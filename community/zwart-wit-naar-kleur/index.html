@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Van zwart-wit naar kleur met ChatGPT - DigitaalSlim</title>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vxsa3zxb7u");
+</script>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-jFioKo5P0whjJRP6PFlO8.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --bg: #F7F5FC; --text: #1A1627; --text-secondary: #2E2845; --text-muted: #6B6589; --white: #FFFFFF; --brand: #553CF7; --brand-mid: #883DF4; --brand-soft: rgba(85,60,247,0.07); --border: #E4E0F0; --shadow: 0 8px 32px rgba(85,60,247,0.06), 0 2px 8px rgba(26,22,39,0.04); --shadow-sm: 0 2px 12px rgba(85,60,247,0.05); --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1); }
+  body { font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; }
+  .hero { background: linear-gradient(160deg, #FFFFFF 0%, #F7F5FC 40%, #F0ECF9 70%, #F7F5FC 100%); padding: 72px 24px 56px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 80%, rgba(85,60,247,0.04) 0%, transparent 50%), radial-gradient(ellipse at 30% 20%, rgba(136,61,244,0.03) 0%, transparent 40%); pointer-events: none; }
+  .hero-inner { max-width: 760px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(85,60,247,0.08); border: 1px solid rgba(85,60,247,0.15); border-radius: 50px; padding: 8px 18px; font-size: 13px; font-weight: 600; color: var(--brand); margin-bottom: 24px; }
+  .hero-badge-dot { width: 7px; height: 7px; background: var(--brand-mid); border-radius: 50%; box-shadow: 0 0 8px rgba(136,61,244,0.5); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(0.85); } }
+  .hero h1 { font-size: 40px; font-weight: 800; color: var(--text); letter-spacing: -1.5px; line-height: 1.15; margin-bottom: 16px; }
+  .hero h1 span { color: var(--brand); }
+  .hero-sub { font-size: 17px; color: var(--text-secondary); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+  .route-section { max-width: 880px; margin: 0 auto; padding: 48px 24px 64px; }
+  .route-intro { text-align: center; max-width: 600px; margin: 0 auto 48px; }
+  .route-intro p { font-size: 16px; color: var(--text-secondary); line-height: 1.7; }
+  .steps { display: flex; flex-direction: column; gap: 32px; position: relative; }
+  .steps::before { content: ''; position: absolute; left: 32px; top: 56px; bottom: 56px; width: 3px; background: linear-gradient(to bottom, #553CF7, #883DF4, #22c55e); border-radius: 3px; }
+  .step { display: flex; gap: 24px; align-items: flex-start; position: relative; }
+  .step-badge { width: 64px; height: 64px; border-radius: 50%; background: var(--brand); color: white; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800; flex-shrink: 0; z-index: 1; box-shadow: 0 6px 20px rgba(85,60,247,0.25); }
+  .step.done .step-badge { background: #22c55e; box-shadow: 0 6px 20px rgba(34,197,94,0.25); }
+  .step-card { background: var(--white); border-radius: 20px; overflow: hidden; flex: 1; border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: transform var(--transition), box-shadow var(--transition); }
+  .step-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .step-card-body { padding: 24px 28px; }
+  .step-app { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--brand); margin-bottom: 6px; }
+  .step-title { font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
+  .step-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.65; }
+  .step-tip { margin-top: 14px; padding: 14px 18px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; font-size: 14px; color: #92400e; line-height: 1.55; }
+  .step-tip strong { color: #78350f; }
+  .step-media { border-top: 1px solid var(--border); background: #fafafa; }
+  .step-media img, .step-media video { width: 100%; display: block; }
+  .step-media iframe { width: 100%; aspect-ratio: 16/9; border: none; display: block; }
+  .step-media-placeholder { padding: 40px 24px; text-align: center; font-size: 14px; color: #8b7fc7; background: #f3f0ff; border-top: 1px solid var(--border); }
+  .step-media-placeholder .placeholder-icon { font-size: 32px; margin-bottom: 8px; display: block; }
+  .cta-section { max-width: 680px; margin: 0 auto; padding: 0 24px 64px; text-align: center; }
+  .cta-card { background: linear-gradient(135deg, #f3f0ff, #ebe7fc, #f3f0ff); border: 1px solid rgba(85,60,247,0.12); border-radius: 24px; padding: 40px 36px; }
+  .cta-card h2 { font-size: 24px; font-weight: 800; color: var(--text); margin-bottom: 12px; }
+  .cta-card p { font-size: 16px; color: var(--text-secondary); max-width: 480px; margin: 0 auto; line-height: 1.7; }
+  .cta-card p + p { margin-top: 12px; }
+  .feedback-section { max-width: 680px; margin: 0 auto; padding: 0 24px 64px; text-align: center; }
+  .feedback-card { background: var(--white); border: 2px solid #fde68a; border-radius: 24px; padding: 36px 32px; }
+  .feedback-card h2 { font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+  .feedback-card p { font-size: 15px; color: var(--text-secondary); max-width: 460px; margin: 0 auto 20px; line-height: 1.65; }
+  .feedback-btn { display: inline-block; background: var(--brand); color: white; font-size: 15px; font-weight: 700; padding: 14px 32px; border-radius: 50px; text-decoration: none; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 16px rgba(85,60,247,0.25); }
+  .feedback-btn:hover { background: var(--brand-mid); transform: translateY(-1px); }
+  .feedback-note { margin-top: 12px; font-size: 13px; color: var(--text-muted); }
+  .footer { background: linear-gradient(160deg, #13111E 0%, #1C1535 40%, #110F1A 100%); padding: 48px 24px; text-align: center; }
+  .footer-inner { max-width: 600px; margin: 0 auto; }
+  .footer-inner h2 { font-size: 26px; font-weight: 800; color: rgba(255,255,255,0.95); letter-spacing: -0.8px; margin-bottom: 12px; }
+  .footer-inner p { font-size: 15px; color: rgba(255,255,255,0.45); line-height: 1.65; }
+  .footer-brand { margin-top: 32px; font-size: 13px; color: rgba(255,255,255,0.2); }
+  @media (max-width: 768px) { .hero { padding: 56px 20px 40px; } .hero h1 { font-size: 28px; letter-spacing: -0.8px; } .hero-sub { font-size: 15px; } .route-section { padding: 32px 16px 48px; } .steps::before { left: 24px; } .step { gap: 16px; } .step-badge { width: 48px; height: 48px; font-size: 18px; } .step-card-body { padding: 18px 20px; } .step-title { font-size: 17px; } .step-desc { font-size: 14px; } .cta-card { padding: 28px 24px; } .cta-card h2 { font-size: 20px; } }
+  @media (min-width: 1024px) { .hero h1 { font-size: 46px; } .step-card-body { padding: 28px 32px; } }
+</style>
+</head>
+<body>
+<section class="hero"><div class="hero-inner"><div class="hero-badge"><span class="hero-badge-dot"></span> DigitaalSlim Plus+</div><h1>Van zwart-wit<br><span>naar kleur</span></h1><p class="hero-sub">Heb je nog oude zwart-witfoto's van je ouders of grootouders? Met ChatGPT maak je er in een paar tikken een kleurenfoto van. Gratis, op je iPad of iPhone. We laten je stap voor stap zien hoe het werkt.</p></div></section>
+<section class="route-section"><div class="route-intro"><p>Volg de stappen hieronder op je eigen tempo. Ken je een stap al? Sla die gerust over. Bij elke stap vind je een korte uitleg, en waar nodig een schermafbeelding of video.</p></div>
+<div class="steps">
+<div class="step"><div class="step-badge">1</div><div class="step-card"><div class="step-card-body"><div class="step-app">App Store</div><div class="step-title">Download de ChatGPT-app</div><div class="step-desc">Open de App Store op je iPad of iPhone en zoek naar "ChatGPT". Download de app (gratis) en maak een account aan. Dat kan met je Apple ID of je e-mailadres.</div><div class="step-tip"><strong>Heb je al ChatGPT?</strong> Dan kun je deze stap overslaan. Zorg er wel voor dat je de nieuwste versie hebt. Ga naar de App Store en tik op "Werk bij" als dat er staat.</div></div><div class="step-media-placeholder"><span class="placeholder-icon">📱</span>Schermafbeelding: ChatGPT in de App Store op de iPad</div></div></div>
+<div class="step"><div class="step-badge">2</div><div class="step-card"><div class="step-card-body"><div class="step-app">Foto's</div><div class="step-title">Zoek je zwart-witfoto op</div><div class="step-desc">Heb je de foto al op je iPad of iPhone staan? Prima. Zo niet: maak een foto van de afgedrukte foto met je camera. Leg de foto op een vlakke ondergrond met goed licht, en maak een zo recht mogelijke opname.</div><div class="step-tip"><strong>Tip:</strong> Hoe scherper de originele foto, hoe mooier het resultaat. Probeer schaduwen en reflecties te vermijden als je een afgedrukte foto fotografeert.</div></div><div class="step-media-placeholder"><span class="placeholder-icon">📷</span>Schermafbeelding: een zwart-witfoto in het fotoalbum</div></div></div>
+<div class="step"><div class="step-badge">3</div><div class="step-card"><div class="step-card-body"><div class="step-app">ChatGPT</div><div class="step-title">Upload de foto en vraag om kleur</div><div class="step-desc">Open ChatGPT en tik op het plus-icoon of het paperclip-icoon naast het tekstveld. Kies "Foto" en selecteer je zwart-witfoto. Typ daarna: "Maak deze zwart-witfoto in kleur." En tik op versturen.</div><div class="step-tip"><strong>Tip:</strong> Je kunt ook specifiekere instructies geven. Bijvoorbeeld: "Maak deze foto in kleur. De jurk was blauw en het huis was rood." Hoe meer je vertelt, hoe nauwkeuriger het resultaat.</div></div><div class="step-media-placeholder"><span class="placeholder-icon">🎨</span>Video of schermafbeelding: de foto uploaden en de instructie typen</div></div></div>
+<div class="step"><div class="step-badge">4</div><div class="step-card"><div class="step-card-body"><div class="step-app">ChatGPT</div><div class="step-title">Bewonder het resultaat en sla het op</div><div class="step-desc">ChatGPT toont nu een kleurenversie van je foto. Tik op de afbeelding en houd je vinger erop. Kies "Bewaar in Foto's" om de kleurenfoto op te slaan op je iPad of iPhone.</div><div class="step-tip"><strong>Niet helemaal goed?</strong> Typ gewoon: "Maak de kleuren wat warmer" of "De achtergrond was eigenlijk groen." ChatGPT past het aan op basis van je feedback.</div></div><div class="step-media-placeholder"><span class="placeholder-icon">💾</span>Video of schermafbeelding: het kleurenresultaat bekijken en opslaan</div></div></div>
+<div class="step"><div class="step-badge">5</div><div class="step-card"><div class="step-card-body"><div class="step-app">WhatsApp</div><div class="step-title">Deel de kleurenfoto met je familie</div><div class="step-desc">Open WhatsApp en kies het gesprek met je familie. Tik op het plus-icoon en kies "Foto". Selecteer de nieuwe kleurenfoto en verstuur hem. Bereid je voor op verbaasde reacties!</div><div class="step-tip"><strong>Leuk idee:</strong> Stuur de originele zwart-witfoto en de kleurenversie samen. Dat maakt de vergelijking nog indrukwekkender.</div></div><div class="step-media-placeholder"><span class="placeholder-icon">📤</span>Schermafbeelding: de kleurenfoto delen via WhatsApp</div></div></div>
+<div class="step done"><div class="step-badge">&#10003;</div><div class="step-card"><div class="step-card-body"><div class="step-app">Klaar!</div><div class="step-title">Je zwart-witfoto heeft kleur gekregen</div><div class="step-desc">Wat begon als een vergeelde herinnering is nu een levendige kleurenfoto. Leuk om te bewaren, af te drukken, of te delen met de hele familie.</div></div></div></div>
+</div></section>
+<section class="cta-section"><div class="cta-card"><h2>Meer van dit soort uitleg?</h2><p>In de DigitaalSlim Plus+ Community delen we regelmatig dit soort stap-voor-stap uitleg. Altijd duidelijk, altijd op jouw tempo. En als je vastloopt, stel je gewoon je vraag.</p><p>Binnenkort kun je je aanmelden. Hou je mailbox in de gaten.</p></div></section>
+<section class="feedback-section"><div class="feedback-card"><h2>Wat vind je van deze aanpak?</h2><p>In plaats van een lange video hebben we het opgesplitst in korte, losse stappen. Met hier en daar een screenshot of videootje erbij. Bevalt dit? Laat het ons weten!</p><a href="GOOGLE_FORM_LINK_HIER" class="feedback-btn" target="_blank">Geef je mening</a><p class="feedback-note">Duurt minder dan een minuut.</p></div></section>
+<footer class="footer"><div class="footer-inner"><h2>Samen digitaal sterker.</h2><p>DigitaalSlim helpt je om met vertrouwen je iPad, iPhone en Mac te gebruiken. Op jouw tempo, met duidelijke uitleg.</p></div><div class="footer-brand">DigitaalSlim</div></footer>
+</body>
+</html>
