@@ -49,30 +49,14 @@
   .prose p:last-child { margin-bottom: 0; }
   .prose .highlight { font-weight: 700; color: var(--text); }
 
-  .compare-story { max-width: 700px; margin: 0 auto; padding: 80px 24px; }
-  .compare-story-block { background: var(--white); border-radius: 20px; padding: 32px; margin-bottom: 20px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); display: flex; gap: 20px; align-items: flex-start; }
-  .compare-story-block .cs-icon { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
-  .compare-story-block h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
-  .compare-story-block p { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
-  .compare-story-block.is-new { border: 2px solid rgba(85,60,247,0.15); background: linear-gradient(135deg, rgba(85,60,247,0.02), rgba(136,61,244,0.04)); }
-  .compare-story-block.is-new h3 { color: var(--brand); }
-
-  .miranda-section { max-width: 880px; margin: 0 auto; padding: 0 24px 64px; }
-  .miranda-flow { display: flex; flex-direction: column; gap: 24px; }
-  .miranda-step { background: var(--white); border-radius: 20px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
-  .miranda-step-info { padding: 24px 28px; }
-  .miranda-step-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--brand); margin-bottom: 8px; }
-  .miranda-step-info h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; line-height: 1.3; }
-  .miranda-step-info p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
-  .miranda-step-img img { width: 100%; display: block; }
-
   .section-label { text-align: center; font-size: 15px; font-weight: 700; color: var(--brand); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
   .section-heading { text-align: center; font-size: 34px; font-weight: 800; color: var(--text); letter-spacing: -1px; margin-bottom: 12px; }
   .section-heading.xl { font-size: 42px; letter-spacing: -1.5px; }
-  .section-sub { text-align: center; font-size: 16px; color: var(--text-secondary); max-width: 580px; margin: 0 auto 48px; line-height: 1.7; }
 
   .testimonial-highlight { max-width: 880px; margin: 0 auto; padding: 0 24px 48px; }
   .testimonial-highlight .testimonial-card { box-shadow: var(--shadow); }
+  .testimonial-card { background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+  .testimonial-card img { width: 100%; display: block; }
 
   .kanalen-section { max-width: 960px; margin: 0 auto; padding: 80px 24px; }
   .kanalen-intro { text-align: center; max-width: 620px; margin: 0 auto 48px; font-size: 16px; color: var(--text-secondary); line-height: 1.75; }
@@ -85,17 +69,8 @@
   .kanaal-item h4 { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
   .kanaal-item p { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
 
-  .dashboard-section { max-width: 1060px; margin: 0 auto; padding: 0 24px 80px; }
-  .dashboard-grid { display: flex; flex-direction: column; gap: 20px; margin-top: 48px; }
-  .dashboard-card { background: var(--white); border-radius: 20px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); }
-  .dashboard-card img { width: 100%; display: block; }
-  .dashboard-caption { padding: 16px 24px; font-size: 15px; font-weight: 600; color: var(--text); border-top: 1px solid var(--border); }
-  .dashboard-caption span { color: var(--text-muted); font-weight: 400; }
-
   .testimonials-section { max-width: 960px; margin: 0 auto; padding: 80px 24px; }
   .testimonials-grid { display: flex; flex-direction: column; gap: 20px; margin-top: 48px; max-width: 700px; margin-left: auto; margin-right: auto; }
-  .testimonial-card { background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
-  .testimonial-card img { width: 100%; display: block; }
 
   .cta-section { background: linear-gradient(160deg, #13111E 0%, #1C1535 40%, #110F1A 100%); padding: 72px 24px; text-align: center; }
   .cta-inner { max-width: 600px; margin: 0 auto; }
@@ -109,12 +84,12 @@
     .kanalen-layout { grid-template-columns: 1fr; }
     .section-heading { font-size: 26px; }
     .section-heading.xl { font-size: 32px; }
-    .compare-story-block { flex-direction: column; }
   }
 </style>
 </head>
 <body>
 
+<!-- 1. HERO: iCloud-vraag als haak (blijft) -->
 <section class="hero">
   <div class="hero-inner">
     <img src="logo.png" alt="DigitaalSlim Plus+" class="hero-logo">
@@ -123,71 +98,30 @@
   </div>
 </section>
 
-<div class="prose" style="padding-bottom:0;text-align:center;">
-  <p style="font-weight:700;color:var(--brand);margin-bottom:0;">Klik op play om de video te bekijken.</p>
-</div>
-
+<!-- 2. VIDEO: direct, zonder tussenstap -->
 <section class="video-section">
   <div class="video-card"><div class="video-embed"><iframe src="https://player.vimeo.com/video/1174687520?badge=0&autopause=1&player_id=0&app_id=58479&dnt=1" allow="fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div></div>
 </section>
 
+<!-- 3. COMMUNITY INTRODUCTIE: direct na de video, waar de aandacht is -->
 <div class="prose">
-  <h2>Jouw vragen, beantwoord met video</h2>
-  <p>Miranda's vraag over iCloud is er een van velen. Elke dag krijgen we vragen van mensen die ergens tegenaan lopen op hun iPad, iPhone of Mac. En vaak zijn het precies de vragen waar je online geen duidelijk antwoord op vindt.</p>
-  <p>Daarom hebben we iets nieuws gebouwd. <span class="highlight">Een eigen platform waar we jouw vragen beantwoorden met korte, duidelijke video's.</span> Stap voor stap, met schermafbeeldingen. Alles netjes per onderwerp, altijd terug te vinden. Met een eigen app op je iPhone en iPad.</p>
-  <div style="margin:32px 0;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);"><img src="afbeeldingen/testimonials/wim.png" alt="Wim over de community" style="width:100%;display:block;"></div>
-  <p>Geen reclame. Geen onvindbaarheid. Geen chaos. Gewoon een rustige plek waar je altijd terecht kunt met je digitale vragen.</p>
+  <h2>Dit is onze gloednieuwe DigitaalSlim Plus+ Community</h2>
+  <p>Miranda's vraag is er een van velen. Elke dag krijgen we vragen van mensen die ergens tegenaan lopen op hun iPad, iPhone of Mac. Daarom hebben we iets nieuws gebouwd.</p>
+  <p><span class="highlight">Een eigen platform waar we jouw vragen beantwoorden met korte, duidelijke video's.</span> Stap voor stap, met schermafbeeldingen. Alles netjes per onderwerp, altijd terug te vinden. Geen reclame, geen chaos. Gewoon een rustige plek waar je altijd terecht kunt.</p>
+  <p style="margin-top:24px;padding:20px 24px;background:var(--brand-soft);border:1px solid rgba(85,60,247,0.12);border-radius:14px;font-size:15px;text-align:center;"><span class="highlight">Op dit moment is de community beschikbaar voor onze DigitaalSlim Plus+ leden.</span> Binnenkort laten we ook nieuwe leden toe. Hou je mailbox in de gaten.</p>
 </div>
 
+<!-- 4. TESTIMONIAL: sociaal bewijs, kort en krachtig -->
+<div class="testimonial-highlight">
+  <div class="testimonial-card"><img src="afbeeldingen/testimonials/wim.png" alt="Wim over de community"></div>
+</div>
+
+<!-- 5. TWEE-IPADS: visueel bewijs -->
 <div style="max-width:880px;margin:0 auto;padding:0 24px 40px;">
   <div style="border-radius:20px;overflow:hidden;box-shadow:var(--shadow);"><img src="afbeeldingen/screenshots-community/twee-ipads.png" alt="De DigitaalSlim Plus+ Community op twee iPads" style="width:100%;display:block;"></div>
 </div>
 
-<section class="compare-story">
-  <div class="section-label">Wat maakt het anders?</div>
-  <h2 class="section-heading" style="margin-bottom:32px;">Een plek die echt voor jou werkt</h2>
-  <div class="compare-story-block is-new">
-    <div class="cs-icon">&#127916;</div>
-    <div><h3>Antwoorden met korte video's</h3><p>Niet alleen tekst. Bij herkenbare vragen maken we een korte video die stap voor stap laat zien hoe het werkt. Zoals bij Miranda's iCloud-vraag.</p></div>
-  </div>
-  <div class="compare-story-block is-new">
-    <div class="cs-icon">&#128269;</div>
-    <div><h3>Alles per kanaal, altijd terug te vinden</h3><p>iPad-vragen bij iPad. iCloud bij iCloud. Je opent het onderwerp en vindt wat je zoekt. Ook als het antwoord van drie maanden geleden is.</p></div>
-  </div>
-  <div class="compare-story-block is-new">
-    <div class="cs-icon">&#128274;</div>
-    <div><h3>Privé en veilig</h3><p>Geen advertenties. Geen oplichters. Geen tracking. Je gegevens zijn van jou. Alles draait op een eigen platform.</p></div>
-  </div>
-  <div class="compare-story-block is-new">
-    <div class="cs-icon">&#128241;</div>
-    <div><h3>Eigen app voor iPhone en iPad</h3><p>Download de app en bekijk alles op je eigen tempo, waar je ook bent. Handig en overzichtelijk.</p></div>
-  </div>
-  <div class="compare-story-block is-new">
-    <div class="cs-icon">&#9989;</div>
-    <div><h3>Jij bepaalt wat je bekijkt</h3><p>Geen algoritme dat voor jou beslist. Jij kiest het kanaal, jij leest wat je wilt, op jouw tempo.</p></div>
-  </div>
-</section>
-
-<div class="prose">
-  <h2 class="section-heading xl" style="margin-bottom:20px;">Een eigen plek, volledig van ons</h2>
-  <p>De community draait op een eigen platform. Geen social media nodig. Jouw gegevens blijven van jou. Geen advertenties, geen tracking. Privacy en veiligheid staan voorop.</p>
-  <p>En het mooiste? <span class="highlight">Je kunt gewoon een vraag stellen en wij beantwoorden die met tekst, schermafbeeldingen en bij herkenbare vragen ook met korte video's.</span> Alles netjes per onderwerp, altijd terug te vinden.</p>
-</div>
-
-<section class="miranda-section">
-  <div class="section-label" style="margin-bottom:16px;">Een echt voorbeeld</div>
-  <h2 class="section-heading xl" style="margin-bottom:40px;">Zo ziet een antwoord eruit</h2>
-  <div class="miranda-flow">
-    <div class="miranda-step"><div class="miranda-step-info"><div class="miranda-step-label">De vraag</div><h3>"Mijn foto's staan in iCloud, maar ze nemen nog steeds opslagruimte in op mijn iPad. Hoe kan dat?"</h3><p>Miranda stelde deze vraag in het kanaal iCloud & Opslag. Het soort vraag dat heel veel mensen herkennen, maar waar je online geen duidelijk antwoord op vindt.</p></div><div class="miranda-step-img"><img src="afbeeldingen/screenshots-video/vraag-miranda.png" alt="Vraag van Miranda"></div></div>
-    <div class="miranda-step"><div class="miranda-step-info"><div class="miranda-step-label">Het antwoord</div><h3>Het blijkt heel normaal te zijn. En toch weten de meeste mensen het niet.</h3><p>Je iPad bewaart een lokale kopie van je foto's zolang er genoeg ruimte is. Pas als de opslag vol raakt, ruimt je toestel die lokale bestanden automatisch op. We hebben het stap voor stap uitgelegd, met schermafbeeldingen.</p></div><div class="miranda-step-img"><img src="afbeeldingen/screenshots-video/antwoord-miranda.png" alt="Geschreven antwoord"></div></div>
-    <div class="miranda-step"><div class="miranda-step-info"><div class="miranda-step-label">Het resultaat</div><h3>Niet alleen Miranda leerde iets bij.</h3><p>Tientallen leden lazen mee. Rachel: "Weer iets bijgeleerd." Marie-Jeanne: "Nu zit het er terug goed in."</p></div><div class="miranda-step-img"><img src="afbeeldingen/screenshots-video/reacties-miranda.png" alt="Reacties van leden"></div></div>
-  </div>
-</section>
-
-<div class="testimonial-highlight">
-  <div class="testimonial-card"><img src="afbeeldingen/testimonials/wendy.png" alt="Wendy: Sneller antwoord dan Facebook"></div>
-</div>
-
+<!-- 6. KANALEN: laat zien dat het meer is dan alleen iCloud -->
 <section class="kanalen-section">
   <div class="section-label">Alles op zijn plek</div>
   <h2 class="section-heading">Geen chaos. Kanalen.</h2>
@@ -205,35 +139,19 @@
   </div>
 </section>
 
-<section class="dashboard-section">
-  <div class="section-label">De community van binnen</div>
-  <h2 class="section-heading">Zo ziet het er echt uit</h2>
-  <div class="dashboard-grid">
-    <div class="dashboard-card">
-      <img src="afbeeldingen/screenshots-community/community-dashboard-2.png" alt="De community met kanalen en gesprekken">
-      <div class="dashboard-caption">De community <span>met kanalen, gesprekken en antwoorden van onze leden</span></div>
-    </div>
-    <div class="dashboard-card">
-      <img src="afbeeldingen/screenshots-community/community-dashboard-3.png" alt="Vraag & Antwoord in de community">
-      <div class="dashboard-caption">Vraag & Antwoord <span>netjes ingedeeld per onderwerp, met mooie illustraties</span></div>
-    </div>
-  </div>
-</section>
-
+<!-- 7. TESTIMONIALS: extra sociaal bewijs voor wie doorscrollt -->
 <section class="testimonials-section">
   <div class="section-label">Meer reacties</div>
   <h2 class="section-heading">Wat onze leden ervan vinden</h2>
   <div class="testimonials-grid">
     <div class="testimonial-card"><img src="afbeeldingen/testimonials/jos.png" alt="Jos"></div>
     <div class="testimonial-card"><img src="afbeeldingen/testimonials/ilka.png" alt="Ilka"></div>
-    <div class="testimonial-card"><img src="afbeeldingen/testimonials/christine.png" alt="Christine"></div>
-    <div class="testimonial-card"><img src="afbeeldingen/testimonials/frank.png" alt="Frank"></div>
-    <div class="testimonial-card"><img src="afbeeldingen/testimonials/josine.png" alt="Josine"></div>
-    <div class="testimonial-card"><img src="afbeeldingen/testimonials/rosette.png" alt="Rosette"></div>
     <div class="testimonial-card"><img src="afbeeldingen/testimonials/wendy.png" alt="Wendy"></div>
+    <div class="testimonial-card"><img src="afbeeldingen/testimonials/christine.png" alt="Christine"></div>
   </div>
 </section>
 
+<!-- 8. CTA -->
 <section class="cta-section">
   <div class="cta-inner">
     <h2>Dit is nog maar het begin</h2>
@@ -241,7 +159,7 @@
     <p style="margin-top:24px;color:rgba(255,255,255,0.7);font-weight:600;">Op dit moment is de community beschikbaar voor onze DigitaalSlim Plus+ leden. Binnenkort laten we ook nieuwe leden toe.</p>
   </div>
 </section>
-<footer class="footer"><div class="footer-text">©DigitaalSlim 2015 - 2026 | Samen digitaal sterker</div></footer>
+<footer class="footer"><div class="footer-text">&copy;DigitaalSlim 2015 - 2026 | Samen digitaal sterker</div></footer>
 
 </body>
 </html>
