@@ -65,6 +65,23 @@
   .feedback-btn { display: inline-block; background: var(--brand); color: white; font-size: 15px; font-weight: 700; padding: 14px 32px; border-radius: 50px; text-decoration: none; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 16px rgba(85,60,247,0.25); }
   .feedback-btn:hover { background: var(--brand-mid); transform: translateY(-1px); }
   .feedback-note { margin-top: 12px; font-size: 13px; color: var(--text-muted); }
+  /* === SHOWCASE === */
+  .showcase-section { max-width: 960px; margin: 0 auto; padding: 0 24px 48px; }
+  .showcase-label { text-align: center; font-size: 13px; font-weight: 700; color: var(--brand); text-transform: uppercase; letter-spacing: 2.5px; margin-bottom: 12px; }
+  .showcase-heading { text-align: center; font-size: 30px; font-weight: 800; color: var(--text); letter-spacing: -0.8px; margin-bottom: 12px; }
+  .showcase-sub { text-align: center; font-size: 16px; color: var(--text-secondary); max-width: 520px; margin: 0 auto 36px; line-height: 1.7; }
+  .showcase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .showcase-item { background: var(--white); border-radius: 20px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: transform var(--transition), box-shadow var(--transition); }
+  .showcase-item:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .showcase-images { display: grid; grid-template-columns: 1fr 1fr; }
+  .showcase-images img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .showcase-images .before { position: relative; }
+  .showcase-images .before::after { content: 'Voor'; position: absolute; bottom: 8px; left: 8px; background: rgba(0,0,0,0.6); color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; }
+  .showcase-images .after { position: relative; }
+  .showcase-images .after::after { content: 'Na'; position: absolute; bottom: 8px; right: 8px; background: var(--brand); color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; }
+  .showcase-caption { padding: 16px 18px; text-align: center; font-size: 14px; color: var(--text-secondary); font-weight: 500; }
+  .showcase-placeholder { display: flex; align-items: center; justify-content: center; aspect-ratio: 1/1.2; background: #f3f0ff; color: #8b7fc7; font-size: 13px; text-align: center; padding: 20px; }
+  @media (max-width: 768px) { .showcase-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; } .showcase-heading { font-size: 24px; } }
   .footer { background: linear-gradient(160deg, #13111E 0%, #1C1535 40%, #110F1A 100%); padding: 48px 24px; text-align: center; }
   .footer-inner { max-width: 600px; margin: 0 auto; }
   .footer-inner h2 { font-size: 26px; font-weight: 800; color: rgba(255,255,255,0.95); letter-spacing: -0.8px; margin-bottom: 12px; }
@@ -76,6 +93,34 @@
 </head>
 <body>
 <section class="hero"><div class="hero-inner"><div class="hero-badge"><span class="hero-badge-dot"></span> DigitaalSlim Plus+</div><h1>Van zwart-wit<br><span>naar kleur</span></h1><p class="hero-sub">Heb je nog oude zwart-witfoto's van je ouders of grootouders? Met ChatGPT maak je er in een paar tikken een kleurenfoto van. Gratis, op je iPad of iPhone. We laten je stap voor stap zien hoe het werkt.</p></div></section>
+<section class="showcase-section">
+<div class="showcase-label">Kijk wat er mogelijk is</div>
+<h2 class="showcase-heading">Van oud en vergeeld naar levendig en kleurrijk</h2>
+<p class="showcase-sub">Dit is wat ChatGPT kan doen met een gewone zwart-witfoto. Gratis, in minder dan een minuut.</p>
+<div class="showcase-grid">
+<div class="showcase-item">
+<div class="showcase-images">
+<div class="before"><img src="afbeeldingen/matroos-zwartwit.png" alt="Matroos in zwart-wit"></div>
+<div class="after"><img src="afbeeldingen/matroos-kleur.png" alt="Matroos in kleur"></div>
+</div>
+<div class="showcase-caption">Een oude portretfoto, tot leven gewekt in kleur</div>
+</div>
+<div class="showcase-item">
+<div class="showcase-images">
+<div class="before"><div class="showcase-placeholder">Voorbeeld 2 komt binnenkort</div></div>
+<div class="after"><div class="showcase-placeholder">Voorbeeld 2 komt binnenkort</div></div>
+</div>
+<div class="showcase-caption">Binnenkort meer voorbeelden</div>
+</div>
+<div class="showcase-item">
+<div class="showcase-images">
+<div class="before"><div class="showcase-placeholder">Voorbeeld 3 komt binnenkort</div></div>
+<div class="after"><div class="showcase-placeholder">Voorbeeld 3 komt binnenkort</div></div>
+</div>
+<div class="showcase-caption">Binnenkort meer voorbeelden</div>
+</div>
+</div>
+</section>
 <section class="route-section"><div class="route-intro"><p>Volg de stappen hieronder op je eigen tempo. Ken je een stap al? Sla die gerust over. Bij elke stap vind je een korte uitleg, en waar nodig een schermafbeelding of video.</p></div>
 <div class="steps">
 <div class="step"><div class="step-badge">1</div><div class="step-card"><div class="step-card-body"><div class="step-app">App Store</div><div class="step-title">Download de ChatGPT-app</div><div class="step-desc">Open de App Store op je iPad of iPhone en zoek naar "ChatGPT". Download de app (gratis) en maak een account aan. Dat kan met je Apple ID of je e-mailadres.</div><div class="step-tip"><strong>Heb je al ChatGPT?</strong> Dan kun je deze stap overslaan. Zorg er wel voor dat je de nieuwste versie hebt. Ga naar de App Store en tik op "Werk bij" als dat er staat.</div></div><div class="step-media-placeholder"><span class="placeholder-icon">📱</span>Schermafbeelding: ChatGPT in de App Store op de iPad</div></div></div>
