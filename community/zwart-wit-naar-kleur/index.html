@@ -95,6 +95,19 @@
   .feedback-btn:hover { background: var(--brand-mid); transform: translateY(-1px); }
   .feedback-note { margin-top: 12px; font-size: 13px; color: var(--text-muted); }
 
+  /* === NEEDS === */
+  .needs-section { max-width: 680px; margin: 0 auto; padding: 0 24px 48px; }
+  .needs-card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 28px 32px; box-shadow: var(--shadow-sm); }
+  .needs-card h3 { font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 14px; }
+  .needs-list { list-style: none; padding: 0; }
+  .needs-list li { font-size: 15px; color: var(--text-secondary); padding: 8px 0; display: flex; align-items: center; gap: 12px; line-height: 1.5; }
+  .needs-list li::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--brand); flex-shrink: 0; }
+
+  /* === CONCEPT INTRO === */
+  .concept-intro { max-width: 680px; margin: 0 auto; padding: 0 24px 40px; text-align: center; }
+  .concept-badge { display: inline-block; background: rgba(85,60,247,0.08); border: 1px solid rgba(85,60,247,0.15); border-radius: 50px; padding: 6px 16px; font-size: 12px; font-weight: 700; color: var(--brand); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; }
+  .concept-intro p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; max-width: 560px; margin: 0 auto; }
+
   /* === TRY IT === */
   .try-section { max-width: 680px; margin: 0 auto; padding: 0 24px 56px; text-align: center; }
   .try-card { background: var(--white); border: 1px solid var(--border); border-radius: 24px; padding: 36px 32px; box-shadow: var(--shadow-sm); }
@@ -183,11 +196,25 @@
   </div>
 </section>
 
+<!-- CONCEPT INTRO -->
+<section class="concept-intro">
+  <div class="concept-badge">Stappenplan</div>
+  <p>Geen lange videolessen, maar direct resultaat. In onze nieuwe stappenplannen laten we je met korte video's, heldere tekst en duidelijke schermafbeeldingen precies zien hoe iets werkt. Ken je een stap al? Sla die over. Volg de rest op je eigen tempo.</p>
+</section>
+
+<!-- WAT HEB JE NODIG? -->
+<section class="needs-section">
+  <div class="needs-card">
+    <h3>Wat heb je nodig?</h3>
+    <ul class="needs-list">
+      <li>De ChatGPT-app (gratis, in de App Store)</li>
+      <li>Een oude zwart-witfoto op je iPad of iPhone (of een foto van een afgedrukt exemplaar)</li>
+    </ul>
+  </div>
+</section>
+
 <!-- STAPPEN -->
 <section class="route-section">
-  <div class="route-intro">
-    <p>Volg de stappen hieronder op je eigen tempo. Ken je een stap al? Sla die gerust over. Bij elke stap vind je een korte uitleg, en waar nodig een schermafbeelding of video.</p>
-  </div>
 
   <div class="steps">
 
