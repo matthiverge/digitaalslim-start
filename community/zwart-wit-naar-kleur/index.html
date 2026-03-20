@@ -98,6 +98,18 @@
   .showcase-caption { padding: 16px 18px; text-align: center; font-size: 14px; color: var(--text-secondary); font-weight: 500; min-height: 52px; display: flex; align-items: center; justify-content: center; }
   .showcase-item.landscape .showcase-images { grid-template-columns: 1fr; grid-template-rows: auto auto; }
 
+  /* === VIDEO === */
+  .video-section { max-width: 780px; margin: 0 auto; padding: 0 24px 56px; }
+  .video-wrapper { position: relative; border-radius: 20px; overflow: hidden; background: #0a0a0a; box-shadow: var(--shadow); border: 1px solid var(--border); cursor: pointer; }
+  .video-wrapper iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+  .video-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.35); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; transition: opacity 0.4s; z-index: 2; }
+  .video-overlay.hidden { opacity: 0; pointer-events: none; }
+  .video-play-btn { width: 72px; height: 72px; border-radius: 50%; background: #FEBB0B; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(0,0,0,0.3); transition: transform 0.2s; }
+  .video-play-btn:hover { transform: scale(1.08); }
+  .video-play-btn svg { margin-left: 4px; }
+  .video-overlay-text { color: white; font-size: 15px; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+  .video-label { text-align: center; margin-top: 14px; font-size: 14px; color: var(--text-muted); }
+
   /* === NEEDS === */
   .needs-section { max-width: 680px; margin: 0 auto; padding: 0 24px 48px; }
   .needs-card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 28px 32px; box-shadow: var(--shadow-sm);  }
@@ -257,6 +269,20 @@
       <div class="showcase-caption">Vriendinnen, tijdloos vastgelegd</div>
     </div>
   </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section">
+  <div class="video-wrapper" id="video-container" onclick="document.getElementById('video-overlay').classList.add('hidden');document.getElementById('vimeo-player').src='https://player.vimeo.com/video/1175482129?autoplay=1&badge=0&autopause=0&player_id=0&app_id=58479';">
+    <div class="video-overlay" id="video-overlay">
+      <div class="video-play-btn">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#1A1627"><polygon points="6,3 20,12 6,21"/></svg>
+      </div>
+      <div class="video-overlay-text">Bekijk hoe het werkt (1:40)</div>
+    </div>
+    <iframe id="vimeo-player" src="https://player.vimeo.com/video/1175482129?badge=0&autopause=0&player_id=0&app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" allowfullscreen></iframe>
+  </div>
+  <p class="video-label">Bekijk het volledige proces in minder dan twee minuten.</p>
 </section>
 
 <!-- WAT HEB JE NODIG -->
