@@ -299,9 +299,75 @@
 <!-- STAPPEN -->
 <section class="route-section">
   <div class="steps">
-    <div class="step"><div class="step-badge">1</div><div class="step-card"><div class="step-card-body"><div class="step-app">App Store</div><div class="step-title">Download de ChatGPT-app</div><div class="step-desc">Open de App Store op je iPad of iPhone en zoek naar "ChatGPT". Download de app (gratis) en maak een account aan.</div><div class="step-tip"><strong>Heb je al ChatGPT?</strong> Dan kun je deze stap overslaan.</div></div><div class="step-media-placeholder"><span class="placeholder-icon">📱</span>Schermafbeelding: ChatGPT in de App Store</div></div></div>
-    <div class="step"><div class="step-badge">2</div><div class="step-card"><div class="step-card-body"><div class="step-app">Foto's</div><div class="step-title">Zoek je zwart-witfoto op</div><div class="step-desc">Heb je de foto al op je toestel? Prima. Zo niet: maak een foto van de afgedrukte foto met je camera.</div><div class="step-tip"><strong>Tip:</strong> Hoe scherper de originele foto, hoe mooier het resultaat.</div></div><div class="step-media-placeholder"><span class="placeholder-icon">📷</span>Schermafbeelding: een zwart-witfoto in het fotoalbum</div></div></div>
-    <div class="step"><div class="step-badge">3</div><div class="step-card"><div class="step-card-body"><div class="step-app">ChatGPT</div><div class="step-title">Upload de foto en plak het prompt</div><div class="step-desc">Open ChatGPT, kies "Foto", selecteer je zwart-witfoto. Kopieer dan onderstaande tekst en plak die in het tekstveld.</div><div class="prompt-label">Kopieer dit prompt</div><div class="prompt-box"><div class="prompt-box-header"><button class="prompt-copy" onclick="navigator.clipboard.writeText(document.getElementById('prompt-text').textContent.trim());this.textContent='Gekopieerd!';var msg=document.getElementById('copy-msg');msg.classList.add('show');setTimeout(()=>{msg.scrollIntoView({behavior:'smooth',block:'nearest'});setTimeout(()=>{window.scrollBy({top:60,behavior:'smooth'});},400);},100);setTimeout(()=>{this.textContent='Kopieer';},4000)">Kopieer</button></div><pre id="prompt-text">Kleur deze zwart-witafbeelding in en geef ze een moderne, realistische look alsof ze genomen is met een recente smartphonecamera.
+
+    <!-- STAP 1: Download -->
+    <div class="step">
+      <div class="step-badge">1</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">App Store</div>
+          <div class="step-title">Download de ChatGPT-app</div>
+          <div class="step-desc">Open de App Store op je iPad of iPhone en zoek naar "ChatGPT". Het is de app van OpenAI (met het zwart-witte logo). Tik op "Download" of "Installeer". De app is gratis.</div>
+          <div class="step-tip"><strong>Heb je al ChatGPT?</strong> Dan kun je deze stap overslaan. Zorg er wel voor dat je de nieuwste versie hebt. Ga naar de App Store en tik op "Werk bij" als dat er staat.</div>
+        </div>
+        <div class="step-media"><img src="afbeeldingen/stap1-appstore.png" alt="ChatGPT in de App Store op de iPad"></div>
+      </div>
+    </div>
+
+    <!-- STAP 2: Account -->
+    <div class="step">
+      <div class="step-badge">2</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">ChatGPT</div>
+          <div class="step-title">Maak een gratis account aan</div>
+          <div class="step-desc">Open de ChatGPT-app. Je wordt gevraagd om een account aan te maken. Dat kan met je Apple ID ("Ga door met Apple"), met Google, of met een e-mailadres. Kies wat je het makkelijkst vindt.</div>
+          <div class="step-tip"><strong>Belangrijk:</strong> Een gratis account is voldoende. Je hoeft niet te upgraden naar een betaald abonnement. Alles wat je nodig hebt om foto's in te kleuren werkt gewoon met een gratis account.</div>
+        </div>
+        <div class="step-media"><img src="afbeeldingen/stap2-account.png" alt="Account aanmaken in ChatGPT"></div>
+      </div>
+    </div>
+
+    <!-- STAP 3: Agree -->
+    <div class="step">
+      <div class="step-badge">3</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">ChatGPT</div>
+          <div class="step-title">Ga akkoord met de voorwaarden</div>
+          <div class="step-desc">Er verschijnt een melding over de gebruiksvoorwaarden. Tik op de groene knop "Agree" om verder te gaan.</div>
+        </div>
+        <div class="step-media"><img src="afbeeldingen/stap3-agree.png" alt="Klik op Agree in ChatGPT"></div>
+      </div>
+    </div>
+
+    <!-- STAP 4: Geheugen -->
+    <div class="step">
+      <div class="step-badge">4</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">ChatGPT</div>
+          <div class="step-title">Schakel geheugen in</div>
+          <div class="step-desc">ChatGPT vraagt of je het geheugen wilt inschakelen. Tik op "Inschakelen". Hierdoor onthoudt ChatGPT je voorkeuren en geeft het betere resultaten.</div>
+          <div class="step-tip"><strong>Liever niet?</strong> Je kunt ook op "Niet nu" tikken. Het inkleuren van foto's werkt ook zonder geheugen.</div>
+        </div>
+        <div class="step-media"><img src="afbeeldingen/stap4-geheugen.png" alt="Geheugen inschakelen in ChatGPT"></div>
+      </div>
+    </div>
+
+    <!-- STAP 5: Prompt kopiëren en foto uploaden -->
+    <div class="step">
+      <div class="step-badge">5</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">ChatGPT</div>
+          <div class="step-title">Upload je foto en plak het prompt</div>
+          <div class="step-desc">Tik op het plus-icoon (+) naast het tekstveld. Kies "Foto" en selecteer je zwart-witfoto uit je fotoalbum. Kopieer dan onderstaande tekst en plak die in het tekstveld. Tik op versturen.</div>
+
+          <div class="prompt-label">Kopieer dit prompt</div>
+          <div class="prompt-box">
+            <div class="prompt-box-header"><button class="prompt-copy" onclick="navigator.clipboard.writeText(document.getElementById('prompt-text').textContent.trim());this.textContent='Gekopieerd!';var msg=document.getElementById('copy-msg');msg.classList.add('show');setTimeout(()=>{msg.scrollIntoView({behavior:'smooth',block:'nearest'});setTimeout(()=>{window.scrollBy({top:60,behavior:'smooth'});},400);},100);setTimeout(()=>{this.textContent='Kopieer';},4000)">Kopieer</button></div>
+            <pre id="prompt-text">Kleur deze zwart-witafbeelding in en geef ze een moderne, realistische look alsof ze genomen is met een recente smartphonecamera.
 
 Behoud de originele compositie, vormen en proporties van de afbeelding.
 
@@ -315,10 +381,60 @@ Voeg geen nieuwe objecten toe en verander geen inhoud van de afbeelding.
 
 Het resultaat moet eruitzien alsof deze scène vandaag gefotografeerd werd met een moderne smartphone, terwijl de originele foto duidelijk herkenbaar blijft.
 
-Geef de uiteindelijke afbeelding rechtstreeks weer in de chat als een afbeelding, zonder extra tekst.</pre></div><div class="copy-success" id="copy-msg"><div class="copy-success-icon"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7.5 5.8,10.3 11,4.5" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><div class="copy-success-text">Tekst gekopieerd!<br><span>Open nu ChatGPT, tik op het tekstveld, en plak de tekst (houd je vinger op het tekstveld en tik op "Plak").</span></div></div><div class="step-tip"><strong>Tip:</strong> Weet je welke kleuren er horen? Voeg dat toe aan het einde.</div></div><div class="step-media-placeholder"><span class="placeholder-icon">🎨</span>Schermafbeelding: het prompt plakken</div></div></div>
-    <div class="step"><div class="step-badge">4</div><div class="step-card"><div class="step-card-body"><div class="step-app">ChatGPT</div><div class="step-title">Bewonder het resultaat en sla het op</div><div class="step-desc">Tik op de afbeelding en houd je vinger erop. Kies "Bewaar in Foto's".</div><div class="step-tip"><strong>Niet tevreden?</strong> Typ gewoon: "Maak de kleuren wat warmer."</div></div><div class="step-media-placeholder"><span class="placeholder-icon">💾</span>Schermafbeelding: het resultaat opslaan</div></div></div>
-    <div class="step"><div class="step-badge">5</div><div class="step-card"><div class="step-card-body"><div class="step-app">WhatsApp</div><div class="step-title">Deel de kleurenfoto met je familie</div><div class="step-desc">Verstuur de kleurenfoto via WhatsApp. Bereid je voor op verbaasde reacties!</div><div class="step-tip"><strong>Leuk idee:</strong> Stuur het origineel en de kleurenversie samen.</div></div><div class="step-media-placeholder"><span class="placeholder-icon">📤</span>Schermafbeelding: delen via WhatsApp</div></div></div>
-    <div class="step done"><div class="step-badge">&#10003;</div><div class="step-card"><div class="step-card-body"><div class="step-app">Klaar!</div><div class="step-title">Je zwart-witfoto heeft kleur gekregen</div><div class="step-desc">Je oude zwart-witfoto is nu een levendige kleurenfoto. Leuk om te bewaren, af te drukken, of te delen met de hele familie.</div></div></div></div>
+Geef de uiteindelijke afbeelding rechtstreeks weer in de chat als een afbeelding, zonder extra tekst.</pre>
+          </div>
+          <div class="copy-success" id="copy-msg"><div class="copy-success-icon"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7.5 5.8,10.3 11,4.5" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><div class="copy-success-text">Tekst gekopieerd!<br><span>Open nu ChatGPT, tik op het tekstveld, en plak de tekst (houd je vinger op het tekstveld en tik op "Plak").</span></div></div>
+
+          <div class="step-tip"><strong>Tip:</strong> Weet je welke kleuren er in de originele foto horen? Voeg dat dan toe aan het einde van de tekst. Bijvoorbeeld: "De jurk was blauw en het huis was rood." Hoe meer je vertelt, hoe nauwkeuriger het resultaat.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAP 6: Resultaat opslaan -->
+    <div class="step">
+      <div class="step-badge">6</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">ChatGPT</div>
+          <div class="step-title">Sla de kleurenfoto op</div>
+          <div class="step-desc">ChatGPT toont nu een kleurenversie van je foto. Houd je vinger even op de foto. Er verschijnt een menu. Tik op "Opslaan in Foto's". De kleurenfoto wordt nu opgeslagen in je Foto's-app.</div>
+          <div class="step-tip"><strong>Niet helemaal goed?</strong> Typ gewoon: "Maak de kleuren wat warmer" of "De achtergrond was eigenlijk groen." ChatGPT past het aan op basis van je feedback.</div>
+        </div>
+        <div class="step-media"><img src="afbeeldingen/stap5-opslaan.png" alt="Kleurenfoto opslaan in Foto's via ChatGPT"></div>
+      </div>
+    </div>
+
+    <!-- STAP 7: WhatsApp -->
+    <div class="step">
+      <div class="step-badge">7</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">WhatsApp</div>
+          <div class="step-title">Deel de kleurenfoto met je familie</div>
+          <div class="step-desc">Open WhatsApp en kies het gesprek met je familie of vrienden. Tik op het plus-icoon, kies "Foto" en selecteer de kleurenfoto. Verstuur hem en bereid je voor op verbaasde reacties!</div>
+          <div class="step-tip"><strong>Leuk idee:</strong> Stuur de originele zwart-witfoto en de kleurenversie samen door. Dat maakt de vergelijking nog indrukwekkender.</div>
+        </div>
+        <div class="step-media" style="background:#f0eded;padding:24px;display:flex;justify-content:center;">
+          <div style="width:280px;border-radius:32px;overflow:hidden;border:8px solid #1a1627;box-shadow:0 12px 40px rgba(0,0,0,0.15);position:relative;">
+            <div style="background:#1a1627;padding:4px 0;text-align:center;"><div style="width:80px;height:4px;background:#333;border-radius:2px;margin:0 auto;"></div></div>
+            <img src="afbeeldingen/stap6-whatsapp.png" alt="Kleurenfoto gedeeld via WhatsApp" style="width:100%;display:block;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KLAAR -->
+    <div class="step done">
+      <div class="step-badge">&#10003;</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">Klaar!</div>
+          <div class="step-title">Je zwart-witfoto heeft kleur gekregen</div>
+          <div class="step-desc">Je oude zwart-witfoto is nu een levendige kleurenfoto. Leuk om te bewaren, af te drukken, of te delen met de hele familie.</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
