@@ -94,6 +94,17 @@
   .feedback-btn { display: inline-block; background: var(--brand); color: white; font-size: 15px; font-weight: 700; padding: 14px 32px; border-radius: 50px; text-decoration: none; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 16px rgba(85,60,247,0.25); }
   .feedback-btn:hover { background: var(--brand-mid); transform: translateY(-1px); }
   .feedback-note { margin-top: 12px; font-size: 13px; color: var(--text-muted); }
+
+  /* === TRY IT === */
+  .try-section { max-width: 680px; margin: 0 auto; padding: 0 24px 56px; text-align: center; }
+  .try-card { background: var(--white); border: 1px solid var(--border); border-radius: 24px; padding: 36px 32px; box-shadow: var(--shadow-sm); }
+  .try-card h2 { font-size: 22px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+  .try-card > p { font-size: 15px; color: var(--text-secondary); max-width: 480px; margin: 0 auto 24px; line-height: 1.65; }
+  .try-photo { max-width: 320px; margin: 0 auto 20px; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border); }
+  .try-photo img { width: 100%; display: block; }
+  .try-instructions { font-size: 13px; color: var(--text-muted); line-height: 1.6; max-width: 440px; margin: 0 auto; }
+  .try-instructions strong { color: var(--text-secondary); }
+
   .footer { background: linear-gradient(160deg, #13111E 0%, #1C1535 40%, #110F1A 100%); padding: 48px 24px; text-align: center; }
   .footer-inner { max-width: 600px; margin: 0 auto; }
   .footer-inner h2 { font-size: 26px; font-weight: 800; color: rgba(255,255,255,0.95); letter-spacing: -0.8px; margin-bottom: 12px; }
@@ -126,7 +137,7 @@
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-badge"><span class="hero-badge-dot"></span> DigitaalSlim Plus+</div>
-    <h1>Van zwart-wit<br><span>naar kleur</span></h1>
+    <h1>Van zwart-wit naar kleur<br><span>met ChatGPT</span></h1>
     <p class="hero-sub">Heb je nog oude zwart-witfoto's van je ouders of grootouders? Met ChatGPT maak je er in een paar tikken een kleurenfoto van. Gratis, op je iPad of iPhone. We laten je stap voor stap zien hoe het werkt.</p>
   </div>
 </section>
@@ -169,6 +180,18 @@
       </div>
       <div class="showcase-caption">Vriendinnen, tijdloos vastgelegd</div>
     </div>
+  </div>
+</section>
+
+<!-- ZELF PROBEREN -->
+<section class="try-section">
+  <div class="try-card">
+    <h2>Wil je het zelf proberen?</h2>
+    <p>Heb je niet meteen een zwart-witfoto bij de hand? Geen probleem. Sla onderstaande foto op en gebruik die om het zelf te testen. Zo kun je meteen zien hoe het werkt.</p>
+    <div class="try-photo">
+      <img src="afbeeldingen/matroos-zwartwit.png" alt="Zwart-witfoto om zelf te testen">
+    </div>
+    <p class="try-instructions"><strong>Op een iPad of iPhone:</strong> houd je vinger op de foto en tik op "Voeg toe aan Foto's".<br><strong>Op een Mac:</strong> klik met de rechtermuisknop en kies "Bewaar afbeelding als...".<br><strong>Op een Windows-computer:</strong> klik met de rechtermuisknop en kies "Afbeelding opslaan als...".</p>
   </div>
 </section>
 
