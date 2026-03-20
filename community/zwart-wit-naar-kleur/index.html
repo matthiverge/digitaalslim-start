@@ -361,21 +361,17 @@
           <div class="step-desc">Hieronder staat een slimme opdracht die je straks in ChatGPT plakt. Je hoeft deze niet te begrijpen. Tik op de gele knop "Kopieer" en ga dan naar de volgende stap. In de video laat ik precies zien hoe je het plakt en je foto uploadt.</div>
           <div class="prompt-box">
             <div class="prompt-box-header"><button class="prompt-copy" onclick="navigator.clipboard.writeText(document.getElementById('prompt-text').textContent.trim());this.textContent='Gekopieerd!';var msg=document.getElementById('copy-msg');msg.classList.add('show');setTimeout(()=>{msg.scrollIntoView({behavior:'smooth',block:'nearest'});setTimeout(()=>{window.scrollBy({top:60,behavior:'smooth'});},400);},100);setTimeout(()=>{this.textContent='Kopieer';},4000)">Kopieer</button></div>
-            <pre id="prompt-text">Kleur deze zwart-witafbeelding in en geef ze een moderne, realistische look alsof ze genomen is met een recente smartphonecamera.
+            <pre id="prompt-text">Kleur deze zwart-witafbeelding in en geef ze een natuurlijke, realistische look.
 
-Behoud de originele compositie, vormen en proporties van de afbeelding.
+Behoud de originele foto zoveel mogelijk zoals ze is. Zorg ervoor dat gezichten, personen, vormen en verhoudingen exact hetzelfde blijven en herkenbaar zijn.
 
-Gezichten en personen moeten herkenbaar blijven en niet vervormd worden, maar lichte optimalisaties in kleur en detail zijn toegestaan.
+Voeg alleen realistische kleuren toe (zoals natuurlijke huidtinten, haarkleuren en kledingkleuren) op een manier die geloofwaardig is.
 
-Pas kleuren, witbalans en contrast aan zodat het resultaat overeenkomt met een hedendaagse foto (realistische huidtinten, natuurlijke kleuren, subtiele HDR-look).
+Lichte verbeteringen in helderheid, contrast en scherpte zijn toegestaan, zolang de foto er niet anders uitziet dan het origineel.
 
-Verbeter de beeldkwaliteit lichtjes waar nodig (zoals helderheid en kleurconsistentie), zonder de scène te veranderen of elementen toe te voegen/verwijderen.
+Verander geen inhoud, voeg niets toe en verwijder niets.
 
-Voeg geen nieuwe objecten toe en verander geen inhoud van de afbeelding.
-
-Het resultaat moet eruitzien alsof deze scène vandaag gefotografeerd werd met een moderne smartphone, terwijl de originele foto duidelijk herkenbaar blijft.
-
-Geef de uiteindelijke afbeelding rechtstreeks weer in de chat als een afbeelding, zonder extra tekst.</pre>
+Het resultaat moet eruitzien als exact dezelfde foto, maar dan in kleur en alsof ze recent genomen is met een moderne camera.</pre>
           </div>
           <div class="copy-success" id="copy-msg"><div class="copy-success-icon"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7.5 5.8,10.3 11,4.5" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><div class="copy-success-text">Tekst gekopieerd!<br><span>Open nu ChatGPT, tik op het tekstveld, en plak de tekst (houd je vinger op het tekstveld en tik op "Plak").</span></div></div>
 
