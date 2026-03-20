@@ -274,20 +274,6 @@
   </div>
 </section>
 
-<!-- VIDEO -->
-<section class="video-section">
-  <div class="video-wrapper" id="video-container" onclick="this.innerHTML='<iframe src=\'https://player.vimeo.com/video/1175482129?autoplay=1&badge=0&autopause=0&player_id=0&app_id=58479\' allow=\'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media\' allowfullscreen style=\'width:100%;aspect-ratio:16/9;display:block;border:none;\'></iframe>';">
-    <div class="video-overlay">
-      <div class="video-play-btn">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="#1A1627"><polygon points="6,3 20,12 6,21"/></svg>
-      </div>
-      <div class="video-overlay-text">Bekijk hoe het werkt (1:40)</div>
-    </div>
-    <img class="video-thumbnail" src="https://vumbnail.com/1175482129.jpg" alt="Video thumbnail">
-  </div>
-  <p class="video-label">Bekijk het volledige proces in minder dan twee minuten.</p>
-</section>
-
 <!-- WAT HEB JE NODIG -->
 <section class="needs-section">
   <div class="needs-card">
@@ -394,9 +380,30 @@ Geef de uiteindelijke afbeelding rechtstreeks weer in de chat als een afbeelding
       </div>
     </div>
 
-    <!-- STAP 6: Resultaat opslaan -->
+    <!-- STAP 6: Video -->
     <div class="step">
       <div class="step-badge">6</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">Video</div>
+          <div class="step-title">Bekijk hoe het werkt</div>
+          <div class="step-desc">In deze korte video (1 minuut en 40 seconden) doorlopen we het volledige proces: van het selecteren van een foto tot het eindresultaat in kleur.</div>
+        </div>
+        <div class="step-media" style="max-height:none;background:#0a0a0a;cursor:pointer;" onclick="this.innerHTML='<iframe src=\'https://player.vimeo.com/video/1175482129?autoplay=1&badge=0&autopause=0&player_id=0&app_id=58479\' allow=\'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media\' allowfullscreen style=\'width:100%;aspect-ratio:16/9;display:block;border:none;\'></iframe>';">
+          <div style="position:relative;width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;">
+            <img src="https://vumbnail.com/1175482129.jpg" alt="Video thumbnail" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:12px;">
+              <div style="width:64px;height:64px;border-radius:50%;background:#FEBB0B;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,0.3);"><svg width="24" height="24" viewBox="0 0 24 24" fill="#1A1627"><polygon points="6,3 20,12 6,21"/></svg></div>
+              <div style="color:white;font-size:14px;font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,0.5);">Tik om af te spelen (1:40)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAP 7: Resultaat opslaan -->
+    <div class="step">
+      <div class="step-badge">7</div>
       <div class="step-card">
         <div class="step-card-body">
           <div class="step-app">ChatGPT</div>
@@ -408,9 +415,9 @@ Geef de uiteindelijke afbeelding rechtstreeks weer in de chat als een afbeelding
       </div>
     </div>
 
-    <!-- STAP 7: WhatsApp -->
+    <!-- STAP 8: WhatsApp -->
     <div class="step">
-      <div class="step-badge">7</div>
+      <div class="step-badge">8</div>
       <div class="step-card">
         <div class="step-card-body">
           <div class="step-app">WhatsApp</div>
@@ -418,9 +425,8 @@ Geef de uiteindelijke afbeelding rechtstreeks weer in de chat als een afbeelding
           <div class="step-desc">Open WhatsApp en kies het gesprek met je familie of vrienden. Tik op het plus-icoon, kies "Foto" en selecteer de kleurenfoto. Verstuur hem en bereid je voor op verbaasde reacties!</div>
           <div class="step-tip"><strong>Leuk idee:</strong> Stuur de originele zwart-witfoto en de kleurenversie samen door. Dat maakt de vergelijking nog indrukwekkender.</div>
         </div>
-        <div class="step-media" style="background:#f0eded;padding:24px;display:flex;justify-content:center;">
-          <div style="width:280px;border-radius:32px;overflow:hidden;border:8px solid #1a1627;box-shadow:0 12px 40px rgba(0,0,0,0.15);position:relative;">
-            <div style="background:#1a1627;padding:4px 0;text-align:center;"><div style="width:80px;height:4px;background:#333;border-radius:2px;margin:0 auto;"></div></div>
+        <div class="step-media" style="max-height:none;background:#f0eded;padding:24px;display:flex;justify-content:center;">
+          <div style="width:240px;border-radius:28px;overflow:hidden;border:6px solid #1a1627;box-shadow:0 12px 40px rgba(0,0,0,0.15);position:relative;">
             <img src="afbeeldingen/stap6-whatsapp.png" alt="Kleurenfoto gedeeld via WhatsApp" style="width:100%;display:block;">
           </div>
         </div>
