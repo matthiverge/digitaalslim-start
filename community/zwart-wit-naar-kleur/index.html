@@ -50,6 +50,9 @@
   .showcase-images .after { position: relative; }
   .showcase-images .after::after { content: 'Na'; position: absolute; bottom: 8px; right: 8px; background: var(--brand); color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; }
   .showcase-caption { padding: 14px 18px; text-align: center; font-size: 14px; color: var(--text-secondary); font-weight: 500; }
+  .showcase-item.landscape .showcase-images { grid-template-columns: 1fr; grid-template-rows: auto auto; }
+  .showcase-item.landscape .showcase-images .before::after { bottom: 8px; left: 8px; }
+  .showcase-item.landscape .showcase-images .after::after { bottom: 8px; right: 8px; }
 
   /* === ROUTE === */
   .route-section { max-width: 880px; margin: 0 auto; padding: 48px 24px 64px; }
@@ -151,7 +154,7 @@
       <div class="showcase-caption">Een studentikoze herinnering in kleur</div>
     </div>
 
-    <div class="showcase-item">
+    <div class="showcase-item landscape">
       <div class="showcase-images">
         <div class="before"><img src="afbeeldingen/cafe-zwartwit.jpg" alt="Wielrenners in een cafe in zwart-wit"></div>
         <div class="after"><img src="afbeeldingen/cafe-kleur.jpg" alt="Dezelfde wielrenners, nu in kleur"></div>
@@ -159,7 +162,7 @@
       <div class="showcase-caption">Na de koers, in het cafe</div>
     </div>
 
-    <div class="showcase-item">
+    <div class="showcase-item landscape">
       <div class="showcase-images">
         <div class="before"><img src="afbeeldingen/vriendinnen-zwartwit.jpg" alt="Vier vriendinnen in zwart-wit"></div>
         <div class="after"><img src="afbeeldingen/vriendinnen-kleur.jpg" alt="Dezelfde vriendinnen, nu in kleur"></div>
