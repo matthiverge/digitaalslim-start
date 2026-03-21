@@ -272,8 +272,31 @@
     margin-bottom: 16px;
     font-size: 22px;
   }
-  .pijler-card h3 { font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
-  .pijler-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+  .pijler-card h3 { font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+  .pijler-card .pijler-intro { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px; }
+  .pijler-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .pijler-features li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    padding-left: 24px;
+    position: relative;
+  }
+  .pijler-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--brand);
+    font-weight: 700;
+    font-size: 14px;
+  }
   .pijler-stat {
     display: inline-block;
     margin-top: 10px;
@@ -770,26 +793,46 @@
     <div class="pijler-card">
       <div class="pijler-icon">&#128172;</div>
       <h3>Je eigen veilige haven</h3>
-      <p>Een afgesloten community, <strong>alleen voor leden</strong>. Geen Facebook, geen reclame, geen onbekenden. Zit je ergens mee? Stel je vraag en je krijgt een persoonlijk antwoord met tekst en schermafbeeldingen. Herkennen meer mensen de vraag? Dan maken we er een video of Stappenplan van. <strong>Altijd binnen 24 uur antwoord.</strong></p>
+      <p class="pijler-intro">Een afgesloten community, <strong>alleen voor leden</strong>. Geen Facebook, geen reclame, geen onbekenden.</p>
+      <ul class="pijler-features">
+        <li>Stel je vraag en krijg <strong>binnen 24 uur</strong> antwoord</li>
+        <li>Persoonlijke uitleg met tekst en schermafbeeldingen</li>
+        <li>Goede vragen worden omgezet in video's of Stappenplannen</li>
+      </ul>
     </div>
 
     <div class="pijler-card">
       <div class="pijler-icon">&#9989;</div>
       <h3>Het Stappenplan</h3>
-      <p>Onze nieuwe manier van uitleggen. <strong>Geen lange video's meer</strong> waar je doorheen moet zitten. In plaats daarvan: korte, visuele stappen die je in je eigen tempo volgt op je iPad, iPhone of Mac. Elke stap is een los blokje. Weet je iets al? Sla het over.</p>
+      <p class="pijler-intro">Onze nieuwe manier van uitleggen. <strong>Geen lange video's meer.</strong></p>
+      <ul class="pijler-features">
+        <li>Korte, visuele stappen op je iPad, iPhone of Mac</li>
+        <li>Elke stap is een los blokje. Weet je iets al? Sla het over</li>
+        <li>Volg alles op <strong>je eigen tempo</strong></li>
+      </ul>
       <span class="pijler-stat">98% van de ondervraagde leden vindt dit de fijnste manier om iets te leren</span>
     </div>
 
     <div class="pijler-card">
       <div class="pijler-icon">&#128214;</div>
       <h3>Het Digitale Kookboek</h3>
-      <p>Toegang tot al onze videolessen over iPad, iPhone, Mac, iCloud, foto's en meer. Maar je hoeft ze niet allemaal te bekijken. <strong>Zie het als een kookboek:</strong> je slaat het open bij het onderwerp dat je nodig hebt. Wil je iets weten over iCloud? Dan pak je dat erbij. Klaar. <strong>Geen druk, geen volgorde, geen verplichting.</strong></p>
+      <p class="pijler-intro">Toegang tot al onze videolessen. <strong>Zie het als een kookboek:</strong> je slaat het open bij wat je nodig hebt.</p>
+      <ul class="pijler-features">
+        <li>iPad, iPhone, Mac, iCloud, foto's, WhatsApp en meer</li>
+        <li>Geen volgorde, geen druk, geen verplichting</li>
+        <li>Altijd up-to-date met de nieuwste versies</li>
+      </ul>
     </div>
 
     <div class="pijler-card">
       <div class="pijler-icon">&#128737;</div>
       <h3>Mee met AI, veilig voor oplichting</h3>
-      <p>AI opent een wereld aan nieuwe mogelijkheden. Maar het maakt oplichting ook een stuk geraffineerder. <strong>Wij helpen je met beide kanten:</strong> ontdek wat je met tools als ChatGPT kunt doen, en leer hoe je phishing en nep-berichten herkent. Binnenkort hebben we daar nog iets bijzonders voor in petto. Als lid hoor je er als eerste over.</p>
+      <p class="pijler-intro">AI biedt kansen, maar maakt oplichting ook slimmer. <strong>Wij helpen je met beide kanten.</strong></p>
+      <ul class="pijler-features">
+        <li>Ontdek wat je met tools als ChatGPT kunt doen</li>
+        <li>Leer phishing en nep-berichten herkennen</li>
+        <li>Binnenkort iets bijzonders in petto. Als lid hoor je het eerst</li>
+      </ul>
     </div>
 
   </div>
