@@ -183,14 +183,48 @@
     font-size: 30px;
     font-weight: 800;
     letter-spacing: -0.8px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     line-height: 1.25;
   }
-  .herkenning-section p {
+  .herkenning-intro {
     font-size: 16px;
     color: var(--text-secondary);
     line-height: 1.75;
-    margin-bottom: 14px;
+    margin-bottom: 28px;
+  }
+  .herkenning-items {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: left;
+    margin-bottom: 28px;
+  }
+  .herkenning-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .herkenning-item-icon {
+    font-size: 22px;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .herkenning-item p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .herkenning-closing {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 28px;
   }
   .herkenning-bridge {
     background: var(--brand-soft);
@@ -697,9 +731,24 @@
 <!-- ============================================ -->
 <section class="herkenning-section">
   <h2>Herken je dit?</h2>
-  <p>Je kent je iPad of iPhone ondertussen goed. Je kunt foto's maken, e-mailen, WhatsAppen. Die basis zit er al lang in. Maar de wereld eromheen? Die draait door. En snel ook.</p>
-  <p>Overal hoor je over AI. Phishing-mails worden zo goed nagemaakt dat zelfs ervaren mensen erin trappen. Elke paar maanden verandert Apple weer iets, en dan ziet alles er net weer anders uit. Je merkt dat je steeds vaker denkt: kan ik hier veilig op klikken? Klopt dit wel? Hoe werkt dit nu weer?</p>
-  <p>Dat gevoel is heel begrijpelijk. De digitale wereld gaat op dit moment sneller dan ooit. En je hoeft dat niet in je eentje bij te houden.</p>
+  <p class="herkenning-intro">Je kent je iPad of iPhone ondertussen goed. De basis zit erin. Maar de wereld eromheen? Die draait door. En snel ook.</p>
+
+  <div class="herkenning-items">
+    <div class="herkenning-item">
+      <div class="herkenning-item-icon">&#129302;</div>
+      <p>Overal hoor je over AI, maar je weet niet precies wat het voor jou betekent. Is het handig? Is het gevaarlijk? Of allebei?</p>
+    </div>
+    <div class="herkenning-item">
+      <div class="herkenning-item-icon">&#128232;</div>
+      <p>Phishing-mails worden zo goed nagemaakt dat zelfs ervaren mensen erin trappen. Je denkt steeds vaker: kan ik hier veilig op klikken?</p>
+    </div>
+    <div class="herkenning-item">
+      <div class="herkenning-item-icon">&#128260;</div>
+      <p>Elke paar maanden verandert Apple weer iets, en dan ziet alles er net weer anders uit. Waar stond dat ook alweer?</p>
+    </div>
+  </div>
+
+  <p class="herkenning-closing">Dat gevoel is heel begrijpelijk. De digitale wereld gaat op dit moment sneller dan ooit. En je hoeft dat niet in je eentje bij te houden.</p>
 
   <div class="herkenning-bridge">
     <strong>Precies daarom bestaat DigitaalSlim Plus+.</strong> Niet om je opnieuw te leren hoe je toestel werkt. Dat kun je al lang. Maar om ervoor te zorgen dat je altijd mee bent, veilig blijft, en altijd iemand hebt om te vragen: hoe zit dit?
