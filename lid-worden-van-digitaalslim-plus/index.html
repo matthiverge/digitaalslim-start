@@ -345,10 +345,14 @@
     padding: 18px 20px;
   }
   .herkenning-item-icon {
-    font-size: 22px;
-    line-height: 1;
+    width: 28px;
+    height: 28px;
     flex-shrink: 0;
     margin-top: 2px;
+  }
+  .herkenning-item-icon .icon-svg {
+    width: 28px;
+    height: 28px;
   }
   .herkenning-item p {
     font-size: 15px;
@@ -424,7 +428,12 @@
     padding: 80px 24px;
     background: var(--white);
   }
-  .pijlers-section > * { max-width: 1000px; margin-left: auto; margin-right: auto; }
+  .pijlers-section > .section-label,
+  .pijlers-section > .section-heading,
+  .pijlers-section > .section-sub,
+  .pijlers-section > .pijlers-grid,
+  .pijlers-section > .geen-school,
+  .pijlers-section > .section-cta { max-width: 1000px; margin-left: auto; margin-right: auto; }
   .pijlers-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -687,7 +696,11 @@
     padding: 80px 24px;
     background: var(--white);
   }
-  .kanalen-section > * { max-width: 960px; margin-left: auto; margin-right: auto; }
+  .kanalen-section > .section-label,
+  .kanalen-section > .section-heading,
+  .kanalen-section > .section-sub,
+  .kanalen-section > .kanalen-layout,
+  .kanalen-section > .veilig-highlights { max-width: 960px; margin-left: auto; margin-right: auto; }
   .kanalen-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -974,7 +987,15 @@
     padding: 80px 24px;
     background: var(--white);
   }
-  .prijzen-section > * { max-width: 880px; margin-left: auto; margin-right: auto; }
+  .prijzen-section > .section-label,
+  .prijzen-section > .section-heading,
+  .prijzen-section > .prijzen-uitleg,
+  .prijzen-section > .prijzen-bevriezing,
+  .prijzen-section > .prijzen-checklist,
+  .prijzen-section > .prijzen-quote,
+  .prijzen-section > .prijzen-grid,
+  .prijzen-section > .prijs-note,
+  .prijzen-section > .prijs-garantie { max-width: 880px; margin-left: auto; margin-right: auto; }
   .prijzen-uitleg {
     max-width: 640px; margin: 0 auto 16px;
     text-align: center; font-size: 16px;
@@ -1178,7 +1199,9 @@
 
   /* === SECTION LABEL PILL === */
   .section-label {
-    display: inline-block;
+    display: block;
+    width: fit-content;
+    margin: 0 auto 16px;
     background: var(--brand-soft);
     border: 1px solid rgba(85,60,247,0.12);
     border-radius: 50px;
@@ -1188,7 +1211,7 @@
     color: var(--brand);
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 16px;
+    text-align: center;
   }
 
   /* === SVG ICON CONTAINERS === */
@@ -1225,8 +1248,16 @@
   .bg-soft { background: var(--bg); }
   .bg-white { background: var(--white); }
   .bg-warm { background: rgba(254,187,11,0.03); }
-  .bg-warm.community-section > * { max-width: 880px; margin-left: auto; margin-right: auto; }
-  .bg-warm.testimonials-section > * { max-width: 960px; margin-left: auto; margin-right: auto; }
+  .community-section.bg-warm > .section-label,
+  .community-section.bg-warm > .section-heading,
+  .community-section.bg-warm > .community-intro,
+  .community-section.bg-warm > .zakmes-stappen,
+  .community-section.bg-warm > .community-vraag-blok,
+  .community-section.bg-warm > .community-placeholder { max-width: 880px; margin-left: auto; margin-right: auto; }
+  .testimonials-section.bg-warm > .section-label,
+  .testimonials-section.bg-warm > .section-heading,
+  .testimonials-section.bg-warm > .testimonials-grid,
+  .testimonials-section.bg-warm > .section-cta { max-width: 960px; margin-left: auto; margin-right: auto; }
 
   /* === STICKY MOBILE CTA === */
   .mobile-cta {
@@ -1396,8 +1427,6 @@
     <p><strong>Daarom hebben we Plus+ gebouwd.</strong> Een lidmaatschap dat met je meegroeit. Nieuwe lessen worden toegevoegd zodra er iets verandert. De community geeft je antwoord op vragen die vandaag pas bestaan. En alles wat we in de toekomst bouwen, krijg je er automatisch bij. <strong>Geen extra kosten, geen nieuwe aankopen.</strong></p>
   </div>
 </section>
-
-<div class="section-divider"></div>
 
 <!-- ============================================ -->
 <!-- SECTIE 3: VIER PIJLERS (met E-mailchecker teaser) -->
