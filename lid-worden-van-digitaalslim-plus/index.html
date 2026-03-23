@@ -725,6 +725,53 @@
   .alles-card p:last-child { margin-bottom: 0; }
   .alles-card strong { color: var(--text); }
 
+  /* === ZAKMES VOORBEELDEN === */
+  .zakmes-voorbeelden {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 28px 0 24px;
+    text-align: left;
+  }
+  .zakmes-voorbeeld {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 22px;
+    box-shadow: var(--shadow-sm);
+  }
+  .zakmes-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .zakmes-voorbeeld p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
+  }
+  .zakmes-voorbeeld strong { color: var(--text); }
+  .zakmes-vergelijking {
+    background: var(--brand-soft);
+    border: 1px solid rgba(85,60,247,0.1);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-top: 28px;
+    text-align: left;
+  }
+  .zakmes-vergelijking p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 10px;
+  }
+  .zakmes-vergelijking p:last-child { margin-bottom: 0; }
+  .zakmes-vergelijking strong { color: var(--text); }
+
   /* === FAQ === */
   .faq-section {
     max-width: 720px;
@@ -1341,17 +1388,37 @@
 <!-- SECTIE 9: ALLES INBEGREPEN (compacter, zonder geen-school) -->
 <!-- ============================================ -->
 <section class="alles-section">
-  <div class="section-label">Geen verrassingen</div>
-  <h2 class="section-heading">Eenmaal lid, altijd toegang tot alles.</h2>
-  <p><strong>Je hoeft nooit meer losse cursussen te kopen.</strong> Geen eindeloze e-mails met nieuwe lanceringen of kortingsacties. Je betaalt een vast bedrag en hoort erbij. Alles wat we maken, is automatisch ook voor jou.</p>
+  <div class="section-label">Alles in &eacute;&eacute;n</div>
+  <h2 class="section-heading">Jouw digitale Zwitsers zakmes.</h2>
+  <p>Ken je dat gevoel van een goed Zwitsers zakmes? Je draagt het altijd bij je, maar je klapt niet alle 30 tools tegelijk uit. Je gebruikt alleen wat je op dat moment nodig hebt. De kurkentrekker voor de wijn, het mesje voor het touw. De rest zit veilig opgeborgen voor wanneer je het w&eacute;l nodig hebt.</p>
+  <p><strong>Zo werkt DigitaalSlim Plus+ ook.</strong> Je hoeft niet alles te bekijken, niet alles te bestuderen. Je pakt er gewoon bij wat je nodig hebt, op het moment dat je het nodig hebt.</p>
 
-  <div class="alles-card">
-    <p><strong>De community</strong> waar je elke vraag kunt stellen en binnen 24 uur een persoonlijk antwoord krijgt.</p>
-    <p><strong>Alle videolessen</strong> over iPad, iPhone, Mac, iCloud, WhatsApp, foto's, ChatGPT, online beveiliging en meer.</p>
-    <p><strong>Alle Stappenplannen</strong> die we maken. Nu en alles wat er nog bij komt.</p>
-    <p><strong>Persoonlijke hulp</strong> als je ergens niet uitkomt.</p>
-    <p><strong>Exclusieve waarschuwingsmails</strong> Je hoeft niet continu video's te kijken om beschermd te blijven. Zodra er een specifieke online dreiging of phishing-plaag rondgaat, ontvang je direct een helder bericht in je mail. Zo ben je altijd veilig, zonder extra moeite.</p>
-    <p><strong>En alles wat we in de toekomst toevoegen.</strong> Nieuwe lessen, nieuwe Stappenplannen, nieuwe tools. Als lid krijg je daar automatisch toegang toe. Zonder extra kosten, zonder dat je iets hoeft te doen.</p>
+  <div class="zakmes-voorbeelden">
+    <div class="zakmes-voorbeeld">
+      <div class="zakmes-icon">&#128232;</div>
+      <p><strong>Krijg je een verdachte mail en twijfel je?</strong> Dan klap je onze E-mailchecker uit en weet je meteen of het veilig is.</p>
+    </div>
+    <div class="zakmes-voorbeeld">
+      <div class="zakmes-icon">&#128260;</div>
+      <p><strong>Heeft Apple weer iets veranderd na een update?</strong> Dan klap je het juiste Stappenplan uit en heb je het in drie minuten opgelost.</p>
+    </div>
+    <div class="zakmes-voorbeeld">
+      <div class="zakmes-icon">&#128101;</div>
+      <p><strong>Wil je weten hoe anderen iets aanpakken?</strong> Dan klap je de community uit en vraag je het aan meer dan 2.000 leden en ons team.</p>
+    </div>
+    <div class="zakmes-voorbeeld">
+      <div class="zakmes-icon">&#128591;</div>
+      <p><strong>Kom je er toch niet uit?</strong> Dan klap je de persoonlijke hulp van Matthias en het team uit en stel je je vraag. Je krijgt altijd antwoord.</p>
+    </div>
+    <div class="zakmes-voorbeeld">
+      <div class="zakmes-icon">&#128276;</div>
+      <p><strong>Gaat er een nieuwe oplichtingstruc rond?</strong> Dan hoef je helemaal niets uit te klappen. Wij sturen je een waarschuwingsmail in je inbox.</p>
+    </div>
+  </div>
+
+  <div class="zakmes-vergelijking">
+    <p>Een losse cursus kost normaal &euro;97. Dat is nuttig, maar zodra Apple een grote update doet, kan die cursus al verouderd zijn. En er zit geen community bij waar je terecht kunt met vragen.</p>
+    <p>Als je voor elk nieuw onderwerp of elke update opnieuw een losse cursus zou kopen, ben je al snel een fortuin kwijt. Bij DigitaalSlim Plus+ krijg je voor <strong>een jaarlijkse bijdrage van &euro;139</strong> het complete zakmes. Alle cursussen, alle Stappenplannen, de community, persoonlijke hulp, en de E-mailchecker. Altijd up-to-date, altijd binnen handbereik. <strong>Je betaalt &eacute;&eacute;n keer, en je hebt altijd de juiste tool op zak.</strong></p>
   </div>
 </section>
 
