@@ -26,8 +26,9 @@
     --green: #16a34a;
     --green-soft: rgba(34,197,94,0.06);
     --green-border: rgba(34,197,94,0.2);
-    --shadow: 0 8px 32px rgba(85,60,247,0.06), 0 2px 8px rgba(26,22,39,0.04);
-    --shadow-sm: 0 2px 12px rgba(85,60,247,0.05);
+    --shadow: 0 16px 48px rgba(85,60,247,0.08), 0 4px 12px rgba(26,22,39,0.04);
+    --shadow-sm: 0 4px 20px rgba(85,60,247,0.06), 0 1px 6px rgba(26,22,39,0.03);
+    --shadow-lg: 0 24px 64px rgba(85,60,247,0.1), 0 8px 20px rgba(26,22,39,0.05);
     --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -91,8 +92,12 @@
   }
   .btn-primary:hover {
     background: var(--accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(254,187,11,0.35);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(254,187,11,0.35);
+  }
+  .btn-primary:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 4px 16px rgba(254,187,11,0.3);
   }
 
   /* === HERO === */
@@ -269,15 +274,6 @@
   }
 
   /* === SHARED === */
-  .section-label {
-    text-align: center;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--brand);
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    margin-bottom: 12px;
-  }
   .section-heading {
     text-align: center;
     font-size: 34px;
@@ -425,13 +421,10 @@
 
   /* === VIER PIJLERS === */
   .pijlers-section {
-    max-width: 1000px;
-    margin: 0 auto;
     padding: 80px 24px;
     background: var(--white);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
   }
+  .pijlers-section > * { max-width: 1000px; margin-left: auto; margin-right: auto; }
   .pijlers-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -445,7 +438,7 @@
     padding: 30px 26px;
     transition: transform var(--transition), box-shadow var(--transition);
   }
-  .pijler-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .pijler-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
   .pijler-icon {
     width: 52px; height: 52px;
     border-radius: 14px;
@@ -513,6 +506,10 @@
     max-width: 880px;
     margin: 0 auto;
     padding: 80px 24px;
+  }
+  .community-section.bg-warm {
+    max-width: none;
+    background: rgba(254,187,11,0.03);
   }
   .community-intro {
     max-width: 640px;
@@ -687,13 +684,10 @@
 
   /* === KANALEN + VEILIG (samengevoegd) === */
   .kanalen-section {
-    max-width: 960px;
-    margin: 0 auto;
     padding: 80px 24px;
     background: var(--white);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
   }
+  .kanalen-section > * { max-width: 960px; margin-left: auto; margin-right: auto; }
   .kanalen-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -761,6 +755,7 @@
     margin: 0 auto;
     padding: 80px 24px;
   }
+  .testimonials-section.bg-warm { max-width: none; background: rgba(254,187,11,0.03); }
   .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -976,13 +971,10 @@
 
   /* === PRIJZEN === */
   .prijzen-section {
-    max-width: 880px;
-    margin: 0 auto;
     padding: 80px 24px;
     background: var(--white);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
   }
+  .prijzen-section > * { max-width: 880px; margin-left: auto; margin-right: auto; }
   .prijzen-uitleg {
     max-width: 640px; margin: 0 auto 16px;
     text-align: center; font-size: 16px;
@@ -1150,6 +1142,117 @@
   }
   .footer-text { font-size: 14px; color: var(--text-muted); line-height: 1.8; }
 
+  /* === SCROLL REVEAL === */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* === FLOATING MOCKUP === */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .hero-mockup {
+    animation: float 4s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-mockup { animation: none; }
+  }
+
+  /* === GRADIENT TEXT === */
+  .gradient-text {
+    background: linear-gradient(135deg, #553CF7 0%, #883DF4 50%, #553CF7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* === SECTION LABEL PILL === */
+  .section-label {
+    display: inline-block;
+    background: var(--brand-soft);
+    border: 1px solid rgba(85,60,247,0.12);
+    border-radius: 50px;
+    padding: 6px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--brand);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  /* === SVG ICON CONTAINERS === */
+  .icon-svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+  .icon-svg svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--brand);
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .icon-svg-gold svg { stroke: #9A7200; }
+  .icon-svg-green svg { stroke: var(--green); }
+  .icon-svg-white svg { stroke: white; }
+
+  /* === DECORATIVE QUOTE === */
+  .quote-decoration::before {
+    content: '\201C';
+    display: block;
+    font-size: 64px;
+    line-height: 1;
+    font-family: Georgia, serif;
+    color: rgba(85,60,247,0.12);
+    margin-bottom: -8px;
+  }
+
+  /* === SECTION BACKGROUNDS === */
+  .bg-soft { background: var(--bg); }
+  .bg-white { background: var(--white); }
+  .bg-warm { background: rgba(254,187,11,0.03); }
+  .bg-warm.community-section > * { max-width: 880px; margin-left: auto; margin-right: auto; }
+  .bg-warm.testimonials-section > * { max-width: 960px; margin-left: auto; margin-right: auto; }
+
+  /* === STICKY MOBILE CTA === */
+  .mobile-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border);
+    padding: 12px 20px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .mobile-cta.visible { transform: translateY(0); }
+  .mobile-cta .btn-primary {
+    width: 100%;
+    max-width: 400px;
+    font-size: 16px;
+    padding: 14px 28px;
+  }
+
   /* === RESPONSIVE === */
   @media (max-width: 768px) {
     .hero { padding: 56px 20px 44px; text-align: center; }
@@ -1168,6 +1271,7 @@
     .trust-bar { gap: 16px; }
     .oorsprong { padding: 40px 20px 36px; }
     .oorsprong-header { flex-direction: column; text-align: center; }
+    .mobile-cta { display: block; }
   }
 </style>
 </head>
@@ -1191,20 +1295,20 @@
       <div class="hero-badge">
         &#9200; Tijdelijk: zet nu je lanceerprijs voor altijd vast
       </div>
-      <h1>Altijd iemand die met je meekijkt.<br><span>Altijd op jouw tempo.</span></h1>
+      <h1>Altijd iemand die met je meekijkt.<br><span class="gradient-text">Altijd op jouw tempo.</span></h1>
       <p class="hero-sub">De digitale wereld verandert snel, maar jij hoeft niet sneller te gaan rennen. <strong>Wij filteren de chaos voor je.</strong> DigitaalSlim Plus+ is je vaste plek voor al je digitale vragen. Een warme club van mensen die elkaar helpen.</p>
 
       <div class="hero-results">
         <div class="hero-result">
-          <span class="hero-result-icon">&#128232;</span>
+          <span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><path d="M12 8v4"/><circle cx="12" cy="16" r="0.5"/></svg></span>
           Weet meteen of die verdachte mail echt is
         </div>
         <div class="hero-result">
-          <span class="hero-result-icon">&#128260;</span>
+          <span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg></span>
           Leer in 3 minuten hoe een Apple-update werkt
         </div>
         <div class="hero-result">
-          <span class="hero-result-icon">&#128172;</span>
+          <span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
           Stel je vraag en krijg persoonlijk antwoord
         </div>
       </div>
@@ -1223,9 +1327,9 @@
 
 <!-- AANPASSING 2: TRUST BAR (10 jaar + 2.000 leden + 98%) -->
 <div class="trust-bar">
-  <div class="trust-item"><span class="trust-item-icon">&#128197;</span> Al meer dan 10 jaar actief</div>
-  <div class="trust-item"><span class="trust-item-icon">&#128101;</span> 2.000+ DigitaalSlim Plus+ leden</div>
-  <div class="trust-item"><span class="trust-item-icon">&#11088;</span> 98% tevredenheid</div>
+  <div class="trust-item"><span class="icon-svg"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span> Al meer dan 10 jaar actief</div>
+  <div class="trust-item"><span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span> 2.000+ DigitaalSlim Plus+ leden</div>
+  <div class="trust-item"><span class="icon-svg"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span> 98% tevredenheid</div>
 </div>
 
 <!-- ============================================ -->
@@ -1255,21 +1359,21 @@
 <!-- ============================================ -->
 <!-- SECTIE 2: HERKENNING -->
 <!-- ============================================ -->
-<section class="herkenning-section">
+<section class="herkenning-section reveal">
   <h2>Herken je dit?</h2>
   <p class="herkenning-intro">DigitaalSlim Plus+ is speciaal gebouwd voor mensen die niet zijn opgegroeid met een iPad in de hand. Je kent je toestel ondertussen goed. De basis zit erin. Maar de wereld eromheen? Die draait door. En snel ook. Dat ligt niet aan jou. Het is gewoon een wereld die razendsnel verandert.</p>
 
   <div class="herkenning-items">
-    <div class="herkenning-item">
-      <div class="herkenning-item-icon">&#129302;</div>
+    <div class="herkenning-item reveal">
+      <div class="herkenning-item-icon"><span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 1 4 4v2H8V6a4 4 0 0 1 4-4z"/><rect x="3" y="8" width="18" height="14" rx="2"/><circle cx="12" cy="16" r="2"/></svg></span></div>
       <p><strong>Overal hoor je over AI</strong>, maar je weet niet precies wat het voor jou betekent. Is het handig? Is het gevaarlijk? Of allebei? Zonder iemand om het aan te vragen, blijf je twijfelen en laat je handige functies links liggen.</p>
     </div>
-    <div class="herkenning-item">
-      <div class="herkenning-item-icon">&#128232;</div>
+    <div class="herkenning-item reveal">
+      <div class="herkenning-item-icon"><span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span></div>
       <p><strong>Phishing-mails worden steeds beter nagemaakt.</strong> Zelfs ervaren mensen trappen erin. E&eacute;n verkeerde klik kan je honderden euro's kosten. En achteraf denk je: had ik dat maar even kunnen vragen.</p>
     </div>
-    <div class="herkenning-item">
-      <div class="herkenning-item-icon">&#128260;</div>
+    <div class="herkenning-item reveal">
+      <div class="herkenning-item-icon"><span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg></span></div>
       <p><strong>Elke paar maanden verandert Apple weer iets</strong>, en dan ziet alles er net weer anders uit. Zelf uitzoeken kost je al snel een hele middag zoeken op internet, terwijl het antwoord in drie minuten te vinden is als je weet waar je moet kijken.</p>
     </div>
   </div>
@@ -1305,8 +1409,8 @@
 
   <div class="pijlers-grid">
 
-    <div class="pijler-card">
-      <div class="pijler-icon">&#128172;</div>
+    <div class="pijler-card reveal">
+      <div class="pijler-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
       <h3>Je eigen veilige haven</h3>
       <p class="pijler-intro">Een afgesloten community, <strong>alleen voor leden</strong>. Geen Facebook, geen reclame, geen onbekenden.</p>
       <ul class="pijler-features">
@@ -1316,8 +1420,8 @@
       </ul>
     </div>
 
-    <div class="pijler-card">
-      <div class="pijler-icon">&#9989;</div>
+    <div class="pijler-card reveal">
+      <div class="pijler-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
       <h3>Het Stappenplan</h3>
       <p class="pijler-intro">Onze nieuwe manier van uitleggen. <strong>Geen lange video's meer.</strong></p>
       <ul class="pijler-features">
@@ -1328,8 +1432,8 @@
       <span class="pijler-stat">98% van de ondervraagde leden vindt dit de fijnste manier om iets te leren</span>
     </div>
 
-    <div class="pijler-card">
-      <div class="pijler-icon">&#128214;</div>
+    <div class="pijler-card reveal">
+      <div class="pijler-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
       <h3>Het Digitale Kookboek</h3>
       <p class="pijler-intro">Toegang tot al onze videolessen. <strong>Zie het als een kookboek:</strong> je slaat het open bij wat je nodig hebt.</p>
       <ul class="pijler-features">
@@ -1340,8 +1444,8 @@
     </div>
 
     <!-- AANPASSING 4: E-mailchecker teaser -->
-    <div class="pijler-card">
-      <div class="pijler-icon">&#128737;</div>
+    <div class="pijler-card reveal">
+      <div class="pijler-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
       <h3>Veilig online, zonder dat je er iets voor hoeft te doen</h3>
       <p class="pijler-intro">Oplichting wordt steeds slimmer. Maar jij hoeft geen expert te worden om beschermd te blijven. <strong>Wij houden de wacht voor je.</strong></p>
       <ul class="pijler-features">
@@ -1369,7 +1473,7 @@
 <!-- ============================================ -->
 <!-- HET ZAKMES IN ACTIE: STAPPENPLAN -->
 <!-- ============================================ -->
-<section class="community-section">
+<section class="community-section bg-warm">
   <div class="section-label">Het zakmes in actie</div>
   <h2 class="section-heading">Van paniek naar gemoedsrust. In vier stappen.</h2>
   <div class="community-intro">
@@ -1473,32 +1577,32 @@
       </figure>
     </div>
     <div class="kanalen-list">
-      <div class="kanaal-item">
-        <div class="kanaal-icon">&#128241;</div>
+      <div class="kanaal-item reveal">
+        <div class="kanaal-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
         <div><h4>iPad & iPhone</h4><p>Instellingen, tips en alles wat je dagelijks gebruikt</p></div>
       </div>
-      <div class="kanaal-item">
-        <div class="kanaal-icon">&#128187;</div>
+      <div class="kanaal-item reveal">
+        <div class="kanaal-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
         <div><h4>Mac</h4><p>Van sneltoetsen tot veelgestelde problemen</p></div>
       </div>
-      <div class="kanaal-item">
-        <div class="kanaal-icon">&#9729;&#65039;</div>
+      <div class="kanaal-item reveal">
+        <div class="kanaal-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
         <div><h4>iCloud & Opslag</h4><p>Foto's, back-ups, opslag vrijmaken</p></div>
       </div>
-      <div class="kanaal-item">
-        <div class="kanaal-icon">&#128247;</div>
+      <div class="kanaal-item reveal">
+        <div class="kanaal-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
         <div><h4>Foto's & Video</h4><p>Maken, bewerken, opslaan en delen</p></div>
       </div>
-      <div class="kanaal-item">
-        <div class="kanaal-icon">&#128231;</div>
+      <div class="kanaal-item reveal">
+        <div class="kanaal-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
         <div><h4>Email & Privacy</h4><p>Veilig surfen, spam herkennen, e-mail instellen</p></div>
       </div>
-      <div class="kanaal-item">
-        <div class="kanaal-icon">&#129302;</div>
+      <div class="kanaal-item reveal">
+        <div class="kanaal-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v2H8V6a4 4 0 0 1 4-4z"/><rect x="3" y="8" width="18" height="14" rx="2"/><circle cx="12" cy="16" r="2"/></svg></div>
         <div><h4>AI & Slim Werken</h4><p>De nieuwste technologie, op een begrijpelijke manier</p></div>
       </div>
-      <div class="kanaal-item">
-        <div class="kanaal-icon">&#9749;</div>
+      <div class="kanaal-item reveal">
+        <div class="kanaal-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
         <div><h4>Koffiehoekje</h4><p>Gezellig bijpraten met andere leden</p></div>
       </div>
     </div>
@@ -1507,19 +1611,19 @@
   <!-- Veiligheid-highlights (voorheen aparte sectie) -->
   <div class="veilig-highlights">
     <div class="veilig-highlight">
-      <div class="veilig-highlight-icon">&#128274;</div>
+      <div class="veilig-highlight-icon"><svg viewBox="0 0 24 24" width="22" height="22" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
       <p>Alleen voor leden</p>
     </div>
     <div class="veilig-highlight">
-      <div class="veilig-highlight-icon">&#128683;</div>
+      <div class="veilig-highlight-icon"><svg viewBox="0 0 24 24" width="22" height="22" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
       <p>Geen reclame</p>
     </div>
     <div class="veilig-highlight">
-      <div class="veilig-highlight-icon">&#128241;</div>
+      <div class="veilig-highlight-icon"><svg viewBox="0 0 24 24" width="22" height="22" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
       <p>Eigen app</p>
     </div>
     <div class="veilig-highlight">
-      <div class="veilig-highlight-icon">&#128172;</div>
+      <div class="veilig-highlight-icon"><svg viewBox="0 0 24 24" width="22" height="22" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
       <p>Elke vraag is welkom</p>
     </div>
   </div>
@@ -1528,14 +1632,14 @@
 <!-- ============================================ -->
 <!-- AANPASSING 7: TESTIMONIALS (mix bestaand + cursus + placeholders) -->
 <!-- ============================================ -->
-<section class="testimonials-section">
+<section class="testimonials-section bg-warm">
   <div class="section-label">Leden aan het woord</div>
   <h2 class="section-heading">Dit zeggen mensen die je voorgingen.</h2>
 
   <div class="testimonials-grid">
 
     <!-- Transformatie-verhaal placeholder 1 -->
-    <div class="testimonial-featured">
+    <div class="testimonial-featured quote-decoration reveal">
       <!-- [HIER PLAATST MATTHIAS EEN ECHT VERHAAL VAN EEN LID DAT DANKZIJ DE COMMUNITY EEN CONCREET PROBLEEM HEEFT OPGELOST - bijv. phishing herkend, iCloud opgelost, FaceTime ingesteld voor kleinkinderen] -->
       <blockquote>"Na lang twijfelen om deze cursus te kopen, heb ik het toch gedaan. Wat me tegenhield was: er staat toch genoeg op internet, zonde van het geld. Maar toen ik betaald had en kon inloggen, schrok ik toch wel even. Wat een hoeveelheid informatie. Ik ga dit stap voor stap doen. Ik ben er blij mee."</blockquote>
       <div class="testimonial-name">Hessel Elsinga</div>
@@ -1632,24 +1736,24 @@
   <p><strong>Zo werkt DigitaalSlim Plus+ ook.</strong> Je hoeft niet alles te bekijken, niet alles te bestuderen. Je pakt er gewoon bij wat je nodig hebt, op het moment dat je het nodig hebt.</p>
 
   <div class="zakmes-voorbeelden">
-    <div class="zakmes-voorbeeld">
-      <div class="zakmes-icon">&#128232;</div>
+    <div class="zakmes-voorbeeld reveal">
+      <div class="zakmes-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
       <p><strong>Krijg je een verdachte mail en twijfel je?</strong> Dan klap je onze E-mailchecker uit en weet je meteen of het veilig is.</p>
     </div>
-    <div class="zakmes-voorbeeld">
-      <div class="zakmes-icon">&#128260;</div>
+    <div class="zakmes-voorbeeld reveal">
+      <div class="zakmes-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg></div>
       <p><strong>Heeft Apple weer iets veranderd na een update?</strong> Dan klap je het juiste Stappenplan uit en heb je het in drie minuten opgelost.</p>
     </div>
-    <div class="zakmes-voorbeeld">
-      <div class="zakmes-icon">&#128101;</div>
+    <div class="zakmes-voorbeeld reveal">
+      <div class="zakmes-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
       <p><strong>Wil je weten hoe anderen iets aanpakken?</strong> Dan klap je de community uit en vraag je het aan meer dan 2.000 leden en ons team.</p>
     </div>
-    <div class="zakmes-voorbeeld">
-      <div class="zakmes-icon">&#128591;</div>
+    <div class="zakmes-voorbeeld reveal">
+      <div class="zakmes-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r="0.5"/></svg></div>
       <p><strong>Kom je er toch niet uit?</strong> Dan klap je de persoonlijke hulp van Matthias en het team uit en stel je je vraag. Je krijgt altijd antwoord.</p>
     </div>
-    <div class="zakmes-voorbeeld">
-      <div class="zakmes-icon">&#128276;</div>
+    <div class="zakmes-voorbeeld reveal">
+      <div class="zakmes-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
       <p><strong>Gaat er een nieuwe oplichtingstruc rond?</strong> Dan hoef je helemaal niets uit te klappen. Wij sturen je een waarschuwingsmail in je inbox.</p>
     </div>
   </div>
@@ -1826,7 +1930,7 @@
   <p class="prijs-note">Op elk moment opzegbaar. Geen kleine lettertjes, geen verplichtingen. Je behoudt altijd toegang tot het einde van de periode waarvoor je hebt betaald.</p>
 
   <div class="prijs-garantie">
-    <div class="prijs-garantie-icon">&#128737;</div>
+    <div class="prijs-garantie-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#16a34a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
     <div><strong>30 dagen niet-goed-geld-terug.</strong> Niet tevreden? Stuur ons een mailtje en je krijgt je volledige bedrag terug. Zonder vragen.</div>
   </div>
 </section>
@@ -1836,7 +1940,7 @@
 <!-- ============================================ -->
 <section class="garantie-section">
   <div class="garantie-card">
-    <div class="garantie-icon">&#128737;</div>
+    <div class="garantie-icon"><svg viewBox="0 0 24 24" width="48" height="48" stroke="#16a34a" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 12 15 16 10"/></svg></div>
     <h3>Niet overtuigd? Dan krijg je je geld terug.</h3>
     <p>We willen dat je met een gerust hart kunt instappen. Daarom krijg je <strong>30 dagen om alles rustig te ontdekken</strong>. Bekijk de video's, stel een vraag in de community, probeer het Stappenplan. Past het toch niet bij je? Stuur ons binnen 30 dagen een mailtje en je krijgt het volledige bedrag terug. Zonder vragen, zonder kleine lettertjes.</p>
   </div>
@@ -1863,5 +1967,52 @@
   </div>
 </footer>
 
+<!-- Sticky Mobile CTA -->
+<div class="mobile-cta" id="mobileCta">
+  <a href="#prijzen" class="btn-primary">Bekijk wat erbij zit</a>
+</div>
+
+<script>
+// Scroll Reveal - IntersectionObserver
+(function() {
+  var reveals = document.querySelectorAll('.reveal');
+  if (!reveals.length) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    reveals.forEach(function(el) { el.classList.add('visible'); });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(function(el) { observer.observe(el); });
+})();
+
+// Sticky Mobile CTA - show after scrolling past hero
+(function() {
+  var cta = document.getElementById('mobileCta');
+  var hero = document.querySelector('.hero');
+  if (!cta || !hero) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        cta.classList.remove('visible');
+      } else {
+        cta.classList.add('visible');
+      }
+    });
+  }, { threshold: 0 });
+
+  observer.observe(hero);
+})();
+</script>
 </body>
 </html>
