@@ -214,15 +214,18 @@
   .trust-item-icon { font-size: 16px; }
 
   /* === MATTHIAS MINI === */
-  .matthias-mini {
-    max-width: 640px;
+  .oorsprong {
+    max-width: 760px;
     margin: 0 auto;
-    padding: 40px 24px 0;
+    padding: 56px 24px 48px;
+  }
+  .oorsprong-header {
     display: flex;
     align-items: center;
     gap: 16px;
+    margin-bottom: 28px;
   }
-  .matthias-mini-photo {
+  .oorsprong-avatar {
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -231,12 +234,39 @@
     flex-shrink: 0;
     background: var(--brand-soft);
   }
-  .matthias-mini p {
-    font-size: 15px;
-    color: var(--text-secondary);
-    line-height: 1.65;
+  .oorsprong-name {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text);
   }
-  .matthias-mini strong { color: var(--text); }
+  .oorsprong-role {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+  .oorsprong p {
+    font-size: 17px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+  .oorsprong p:last-of-type { margin-bottom: 0; }
+  .oorsprong strong { color: var(--text); }
+  .oorsprong-foto {
+    width: 100%;
+    max-width: 520px;
+    margin: 32px auto;
+    display: block;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+  }
+  .oorsprong-caption {
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: -16px;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
 
   /* === SHARED === */
   .section-label {
@@ -1136,7 +1166,8 @@
     .cta-inner h2 { font-size: 26px; }
     .prijs-amount { font-size: 36px; }
     .trust-bar { gap: 16px; }
-    .matthias-mini { flex-direction: column; text-align: center; }
+    .oorsprong { padding: 40px 20px 36px; }
+    .oorsprong-header { flex-direction: column; text-align: center; }
   }
 </style>
 </head>
@@ -1198,11 +1229,27 @@
 </div>
 
 <!-- ============================================ -->
-<!-- AANPASSING 3: KLEINE MATTHIAS INTRO -->
+<!-- OORSPRONGVERHAAL: Matthias, Barcelona & het team -->
 <!-- ============================================ -->
-<div class="matthias-mini">
-  <img src="afbeeldingen/matthias.png" alt="Matthias Moens" class="matthias-mini-photo">
-  <p><strong>Hey, ik ben Matthias.</strong> Samen met mijn team help ik al meer dan tien jaar mensen in Belgi&euml; en Nederland om veilig met hun Apple-toestellen om te gaan, nieuwe dingen te ontdekken en zich online zeker te voelen.</p>
+<div class="oorsprong">
+  <div class="oorsprong-header">
+    <img src="afbeeldingen/matthias.png" alt="Matthias Moens" class="oorsprong-avatar">
+    <div>
+      <div class="oorsprong-name">Hey, ik ben Matthias.</div>
+      <div class="oorsprong-role">Oprichter van DigitaalSlim</div>
+    </div>
+  </div>
+
+  <p>Iets meer dan tien jaar geleden kocht mijn vader zijn allereerste iPad. Hij was er dolblij mee, maar zat al snel met vragen. Hoe sla ik een foto op? Waar is dat mailtje gebleven? Het probleem: ik woonde op dat moment in Barcelona. Ik kon niet even naast hem op de bank schuiven om het voor te doen. Dus begon ik simpele, duidelijke video's te maken die hij kon volgen op zijn eigen tempo. <strong>Dat werkte.</strong> Z&oacute; goed zelfs, dat het de basis werd van mijn allereerste cursussen.</p>
+
+  <img src="afbeeldingen/papa-en-gezin.jpg" alt="Matthias met zijn gezin en ouders" class="oorsprong-foto">
+  <p class="oorsprong-caption">Familie Moens, en de reden dat DigitaalSlim bestaat.</p>
+
+  <p>Maar de digitale wereld stond niet stil. Mijn moeder en haar partner bleven met nieuwe vragen komen. Hoe werkt dit nieuwe knopje na de update? Is dit mailtje wel te vertrouwen? Die dagelijkse, echte vragen werden mijn grootste inspiratiebron. Niet wat ik d&aacute;cht dat mensen moesten weten, maar waar ze &eacute;cht tegenaan liepen.</p>
+
+  <p><strong>Met DigitaalSlim Plus+ keren we terug naar die absolute essentie.</strong> Wat we voor mijn familie doen, doen we nu voor jou. We bouwen de lessen niet rondom een vast lesprogramma, maar we luisteren naar jouw dagelijkse vragen in de community en maken daar direct nieuwe, simpele oplossingen voor. Precies zoals ik deed voor mijn vader vanuit Barcelona.</p>
+
+  <p>En nee, ik doe dit allang niet meer in mijn eentje. DigitaalSlim is uitgegroeid tot een prachtig bedrijf. Er staat nu een heel team van toegewijde mensen klaar die zich elke dag met volle inzet en datzelfde eindeloze geduld over jouw vragen buigen. Denk aan de behulpzame kleinzoon of dochter die je altijd even kunt bellen. Alleen hoef je ons niet te bellen. <strong>We staan elke dag voor je klaar in de community.</strong></p>
 </div>
 
 <!-- ============================================ -->
