@@ -517,6 +517,130 @@
   .miranda-step-info p { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
   .miranda-step-img img { width: 100%; display: block; }
 
+  /* === ZAKMES STAPPENPLAN === */
+  .zakmes-stappen {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    position: relative;
+    margin-top: 36px;
+  }
+  .zakmes-stappen::before {
+    content: '';
+    position: absolute;
+    left: 28px;
+    top: 48px;
+    bottom: 48px;
+    width: 3px;
+    background: linear-gradient(to bottom, #FEBB0B, #F5A623, #22c55e);
+    border-radius: 3px;
+  }
+  .zakmes-stap {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+  }
+  .zakmes-stap-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 800;
+    flex-shrink: 0;
+    z-index: 1;
+    box-shadow: 0 6px 20px rgba(254,187,11,0.25);
+  }
+  .zakmes-stap.done .zakmes-stap-badge {
+    background: #22c55e;
+    color: white;
+    box-shadow: 0 6px 20px rgba(34,197,94,0.25);
+  }
+  .zakmes-stap-card {
+    background: var(--white);
+    border-radius: 18px;
+    overflow: hidden;
+    flex: 1;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+  }
+  .zakmes-stap-body { padding: 22px 26px; }
+  .zakmes-stap-label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--brand);
+    margin-bottom: 5px;
+  }
+  .zakmes-stap-title {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .zakmes-stap-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+  .zakmes-stap-tip {
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #92400e;
+    line-height: 1.55;
+  }
+  .zakmes-stap-tip strong { color: #78350f; }
+  .zakmes-stap-media {
+    border-top: 1px solid var(--border);
+    background: #fafafa;
+  }
+  .zakmes-stap-media img { width: 100%; display: block; }
+  @media (max-width: 600px) {
+    .zakmes-stap-badge { width: 44px; height: 44px; font-size: 17px; }
+    .zakmes-stappen::before { left: 22px; }
+    .zakmes-stap { gap: 14px; }
+    .zakmes-stap-title { font-size: 17px; }
+  }
+
+  /* === COMMUNITY LEVEND PLATFORM === */
+  .community-vraag-blok {
+    background: var(--brand-soft);
+    border: 1px solid rgba(85,60,247,0.1);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-top: 28px;
+    text-align: left;
+  }
+  .community-vraag-blok p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 10px;
+  }
+  .community-vraag-blok p:last-child { margin-bottom: 0; }
+  .community-vraag-blok strong { color: var(--text); }
+  .community-placeholder {
+    margin-top: 24px;
+    background: var(--white);
+    border: 2px dashed var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
   /* === KANALEN + VEILIG (samengevoegd) === */
   .kanalen-section {
     max-width: 960px;
@@ -1171,52 +1295,94 @@
 </section>
 
 <!-- ============================================ -->
-<!-- SECTIE 4: COMMUNITY IN ACTIE -->
+<!-- HET ZAKMES IN ACTIE: STAPPENPLAN -->
 <!-- ============================================ -->
 <section class="community-section">
-  <div class="section-label">Zo gaat het er in de praktijk aan toe</div>
-  <h2 class="section-heading">Miranda had een vraag. Kijk wat er gebeurde.</h2>
+  <div class="section-label">Het zakmes in actie</div>
+  <h2 class="section-heading">Van paniek naar gemoedsrust. In vier stappen.</h2>
   <div class="community-intro">
-    <p>Miranda had iCloud ingeschakeld, maar haar iPad zat nog steeds vol. Herkenbaar? Ze stelde haar vraag in de community. <strong>Binnen een paar uur</strong> had ze een duidelijk antwoord, met schermafbeeldingen en een video erbij.</p>
+    <p>DigitaalSlim Plus+ is je digitale Zwitsers zakmes. Je klapt alleen uit wat je op dat moment nodig hebt. Hoe dat er in de praktijk uitziet? We laten het je zien.</p>
   </div>
 
-  <div class="video-card">
-    <div class="video-embed">
-      <iframe src="https://player.vimeo.com/video/1174687520?badge=0&autopause=0&player_id=0&app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" allowfullscreen></iframe>
+  <div class="zakmes-stappen">
+    <div class="zakmes-stap">
+      <div class="zakmes-stap-badge">1</div>
+      <div class="zakmes-stap-card">
+        <div class="zakmes-stap-body">
+          <div class="zakmes-stap-label">De twijfel</div>
+          <div class="zakmes-stap-title">Je ontvangt een mail van 'de bank'</div>
+          <div class="zakmes-stap-desc">Er staat dat je rekening geblokkeerd wordt als je niet snel je gegevens bevestigt. Het logo ziet er echt uit. Je hart slaat even over. Is dit oplichting? Of is dit echt? Paniek is niet nodig. Je hebt je zakmes bij je.</div>
+        </div>
+        <div class="zakmes-stap-media">
+          <!-- Matthias: hier komt een screenshot van een typische phishing-mail -->
+        </div>
+      </div>
+    </div>
+
+    <div class="zakmes-stap">
+      <div class="zakmes-stap-badge">2</div>
+      <div class="zakmes-stap-card">
+        <div class="zakmes-stap-body">
+          <div class="zakmes-stap-label">Klap de E-mailchecker uit</div>
+          <div class="zakmes-stap-title">Een snelle check, zonder gedoe</div>
+          <div class="zakmes-stap-desc">Je stuurt de verdachte mail door naar onze E-mailchecker. Binnen een ogenblik krijg je een helder oordeel: veilig of verdacht. Geen technisch jargon, gewoon een duidelijk antwoord.</div>
+          <div class="zakmes-stap-tip"><strong>Binnenkort beschikbaar:</strong> De E-mailchecker wordt exclusief beschikbaar voor Plus+ leden. Als lid ben je verzekerd van onbeperkte toegang.</div>
+        </div>
+        <div class="zakmes-stap-media">
+          <!-- Matthias: hier komt een screenshot van de E-mailchecker -->
+        </div>
+      </div>
+    </div>
+
+    <div class="zakmes-stap">
+      <div class="zakmes-stap-badge">3</div>
+      <div class="zakmes-stap-card">
+        <div class="zakmes-stap-body">
+          <div class="zakmes-stap-label">Klap de Community uit</div>
+          <div class="zakmes-stap-title">Nog niet gerust? Vraag het aan echte mensen</div>
+          <div class="zakmes-stap-desc">Nog steeds een beetje onzeker? Plaats je vraag in de community. Matthias en het team kijken direct met je mee. Vaak reageren ook andere leden die precies dezelfde mail hebben ontvangen. Je staat er nooit alleen voor.</div>
+        </div>
+        <div class="zakmes-stap-media">
+          <!-- Matthias: hier komt een screenshot van een community-vraag over phishing -->
+        </div>
+      </div>
+    </div>
+
+    <div class="zakmes-stap done">
+      <div class="zakmes-stap-badge">&#10003;</div>
+      <div class="zakmes-stap-card">
+        <div class="zakmes-stap-body">
+          <div class="zakmes-stap-label">Gemoedsrust</div>
+          <div class="zakmes-stap-title">Mail weg, rustig verder met je dag</div>
+          <div class="zakmes-stap-desc">Binnen korte tijd weet je zeker: het was phishing. Je gooit de mail weg en gaat rustig verder. Geen uren zoeken op internet, geen onzekerheid die aan je knaagt. <strong>D&aacute;t is wat je zakmes voor je doet.</strong> Het ligt altijd klaar, en je klapt het alleen uit wanneer je het nodig hebt.</div>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-  <div class="miranda-flow">
-    <div class="miranda-step">
-      <div class="miranda-step-info">
-        <div class="miranda-step-label">De vraag</div>
-        <h3>Miranda stelt haar vraag</h3>
-        <p>"Waarom nemen mijn foto's nog steeds opslagruimte in, terwijl ik iCloud heb ingeschakeld?" Een vraag die duizenden mensen herkennen, maar waar je online zelden een duidelijk antwoord op vindt.</p>
-      </div>
-      <div class="miranda-step-img">
-        <img src="afbeeldingen/screenshots/vraag-miranda.png" alt="Miranda stelt haar vraag in de community" loading="lazy">
-      </div>
-    </div>
-    <div class="miranda-step">
-      <div class="miranda-step-info">
-        <div class="miranda-step-label">Het antwoord</div>
-        <h3>Een duidelijke uitleg, met schermafbeeldingen</h3>
-        <p>Geen vaag antwoord van drie woorden, maar <strong>een rustige uitleg die Miranda stap voor stap kon volgen</strong> op haar eigen iPad.</p>
-      </div>
-      <div class="miranda-step-img">
-        <img src="afbeeldingen/screenshots/antwoord-miranda.png" alt="Geschreven antwoord met schermafbeeldingen" loading="lazy">
-      </div>
-    </div>
-    <div class="miranda-step">
-      <div class="miranda-step-info">
-        <div class="miranda-step-label">De reacties</div>
-        <h3>Niet alleen Miranda leerde iets bij</h3>
-        <p>Andere leden lazen mee en herkenden de vraag. Rachel: "Weer iets bijgeleerd." Marie-Jeanne: "Nu zit het er terug goed in."</p>
-      </div>
-      <div class="miranda-step-img">
-        <img src="afbeeldingen/screenshots/reacties-miranda.png" alt="Positieve reacties van leden" loading="lazy">
-      </div>
-    </div>
+<!-- ============================================ -->
+<!-- SECTIE 4: JOUW VRAGEN STUREN ONS PLATFORM -->
+<!-- ============================================ -->
+<section class="community-section">
+  <div class="section-label">Een levend platform</div>
+  <h2 class="section-heading">Jouw vragen sturen ons platform.</h2>
+  <div class="community-intro">
+    <p>We maken geen willekeurige lessen vanuit een ivoren toren. Bij DigitaalSlim Plus+ bepalen de leden wat er gemaakt wordt. Dat maakt het verschil tussen een stoffige cursusmap en een platform dat meegroeit met jouw vragen.</p>
+  </div>
+
+  <div class="community-vraag-blok">
+    <p><strong>Loop je ergens tegenaan?</strong> Stel je vraag in de community. Binnen 24 uur helpen Matthias en het team je persoonlijk verder, met duidelijke uitleg en schermafbeeldingen als dat nodig is.</p>
+    <p>Maar het stopt niet bij jouw antwoord. Merken we dat meerdere leden dezelfde vraag hebben? Dan maken we er speciaal een <strong>nieuw Stappenplan of een korte video</strong> van. Zo helpt jouw vraag niet alleen jou, maar ook honderden andere leden.</p>
+    <p>Een paar voorbeelden van vragen die leidden tot nieuwe content:</p>
+    <p>&#128161; <em>"Hoe maak ik ruimte vrij op mijn iPad?"</em> &#8594; Werd een compleet Stappenplan met video<br>
+    &#128161; <em>"Is die mail van PostNL echt of nep?"</em> &#8594; Werd een waarschuwingsmail naar alle leden<br>
+    &#128161; <em>"Hoe werkt die nieuwe Foto's-app na de update?"</em> &#8594; Werd een videoles van 8 minuten</p>
+    <p><strong>Dat is het verschil met een losse cursus van &euro;97.</strong> Die staat stil in de tijd. Plus+ groeit elke week, gestuurd door wat jullie echt nodig hebben.</p>
+  </div>
+
+  <div class="community-placeholder">
+    &#128248; <strong>Matthias:</strong> Hier kun je een paar leuke, herkenbare screenshots plaatsen van echte community-interacties. Denk aan een vraag die veel reacties kreeg, of een bericht waar leden elkaar bedanken.
   </div>
 </section>
 
