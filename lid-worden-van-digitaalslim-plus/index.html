@@ -99,7 +99,6 @@
   .hero {
     background: linear-gradient(160deg, #FFFFFF 0%, #F7F5FC 40%, #F0ECF9 70%, #F7F5FC 100%);
     padding: 72px 24px 56px;
-    text-align: center;
     position: relative;
     overflow: hidden;
   }
@@ -113,13 +112,23 @@
     pointer-events: none;
   }
   .hero-inner {
-    max-width: 760px;
+    max-width: 1080px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 48px;
+  }
+  .hero-content {
+    flex: 1;
+    min-width: 0;
+  }
+  .hero-visual {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .hero-logo { height: 110px; width: auto; margin-bottom: 28px; }
   .hero-badge {
@@ -148,21 +157,19 @@
     font-size: 18px;
     color: var(--text-secondary);
     max-width: 600px;
-    margin: 0 auto 28px;
+    margin: 0 0 28px;
     line-height: 1.7;
   }
   .hero-mockup {
-    max-width: 420px;
+    max-width: 380px;
     width: 100%;
     height: auto;
-    margin: 0 auto 32px;
     filter: drop-shadow(0 16px 40px rgba(85,60,247,0.12)) drop-shadow(0 4px 12px rgba(26,22,39,0.08));
   }
   .hero-results {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    justify-content: center;
     margin-bottom: 28px;
   }
   .hero-result {
@@ -181,7 +188,7 @@
   .hero-cta-group {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 14px;
   }
   .hero-note { font-size: 14px; color: var(--text-muted); }
@@ -1115,11 +1122,15 @@
 
   /* === RESPONSIVE === */
   @media (max-width: 768px) {
-    .hero { padding: 56px 20px 44px; }
-    .hero h1 { font-size: 28px; letter-spacing: -1px; }
-    .hero-sub { font-size: 16px; }
-    .hero-mockup { max-width: 300px; margin-bottom: 24px; }
+    .hero { padding: 56px 20px 44px; text-align: center; }
+    .hero-inner { flex-direction: column; gap: 32px; }
+    .hero-content { display: flex; flex-direction: column; align-items: center; }
+    .hero-sub { text-align: center; }
+    .hero h1 { font-size: 28px; letter-spacing: -1px; text-align: center; }
+    .hero-mockup { max-width: 280px; }
+    .hero-visual { order: -1; }
     .hero-results { flex-direction: column; align-items: center; }
+    .hero-cta-group { align-items: center; }
     .section-heading { font-size: 26px; }
     .herkenning-section h2 { font-size: 24px; }
     .cta-inner h2 { font-size: 26px; }
@@ -1144,34 +1155,37 @@
 <!-- ============================================ -->
 <section class="hero">
   <div class="hero-inner">
-    <img src="afbeeldingen/logo-digitaalslim-plus-geel.png" alt="DigitaalSlim Plus+" class="hero-logo">
-    <div class="hero-badge">
-      &#9200; Tijdelijk: zet nu je lanceerprijs voor altijd vast
+    <div class="hero-content">
+      <img src="afbeeldingen/logo-digitaalslim-plus-geel.png" alt="DigitaalSlim Plus+" class="hero-logo">
+      <div class="hero-badge">
+        &#9200; Tijdelijk: zet nu je lanceerprijs voor altijd vast
+      </div>
+      <h1>Altijd iemand die met je meekijkt.<br><span>Altijd op jouw tempo.</span></h1>
+      <p class="hero-sub">De digitale wereld verandert snel, maar jij hoeft niet sneller te gaan rennen. <strong>Wij filteren de chaos voor je.</strong> DigitaalSlim Plus+ is je vaste plek voor al je digitale vragen. Een warme club van mensen die elkaar helpen.</p>
+
+      <div class="hero-results">
+        <div class="hero-result">
+          <span class="hero-result-icon">&#128232;</span>
+          Weet meteen of die verdachte mail echt is
+        </div>
+        <div class="hero-result">
+          <span class="hero-result-icon">&#128260;</span>
+          Leer in 3 minuten hoe een Apple-update werkt
+        </div>
+        <div class="hero-result">
+          <span class="hero-result-icon">&#128172;</span>
+          Stel je vraag en krijg persoonlijk antwoord
+        </div>
+      </div>
+
+      <div class="hero-cta-group">
+        <a href="#prijzen" class="btn-primary">Bekijk wat erbij zit</a>
+        <p class="hero-note">Sluit je aan bij meer dan 2.000 leden. Op elk moment opzegbaar.</p>
+      </div>
     </div>
-    <h1>Altijd iemand die met je meekijkt.<br><span>Altijd op jouw tempo.</span></h1>
-    <p class="hero-sub">De digitale wereld verandert snel, maar jij hoeft niet sneller te gaan rennen. <strong>Wij filteren de chaos voor je.</strong> DigitaalSlim Plus+ is je vaste plek voor al je digitale vragen. Een warme club van mensen die elkaar helpen.</p>
 
-    <img src="afbeeldingen/DS-Plus-Mockup-2026.png" alt="DigitaalSlim Plus+ op iPad, iPhone en Mac" class="hero-mockup">
-
-    <!-- AANPASSING 9: Concrete resultaten -->
-    <div class="hero-results">
-      <div class="hero-result">
-        <span class="hero-result-icon">&#128232;</span>
-        Weet meteen of die verdachte mail echt is
-      </div>
-      <div class="hero-result">
-        <span class="hero-result-icon">&#128260;</span>
-        Leer in 3 minuten hoe een Apple-update werkt
-      </div>
-      <div class="hero-result">
-        <span class="hero-result-icon">&#128172;</span>
-        Stel je vraag en krijg persoonlijk antwoord
-      </div>
-    </div>
-
-    <div class="hero-cta-group">
-      <a href="#prijzen" class="btn-primary">Bekijk wat erbij zit</a>
-      <p class="hero-note">Sluit je aan bij meer dan 2.000 leden. Op elk moment opzegbaar.</p>
+    <div class="hero-visual">
+      <img src="afbeeldingen/DS-Plus-Mockup-2026.png" alt="DigitaalSlim Plus+ op iPad, iPhone en Mac" class="hero-mockup">
     </div>
   </div>
 </section>
