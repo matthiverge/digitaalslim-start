@@ -835,6 +835,38 @@
     border: 2px solid var(--brand); box-shadow: none;
   }
   .prijs-card .btn-primary.btn-outline:hover { background: var(--brand-soft); }
+  .prijzen-checklist {
+    max-width: 580px; margin: 0 auto 32px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8px 24px; text-align: left;
+  }
+  .prijzen-check {
+    font-size: 14px; color: var(--text-secondary); line-height: 1.6;
+    padding: 4px 0;
+  }
+  .prijzen-check::before {
+    content: '\2713'; color: var(--green); font-weight: 700; margin-right: 8px;
+  }
+  .prijzen-quote {
+    max-width: 580px; margin: 0 auto 36px;
+    text-align: center; font-style: italic;
+    font-size: 15px; color: var(--text-secondary); line-height: 1.7;
+  }
+  .prijzen-quote .pq-name {
+    display: block; margin-top: 6px;
+    font-style: normal; font-weight: 700; font-size: 13px; color: var(--text);
+  }
+  .prijs-besparing {
+    font-size: 12px; color: var(--green); font-weight: 600; margin-top: 6px;
+  }
+  .prijs-garantie {
+    max-width: 580px; margin: 20px auto 0;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--green-soft); border: 1px solid var(--green-border);
+    border-radius: 12px; padding: 14px 20px;
+    font-size: 14px; color: var(--text-secondary); line-height: 1.5;
+  }
+  .prijs-garantie-icon { font-size: 22px; flex-shrink: 0; }
   .prijs-note {
     text-align: center; margin-top: 20px;
     font-size: 14px; color: var(--text-muted); line-height: 1.6;
@@ -1444,6 +1476,20 @@
     <strong>Maar wie er nu bij komt, betaalt &euro;139 per jaar. En dat blijft zo.</strong> Zolang je lid bent, gaat jouw prijs niet omhoog. Dat is ons bedankje aan iedereen die er vroeg bij is.
   </div>
 
+  <div class="prijzen-checklist">
+    <div class="prijzen-check">Alle videolessen en cursussen</div>
+    <div class="prijzen-check">De community met persoonlijke hulp</div>
+    <div class="prijzen-check">Alle Stappenplannen</div>
+    <div class="prijzen-check">De E-mailchecker app</div>
+    <div class="prijzen-check">Alles wat er nog bij komt</div>
+    <div class="prijzen-check">Een team van 5 dat voor je klaarstaat</div>
+  </div>
+
+  <div class="prijzen-quote">
+    "Ik ben al van de beginjaren bij Matthias. Ik heb er nog geen moment spijt van gehad. Zeker een aanrader."
+    <span class="pq-name">Jos, lid sinds het eerste uur</span>
+  </div>
+
   <div class="prijzen-grid">
     <div class="prijs-card">
       <div class="prijs-period">Per kwartaal</div>
@@ -1451,6 +1497,7 @@
       <div class="prijs-strikethrough">&euro;45/kwartaal</div>
       <div class="prijs-amount">&euro;39 <span>/kwartaal</span></div>
       <div class="prijs-per">Dat is nog geen &euro;3 per week</div>
+      <div class="prijs-besparing">Ideaal om vrijblijvend te starten</div>
       <a href="CHECKOUT_URL_KWARTAAL" class="btn-primary btn-outline">Word lid</a>
     </div>
     <div class="prijs-card popular">
@@ -1459,12 +1506,17 @@
       <div class="prijs-strikethrough">&euro;159/jaar</div>
       <div class="prijs-amount">&euro;139 <span>/jaar</span></div>
       <div class="prijs-per">Dat is &euro;2,67 per week. Minder dan een koffietje.</div>
+      <div class="prijs-besparing">Je bespaart &euro;17 t.o.v. kwartaal</div>
       <a href="CHECKOUT_URL_JAAR" class="btn-primary">Word lid</a>
     </div>
   </div>
 
   <p class="prijs-note">Op elk moment opzegbaar. Geen kleine lettertjes, geen verplichtingen. Je behoudt altijd toegang tot het einde van de periode waarvoor je hebt betaald.</p>
-  <p class="prijs-note">Niet tevreden? Binnen 30 dagen krijg je je volledige bedrag terug. Zonder vragen.</p>
+
+  <div class="prijs-garantie">
+    <div class="prijs-garantie-icon">&#128737;</div>
+    <div><strong>30 dagen niet-goed-geld-terug.</strong> Niet tevreden? Stuur ons een mailtje en je krijgt je volledige bedrag terug. Zonder vragen.</div>
+  </div>
 </section>
 
 <!-- ============================================ -->
@@ -1495,7 +1547,7 @@
 <!-- ============================================ -->
 <footer class="footer">
   <div class="footer-text">
-    DigitaalSlim &copy; 2026 &middot; Samen digitaal sterker<br>
+    &copy;DigitaalSlim 2015 - 2026 &middot; Samen digitaal slimmer<br>
     DigitaalSlim van Matthias Moens &middot; Coupure Rechts 88, 9000 Gent, Belgi&euml;<br>
     KvK: 0756835273 &middot; BTW: BE0756835273
   </div>
