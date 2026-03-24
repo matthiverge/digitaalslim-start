@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stappenplan: Van zwart-wit naar kleur met ChatGPT - DigitaalSlim</title>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vxsa3zxb7u");
+</script>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1629807923939922');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1629807923939922&ev=PageView&noscript=1"
+/></noscript>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-jFioKo5P0whjJRP6PFlO8.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #FFFCF5;
+    --text: #1A1627;
+    --text-secondary: #3D3552;
+    --text-muted: #7A7189;
+    --white: #FFFFFF;
+    --brand: #FEBB0B;
+    --brand-dark: #D4940A;
+    --green: #22c55e;
+    --border: #F0E8D8;
+    --shadow-sm: 0 2px 12px rgba(254,187,11,0.06);
+    --shadow: 0 8px 32px rgba(254,187,11,0.06), 0 2px 8px rgba(26,22,39,0.04);
+    --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  body { font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; -webkit-font-smoothing: antialiased; padding: 24px 16px 40px; }
+
+  /* === IMAGES BASE URL === */
+  /* Images referenced from the public version */
+
+  /* === HEADER === */
+  .header { text-align: center; margin-bottom: 32px; padding-top: 8px; }
+  .header-badge { display: inline-flex; align-items: center; gap: 8px; background: #1A1627; border-radius: 50px; padding: 8px 18px; font-size: 13px; font-weight: 600; color: #FEBB0B; margin-bottom: 16px; }
+  .header-badge-dot { width: 7px; height: 7px; background: #FEBB0B; border-radius: 50%; box-shadow: 0 0 8px rgba(254,187,11,0.5); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(0.85); } }
+  .header h1 { font-size: 28px; font-weight: 800; color: var(--text); letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 10px; }
+  .header h1 span { color: #E8A000; }
+  .header-sub { font-size: 15px; color: var(--text-secondary); max-width: 480px; margin: 0 auto; line-height: 1.65; }
+
+  /* === SHOWCASE === */
+  .showcase-section { max-width: 520px; margin: 0 auto 32px; }
+  .showcase-label { text-align: center; font-size: 12px; font-weight: 700; color: #B8860B; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+  .showcase-heading { text-align: center; font-size: 22px; font-weight: 800; color: var(--text); letter-spacing: -0.5px; margin-bottom: 8px; }
+  .showcase-sub { text-align: center; font-size: 14px; color: var(--text-secondary); max-width: 440px; margin: 0 auto 24px; line-height: 1.65; }
+  .showcase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .showcase-item { background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; }
+  .showcase-images { display: grid; grid-template-columns: 1fr 1fr; flex: 1; }
+  .showcase-images img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .showcase-images .before { position: relative; }
+  .showcase-images .before::after { content: 'Voor'; position: absolute; bottom: 8px; left: 8px; background: #FEBB0B; color: #1A1627; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; }
+  .showcase-images .after { position: relative; }
+  .showcase-images .after::after { content: 'Na'; position: absolute; bottom: 8px; left: 8px; background: #22c55e; color: white; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; }
+  .showcase-caption { padding: 12px 14px; text-align: center; font-size: 13px; color: var(--text-secondary); font-weight: 500; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+  .showcase-item.landscape .showcase-images { grid-template-columns: 1fr; grid-template-rows: auto auto; }
+
+  /* === NEEDS === */
+  .needs-section { max-width: 520px; margin: 0 auto 32px; }
+  .needs-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 22px 24px; box-shadow: var(--shadow-sm); }
+  .needs-card h3 { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 12px; }
+  .needs-list { list-style: none; padding: 0; }
+  .needs-list li { font-size: 14px; color: var(--text-secondary); padding: 6px 0; display: flex; align-items: center; gap: 10px; line-height: 1.5; }
+  .needs-list li::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #FEBB0B; flex-shrink: 0; }
+
+  /* === STEPS === */
+  .steps-section { max-width: 520px; margin: 0 auto; padding-bottom: 32px; }
+  .steps { display: flex; flex-direction: column; gap: 24px; position: relative; }
+  .steps::before { content: ''; position: absolute; left: 24px; top: 48px; bottom: 48px; width: 3px; background: linear-gradient(to bottom, #FEBB0B, #F5A623, #22c55e); border-radius: 3px; }
+  .step { display: flex; gap: 18px; align-items: flex-start; position: relative; }
+  .step-badge { width: 48px; height: 48px; border-radius: 50%; background: #FEBB0B; color: #1A1627; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; flex-shrink: 0; z-index: 1; box-shadow: 0 4px 16px rgba(254,187,11,0.25); }
+  .step.done .step-badge { background: #22c55e; color: white; box-shadow: 0 4px 16px rgba(34,197,94,0.25); }
+  .step-card { background: var(--white); border-radius: 16px; overflow: hidden; flex: 1; border: 1px solid var(--border); box-shadow: var(--shadow-sm); transition: transform var(--transition), box-shadow var(--transition); }
+  .step-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .step-card-body { padding: 18px 20px; }
+  .step-app { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #B8860B; margin-bottom: 4px; }
+  .step-title { font-size: 17px; font-weight: 800; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
+  .step-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+  .step-tip { margin-top: 12px; padding: 12px 14px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; font-size: 13px; color: #92400e; line-height: 1.5; }
+  .step-tip strong { color: #78350f; }
+  .step-media { border-top: 1px solid var(--border); background: #fafafa; }
+  .step-media img { width: 100%; display: block; }
+
+  /* === PROMPT === */
+  .prompt-box { margin-top: 14px; background: #1a1627; border-radius: 10px; padding: 14px 16px 16px; }
+  .prompt-box-header { display: flex; justify-content: flex-end; margin-bottom: 10px; }
+  .prompt-box pre { font-family: "Inter", sans-serif; font-size: 12px; color: rgba(255,255,255,0.85); white-space: pre-wrap; word-wrap: break-word; line-height: 1.6; margin: 0; }
+  .prompt-copy { background: #FEBB0B; color: #1A1627; border: none; padding: 5px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.3s; font-family: "Inter", sans-serif; }
+  .copy-success { margin-top: 10px; padding: 10px 14px; background: #22c55e; border-radius: 8px; display: none; align-items: center; gap: 8px; animation: fadeSlideIn 0.3s ease; }
+  .copy-success.show { display: flex; }
+  .copy-success-icon { width: 22px; height: 22px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .copy-success-text { font-size: 13px; color: white; font-weight: 600; line-height: 1.4; }
+  .copy-success-text span { font-weight: 400; opacity: 0.9; }
+  @keyframes fadeSlideIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* === TRY === */
+  .try-section { max-width: 520px; margin: 0 auto 32px; text-align: center; }
+  .try-card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 28px 24px; box-shadow: var(--shadow-sm); }
+  .try-card h2 { font-size: 19px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+  .try-card > p { font-size: 14px; color: var(--text-secondary); max-width: 440px; margin: 0 auto 20px; line-height: 1.6; }
+  .try-photo { max-width: 280px; margin: 0 auto 16px; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border); }
+  .try-photo img { width: 100%; display: block; }
+  .try-instructions { font-size: 12px; color: var(--text-muted); line-height: 1.5; max-width: 400px; margin: 0 auto; }
+  .try-instructions strong { color: var(--text-secondary); }
+
+  /* === COMMUNITY === */
+  .community-section { max-width: 520px; margin: 0 auto 32px; text-align: center; }
+  .community-card { background: linear-gradient(135deg, #FFF8E8, #FFF3D4, #FFF8E8); border: 1px solid rgba(254,187,11,0.2); border-radius: 20px; padding: 28px 24px; }
+  .community-card h2 { font-size: 19px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+  .community-card p { font-size: 14px; color: var(--text-secondary); max-width: 440px; margin: 0 auto; line-height: 1.65; }
+  .community-card p + p { margin-top: 10px; }
+
+  /* === FEEDBACK === */
+  .feedback-section { max-width: 520px; margin: 0 auto; text-align: center; }
+  .feedback-card { background: var(--white); border: 2px solid #fde68a; border-radius: 20px; padding: 28px 24px 36px; }
+  .feedback-card h2 { font-size: 19px; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+  .feedback-card p { font-size: 14px; color: var(--text-secondary); max-width: 420px; margin: 0 auto 16px; line-height: 1.6; }
+  .feedback-btn { display: inline-block; background: #FEBB0B; color: #1A1627; font-size: 14px; font-weight: 700; padding: 12px 28px; border-radius: 50px; text-decoration: none; transition: all 0.3s; box-shadow: 0 4px 16px rgba(254,187,11,0.25); }
+  .feedback-btn:hover { transform: translateY(-1px); }
+  .feedback-note { margin-top: 20px; font-size: 12px; color: var(--text-muted); }
+  .sp-logo { display: inline-flex; align-items: center; gap: 14px; padding: 0 0 16px; }
+  .sp-logo img { height: 40px; width: auto; }
+  .sp-divider { width: 2px; height: 36px; background: #FEBB0B; border-radius: 2px; }
+  .sp-right { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; }
+  .sp-dots { display: flex; align-items: center; width: 100%; }
+  .sp-dot { width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 800; background: #FEBB0B; color: #1A1627; flex-shrink: 0; }
+  .sp-dot-green { background: #22c55e; }
+  .sp-conn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 3px; padding: 0 2px; }
+  .sp-conn span { width: 3px; height: 3px; border-radius: 50%; background: #FEBB0B; opacity: 0.35; }
+  .sp-conn-green span { background: #22c55e; }
+  .sp-text { font-size: 15px; font-weight: 900; letter-spacing: 2px; color: #1A1627; }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 560px) {
+    .showcase-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+    .header h1 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-badge"><span class="header-badge-dot"></span> Stappenplan</div>
+  <h1>Van zwart-wit naar kleur<br><span>met ChatGPT</span></h1>
+  <p class="header-sub">Heb je nog oude zwart-witfoto's van je ouders of grootouders? Met ChatGPT maak je er in een paar tikken een kleurenfoto van. Gratis, op je iPad of iPhone. Volg de stappen hieronder.</p>
+</div>
+
+<!-- SHOWCASE -->
+<section class="showcase-section">
+  <div class="showcase-label">Kijk wat er mogelijk is</div>
+  <h2 class="showcase-heading">Van een oude zwart-witfoto naar een kleurenfoto</h2>
+  <p class="showcase-sub">Dit zijn echte resultaten, gemaakt met ChatGPT. Gratis, in minder dan een minuut.</p>
+  <div class="showcase-grid">
+    <div class="showcase-item">
+      <div class="showcase-images">
+        <div class="before"><img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/matroos-zwartwit.png" alt="Matroos zwart-wit"></div>
+        <div class="after"><img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/matroos-kleur.jpg" alt="Matroos kleur"></div>
+      </div>
+      <div class="showcase-caption">Een karaktervol portret, tot leven gewekt</div>
+    </div>
+    <div class="showcase-item">
+      <div class="showcase-images">
+        <div class="before"><img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/student-zwartwit.png" alt="Student zwart-wit"></div>
+        <div class="after"><img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/student-kleur.jpg" alt="Student kleur"></div>
+      </div>
+      <div class="showcase-caption">Een studentikoze herinnering in kleur</div>
+    </div>
+    <div class="showcase-item landscape">
+      <div class="showcase-images">
+        <div class="before"><img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/cafe-zwartwit.jpg" alt="Cafe zwart-wit"></div>
+        <div class="after"><img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/cafe-kleur.jpg" alt="Cafe kleur"></div>
+      </div>
+      <div class="showcase-caption">Na de koers, in het cafe</div>
+    </div>
+    <div class="showcase-item landscape">
+      <div class="showcase-images">
+        <div class="before"><img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/vriendinnen-zwartwit.jpg" alt="Vriendinnen zwart-wit"></div>
+        <div class="after"><img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/vriendinnen-kleur.jpg" alt="Vriendinnen kleur"></div>
+      </div>
+      <div class="showcase-caption">Vriendinnen, tijdloos vastgelegd</div>
+    </div>
+  </div>
+</section>
+
+<!-- WAT HEB JE NODIG -->
+<section class="needs-section">
+  <div class="needs-card">
+    <h3>Wat heb je nodig?</h3>
+    <ul class="needs-list">
+      <li>De ChatGPT-app (gratis, in de App Store)</li>
+      <li>Een oude zwart-witfoto op je iPad of iPhone (of een foto van een afgedrukt exemplaar)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- STAPPEN -->
+<section class="steps-section">
+  <div class="steps">
+
+    <!-- STAP 1: Download -->
+    <div class="step">
+      <div class="step-badge">1</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">App Store</div>
+          <div class="step-title">Download de ChatGPT-app</div>
+          <div class="step-desc">Open de App Store op je iPad of iPhone en zoek naar "ChatGPT". Het is de app van OpenAI (met het zwart-witte logo). Tik op "Download" of "Installeer". De app is gratis.</div>
+          <div style="margin-top:12px;"><a href="https://chatgpt.com/nl-NL/download/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#FEBB0B;color:#1A1627;font-size:13px;font-weight:700;padding:8px 18px;border-radius:50px;text-decoration:none;">Download ChatGPT <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A1627" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></div>
+          <div class="step-tip"><strong>Heb je al ChatGPT?</strong> Dan kun je deze stap overslaan. Zorg er wel voor dat je de nieuwste versie hebt.</div>
+        </div>
+        <div class="step-media"><img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/stap1-appstore.png" alt="ChatGPT in de App Store op de iPad"></div>
+      </div>
+    </div>
+
+    <!-- STAP 2: Account -->
+    <div class="step">
+      <div class="step-badge">2</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">ChatGPT</div>
+          <div class="step-title">Maak een gratis account aan</div>
+          <div class="step-desc">Open de ChatGPT-app. Je wordt gevraagd om een account aan te maken. Dat kan met je Apple ID, met Google, of met een e-mailadres. Kies wat je het makkelijkst vindt.</div>
+          <div class="step-tip"><strong>Belangrijk:</strong> Een gratis account is voldoende. Je hoeft niet te upgraden naar een betaald abonnement.</div>
+        </div>
+        <div class="step-media"><img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/stap2-account.png" alt="Account aanmaken in ChatGPT"></div>
+      </div>
+    </div>
+
+    <!-- STAP 3: Agree -->
+    <div class="step">
+      <div class="step-badge">3</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">ChatGPT</div>
+          <div class="step-title">Ga akkoord met de voorwaarden</div>
+          <div class="step-desc">Er verschijnt een melding over de gebruiksvoorwaarden. Dit schermpje is in het Engels, maar dat is niet erg. Tik gewoon op de blauwe knop "Agree" (dat betekent "Akkoord") om verder te gaan.</div>
+        </div>
+        <div class="step-media"><img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/stap3-agree.png" alt="Klik op Agree in ChatGPT"></div>
+      </div>
+    </div>
+
+    <!-- STAP 4: Geheugen -->
+    <div class="step">
+      <div class="step-badge">4</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">ChatGPT</div>
+          <div class="step-title">Schakel geheugen in</div>
+          <div class="step-desc">ChatGPT vraagt of je het geheugen wilt inschakelen. Tik op "Inschakelen". Hierdoor onthoudt ChatGPT je voorkeuren en geeft het betere resultaten.</div>
+          <div class="step-tip"><strong>Liever niet?</strong> Je kunt ook op "Niet nu" tikken. Het inkleuren van foto's werkt ook zonder geheugen.</div>
+        </div>
+        <div class="step-media"><img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/stap4-geheugen.png" alt="Geheugen inschakelen in ChatGPT"></div>
+      </div>
+    </div>
+
+    <!-- STAP 5: Prompt -->
+    <div class="step">
+      <div class="step-badge">5</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">ChatGPT</div>
+          <div class="step-title">Kopieer de opdracht voor ChatGPT</div>
+          <div class="step-desc">Hieronder staat een slimme opdracht die je straks in ChatGPT plakt. Je hoeft deze niet te begrijpen. Tik op de gele knop "Kopieer" en ga dan naar de volgende stap. In de video laat ik precies zien hoe je het plakt en je foto uploadt.</div>
+          <div class="prompt-box">
+            <div class="prompt-box-header"><button class="prompt-copy" onclick="navigator.clipboard.writeText(document.getElementById('prompt-text').textContent.trim());this.textContent='Gekopieerd!';var msg=document.getElementById('copy-msg');msg.classList.add('show');setTimeout(()=>{msg.scrollIntoView({behavior:'smooth',block:'nearest'});setTimeout(()=>{window.scrollBy({top:60,behavior:'smooth'});},400);},100);setTimeout(()=>{this.textContent='Kopieer';},4000)">Kopieer</button></div>
+            <pre id="prompt-text">Kleur deze zwart-witafbeelding in en geef ze een natuurlijke, realistische look.
+
+Behoud de originele foto zoveel mogelijk zoals ze is. Zorg ervoor dat gezichten, personen, vormen en verhoudingen exact hetzelfde blijven en herkenbaar zijn.
+
+Voeg alleen realistische kleuren toe (zoals natuurlijke huidtinten, haarkleuren en kledingkleuren) op een manier die geloofwaardig is.
+
+Lichte verbeteringen in helderheid, contrast en scherpte zijn toegestaan, zolang de foto er niet anders uitziet dan het origineel.
+
+Verander geen inhoud, voeg niets toe en verwijder niets.
+
+Het resultaat moet eruitzien als exact dezelfde foto, maar dan in kleur en alsof ze recent genomen is met een moderne camera.</pre>
+          </div>
+          <div class="copy-success" id="copy-msg"><div class="copy-success-icon"><svg width="14" height="14" viewBox="0 0 14 14"><polyline points="3,7.5 5.8,10.3 11,4.5" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div><div class="copy-success-text">Tekst gekopieerd!<br><span>Open nu ChatGPT, tik op het tekstveld, en plak de tekst.</span></div></div>
+
+          <div class="step-tip"><strong>Tip:</strong> Weet je welke kleuren er in de originele foto horen? Voeg dat dan toe aan het einde van de tekst. Bijvoorbeeld: "De jurk was blauw en het huis was rood."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAP 6: Video -->
+    <div class="step">
+      <div class="step-badge">6</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">Video</div>
+          <div class="step-title">Bekijk hoe het werkt</div>
+          <div class="step-desc">In deze korte video (1 minuut en 40 seconden) doorlopen we het volledige proces: van het selecteren van een foto tot het eindresultaat in kleur.</div>
+          <div class="step-tip"><strong>Video bekeken?</strong> Scroll dan verder naar stap 7 om je kleurenfoto op te slaan.</div>
+        </div>
+        <div class="step-media" style="max-height:none;background:#0a0a0a;cursor:pointer;" onclick="this.innerHTML='<iframe src=\'https://player.vimeo.com/video/1175482129?autoplay=1&badge=0&autopause=0&player_id=0&app_id=58479\' allow=\'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media\' allowfullscreen style=\'width:100%;aspect-ratio:16/9;display:block;border:none;\'></iframe>';">
+          <div style="position:relative;width:100%;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;">
+            <img src="https://vumbnail.com/1175482129.jpg" alt="Video thumbnail" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,0.45);"></div>
+            <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:12px;">
+              <div style="width:60px;height:60px;border-radius:50%;background:#FEBB0B;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(0,0,0,0.4);"><svg width="24" height="24" viewBox="0 0 24 24" fill="#1A1627"><polygon points="7,3 20,12 7,21"/></svg></div>
+              <div style="background:rgba(0,0,0,0.7);padding:6px 16px;border-radius:50px;color:white;font-size:13px;font-weight:700;">Bekijk de video (1:40)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAP 7: Resultaat opslaan -->
+    <div class="step">
+      <div class="step-badge">7</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">ChatGPT</div>
+          <div class="step-title">Sla de kleurenfoto op</div>
+          <div class="step-desc">ChatGPT toont nu een kleurenversie van je foto. Houd je vinger even op de foto. Er verschijnt een menu. Tik op "Opslaan in Foto's". De kleurenfoto wordt nu opgeslagen in je Foto's-app.</div>
+          <div class="step-tip"><strong>Op een Mac of Windows-computer?</strong> Klik met je rechtermuisknop op de foto en kies "Afbeelding opslaan als...".</div>
+        </div>
+        <div class="step-media"><img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/stap5-opslaan.png" alt="Kleurenfoto opslaan in Foto's via ChatGPT"></div>
+      </div>
+    </div>
+
+    <!-- STAP 8: WhatsApp -->
+    <div class="step">
+      <div class="step-badge">8</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">WhatsApp</div>
+          <div class="step-title">Deel de kleurenfoto met je familie</div>
+          <div class="step-desc">Open WhatsApp en kies het gesprek met je familie of vrienden. Tik op het plus-icoon, kies "Foto" en selecteer de kleurenfoto. Verstuur hem en bereid je voor op verbaasde reacties!</div>
+          <div class="step-tip"><strong>Leuk idee:</strong> Stuur de originele zwart-witfoto en de kleurenversie samen door. Dat maakt de vergelijking nog indrukwekkender.</div>
+        </div>
+        <div class="step-media" style="max-height:none;background:#f0eded;padding:20px;display:flex;justify-content:center;">
+          <div style="width:220px;border-radius:28px;overflow:hidden;border:6px solid #1a1627;box-shadow:0 12px 40px rgba(0,0,0,0.15);">
+            <img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/stap6-whatsapp.png" alt="Kleurenfoto gedeeld via WhatsApp" style="width:100%;display:block;">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KLAAR -->
+    <div class="step done">
+      <div class="step-badge">&#10003;</div>
+      <div class="step-card">
+        <div class="step-card-body">
+          <div class="step-app">Klaar!</div>
+          <div class="step-title">Je zwart-witfoto heeft kleur gekregen</div>
+          <div class="step-desc">Je oude zwart-witfoto is nu een levendige kleurenfoto. Leuk om te bewaren, af te drukken, of te delen met de hele familie.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ZELF PROBEREN -->
+<section class="try-section">
+  <div class="try-card">
+    <h2>Wil je het zelf proberen?</h2>
+    <p>Heb je niet meteen een zwart-witfoto bij de hand? Sla een van onderstaande foto's op en test het zelf.</p>
+    <div style="display:flex;gap:12px;justify-content:center;margin-bottom:16px;height:240px;">
+      <div class="try-photo" style="margin:0;max-width:none;width:auto;height:100%;">
+        <img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/matroos-zwartwit.png" alt="Matroos zwart-wit" style="height:100%;width:auto;object-fit:cover;">
+      </div>
+      <div class="try-photo" style="margin:0;max-width:none;width:auto;height:100%;">
+        <img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/student-zwartwit.png" alt="Student zwart-wit" style="height:100%;width:auto;object-fit:cover;">
+      </div>
+    </div>
+    <p class="try-instructions"><strong>Op een iPad of iPhone:</strong> houd je vinger op de foto en tik op "Bewaar in Foto's".<br><strong>Op een Mac:</strong> klik met de rechtermuisknop en kies "Bewaar afbeelding als...".</p>
+  </div>
+</section>
+
+<!-- COMMUNITY BLOK (voor leden) -->
+<section class="community-section">
+  <div class="community-card">
+    <h2>Deel je resultaat in de community!</h2>
+    <p>Is het gelukt? We zijn heel benieuwd naar je resultaat. Deel je voor-en-na foto in de community. Andere leden vinden dat geweldig om te zien.</p>
+    <p>Loop je ergens vast? Stel je vraag gerust in de community. Wij of een van de andere leden helpen je graag verder.</p>
+  </div>
+</section>
+
+<!-- FEEDBACK -->
+<section class="feedback-section">
+  <div class="feedback-card">
+    <div class="sp-logo" style="margin-bottom:16px;">
+      <img src="https://start.digitaalslim.be/community/zwart-wit-naar-kleur/afbeeldingen/DS-Logo-HD---Black.png" alt="DigitaalSlim">
+      <div class="sp-divider"></div>
+      <div class="sp-right">
+        <div class="sp-dots">
+          <div class="sp-dot">1</div><div class="sp-conn"><span></span><span></span></div>
+          <div class="sp-dot">2</div><div class="sp-conn"><span></span><span></span></div>
+          <div class="sp-dot">3</div><div class="sp-conn sp-conn-green"><span></span><span></span></div>
+          <div class="sp-dot sp-dot-green"><svg width="8" height="8" viewBox="0 0 14 14"><polyline points="3,7.5 5.8,10.3 11,4.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
+        </div>
+        <div class="sp-text">STAPPENPLAN</div>
+      </div>
+    </div>
+    <h2>Wat vond je hiervan?</h2>
+    <p>Dit is een van de eerste DigitaalSlim Stappenplannen. We willen graag weten of je dit een fijne manier vindt om iets nieuws te leren. Jouw feedback helpt ons om het nog beter te maken!</p>
+    <a href="https://forms.gle/Gi71voPdzVdaYPcc7" target="_blank" class="feedback-btn">Geef je mening</a>
+    <p class="feedback-note">Duurt minder dan een minuut.</p>
+  </div>
+</section>
+
+</body>
+</html>
