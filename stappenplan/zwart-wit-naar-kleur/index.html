@@ -430,5 +430,25 @@ Het resultaat moet eruitzien als exact dezelfde foto, maar dan in kleur en alsof
   </div>
 </section>
 
+<script>
+// Send height to parent for iframe auto-resize
+function sendHeight() {
+  var height = document.documentElement.scrollHeight;
+  window.parent.postMessage({ type: 'iframe-height', height: height }, '*');
+}
+window.addEventListener('load', sendHeight);
+window.addEventListener('resize', sendHeight);
+// Also send after images load
+document.querySelectorAll('img').forEach(function(img) {
+  img.addEventListener('load', sendHeight);
+});
+// Send periodically for first few seconds (video thumbnails etc)
+var attempts = 0;
+var interval = setInterval(function() {
+  sendHeight();
+  attempts++;
+  if (attempts > 10) clearInterval(interval);
+}, 500);
+</script>
 </body>
 </html>
