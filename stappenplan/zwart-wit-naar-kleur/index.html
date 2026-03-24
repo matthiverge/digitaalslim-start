@@ -431,23 +431,31 @@ Het resultaat moet eruitzien als exact dezelfde foto, maar dan in kleur en alsof
 </section>
 
 <script>
-// Send height to parent for iframe auto-resize
+// Dynamic height: send to parent iframe via postMessage + URL fragment
 function sendHeight() {
   var height = document.documentElement.scrollHeight;
+  // Method 1: postMessage (works if parent has listener)
   window.parent.postMessage({ type: 'iframe-height', height: height }, '*');
+  // Method 2: update URL fragment (Froala-friendly, no script needed in parent)
+  if (window.parent !== window) {
+    try { window.name = 'height:' + height; } catch(e) {}
+  }
 }
 window.addEventListener('load', sendHeight);
 window.addEventListener('resize', sendHeight);
-// Also send after images load
 document.querySelectorAll('img').forEach(function(img) {
   img.addEventListener('load', sendHeight);
 });
-// Send periodically for first few seconds (video thumbnails etc)
+// ResizeObserver for dynamic content changes
+if (window.ResizeObserver) {
+  new ResizeObserver(sendHeight).observe(document.body);
+}
+// Fallback: poll for first 10 seconds
 var attempts = 0;
 var interval = setInterval(function() {
   sendHeight();
   attempts++;
-  if (attempts > 10) clearInterval(interval);
+  if (attempts > 20) clearInterval(interval);
 }, 500);
 </script>
 </body>
