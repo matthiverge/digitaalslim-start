@@ -995,52 +995,27 @@ a { text-decoration: none; }
   margin-top: 16px;
 }
 
+.geen-school-visual-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .geen-school-visual {
   position: relative;
   border-radius: var(--r2);
   overflow: hidden;
-  aspect-ratio: 4/3;
-  background: linear-gradient(145deg, #1a1730 0%, #231e3d 50%, #1e1a35 100%);
   border: 1px solid rgba(255,255,255,0.06);
   box-shadow:
     0 8px 32px rgba(0,0,0,0.25),
-    0 2px 8px rgba(0,0,0,0.15),
-    inset 0 1px 0 rgba(255,255,255,0.04);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+    0 2px 8px rgba(0,0,0,0.15);
 }
 
 .geen-school-visual img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
   border-radius: var(--r2);
-}
-
-/* Premium placeholder with Swiss Army knife icon */
-.geen-school-placeholder-icon {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--violet), var(--violet-2));
-  box-shadow: 0 4px 20px rgba(74,44,245,0.30), 0 0 0 1px rgba(255,255,255,0.06);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-}
-
-.geen-school-placeholder-label {
-  color: rgba(255,255,255,0.35);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-align: center;
-  padding: 0 24px;
-  line-height: 1.6;
 }
 
 .geen-school strong { color: rgba(255,255,255,0.82); font-weight: 600; }
@@ -2364,7 +2339,7 @@ a { text-decoration: none; }
   .pijlers-grid { grid-template-columns: 1fr; }
   .geen-school { padding: 28px 24px; grid-template-columns: 1fr; gap: 28px; }
   .geen-school-tekst { font-size: 16px; }
-  .geen-school-visual { aspect-ratio: 16/9; order: -1; }
+  .geen-school-visual-stack { order: -1; }
 
   /* Urgency inline */
   .urgency-inline { padding: 32px 16px; }
@@ -2623,10 +2598,13 @@ a { text-decoration: none; }
       <p><strong>En voor alle duidelijkheid: dit is geen school.</strong> Er zijn geen lessen die je "moet" volgen, geen deadlines, geen schema. Je zorgt voor de kleinkinderen, je hebt het druk met mantelzorg, je hebt een hele week geen tijd? Prima. Alles wacht geduldig op jou.</p>
       <p>En we weten hoe het gaat: je bekijkt een interessante video, maar een week later als je het zelf wilt doen, ben je een stapje vergeten. Dat is heel normaal als je niet met computers bent opgegroeid. Daarom is Plus+ jouw <strong>oneindige naslagwerk</strong>. Je hoeft niets uit je hoofd te leren. Ben je iets vergeten? Dan kijk je de video gewoon rustig opnieuw, of je pakt ons snelle Stappenplan erbij. Alles staat altijd voor je klaar. <strong>Op jouw moment, op jouw tempo.</strong></p>
     </div>
-    <div class="geen-school-visual">
-      <!-- PLACEHOLDER: vervang door 3D Swiss Army knife cartoon visual -->
-      <div class="geen-school-placeholder-icon">🛡️</div>
-      <div class="geen-school-placeholder-label">Hier komt een illustratie van een Zwitsers zakmes<br>met digitale tools als symbool voor Plus+</div>
+    <div class="geen-school-visual-stack">
+      <div class="geen-school-visual">
+        <img src="afbeeldingen/lid-op-haar-ipad.jpeg" alt="Plus+ lid ontspannen met iPad" loading="lazy">
+      </div>
+      <div class="geen-school-visual">
+        <img src="afbeeldingen/zwitsers-zakmes.png" alt="Zwitsers zakmes met digitale tools als symbool voor Plus+" loading="lazy">
+      </div>
     </div>
   </div>
 
