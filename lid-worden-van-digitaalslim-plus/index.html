@@ -917,32 +917,58 @@ a { text-decoration: none; }
 .geen-school {
   max-width: 1080px;
   margin: 20px auto 0;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--r3);
-  padding: 36px 44px;
-  font-size: 17px;
-  color: rgba(255,255,255,0.50);
-  line-height: 1.82;
+  padding: 48px 52px;
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
   align-items: center;
 }
 
-.geen-school-tekst { }
+.geen-school-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(240,180,41,0.10);
+  border: 1px solid rgba(240,180,41,0.20);
+  padding: 6px 16px;
+  border-radius: var(--rpill);
+  margin-bottom: 20px;
+}
+
+.geen-school-tekst {
+  font-size: 18px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.8;
+}
+
+.geen-school-tekst p + p {
+  margin-top: 16px;
+}
 
 .geen-school-visual {
   position: relative;
   border-radius: var(--r2);
   overflow: hidden;
   aspect-ratio: 4/3;
-  background: linear-gradient(135deg, var(--violet-soft), var(--gold-soft));
+  background: linear-gradient(145deg, #1a1730 0%, #231e3d 50%, #1e1a35 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.25),
+    0 2px 8px rgba(0,0,0,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.04);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 16px;
 }
 
 .geen-school-visual img {
@@ -952,15 +978,30 @@ a { text-decoration: none; }
   border-radius: var(--r2);
 }
 
-.geen-school-visual .placeholder-label {
-  color: var(--muted-2);
-  font-size: 14px;
-  text-align: center;
-  padding: 20px;
-  line-height: 1.5;
+/* Premium placeholder with Swiss Army knife icon */
+.geen-school-placeholder-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--violet), var(--violet-2));
+  box-shadow: 0 4px 20px rgba(74,44,245,0.30), 0 0 0 1px rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
 }
 
-.geen-school strong { color: rgba(255,255,255,0.80); }
+.geen-school-placeholder-label {
+  color: rgba(255,255,255,0.35);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 0 24px;
+  line-height: 1.6;
+}
+
+.geen-school strong { color: rgba(255,255,255,0.82); font-weight: 600; }
 
 .pijlers-cta {
   text-align: center;
@@ -2198,8 +2239,9 @@ a { text-decoration: none; }
 
   /* Pijlers */
   .pijlers-grid { grid-template-columns: 1fr; }
-  .geen-school { padding: 24px 24px; font-size: 16px; grid-template-columns: 1fr; gap: 24px; }
-  .geen-school-visual { aspect-ratio: 16/9; }
+  .geen-school { padding: 28px 24px; grid-template-columns: 1fr; gap: 28px; }
+  .geen-school-tekst { font-size: 16px; }
+  .geen-school-visual { aspect-ratio: 16/9; order: -1; }
 
   /* Urgency inline */
   .urgency-inline { padding: 20px 20px; font-size: 15px; flex-direction: column; text-align: center; gap: 12px; margin: 0 16px; }
@@ -2450,13 +2492,15 @@ a { text-decoration: none; }
 
   <div class="geen-school r">
     <div class="geen-school-tekst">
-      <strong>Hoe werkt het in de praktijk?</strong> Je logt gewoon in via je iPhone, iPad, smartphone, tablet of computer. Onze ledenomgeving met cursussen en community staat op onze website. Maar we hebben ook een eigen app die je installeert op je smartphone of tablet. Van daaruit heb je toegang tot alles wat we aanbieden. Je hoeft nergens naartoe. Je hoeft niet op een bepaald tijdstip klaar te zitten. <strong>Je bekijkt wat je wilt, wanneer je wilt, op je eigen tempo.</strong><br><br>
-      <strong>En voor alle duidelijkheid: dit is geen school.</strong> Er zijn geen lessen die je "moet" volgen, geen deadlines, geen schema. Je zorgt voor de kleinkinderen, je hebt het druk met mantelzorg, je hebt een hele week geen tijd? Prima. Alles wacht geduldig op jou.<br><br>
-      En we weten hoe het gaat: je bekijkt een interessante video, maar een week later als je het zelf wilt doen, ben je een stapje vergeten. Dat is heel normaal als je niet met computers bent opgegroeid. Daarom is Plus+ jouw <strong>oneindige naslagwerk</strong>. Je hoeft niets uit je hoofd te leren. Ben je iets vergeten? Dan kijk je de video gewoon rustig opnieuw, of je pakt ons snelle Stappenplan erbij. Alles staat altijd voor je klaar. <strong>Op jouw moment, op jouw tempo.</strong>
+      <div class="geen-school-eyebrow">In de praktijk</div>
+      <p><strong>Hoe werkt het in de praktijk?</strong> Je logt gewoon in via je iPhone, iPad, smartphone, tablet of computer. Onze ledenomgeving met cursussen en community staat op onze website. Maar we hebben ook een eigen app die je installeert op je smartphone of tablet. Van daaruit heb je toegang tot alles wat we aanbieden. Je hoeft nergens naartoe. Je hoeft niet op een bepaald tijdstip klaar te zitten. <strong>Je bekijkt wat je wilt, wanneer je wilt, op je eigen tempo.</strong></p>
+      <p><strong>En voor alle duidelijkheid: dit is geen school.</strong> Er zijn geen lessen die je "moet" volgen, geen deadlines, geen schema. Je zorgt voor de kleinkinderen, je hebt het druk met mantelzorg, je hebt een hele week geen tijd? Prima. Alles wacht geduldig op jou.</p>
+      <p>En we weten hoe het gaat: je bekijkt een interessante video, maar een week later als je het zelf wilt doen, ben je een stapje vergeten. Dat is heel normaal als je niet met computers bent opgegroeid. Daarom is Plus+ jouw <strong>oneindige naslagwerk</strong>. Je hoeft niets uit je hoofd te leren. Ben je iets vergeten? Dan kijk je de video gewoon rustig opnieuw, of je pakt ons snelle Stappenplan erbij. Alles staat altijd voor je klaar. <strong>Op jouw moment, op jouw tempo.</strong></p>
     </div>
     <div class="geen-school-visual">
-      <!-- PLACEHOLDER: vervang door sfeerbeeld van iemand ontspannen met iPad op de bank -->
-      <div class="placeholder-label">Sfeerbeeld: ontspannen met iPad op de bank, kopje koffie erbij</div>
+      <!-- PLACEHOLDER: vervang door 3D Swiss Army knife cartoon visual -->
+      <div class="geen-school-placeholder-icon">🛡️</div>
+      <div class="geen-school-placeholder-label">Hier komt een illustratie van een Zwitsers zakmes<br>met digitale tools als symbool voor Plus+</div>
     </div>
   </div>
 
