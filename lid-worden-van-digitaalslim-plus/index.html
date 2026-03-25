@@ -1193,6 +1193,68 @@
   .cta-inner .btn-primary { font-size: 18px; padding: 18px 40px; }
   .cta-note { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 14px; }
 
+  /* === URGENTIE BANNER === */
+  .urgentie-banner {
+    background: #E53E3E;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .urgentie-banner a {
+    display: inline-block;
+    background: #ffffff;
+    color: #E53E3E;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background var(--transition);
+  }
+  .urgentie-banner a:hover { background: #f0f0f0; }
+
+  /* === PRIJS TUSSENSECTIE === */
+  .prijs-tussenblok {
+    text-align: center;
+    padding: 40px 24px;
+    background: var(--bg-alt);
+  }
+  .prijs-tussenblok-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .prijs-tussenblok .prijs-groot {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--brand);
+    letter-spacing: -1px;
+  }
+  .prijs-tussenblok .prijs-periode {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+  .prijs-tussenblok .prijs-boodschap {
+    font-size: 17px;
+    color: var(--text);
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+  .prijs-tussenblok .prijs-urgentie {
+    display: inline-block;
+    background: #E53E3E;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 8px;
+    margin-top: 16px;
+  }
+
   /* === FOOTER === */
   .footer {
     text-align: center;
@@ -1415,6 +1477,13 @@
     .faq-question { padding: 16px 18px; font-size: 15px; }
     .faq-answer-inner { padding: 0 18px 16px; font-size: 14px; }
 
+    /* Urgentie banners */
+    .urgentie-banner { font-size: 14px; padding: 16px 18px; }
+    .urgentie-banner a { font-size: 13px; padding: 6px 16px; }
+    .prijs-tussenblok .prijs-groot { font-size: 38px; }
+    .prijs-tussenblok .prijs-boodschap { font-size: 15px; }
+    .prijs-tussenblok .prijs-urgentie { font-size: 13px; }
+
     /* Prijzen */
     .prijzen-section { padding: 36px 16px; }
     .prijzen-uitleg { font-size: 15px; }
@@ -1622,6 +1691,16 @@
   </div>
 </section>
 
+<!-- PRIJS TUSSENSECTIE -->
+<section class="prijs-tussenblok reveal">
+  <div class="prijs-tussenblok-inner">
+    <div class="prijs-groot">&euro;139</div>
+    <div class="prijs-periode">per jaar voor alles wat je hierboven ziet</div>
+    <p class="prijs-boodschap">Alle cursussen, Stappenplannen, de community, persoonlijke hulp en de nieuwe E-mailchecker app. Alles inbegrepen, geen verborgen kosten.</p>
+    <div class="prijs-urgentie">Binnenkort wordt dit &euro;159. Wie er nu bij komt, behoudt &euro;139 voor altijd.</div>
+  </div>
+</section>
+
 <!-- ============================================ -->
 <!-- HET ZAKMES IN ACTIE: STAPPENPLAN -->
 <!-- ============================================ -->
@@ -1773,6 +1852,12 @@
   </div>
 </section>
 
+<!-- URGENTIE BANNER 1: na kanalen -->
+<div class="urgentie-banner reveal">
+  De prijs stijgt binnenkort van &euro;139 naar &euro;159. Schrijf je nu in en zet je prijs vast.
+  <br><a href="#prijzen">Schrijf je nu in</a>
+</div>
+
 <!-- ============================================ -->
 <!-- AANPASSING 7: TESTIMONIALS (mix bestaand + cursus + placeholders) -->
 <!-- ============================================ -->
@@ -1849,6 +1934,12 @@
     <p class="cta-sub">Vanaf &euro;2,67 per week. Minder dan een koffietje. Op elk moment opzegbaar.</p>
   </div>
 </section>
+
+<!-- URGENTIE BANNER 2: na testimonials -->
+<div class="urgentie-banner reveal">
+  Laatste kans aan de huidige prijs. Wie er nu bij komt voor &euro;139, behoudt die prijs voor altijd.
+  <br><a href="#prijzen">Bekijk de prijzen</a>
+</div>
 
 <!-- Vergelijking met losse cursussen - verplaatst naar voor de FAQ -->
 <section class="alles-section">
@@ -1980,6 +2071,9 @@
 <!-- SECTIE 11: PRIJZEN -->
 <!-- ============================================ -->
 <section class="prijzen-section" id="prijzen">
+  <div class="urgentie-banner" style="border-radius: 12px; max-width: 680px; margin: 0 auto 32px; padding: 18px 24px; font-size: 15px;">
+    &#9200; De prijs van DigitaalSlim Plus+ stijgt binnenkort van &euro;139 naar &euro;159 per jaar. Schrijf je nu in en je betaalt <strong>voor altijd &euro;139</strong>. Jouw prijs gaat nooit meer omhoog.
+  </div>
   <div class="section-label">Word lid</div>
   <h2 class="section-heading">Eerlijke prijzen. Geen verrassingen.</h2>
 
