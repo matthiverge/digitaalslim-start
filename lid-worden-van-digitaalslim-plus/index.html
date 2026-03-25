@@ -171,6 +171,27 @@
     height: auto;
     filter: drop-shadow(0 16px 40px rgba(85,60,247,0.12)) drop-shadow(0 4px 12px rgba(26,22,39,0.08));
   }
+  .mockup-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  .mockup-badge {
+    position: absolute;
+    top: 12px;
+    right: -18px;
+    background: var(--accent);
+    color: var(--bg-dark);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 16px;
+    border-radius: 10px;
+    line-height: 1.4;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(254,187,11,0.35), 0 2px 6px rgba(0,0,0,0.12);
+    transform: rotate(3deg);
+    z-index: 2;
+    max-width: 200px;
+  }
   .hero-results {
     display: flex;
     gap: 8px;
@@ -1312,6 +1333,7 @@
     .hero-logo { height: 64px; margin-bottom: 12px; }
     .hero-badge { font-size: 13px; padding: 6px 14px; margin-bottom: 12px; }
     .hero-mockup { max-width: 240px; }
+    .mockup-badge { font-size: 11px; padding: 7px 12px; right: -8px; top: 6px; max-width: 160px; }
     .hero-visual { order: -1; }
     .hero-results { flex-direction: column; align-items: center; gap: 6px; }
     .hero-result { font-size: 13px; padding: 8px 12px; }
@@ -1452,7 +1474,10 @@
     </div>
 
     <div class="hero-visual">
-      <img src="afbeeldingen/DS-Plus-Mockup-2026.png" alt="DigitaalSlim Plus+ op iPad, iPhone en Mac" class="hero-mockup">
+      <div class="mockup-wrapper">
+        <img src="afbeeldingen/DS-Plus-Mockup-2026.png" alt="DigitaalSlim Plus+ op iPad, iPhone en Mac" class="hero-mockup">
+        <div class="mockup-badge">Laatste kans om in te schrijven vóór de prijsverhoging</div>
+      </div>
     </div>
   </div>
 </section>
