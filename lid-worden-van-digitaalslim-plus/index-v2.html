@@ -1,0 +1,2198 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word lid van DigitaalSlim Plus+ | Jouw digitale thuisbasis</title>
+<meta name="description" content="Word lid van DigitaalSlim Plus+ en krijg toegang tot de community, videocursussen, stappenplannen en persoonlijke hulp. Altijd op jouw tempo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F7F5FC;
+    --text: #1A1627;
+    --text-secondary: #2E2845;
+    --text-muted: #4A4562;
+    --white: #FFFFFF;
+    --brand: #553CF7;
+    --brand-mid: #883DF4;
+    --brand-soft: rgba(85,60,247,0.07);
+    --accent: #FEBB0B;
+    --accent-hover: #FEC942;
+    --dark: #13111E;
+    --border: #E4E0F0;
+    --green: #16a34a;
+    --green-soft: rgba(34,197,94,0.06);
+    --green-border: rgba(34,197,94,0.2);
+    --shadow: 0 16px 48px rgba(85,60,247,0.08), 0 4px 12px rgba(26,22,39,0.04);
+    --shadow-sm: 0 4px 20px rgba(85,60,247,0.06), 0 1px 6px rgba(26,22,39,0.03);
+    --shadow-lg: 0 24px 64px rgba(85,60,247,0.1), 0 8px 20px rgba(26,22,39,0.05);
+    --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* === STICKY BAR === */
+  .sticky-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #E53E3E;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  .sticky-bar span { color: #ffffff; font-weight: 700; }
+  .sticky-bar a {
+    background: #ffffff;
+    color: #E53E3E;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    margin-left: 8px;
+    transition: background var(--transition);
+  }
+  .sticky-bar a:hover { background: #f0f0f0; }
+
+  /* === BUTTONS === */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: var(--dark);
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 16px 36px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--transition);
+    box-shadow: 0 4px 16px rgba(254,187,11,0.3);
+  }
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(254,187,11,0.35);
+  }
+  .btn-primary:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 4px 16px rgba(254,187,11,0.3);
+  }
+
+  /* === HERO === */
+  .hero {
+    background: linear-gradient(160deg, #FFFFFF 0%, #F7F5FC 40%, #F0ECF9 70%, #F7F5FC 100%);
+    padding: 48px 24px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 80%, rgba(85,60,247,0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at 30% 20%, rgba(136,61,244,0.03) 0%, transparent 40%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+  .hero-content {
+    flex: 1;
+    min-width: 0;
+  }
+  .hero-visual {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-logo { height: 80px; width: auto; margin-bottom: 16px; }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(254,187,11,0.12);
+    border: 1px solid rgba(254,187,11,0.3);
+    border-radius: 50px;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #9A7200;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -1.5px;
+    line-height: 1.18;
+    margin-bottom: 14px;
+  }
+  .hero h1 span { color: var(--brand); }
+  .hero-sub {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 0 20px;
+    line-height: 1.65;
+  }
+  .hero-mockup {
+    max-width: 460px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 16px 40px rgba(85,60,247,0.12)) drop-shadow(0 4px 12px rgba(26,22,39,0.08));
+  }
+  .mockup-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  .mockup-badge {
+    position: absolute;
+    top: -10px;
+    right: -24px;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #E53E3E;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: center;
+    padding: 20px;
+    clip-path: polygon(50% 0%, 61% 11%, 74% 4%, 80% 18%, 94% 17%, 93% 31%, 100% 42%, 92% 50%, 100% 58%, 93% 69%, 94% 83%, 80% 82%, 74% 96%, 61% 89%, 50% 100%, 39% 89%, 26% 96%, 20% 82%, 6% 83%, 7% 69%, 0% 58%, 8% 50%, 0% 42%, 7% 31%, 6% 17%, 20% 18%, 26% 4%, 39% 11%);
+    filter: drop-shadow(0 3px 8px rgba(0,0,0,0.2));
+    transform: rotate(6deg);
+    z-index: 2;
+  }
+  .hero-results {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .hero-result {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow-sm);
+  }
+  .hero-result-icon { font-size: 16px; flex-shrink: 0; }
+  .hero-cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .hero-note { font-size: 14px; color: var(--text-muted); }
+
+  /* === TRUST BAR === */
+  .trust-bar {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding: 20px 24px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+  .trust-item-icon { font-size: 16px; }
+
+  /* === MATTHIAS MINI === */
+  .oorsprong {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 24px 36px;
+  }
+  .oorsprong-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .oorsprong-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+    background: var(--brand-soft);
+  }
+  .oorsprong-name {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text);
+  }
+  .oorsprong-role {
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+  .oorsprong p {
+    font-size: 17px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+  .oorsprong p:last-of-type { margin-bottom: 0; }
+  .oorsprong strong { color: var(--text); }
+  .oorsprong-foto {
+    width: 100%;
+    max-width: 520px;
+    margin: 32px auto;
+    display: block;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+  }
+  .oorsprong-caption {
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: -16px;
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  /* === SHARED === */
+  .section-heading {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -1px;
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .section-sub {
+    text-align: center;
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+  }
+  .section-divider {
+    max-width: 120px;
+    height: 1px;
+    background: var(--border);
+    margin: 0 auto;
+  }
+  .section-cta {
+    text-align: center;
+    margin-top: 32px;
+    padding-top: 8px;
+  }
+  .cta-sub {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 12px;
+  }
+
+  /* === HERKENNING === */
+  .herkenning-section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+  .herkenning-section h2 {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    margin-bottom: 10px;
+    line-height: 1.25;
+  }
+  .herkenning-intro {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+  .herkenning-items {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: left;
+    margin-bottom: 28px;
+  }
+  .herkenning-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .herkenning-item-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .herkenning-item-icon .icon-svg {
+    width: 28px;
+    height: 28px;
+  }
+  .herkenning-item p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .herkenning-closing {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 28px;
+  }
+  .herkenning-bridge {
+    background: var(--brand-soft);
+    border: 1px solid rgba(85,60,247,0.1);
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-top: 28px;
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  .herkenning-bridge strong { color: var(--text); }
+
+  /* === WAAROM LIDMAATSCHAP === */
+  .waarom-section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+    text-align: center;
+  }
+  .waarom-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 28px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+  }
+  .waarom-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  .waarom-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 12px;
+  }
+  .waarom-card p:last-child { margin-bottom: 0; }
+  .waarom-card strong { color: var(--text); }
+
+  /* === GEEN SCHOOL === */
+  .geen-school {
+    background: var(--brand-soft);
+    border: 1px solid rgba(85,60,247,0.1);
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin-top: 32px;
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    text-align: left;
+  }
+  .geen-school strong { color: var(--text); }
+
+  /* === VIER PIJLERS === */
+  .pijlers-section {
+    padding: 48px 24px;
+    background: var(--white);
+  }
+  .pijlers-section > .section-label,
+  .pijlers-section > .section-heading,
+  .pijlers-section > .section-sub,
+  .pijlers-section > .pijlers-grid,
+  .pijlers-section > .geen-school,
+  .pijlers-section > .section-cta { max-width: 1000px; margin-left: auto; margin-right: auto; }
+  .pijlers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .pijler-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px 26px;
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .pijler-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .pijler-card-img {
+    width: calc(100% + 52px);
+    margin: -30px -26px 18px -26px;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+  }
+  .pijler-card-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .pijler-icon {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    background: var(--brand-soft);
+    border: 1px solid rgba(85,60,247,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    font-size: 22px;
+  }
+  .pijler-card h3 { font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+  .pijler-card .pijler-intro { font-size: 15px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 12px; }
+  .pijler-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .pijler-features li {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding-left: 24px;
+    position: relative;
+  }
+  .pijler-features li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: var(--brand);
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .pijler-stat {
+    display: inline-block;
+    margin-top: 10px;
+    background: var(--green-soft);
+    border: 1px solid var(--green-border);
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--green);
+  }
+  .pijler-teaser {
+    display: inline-block;
+    margin-top: 10px;
+    background: rgba(254,187,11,0.1);
+    border: 1px solid rgba(254,187,11,0.25);
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #9A7200;
+  }
+  @media (max-width: 768px) {
+    .pijlers-grid { grid-template-columns: 1fr; }
+  }
+
+  /* === COMMUNITY IN ACTIE === */
+  .community-section {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+  .community-section.bg-warm {
+    max-width: none;
+    background: rgba(254,187,11,0.03);
+  }
+  .community-intro {
+    max-width: 640px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+  .community-intro p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+  .video-card {
+    background: var(--white);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(85,60,247,0.08), 0 4px 16px rgba(26,22,39,0.05);
+    border: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .video-embed {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #0a0a0a;
+  }
+  .video-embed iframe { width: 100%; height: 100%; border: none; }
+  .miranda-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 32px;
+  }
+  .miranda-step {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+  }
+  .miranda-step-info { padding: 22px 26px; }
+  .miranda-step-label {
+    font-size: 13px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 2px;
+    color: var(--brand); margin-bottom: 6px;
+  }
+  .miranda-step-info h3 { font-size: 17px; font-weight: 800; color: var(--text); margin-bottom: 6px; line-height: 1.3; }
+  .miranda-step-info p { font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
+  .miranda-step-img img { width: 100%; display: block; }
+
+  /* === ZAKMES STAPPENPLAN === */
+  .zakmes-stappen {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    position: relative;
+    margin-top: 36px;
+  }
+  .zakmes-stappen::before {
+    content: '';
+    position: absolute;
+    left: 28px;
+    top: 48px;
+    bottom: 48px;
+    width: 3px;
+    background: linear-gradient(to bottom, #FEBB0B, #F5A623, #22c55e);
+    border-radius: 3px;
+  }
+  .zakmes-stap {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+  }
+  .zakmes-stap-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 800;
+    flex-shrink: 0;
+    z-index: 1;
+    box-shadow: 0 6px 20px rgba(254,187,11,0.25);
+  }
+  .zakmes-stap.done .zakmes-stap-badge {
+    background: #22c55e;
+    color: white;
+    box-shadow: 0 6px 20px rgba(34,197,94,0.25);
+  }
+  .zakmes-stap-card {
+    background: var(--white);
+    border-radius: 18px;
+    overflow: hidden;
+    flex: 1;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+  }
+  .zakmes-stap-body { padding: 22px 26px; }
+  .zakmes-stap-label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--brand);
+    margin-bottom: 5px;
+  }
+  .zakmes-stap-title {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  .zakmes-stap-desc {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+  .zakmes-stap-tip {
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #92400e;
+    line-height: 1.55;
+  }
+  .zakmes-stap-tip strong { color: #78350f; }
+  .zakmes-stap-media {
+    border-top: 1px solid var(--border);
+    background: #fafafa;
+  }
+  .zakmes-stap-media img { width: 100%; display: block; }
+  @media (max-width: 600px) {
+    .zakmes-stap-badge { width: 44px; height: 44px; font-size: 17px; }
+    .zakmes-stappen::before { left: 22px; }
+    .zakmes-stap { gap: 14px; }
+    .zakmes-stap-title { font-size: 17px; }
+  }
+
+  /* === COMMUNITY LEVEND PLATFORM === */
+  .community-vraag-blok {
+    background: var(--brand-soft);
+    border: 1px solid rgba(85,60,247,0.1);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-top: 28px;
+    text-align: left;
+  }
+  .community-vraag-blok p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 10px;
+  }
+  .community-vraag-blok p:last-child { margin-bottom: 0; }
+  .community-vraag-blok strong { color: var(--text); }
+  .community-placeholder {
+    margin-top: 24px;
+    background: var(--white);
+    border: 2px dashed var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  /* === KANALEN + VEILIG (samengevoegd) === */
+  .kanalen-section {
+    padding: 48px 24px;
+    background: var(--white);
+  }
+  .kanalen-section > .section-label,
+  .kanalen-section > .section-heading,
+  .kanalen-section > .section-sub,
+  .kanalen-section > .kanalen-layout,
+  .kanalen-section > .veilig-highlights { max-width: 960px; margin-left: auto; margin-right: auto; }
+  .kanalen-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+  }
+  .kanalen-screenshot {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    max-height: 560px;
+  }
+  .kanalen-screenshot img {
+    width: 100%; height: 100%;
+    display: block; border-radius: 16px;
+    object-fit: cover; object-position: top center;
+  }
+  .kanalen-list { display: flex; flex-direction: column; gap: 12px; }
+  .kanaal-item {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex; gap: 14px; align-items: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition);
+  }
+  .kanaal-item:hover { transform: translateY(-2px); }
+  .kanaal-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: var(--brand-soft);
+    border: 1px solid rgba(85,60,247,0.1);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; font-size: 18px;
+  }
+  .kanaal-item h4 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .kanaal-item p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+  .veilig-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 40px;
+  }
+  .veilig-highlight {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    text-align: center;
+  }
+  .veilig-highlight-icon { font-size: 20px; margin-bottom: 6px; }
+  .veilig-highlight p { font-size: 14px; color: var(--text-secondary); line-height: 1.5; font-weight: 600; }
+  @media (max-width: 768px) {
+    .kanalen-layout { grid-template-columns: 1fr; }
+    .veilig-highlights { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 480px) {
+    .veilig-highlights { grid-template-columns: 1fr; }
+  }
+
+  /* === TESTIMONIALS === */
+  .testimonials-section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+  .testimonials-section.bg-warm { max-width: none; background: rgba(254,187,11,0.03); }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; margin-top: 48px;
+  }
+  .testimonial-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .testimonial-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .testimonial-text { padding: 22px 24px; }
+  .testimonial-text blockquote {
+    font-size: 15px; color: var(--text-secondary);
+    line-height: 1.6; font-style: italic; margin-bottom: 10px;
+  }
+  .testimonial-text .testimonial-name { font-size: 15px; font-weight: 700; color: var(--text); }
+  .testimonial-text .testimonial-role { font-size: 13px; color: var(--text-muted); }
+
+  /* Featured transformation testimonial */
+  .testimonial-featured {
+    grid-column: 1 / -1;
+    background: var(--brand-soft);
+    border: 1px solid rgba(85,60,247,0.15);
+    border-radius: 20px;
+    padding: 28px 32px;
+  }
+  .testimonial-featured blockquote {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+  .testimonial-featured .testimonial-name { font-size: 15px; font-weight: 700; color: var(--text); }
+  .testimonial-featured .testimonial-role { font-size: 14px; color: var(--text-muted); }
+  .testimonial-placeholder {
+    grid-column: 1 / -1;
+    background: rgba(254,187,11,0.06);
+    border: 2px dashed rgba(254,187,11,0.3);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .testimonial-featured { grid-column: 1; }
+    .testimonial-placeholder { grid-column: 1; }
+  }
+
+  /* === MATTHIAS === */
+  .matthias-section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+  .matthias-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .matthias-photo {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+  }
+  .matthias-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, var(--brand-soft) 0%, rgba(136,61,244,0.08) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+  .matthias-content {
+    padding: 32px 28px;
+  }
+  .matthias-content h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+  .matthias-content p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 12px;
+  }
+  .matthias-content p:last-child { margin-bottom: 0; }
+
+  /* === ALLES INBEGREPEN === */
+  .alles-section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px;
+    text-align: center;
+  }
+  .alles-section > p {
+    font-size: 16px; color: var(--text-secondary);
+    line-height: 1.75; max-width: 600px;
+    margin: 0 auto 32px;
+  }
+  .alles-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+  }
+  .alles-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 12px;
+  }
+  .alles-card p:last-child { margin-bottom: 0; }
+  .alles-card strong { color: var(--text); }
+
+  /* === ZAKMES VOORBEELDEN === */
+  .zakmes-voorbeelden {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 28px 0 24px;
+    text-align: left;
+  }
+  .zakmes-voorbeeld {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 22px;
+    box-shadow: var(--shadow-sm);
+  }
+  .zakmes-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .zakmes-voorbeeld p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
+  }
+  .zakmes-voorbeeld strong { color: var(--text); }
+  .zakmes-vergelijking {
+    background: var(--brand-soft);
+    border: 1px solid rgba(85,60,247,0.1);
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-top: 28px;
+    text-align: left;
+  }
+  .zakmes-vergelijking p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 10px;
+  }
+  .zakmes-vergelijking p:last-child { margin-bottom: 0; }
+  .zakmes-vergelijking strong { color: var(--text); }
+
+  /* === FAQ === */
+  .faq-section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px;
+  }
+  .faq-list { margin-top: 28px; display: flex; flex-direction: column; gap: 10px; }
+  .faq-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .faq-question {
+    width: 100%; background: none; border: none;
+    padding: 20px 24px;
+    font-family: inherit; font-size: 16px; font-weight: 700;
+    color: var(--text); text-align: left; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .faq-question:hover { color: var(--brand); }
+  .faq-icon {
+    flex-shrink: 0; width: 28px; height: 28px;
+    border-radius: 50%; background: var(--brand-soft);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; color: var(--brand);
+    transition: transform var(--transition);
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+  .faq-item.open .faq-answer { max-height: 500px; }
+  .faq-answer-inner { padding: 0 24px 20px; font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+
+  /* === PRIJZEN === */
+  .prijzen-section {
+    padding: 48px 24px;
+    background: var(--white);
+  }
+  .prijzen-section > .section-label,
+  .prijzen-section > .section-heading,
+  .prijzen-section > .prijzen-uitleg,
+  .prijzen-section > .prijzen-bevriezing,
+  .prijzen-section > .prijzen-checklist,
+  .prijzen-section > .prijzen-quote,
+  .prijzen-section > .prijzen-grid,
+  .prijzen-section > .prijs-note,
+  .prijzen-section > .prijs-garantie { max-width: 880px; margin-left: auto; margin-right: auto; }
+  .prijzen-uitleg {
+    max-width: 640px; margin: 0 auto 16px;
+    text-align: center; font-size: 16px;
+    color: var(--text-secondary); line-height: 1.75;
+  }
+  .prijzen-bevriezing {
+    max-width: 580px; margin: 0 auto 40px;
+    text-align: center;
+    background: var(--green-soft);
+    border: 1px solid var(--green-border);
+    border-radius: 14px;
+    padding: 18px 24px;
+    font-size: 15px; color: var(--text-secondary); line-height: 1.65;
+  }
+  .prijzen-bevriezing strong { color: var(--green); }
+  .prijzen-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; max-width: 680px; margin: 0 auto;
+    align-items: stretch;
+  }
+  .prijs-card {
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 28px;
+    text-align: center;
+    position: relative;
+    transition: transform var(--transition), box-shadow var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .prijs-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .prijs-card.popular {
+    border-color: var(--brand);
+    background: linear-gradient(180deg, rgba(85,60,247,0.03) 0%, var(--bg) 100%);
+  }
+  .prijs-card.popular::before {
+    content: 'Meest gekozen';
+    position: absolute; top: -13px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--brand); color: white;
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    padding: 5px 16px; border-radius: 50px; white-space: nowrap;
+  }
+  .prijs-period { font-size: 15px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; }
+  .prijs-badge {
+    display: inline-block;
+    background: rgba(254,187,11,0.12); color: #9A7200;
+    font-size: 13px; font-weight: 700;
+    padding: 3px 10px; border-radius: 6px; margin-bottom: 8px;
+  }
+  .prijs-strikethrough {
+    text-decoration: line-through;
+    color: var(--text-muted); font-size: 16px;
+    font-weight: 500; margin-bottom: 4px;
+  }
+  .prijs-amount {
+    font-size: 44px; font-weight: 800;
+    color: var(--text); line-height: 1.1; margin-bottom: 4px;
+  }
+  .prijs-amount span { font-size: 18px; font-weight: 600; color: var(--text-muted); }
+  .prijs-per { font-size: 14px; color: var(--text-muted); }
+  .prijs-besparing { margin-bottom: 0; }
+  .prijs-card .btn-primary { width: 100%; font-size: 15px; padding: 14px 24px; margin-top: auto; }
+  .prijs-card .btn-primary.btn-outline {
+    background: transparent; color: var(--brand);
+    border: 2px solid var(--brand); box-shadow: none;
+  }
+  .prijs-card .btn-primary.btn-outline:hover { background: var(--brand-soft); }
+  .prijzen-checklist {
+    max-width: 580px; margin: 0 auto 32px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8px 24px; text-align: left;
+  }
+  .prijzen-check {
+    font-size: 15px; color: var(--text-secondary); line-height: 1.6;
+    padding: 4px 0;
+  }
+  .prijzen-check::before {
+    content: '\2713'; color: var(--green); font-weight: 700; margin-right: 8px;
+  }
+  .prijzen-quote {
+    max-width: 580px; margin: 0 auto 36px;
+    text-align: center; font-style: italic;
+    font-size: 16px; color: var(--text-secondary); line-height: 1.7;
+  }
+  .prijzen-quote .pq-name {
+    display: block; margin-top: 6px;
+    font-style: normal; font-weight: 700; font-size: 14px; color: var(--text);
+  }
+  .prijs-besparing {
+    font-size: 13px; color: var(--green); font-weight: 600; margin-top: 6px;
+  }
+  .prijs-garantie {
+    max-width: 580px; margin: 20px auto 0;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--green-soft); border: 1px solid var(--green-border);
+    border-radius: 12px; padding: 14px 20px;
+    font-size: 15px; color: var(--text-secondary); line-height: 1.5;
+  }
+  .prijs-garantie-icon { font-size: 24px; flex-shrink: 0; }
+  .prijs-note {
+    text-align: center; margin-top: 20px;
+    font-size: 15px; color: var(--text-muted); line-height: 1.6;
+  }
+  @media (max-width: 600px) {
+    .prijzen-grid { grid-template-columns: 1fr; max-width: 360px; }
+  }
+
+  /* === GARANTIE === */
+  .garantie-section {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 40px 24px 48px;
+    text-align: center;
+  }
+  .garantie-card {
+    background: var(--green-soft);
+    border: 1px solid var(--green-border);
+    border-radius: 20px;
+    padding: 32px 28px;
+  }
+  .garantie-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+  .garantie-card h3 {
+    font-size: 20px; font-weight: 800;
+    color: var(--text); margin-bottom: 12px;
+  }
+  .garantie-card p {
+    font-size: 15px; color: var(--text-secondary);
+    line-height: 1.7; margin-bottom: 10px;
+  }
+  .garantie-card p:last-child { margin-bottom: 0; }
+  .garantie-card strong { color: var(--green); }
+
+  /* === CTA === */
+  .cta-section {
+    background: linear-gradient(160deg, #13111E 0%, #1C1535 40%, #110F1A 100%);
+    padding: 48px 24px;
+    text-align: center;
+  }
+  .cta-inner { max-width: 620px; margin: 0 auto; }
+  .cta-inner h2 {
+    font-size: 32px; font-weight: 800;
+    color: rgba(255,255,255,0.95);
+    letter-spacing: -0.8px; margin-bottom: 16px; line-height: 1.2;
+  }
+  .cta-inner p {
+    font-size: 16px; color: rgba(255,255,255,0.5);
+    margin-bottom: 28px; line-height: 1.7;
+  }
+  .cta-inner .btn-primary { font-size: 18px; padding: 18px 40px; }
+  .cta-note { font-size: 14px; color: rgba(255,255,255,0.5); margin-top: 14px; }
+
+  /* === URGENTIE BANNER === */
+  .urgentie-banner {
+    background: #E53E3E;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .urgentie-banner a {
+    display: inline-block;
+    background: #ffffff;
+    color: #E53E3E;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background var(--transition);
+  }
+  .urgentie-banner a:hover { background: #f0f0f0; }
+
+  /* === PRIJS TUSSENSECTIE === */
+  .prijs-tussenblok {
+    text-align: center;
+    padding: 40px 24px;
+    background: var(--bg-alt);
+  }
+  .prijs-tussenblok-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .prijs-tussenblok .prijs-groot {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--brand);
+    letter-spacing: -1px;
+  }
+  .prijs-tussenblok .prijs-periode {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+  .prijs-tussenblok .prijs-boodschap {
+    font-size: 17px;
+    color: var(--text);
+    margin-top: 14px;
+    line-height: 1.6;
+  }
+  .prijs-tussenblok .prijs-urgentie {
+    display: inline-block;
+    background: #E53E3E;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 18px;
+    border-radius: 8px;
+    margin-top: 16px;
+  }
+
+  /* === FOOTER === */
+  .footer {
+    text-align: center;
+    padding: 32px 24px;
+    border-top: 1px solid var(--border);
+  }
+  .footer-text { font-size: 14px; color: var(--text-muted); line-height: 1.8; }
+
+  /* === SCROLL REVEAL === */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* === FLOATING MOCKUP === */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .mockup-wrapper {
+    animation: float 4s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mockup-wrapper { animation: none; }
+  }
+
+  /* === GRADIENT TEXT === */
+  .gradient-text {
+    background: linear-gradient(135deg, #553CF7 0%, #883DF4 50%, #553CF7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* === SECTION LABEL PILL === */
+  .section-label {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 16px;
+    background: var(--brand-soft);
+    border: 1px solid rgba(85,60,247,0.12);
+    border-radius: 50px;
+    padding: 6px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--brand);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  /* === SVG ICON CONTAINERS === */
+  .icon-svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+  .icon-svg svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--brand);
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .icon-svg-gold svg { stroke: #9A7200; }
+  .icon-svg-green svg { stroke: var(--green); }
+  .icon-svg-white svg { stroke: white; }
+
+  /* === DECORATIVE QUOTE === */
+  .quote-decoration::before {
+    content: '\201C';
+    display: block;
+    font-size: 64px;
+    line-height: 1;
+    font-family: Georgia, serif;
+    color: rgba(85,60,247,0.12);
+    margin-bottom: -8px;
+  }
+
+  /* === SECTION BACKGROUNDS === */
+  .bg-soft { background: var(--bg); }
+  .bg-white { background: var(--white); }
+  .bg-warm { background: rgba(254,187,11,0.03); }
+  .community-section.bg-warm > .section-label,
+  .community-section.bg-warm > .section-heading,
+  .community-section.bg-warm > .community-intro,
+  .community-section.bg-warm > .zakmes-stappen,
+  .community-section.bg-warm > .community-vraag-blok,
+  .community-section.bg-warm > .community-placeholder { max-width: 880px; margin-left: auto; margin-right: auto; }
+  .testimonials-section.bg-warm > .section-label,
+  .testimonials-section.bg-warm > .section-heading,
+  .testimonials-section.bg-warm > .testimonials-grid,
+  .testimonials-section.bg-warm > .section-cta { max-width: 960px; margin-left: auto; margin-right: auto; }
+
+  /* === STICKY MOBILE CTA === */
+  .mobile-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border);
+    padding: 12px 20px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .mobile-cta.visible { transform: translateY(0); }
+  .mobile-cta .btn-primary {
+    width: 100%;
+    max-width: 400px;
+    font-size: 16px;
+    padding: 14px 28px;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    /* Sticky bar */
+    .sticky-bar { font-size: 11px; padding: 6px 12px; gap: 3px; flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    .sticky-bar span { display: inline; }
+    .sticky-bar a { font-size: 11px; padding: 3px 10px; margin-left: 6px; }
+
+    /* Hero */
+    .hero { padding: 32px 16px 28px; text-align: center; }
+    .hero-inner { flex-direction: column; gap: 20px; }
+    .hero-content { display: flex; flex-direction: column; align-items: center; }
+    .hero-sub { text-align: center; font-size: 15px; }
+    .hero h1 { font-size: 26px; letter-spacing: -0.8px; text-align: center; }
+    .hero-logo { height: 64px; margin-bottom: 12px; }
+    .hero-badge { font-size: 13px; padding: 6px 14px; margin-bottom: 12px; }
+    .hero-mockup { max-width: 240px; }
+    .mockup-badge { width: 100px; height: 100px; font-size: 10px; padding: 16px; right: -12px; top: -6px; }
+    .hero-visual { order: -1; }
+    .hero-results { flex-direction: column; align-items: center; gap: 6px; }
+    .hero-result { font-size: 13px; padding: 8px 12px; }
+    .hero-cta-group { align-items: center; }
+    .btn-primary { font-size: 16px; padding: 14px 28px; }
+
+    /* Shared */
+    .section-heading { font-size: 24px; letter-spacing: -0.5px; }
+    .section-label { font-size: 12px; padding: 5px 14px; margin-bottom: 12px; }
+    .section-sub { font-size: 15px; margin-bottom: 24px; }
+
+    /* Trust bar */
+    .trust-bar { gap: 12px; padding: 14px 16px; flex-direction: column; align-items: center; }
+    .trust-item { font-size: 13px; }
+
+    /* Herkenning */
+    .herkenning-section { padding: 36px 16px 32px; }
+    .herkenning-section h2 { font-size: 24px; }
+    .herkenning-item { padding: 14px 16px; }
+    .herkenning-item p { font-size: 14px; }
+    .herkenning-bridge { padding: 18px 20px; font-size: 15px; }
+
+    /* Oorsprong */
+    .oorsprong { padding: 32px 16px 28px; }
+    .oorsprong-header { flex-direction: column; text-align: center; }
+    .oorsprong p { font-size: 15px; margin-bottom: 16px; }
+    .oorsprong-foto { margin: 24px auto; border-radius: 12px; }
+
+    /* Pijlers */
+    .pijlers-section { padding: 36px 16px; }
+    .pijlers-grid { grid-template-columns: 1fr; gap: 16px; }
+    .pijler-card { padding: 24px 20px; }
+    .pijler-card-img { width: calc(100% + 40px); margin: -24px -20px 14px -20px; }
+    .pijler-icon { width: 44px; height: 44px; margin-bottom: 12px; }
+    .geen-school { padding: 18px 20px; font-size: 15px; margin-top: 24px; }
+
+    /* Zakmes stappen */
+    .community-section { padding: 36px 16px; }
+    .zakmes-stap { flex-direction: column; gap: 0; }
+    .zakmes-stap-badge { width: 44px; height: 44px; font-size: 18px; margin-bottom: -8px; margin-left: 20px; }
+    .zakmes-stap-card { margin-left: 0; }
+    .zakmes-stap-body { padding: 20px; }
+    .zakmes-stap-title { font-size: 17px; }
+    .zakmes-stap-desc { font-size: 14px; }
+
+    /* Community levend platform */
+    .community-vraag-blok { padding: 20px; font-size: 14px; }
+    .community-intro p { font-size: 15px; }
+
+    /* Kanalen */
+    .kanalen-section { padding: 36px 16px; }
+    .kanalen-layout { grid-template-columns: 1fr; gap: 24px; }
+    .kanalen-list { gap: 10px; }
+    .kanaal-item { padding: 12px 14px; }
+    .kanaal-item h4 { font-size: 15px; }
+    .kanaal-item p { font-size: 13px; }
+    .veilig-highlights { flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .veilig-highlight { font-size: 13px; }
+
+    /* Testimonials */
+    .testimonials-section { padding: 36px 16px; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .testimonial-featured { grid-column: 1; padding: 20px; }
+    .testimonial-featured blockquote { font-size: 15px; }
+    .testimonial-card { padding: 0; }
+
+    /* Alles sectie (vergelijking) */
+    .alles-section { padding: 36px 16px; }
+    .zakmes-vergelijking { padding: 20px; }
+    .zakmes-vergelijking p { font-size: 14px; }
+
+    /* FAQ */
+    .faq-section { padding: 36px 16px; }
+    .faq-question { padding: 16px 18px; font-size: 15px; }
+    .faq-answer-inner { padding: 0 18px 16px; font-size: 14px; }
+
+    /* Urgentie banners */
+    .urgentie-banner { font-size: 14px; padding: 16px 18px; }
+    .urgentie-banner a { font-size: 13px; padding: 6px 16px; }
+    .prijs-tussenblok .prijs-groot { font-size: 38px; }
+    .prijs-tussenblok .prijs-boodschap { font-size: 15px; }
+    .prijs-tussenblok .prijs-urgentie { font-size: 13px; }
+
+    /* Prijzen */
+    .prijzen-section { padding: 36px 16px; }
+    .prijzen-uitleg { font-size: 15px; }
+    .prijzen-bevriezing { padding: 14px 18px; font-size: 14px; }
+    .prijzen-checklist { grid-template-columns: 1fr; gap: 6px; }
+    .prijs-amount { font-size: 36px; }
+    .prijs-card { padding: 24px 20px; }
+
+    /* CTA */
+    .cta-section { padding: 48px 16px; }
+    .cta-inner h2 { font-size: 24px; }
+    .cta-inner p { font-size: 15px; }
+    .cta-inner .btn-primary { font-size: 16px; padding: 16px 32px; }
+
+    /* Mobile CTA */
+    .mobile-cta { display: block; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- AANPASSING 1: STICKY BALK -->
+<!-- ============================================ -->
+<div class="sticky-bar">
+  Laatste kans aan de huidige prijs. <span>Schrijf je in en zet je prijs vast.</span>
+  <a href="#prijzen">Schrijf je nu in</a>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTIE 1: HERO (aangepast: concrete resultaten + 2.000 leden) -->
+<!-- ============================================ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <img src="afbeeldingen/logo-digitaalslim-plus-geel.png" alt="DigitaalSlim Plus+" class="hero-logo">
+      <div class="hero-badge">
+        &#9200; Laatste kans: schrijf je in voor de prijsverhoging
+      </div>
+      <h1>Eindelijk iemand die het rustig en duidelijk aan je uitlegt.<br><span class="gradient-text">Hulp die altijd klaarstaat, op jouw tempo.</span></h1>
+      <p class="hero-sub">De digitale wereld verandert snel, maar jij hoeft niet sneller te gaan rennen. <strong>Wij filteren de chaos voor je.</strong> DigitaalSlim Plus+ is je vaste plek voor al je digitale vragen. Een warme club van mensen die elkaar helpen.</p>
+
+      <div class="hero-results">
+        <div class="hero-result">
+          <span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><path d="M12 8v4"/><circle cx="12" cy="16" r="0.5"/></svg></span>
+          Weet meteen of die verdachte mail echt is
+        </div>
+        <div class="hero-result">
+          <span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg></span>
+          Leer in 3 minuten hoe een Apple-update werkt
+        </div>
+        <div class="hero-result">
+          <span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+          Stel je vraag en krijg persoonlijk antwoord
+        </div>
+      </div>
+
+      <div class="hero-cta-group">
+        <a href="#prijzen" class="btn-primary">Bekijk wat erbij zit</a>
+        <p class="hero-note">Sluit je aan bij meer dan 2.000 leden. Op elk moment opzegbaar.</p>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="mockup-wrapper">
+        <img src="afbeeldingen/DS-Plus-Mockup-2026.png" alt="DigitaalSlim Plus+ op iPad, iPhone en Mac" class="hero-mockup">
+        <div class="mockup-badge">Schrijf je nu in en behoud de huidige prijs.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AANPASSING 2: TRUST BAR (10 jaar + 2.000 leden + 98%) -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="icon-svg"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span> Al meer dan 10 jaar actief</div>
+  <div class="trust-item"><span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span> 2.000+ DigitaalSlim Plus+ leden</div>
+  <div class="trust-item"><span class="icon-svg"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span> 98% tevredenheid</div>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTIE 2: HERKENNING -->
+<!-- ============================================ -->
+<section class="herkenning-section reveal">
+  <h2>Herken je dit?</h2>
+  <p class="herkenning-intro">DigitaalSlim Plus+ is speciaal gebouwd voor mensen die niet zijn opgegroeid met een iPad in de hand. Je kent je toestel ondertussen goed. De basis zit erin. Maar de wereld eromheen? Die draait door. En snel ook. Dat ligt niet aan jou. Het is gewoon een wereld die razendsnel verandert.</p>
+
+  <div class="herkenning-items">
+    <div class="herkenning-item reveal">
+      <div class="herkenning-item-icon"><span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 1 4 4v2H8V6a4 4 0 0 1 4-4z"/><rect x="3" y="8" width="18" height="14" rx="2"/><circle cx="12" cy="16" r="2"/></svg></span></div>
+      <p><strong>Overal hoor je over AI</strong>, maar je weet niet precies wat het voor jou betekent. Is het handig? Is het gevaarlijk? Of allebei? Zonder iemand om het aan te vragen, blijf je twijfelen en laat je handige functies links liggen.</p>
+    </div>
+    <div class="herkenning-item reveal">
+      <div class="herkenning-item-icon"><span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span></div>
+      <p><strong>Phishing-mails worden steeds beter nagemaakt.</strong> Zelfs ervaren mensen trappen erin. E&eacute;n verkeerde klik kan je honderden euro's kosten. En achteraf denk je: had ik dat maar even kunnen vragen.</p>
+    </div>
+    <div class="herkenning-item reveal">
+      <div class="herkenning-item-icon"><span class="icon-svg"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg></span></div>
+      <p><strong>Elke paar maanden verandert Apple weer iets</strong>, en dan ziet alles er net weer anders uit. Zelf uitzoeken kost je al snel een hele middag zoeken op internet, terwijl het antwoord in drie minuten te vinden is als je weet waar je moet kijken.</p>
+    </div>
+  </div>
+
+  <div class="herkenning-bridge">
+    <strong>Dat gevoel is heel begrijpelijk.</strong> De technologie van vandaag verandert zo snel dat een losse cursus al verouderd kan zijn voor je hem hebt afgemaakt. Zeker bij onderwerpen als AI en online veiligheid. Precies daarom bestaat DigitaalSlim Plus+: een lidmaatschap dat met je meegroeit. Nieuwe lessen worden toegevoegd zodra er iets verandert. De community geeft je antwoord op vragen die vandaag pas bestaan. En alles wat we in de toekomst bouwen, krijg je er automatisch bij. <strong>Geen extra kosten, geen nieuwe aankopen. Plus+ groeit gewoon mee.</strong>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- OORSPRONGVERHAAL: Matthias, Barcelona & het team -->
+<!-- Verplaatst: nu na herkenning, zodat lezer eerst de pijn herkent -->
+<!-- ============================================ -->
+<div class="oorsprong">
+  <div class="oorsprong-header">
+    <img src="afbeeldingen/matthias.png" alt="Matthias Moens" class="oorsprong-avatar">
+    <div>
+      <div class="oorsprong-name">Hey, ik ben Matthias.</div>
+      <div class="oorsprong-role">Oprichter van DigitaalSlim</div>
+    </div>
+  </div>
+
+  <p>Iets meer dan tien jaar geleden kocht mijn vader zijn allereerste iPad. Hij was er dolblij mee, maar zat al snel met vragen. Hoe sla ik een foto op? Waar is dat mailtje gebleven? Het probleem: ik woonde op dat moment in Barcelona. Ik kon niet even naast hem op de bank schuiven om het voor te doen. Dus begon ik simpele, duidelijke video's te maken die hij kon volgen op zijn eigen tempo. <strong>Dat werkte.</strong> Z&oacute; goed zelfs, dat het de basis werd van mijn allereerste cursussen.</p>
+
+  <img src="afbeeldingen/papa-en-gezin.jpg" alt="Matthias met zijn gezin en ouders" class="oorsprong-foto">
+  <p class="oorsprong-caption">Familie Moens, en de reden dat DigitaalSlim bestaat.</p>
+
+  <p>Maar de digitale wereld stond niet stil. Mijn moeder en haar partner bleven met nieuwe vragen komen. Hoe werkt dit nieuwe knopje na de update? Is dit mailtje wel te vertrouwen? Die dagelijkse, echte vragen werden mijn grootste inspiratiebron. Niet wat ik d&aacute;cht dat mensen moesten weten, maar waar ze &eacute;cht tegenaan liepen.</p>
+
+  <p><strong>Met DigitaalSlim Plus+ keren we terug naar die absolute essentie.</strong> Wat we voor mijn familie doen, doen we nu voor jou. We bouwen de lessen niet enkel rondom een vast lesprogramma, maar we luisteren naar jouw dagelijkse vragen in de community en maken daar direct nieuwe, simpele oplossingen voor. Precies zoals ik deed voor mijn vader vanuit Barcelona.</p>
+
+  <p>En nee, ik doe dit allang niet meer in mijn eentje. DigitaalSlim is uitgegroeid tot een prachtig bedrijf. Er staat nu een heel team van toegewijde mensen klaar die zich elke dag met volle inzet en datzelfde eindeloze geduld over jouw vragen buigen. Denk aan de behulpzame kleinzoon of dochter die je altijd even kunt bellen. Alleen hoef je ons niet te bellen. <strong>We staan elke dag voor je klaar in de community.</strong></p>
+</div>
+
+<!-- ============================================ -->
+<!-- SECTIE 3: VIER PIJLERS (met E-mailchecker teaser) -->
+<!-- ============================================ -->
+<section class="pijlers-section">
+  <div class="section-label">Wat zit er allemaal in?</div>
+  <h2 class="section-heading">Vier dingen die het verschil maken.</h2>
+  <p class="section-sub">Alles wat je nodig hebt om veilig mee te blijven doen. Op jouw tempo, met hulp wanneer je het nodig hebt.</p>
+
+  <div class="pijlers-grid">
+
+    <div class="pijler-card reveal">
+      <div class="pijler-card-img"><img src="afbeeldingen/pijler-veilige-haven.png" alt="De DigitaalSlim community" loading="lazy"></div>
+      <div class="pijler-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <h3>Je eigen veilige haven</h3>
+      <p class="pijler-intro">Een afgesloten community, <strong>alleen voor leden</strong>. Geen Facebook, geen reclame, geen onbekenden.</p>
+      <ul class="pijler-features">
+        <li>Stel je vraag en krijg <strong>binnen 24 uur</strong> antwoord</li>
+        <li>Persoonlijke uitleg met tekst en schermafbeeldingen</li>
+        <li>Goede vragen worden omgezet in video's of Stappenplannen</li>
+      </ul>
+    </div>
+
+    <div class="pijler-card reveal">
+      <div class="pijler-card-img"><img src="afbeeldingen/pijler-stappenplan.png" alt="Het DigitaalSlim Stappenplan" loading="lazy"></div>
+      <div class="pijler-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+      <h3>Het Stappenplan</h3>
+      <p class="pijler-intro">Een nieuwe manier van leren, <strong>als aanvulling op onze video's en community.</strong></p>
+      <ul class="pijler-features">
+        <li>Korte, visuele stappen op je iPad, iPhone of Mac</li>
+        <li>Elke stap is een los blokje. Weet je iets al? Sla het over</li>
+        <li>Volg alles op <strong>je eigen tempo</strong></li>
+      </ul>
+      <span class="pijler-stat">98% van de ondervraagde leden vindt dit de fijnste manier om iets te leren</span>
+    </div>
+
+    <div class="pijler-card reveal">
+      <div class="pijler-card-img"><img src="afbeeldingen/pijler-kookboek.png" alt="Overzicht van alle 25+ videocursussen in Het Digitale Kookboek"></div>
+      <div class="pijler-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+      <h3>Het Digitale Kookboek</h3>
+      <p class="pijler-intro">Toegang tot al onze videolessen. <strong>Zie het als een kookboek:</strong> je slaat het open bij wat je nodig hebt.</p>
+      <ul class="pijler-features">
+        <li>iPad, iPhone, Mac, iCloud, foto's, WhatsApp en meer</li>
+        <li>Geen volgorde, geen druk, geen verplichting</li>
+        <li><strong>Altijd bijgewerkt</strong> als Apple iets verandert of er iets nieuws bijkomt</li>
+      </ul>
+    </div>
+
+    <!-- AANPASSING 4: E-mailchecker teaser -->
+    <div class="pijler-card reveal">
+      <div class="pijler-card-img"><img src="afbeeldingen/pijler-emailchecker.png" alt="De DigitaalSlim E-mailchecker controleert verdachte e-mails"></div>
+      <div class="pijler-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3>Beschermd tegen phishing en oplichting</h3>
+      <p class="pijler-intro">Er is een echte phishingplaag aan de gang. Maar jij hoeft geen expert te worden om beschermd te blijven. <strong>Wij houden de wacht voor je.</strong></p>
+      <ul class="pijler-features">
+        <li>De nieuwe <strong>DigitaalSlim E-mailchecker app</strong>: controleer onbeperkt of een e-mail echt is. Of het nu 1 mail is of 50 per dag</li>
+        <li>Twijfel je over iets anders? Vraag het in de community. <strong>Niet alleen e-mails</strong>, maar ook sms'jes, WhatsApp-berichten of verdachte websites</li>
+        <li>Is het te priv&eacute; om in de community te plaatsen? Stuur ons een e-mail en we helpen je &eacute;&eacute;n op &eacute;&eacute;n verder</li>
+      </ul>
+      <span class="pijler-teaser">De nieuwe E-mailchecker app is binnenkort beschikbaar voor leden</span>
+    </div>
+
+  </div>
+
+  <!-- Hoe gebruik je Plus+? -->
+  <div class="geen-school">
+    <strong>Hoe werkt het in de praktijk?</strong> Je logt gewoon in via je iPhone, iPad, smartphone, tablet of computer. Onze ledenomgeving met cursussen en community staat op onze website. Maar we hebben ook een eigen app die je installeert op je smartphone of tablet. Van daaruit heb je toegang tot alles wat we aanbieden. Je hoeft nergens naartoe. Je hoeft niet op een bepaald tijdstip klaar te zitten. <strong>Je bekijkt wat je wilt, wanneer je wilt, op je eigen tempo.</strong><br><br>
+    <strong>En voor alle duidelijkheid: dit is geen school.</strong> Er zijn geen lessen die je "moet" volgen, geen deadlines, geen schema. Je zorgt voor de kleinkinderen, je hebt het druk met mantelzorg, je hebt een hele week geen tijd? Prima. Alles wacht geduldig op jou.<br><br>
+    En we weten hoe het gaat: je bekijkt een interessante video, maar een week later als je het zelf wilt doen, ben je een stapje vergeten. Dat is heel normaal als je niet met computers bent opgegroeid. Daarom is Plus+ jouw <strong>oneindige naslagwerk</strong>. Je hoeft niets uit je hoofd te leren. Ben je iets vergeten? Dan kijk je de video gewoon rustig opnieuw, of je pakt ons snelle Stappenplan erbij. Alles staat altijd voor je klaar. <strong>Op jouw moment, op jouw tempo.</strong>
+  </div>
+
+  <div class="section-cta">
+    <a href="#prijzen" class="btn-primary">Ja, ik wil erbij zijn</a>
+    <p class="cta-sub">30 dagen bedenktijd. Op elk moment opzegbaar.</p>
+  </div>
+</section>
+
+<!-- PRIJS TUSSENSECTIE -->
+<section class="prijs-tussenblok reveal">
+  <div class="prijs-tussenblok-inner">
+    <div class="prijs-groot">&euro;139</div>
+    <div class="prijs-periode">per jaar voor alles wat je hierboven ziet</div>
+    <p class="prijs-boodschap">Alle cursussen, Stappenplannen, de community, persoonlijke hulp en de nieuwe E-mailchecker app. Alles inbegrepen, geen verborgen kosten.</p>
+    <div class="prijs-urgentie">Binnenkort wordt dit &euro;159. Wie er nu bij komt, behoudt &euro;139 voor altijd.</div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- HET ZAKMES IN ACTIE: STAPPENPLAN -->
+<!-- ============================================ -->
+<section class="community-section bg-warm">
+  <div class="section-label">Het zakmes in actie</div>
+  <h2 class="section-heading">Van paniek naar gemoedsrust. In vier stappen.</h2>
+  <div class="community-intro">
+    <p>DigitaalSlim Plus+ is je digitale Zwitsers zakmes. Je klapt alleen uit wat je op dat moment nodig hebt. Hoe dat er in de praktijk uitziet? We laten het je zien.</p>
+  </div>
+
+  <div class="zakmes-stappen">
+    <div class="zakmes-stap">
+      <div class="zakmes-stap-badge">1</div>
+      <div class="zakmes-stap-card">
+        <div class="zakmes-stap-body">
+          <div class="zakmes-stap-label">De twijfel</div>
+          <div class="zakmes-stap-title">Je ontvangt een mail van 'de bank'</div>
+          <div class="zakmes-stap-desc">Er staat dat je rekening geblokkeerd wordt als je niet snel je gegevens bevestigt. Het logo ziet er echt uit. Je hart slaat even over. Is dit oplichting? Of is dit echt? Paniek is niet nodig. Je hebt je zakmes bij je.</div>
+        </div>
+        <!-- Media: screenshot phishing-mail (later toevoegen) -->
+      </div>
+    </div>
+
+    <div class="zakmes-stap">
+      <div class="zakmes-stap-badge">2</div>
+      <div class="zakmes-stap-card">
+        <div class="zakmes-stap-body">
+          <div class="zakmes-stap-label">Klap de nieuwe E-mailchecker app uit</div>
+          <div class="zakmes-stap-title">Een snelle check, zonder gedoe</div>
+          <div class="zakmes-stap-desc">Je stuurt de verdachte mail door naar onze gloednieuwe E-mailchecker app (die zeer binnenkort beschikbaar zal zijn). Binnen een ogenblik krijg je een helder oordeel: veilig of verdacht. Geen technisch jargon, gewoon een duidelijk antwoord.</div>
+          <div class="zakmes-stap-tip"><strong>Binnenkort beschikbaar:</strong> De nieuwe E-mailchecker app wordt exclusief beschikbaar voor Plus+ leden. Als lid ben je verzekerd van onbeperkte toegang.</div>
+        </div>
+        <!-- Media: screenshot E-mailchecker (later toevoegen) -->
+      </div>
+    </div>
+
+    <div class="zakmes-stap">
+      <div class="zakmes-stap-badge">3</div>
+      <div class="zakmes-stap-card">
+        <div class="zakmes-stap-body">
+          <div class="zakmes-stap-label">Klap de Community uit</div>
+          <div class="zakmes-stap-title">Nog niet gerust? Vraag het aan echte mensen</div>
+          <div class="zakmes-stap-desc">Nog steeds een beetje onzeker? Plaats je vraag in de community. Matthias en het team kijken direct met je mee. Vaak reageren ook andere leden die precies dezelfde mail hebben ontvangen. Je staat er nooit alleen voor.</div>
+        </div>
+        <!-- Media: screenshot community-vraag (later toevoegen) -->
+      </div>
+    </div>
+
+    <div class="zakmes-stap done">
+      <div class="zakmes-stap-badge">&#10003;</div>
+      <div class="zakmes-stap-card">
+        <div class="zakmes-stap-body">
+          <div class="zakmes-stap-label">Gemoedsrust</div>
+          <div class="zakmes-stap-title">Mail weg, rustig verder met je dag</div>
+          <div class="zakmes-stap-desc">Binnen korte tijd weet je zeker: het was phishing. Je gooit de mail weg en gaat rustig verder. Geen uren zoeken op internet, geen onzekerheid die aan je knaagt. <strong>D&aacute;t is wat je zakmes voor je doet.</strong> Het ligt altijd klaar, en je klapt het alleen uit wanneer je het nodig hebt.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTIE 4: JOUW VRAGEN STUREN ONS PLATFORM -->
+<!-- ============================================ -->
+<section class="community-section">
+  <div class="section-label">Een levend platform</div>
+  <h2 class="section-heading">Jouw vragen sturen ons platform.</h2>
+  <div class="community-intro">
+    <p>We maken geen willekeurige lessen vanuit een ivoren toren. Bij DigitaalSlim Plus+ bepalen de leden wat er gemaakt wordt. Dat maakt het verschil tussen een stoffige cursusmap en een platform dat meegroeit met jouw vragen.</p>
+  </div>
+
+  <div class="community-vraag-blok">
+    <p><strong>Loop je ergens tegenaan?</strong> Stel je vraag in de community. Binnen 24 uur helpen Matthias en het team je persoonlijk verder, met duidelijke uitleg en schermafbeeldingen als dat nodig is.</p>
+    <p>Maar het stopt niet bij jouw antwoord. Merken we dat meerdere leden dezelfde vraag hebben? Dan maken we er speciaal een <strong>nieuw Stappenplan of een korte video</strong> van. Zo helpt jouw vraag niet alleen jou, maar ook honderden andere leden.</p>
+    <p>Een paar voorbeelden van vragen die leidden tot nieuwe content:</p>
+    <p>&#128161; <em>"Hoe maak ik ruimte vrij op mijn iPad?"</em> &#8594; Werd een compleet Stappenplan met video<br>
+    &#128161; <em>"Is die mail van PostNL echt of nep?"</em> &#8594; Werd een waarschuwingsmail naar alle leden<br>
+    &#128161; <em>"Hoe werkt die nieuwe Foto's-app na de update?"</em> &#8594; Werd een videoles van 8 minuten</p>
+    <p><strong>Dat is het verschil met een losse cursus.</strong> Die staat stil in de tijd. Plus+ groeit elke week, gestuurd door wat jullie echt nodig hebben.</p>
+  </div>
+
+  <!-- Screenshots community-interacties: later toevoegen -->
+</section>
+
+<!-- ============================================ -->
+<!-- AANPASSING 8: KANALEN + VEILIG SAMENGEVOEGD -->
+<!-- ============================================ -->
+<section class="kanalen-section">
+  <div class="section-label">Veilig en overzichtelijk</div>
+  <h2 class="section-heading">Je eigen plek. Zonder Facebook.</h2>
+  <p class="section-sub">De community draait op een eigen platform met een eigen app. Geen Facebook, geen algoritmes, geen onbekenden. Alles is ingedeeld in duidelijke kanalen, zodat je snel vindt wat je zoekt. Ons team volgt alle kanalen, dus je vraag wordt nooit gemist.</p>
+
+  <div class="kanalen-layout">
+    <div>
+      <figure class="kanalen-screenshot">
+        <img src="afbeeldingen/screenshots/community-kanalen.png" alt="Alle kanalen in de community" loading="lazy">
+      </figure>
+    </div>
+    <div class="kanalen-list">
+      <div class="kanaal-item reveal">
+        <div class="kanaal-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <div><h4>iPad & iPhone</h4><p>Instellingen, tips en alles wat je dagelijks gebruikt</p></div>
+      </div>
+      <div class="kanaal-item reveal">
+        <div class="kanaal-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div><h4>Mac</h4><p>Van sneltoetsen tot veelgestelde problemen</p></div>
+      </div>
+      <div class="kanaal-item reveal">
+        <div class="kanaal-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
+        <div><h4>iCloud & Opslag</h4><p>Foto's, back-ups, opslag vrijmaken</p></div>
+      </div>
+      <div class="kanaal-item reveal">
+        <div class="kanaal-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+        <div><h4>Foto's & Video</h4><p>Maken, bewerken, opslaan en delen</p></div>
+      </div>
+      <div class="kanaal-item reveal">
+        <div class="kanaal-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div><h4>Email & Privacy</h4><p>Veilig surfen, spam herkennen, e-mail instellen</p></div>
+      </div>
+      <div class="kanaal-item reveal">
+        <div class="kanaal-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v2H8V6a4 4 0 0 1 4-4z"/><rect x="3" y="8" width="18" height="14" rx="2"/><circle cx="12" cy="16" r="2"/></svg></div>
+        <div><h4>AI & Slim Werken</h4><p>De nieuwste technologie, op een begrijpelijke manier</p></div>
+      </div>
+      <div class="kanaal-item reveal">
+        <div class="kanaal-icon"><svg viewBox="0 0 24 24" width="20" height="20" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div>
+        <div><h4>Koffiehoekje</h4><p>Gezellig bijpraten met andere leden</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Veiligheid-highlights (voorheen aparte sectie) -->
+  <div class="veilig-highlights">
+    <div class="veilig-highlight">
+      <div class="veilig-highlight-icon"><svg viewBox="0 0 24 24" width="22" height="22" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+      <p>Alleen voor leden</p>
+    </div>
+    <div class="veilig-highlight">
+      <div class="veilig-highlight-icon"><svg viewBox="0 0 24 24" width="22" height="22" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div>
+      <p>Geen reclame</p>
+    </div>
+    <div class="veilig-highlight">
+      <div class="veilig-highlight-icon"><svg viewBox="0 0 24 24" width="22" height="22" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+      <p>Eigen app</p>
+    </div>
+    <div class="veilig-highlight">
+      <div class="veilig-highlight-icon"><svg viewBox="0 0 24 24" width="22" height="22" stroke="#553CF7" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <p>Elke vraag is welkom</p>
+    </div>
+  </div>
+</section>
+
+<!-- URGENTIE BANNER 1: na kanalen -->
+<div class="urgentie-banner reveal">
+  De prijs stijgt binnenkort van &euro;139 naar &euro;159. Schrijf je nu in en zet je prijs vast.
+  <br><a href="#prijzen">Schrijf je nu in</a>
+</div>
+
+<!-- ============================================ -->
+<!-- AANPASSING 7: TESTIMONIALS (mix bestaand + cursus + placeholders) -->
+<!-- ============================================ -->
+<section class="testimonials-section bg-warm">
+  <div class="section-label">Leden aan het woord</div>
+  <h2 class="section-heading">Dit zeggen mensen die je voorgingen.</h2>
+
+  <div class="testimonials-grid">
+
+    <!-- Transformatie-verhaal placeholder 1 -->
+    <div class="testimonial-featured quote-decoration reveal">
+      <!-- [HIER PLAATST MATTHIAS EEN ECHT VERHAAL VAN EEN LID DAT DANKZIJ DE COMMUNITY EEN CONCREET PROBLEEM HEEFT OPGELOST - bijv. phishing herkend, iCloud opgelost, FaceTime ingesteld voor kleinkinderen] -->
+      <blockquote>"Na lang twijfelen om deze cursus te kopen, heb ik het toch gedaan. Wat me tegenhield was: er staat toch genoeg op internet, zonde van het geld. Maar toen ik betaald had en kon inloggen, schrok ik toch wel even. Wat een hoeveelheid informatie. Ik ga dit stap voor stap doen. Ik ben er blij mee."</blockquote>
+      <div class="testimonial-name">Hessel Elsinga</div>
+      <div class="testimonial-role">Plus+ lid</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        <blockquote>"De cursus is zo fijn opgedeeld in kleine stukken dat je makkelijk tussendoor even een paar lesjes kunt doen. Vind het gewoon jammer dat ik al door alle lessen heen ben."</blockquote>
+        <div class="testimonial-name">Claudia Sch&auml;fers</div>
+        <div class="testimonial-role">Plus+ lid</div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        <blockquote>"Met vakmensen aan het roer! Een ware oplossing voor alle vragen en problemen die met Apple producten te maken hebben."</blockquote>
+        <div class="testimonial-name">Alfons Verheijden</div>
+        <div class="testimonial-role">Plus+ lid</div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        <blockquote>"Wij volgden de cursus op de pc en met onze iPad ernaast, zodat we alles meteen konden uitproberen. Het was net of Matthias naast ons zat. Een aanbeveling!"</blockquote>
+        <div class="testimonial-name">Riet Bouter</div>
+        <div class="testimonial-role">Plus+ lid</div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        <blockquote>"Ik (71 jaar) ben heel tevreden over alle informatie. Men hoeft niet alles in een keer te leren. Net de dingen die jou interesseren en nodig hebt. Mensen, niet twijfelen, gewoon doen!"</blockquote>
+        <div class="testimonial-name">Bea de Splenter</div>
+        <div class="testimonial-role">Plus+ lid</div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        <blockquote>"Het feit dat wij hiermee niet meer afhankelijk zijn van Facebook vind ik sowieso een plus!"</blockquote>
+        <div class="testimonial-name">Jos Wauben</div>
+        <div class="testimonial-role">Plus+ lid</div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        <blockquote>"Ik ben al van de beginjaren bij Matthias. Ik heb er nog geen moment spijt van gehad. Al het geen dat ik heb geleerd is door de goede uitleg van Matthias. Zeker een aanrader."</blockquote>
+        <div class="testimonial-name">Pierre Schouwenaar</div>
+        <div class="testimonial-role">Plus+ lid</div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        <blockquote>"Voor een digibeet als ik een heel fijn platform."</blockquote>
+        <div class="testimonial-name">Monique Van der Knaap</div>
+        <div class="testimonial-role">Plus+ lid sinds 2 jaar</div>
+      </div>
+    </div>
+
+    <!-- Transformatie-verhalen: later toevoegen -->
+
+  </div>
+
+  <div class="section-cta">
+    <a href="#prijzen" class="btn-primary">Schrijf je nu in</a>
+    <p class="cta-sub">Op elk moment opzegbaar. 30 dagen niet-goed-geld-terug.</p>
+  </div>
+</section>
+
+<!-- URGENTIE BANNER 2: na testimonials -->
+<div class="urgentie-banner reveal">
+  Laatste kans aan de huidige prijs. Wie er nu bij komt voor &euro;139, behoudt die prijs voor altijd.
+  <br><a href="#prijzen">Bekijk de prijzen</a>
+</div>
+
+<!-- Vergelijking met losse cursussen - verplaatst naar voor de FAQ -->
+<section class="alles-section">
+  <div class="section-label">Waarom een lidmaatschap?</div>
+  <h2 class="section-heading">Meer dan een losse cursus.</h2>
+
+  <div class="zakmes-vergelijking">
+    <p>Tienduizenden mensen kochten al een losse cursus bij ons, voor gemiddeld &euro;97 per stuk. Daar waren ze blij mee, maar een losse cursus staat stil in de tijd. Zodra Apple een grote update uitbrengt, kan die cursus al verouderd raken. En er zit geen community bij waar je terecht kunt met vragen.</p>
+    <p>Bij DigitaalSlim Plus+ krijg je voor <strong>jaarlijks &euro;139</strong> alles in een pakket: alle cursussen, alle Stappenplannen, de community, persoonlijke hulp, en de nieuwe E-mailchecker app. Altijd up-to-date, altijd binnen handbereik. <strong>En alles wat we in de toekomst bouwen, krijg je er automatisch bij.</strong></p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTIE 10: FAQ (met 2 nieuwe vragen) -->
+<!-- ============================================ -->
+<section class="faq-section">
+  <div class="section-label">Veelgestelde vragen</div>
+  <h2 class="section-heading">Misschien vraag je je dit af</h2>
+
+  <div class="faq-list">
+
+    <!-- AANPASSING 11: Nieuwe FAQ voor Evergreen-mensen -->
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Ik heb al een cursus gekocht bij DigitaalSlim. Wat voegt dit toe?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Goed nieuws: je cursussen blijven gewoon beschikbaar. Plus+ bouwt daarop voort. Je krijgt er de community bij (waar je vragen kunt stellen en persoonlijk antwoord krijgt), het nieuwe Stappenplan, en toegang tot alles wat we in de toekomst toevoegen. Zie het als het verschil tussen een kookboek en een persoonlijke kok: <strong>het kookboek heb je al, de kok helpt je wanneer het recept niet lukt.</strong></div>
+      </div>
+    </div>
+
+    <!-- AANPASSING 11: Nieuwe FAQ voor prijs-bezwaar -->
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Ik heb een klein budget. Is dit het waard?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">We begrijpen dat. Daarom even in perspectief: het jaarlijkse lidmaatschap komt neer op <strong>&euro;2,67 per week</strong>. Minder dan een koffietje. Liever niet alles in &eacute;&eacute;n keer betalen? Dan is er ook een <strong>kwartaallidmaatschap van &euro;39</strong>, zodat je in kleinere stappen kunt instappen. Bedenk ook: &eacute;&eacute;n phishing-mail waar je per ongeluk op klikt, kan je honderden euro's kosten. De gemoedsrust dat je altijd iemand hebt om even te vragen "klopt dit?", is eigenlijk onbetaalbaar. En daarvoor hoef je nooit meer losse cursussen te kopen en heb je toegang tot alles wat we maken. Plus: als het toch niet bij je past, krijg je binnen 30 dagen je volledige bedrag terug.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Wat als ik het niet genoeg gebruik?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Dat hoeft ook helemaal niet. Veel leden gebruiken het <strong>als vangnet</strong>: het is er wanneer je het nodig hebt. Heb je een vraag? Stel hem in de community. Wil je eens rustig een video bekijken? Die staat klaar wanneer het jou uitkomt. <strong>Er is geen schema, geen deadline, geen verplichting.</strong></div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Kan ik op elk moment opzeggen?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Ja, altijd. Je stuurt een mailtje of je regelt het in je account, en klaar. Je behoudt gewoon toegang tot het einde van de periode waarvoor je hebt betaald. <strong>Geen boete, geen vragen, geen moeilijk gedoe.</strong></div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Heb ik een Facebook-account nodig?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Nee, helemaal niet. De community draait op <strong>een eigen platform dat volledig losstaat van Facebook</strong>. Je hebt alleen een e-mailadres nodig om in te loggen. Er is ook een eigen app voor iPhone en iPad.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Wat als ik ergens vastloop?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Dan stel je je vraag in de community. Zo simpel is het. Je krijgt een duidelijk antwoord met tekst en schermafbeeldingen. En als het een vraag is die meer mensen herkennen, maken we er een video of Stappenplan van.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Is het niet te technisch voor mij?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Helemaal niet. Een groot deel van onze leden noemt zichzelf "beginner", en dat is prima. <strong>Alles is gemaakt voor mensen die het rustig willen leren</strong>, stap voor stap. Onze Stappenplannen leiden je in kleine, duidelijke stappen door een onderwerp.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Ik ben al Plus+ lid. Wat verandert er voor mij?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Goed nieuws: als bestaand lid behoud je gewoon je huidige prijs. De community is er als extra bijgekomen en je hebt er al toegang toe. Je cursussen blijven beschikbaar op de vertrouwde plek.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Waarom gaat de prijs binnenkort omhoog?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Simpel gezegd: omdat er steeds meer bij komt. Een eigen community, het nieuwe Stappenplan, persoonlijke hulp, de nieuwe E-mailchecker app om phishing-mails op te sporen en nog veel meer dat in de maak is. Binnenkort past de prijs daar bij: jaarlijks &euro;159. Maar <strong>wie er nu bij komt voor &euro;139, behoudt die prijs zolang je lid blijft</strong>. Dat is onze manier om vroege leden te bedanken.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Is het veilig om online te betalen?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Ja, helemaal veilig. We gebruiken Plug&amp;Pay, een Nederlands betaalplatform dat werkt met <strong>de strengste beveiligingsstandaarden</strong>. Je gegevens worden versleuteld en nooit met derden gedeeld. Je kunt betalen met iDEAL, creditcard of Bancontact.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Wat is de volgende stap als ik lid word?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Zodra je betaling is afgerond, ontvang je binnen een paar seconden een mailtje met je inloggegevens. Daarmee kun je meteen aan de slag op het cursusplatform, en je krijgt een uitnodiging voor de community. Nog nooit een community gebruikt? Geen probleem. We hebben eenvoudige stappenplannen met korte video's die je precies laten zien hoe je toegang krijgt en hoe alles werkt. Meer dan 2.000 leden gingen je al voor, en bij vrijwel iedereen ging het heel vlot. Loop je toch ergens vast? Stuur ons gewoon een mailtje of een berichtje, dan helpen we je er persoonlijk doorheen.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- SECTIE 11: PRIJZEN -->
+<!-- ============================================ -->
+<section class="prijzen-section" id="prijzen">
+  <div class="urgentie-banner" style="border-radius: 12px; max-width: 680px; margin: 0 auto 32px; padding: 18px 24px; font-size: 15px;">
+    &#9200; De prijs van DigitaalSlim Plus+ stijgt binnenkort van &euro;139 naar &euro;159 per jaar. Schrijf je nu in en je betaalt <strong>voor altijd &euro;139</strong>. Jouw prijs gaat nooit meer omhoog.
+  </div>
+  <div class="section-label">Word lid</div>
+  <h2 class="section-heading">Eerlijke prijzen. Geen verrassingen.</h2>
+
+  <div class="prijzen-bevriezing">
+    <strong>Zolang je lid bent, gaat jouw prijs niet omhoog.</strong> Dat is ons bedankje aan iedereen die er vroeg bij is.
+  </div>
+
+  <div class="prijzen-checklist">
+    <div class="prijzen-check">Alle videolessen en cursussen</div>
+    <div class="prijzen-check">De community met persoonlijke hulp</div>
+    <div class="prijzen-check">Alle Stappenplannen</div>
+    <div class="prijzen-check">De nieuwe E-mailchecker app</div>
+    <div class="prijzen-check">Exclusieve waarschuwingsmails</div>
+    <div class="prijzen-check">Een team van 5 dat voor je klaarstaat</div>
+  </div>
+
+  <div class="prijzen-quote">
+    "Ik ben al van de beginjaren bij Matthias. Ik heb er nog geen moment spijt van gehad. Zeker een aanrader."
+    <span class="pq-name">Jos, lid sinds het eerste uur</span>
+  </div>
+
+  <div class="prijzen-grid">
+    <div class="prijs-card">
+      <div class="prijs-period">Elk kwartaal</div>
+      <div class="prijs-badge">Zet jouw prijs vast</div>
+      <div class="prijs-strikethrough">Wordt binnenkort &euro;45</div>
+      <div class="prijs-amount">&euro;39 <span>/kwartaal</span></div>
+      <div class="prijs-per">Dat is nog geen &euro;3 per week</div>
+      <div class="prijs-besparing">Ideaal om vrijblijvend te starten</div>
+      <a href="CHECKOUT_URL_KWARTAAL" class="btn-primary btn-outline">Word lid</a>
+    </div>
+    <div class="prijs-card popular">
+      <div class="prijs-period">Jaarlijks</div>
+      <div class="prijs-badge">Zet jouw prijs vast</div>
+      <div class="prijs-strikethrough">Wordt binnenkort &euro;159</div>
+      <div class="prijs-amount">&euro;139 <span>/jaar</span></div>
+      <div class="prijs-per">Dat is &euro;2,67 per week. Minder dan een koffietje.</div>
+      <div class="prijs-besparing">Bespaar &euro;20 per jaar door er nu bij te komen</div>
+      <a href="CHECKOUT_URL_JAAR" class="btn-primary">Word lid</a>
+    </div>
+  </div>
+
+  <p class="prijs-note">Op elk moment opzegbaar. Geen kleine lettertjes, geen verplichtingen. Je behoudt altijd toegang tot het einde van de periode waarvoor je hebt betaald.</p>
+
+  <div class="prijs-garantie">
+    <div class="prijs-garantie-icon"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#16a34a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+    <div><strong>30 dagen niet-goed-geld-terug.</strong> Niet tevreden? Stuur ons een mailtje en je krijgt je volledige bedrag terug. Zonder vragen.</div>
+  </div>
+</section>
+
+<!-- Garantie is al opgenomen in de prijzensectie -->
+
+<!-- ============================================ -->
+<!-- SECTIE 13: LAATSTE CTA -->
+<!-- ============================================ -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Je hoeft het niet alleen uit te zoeken.</h2>
+    <p>Eindelijk iemand die het rustig en duidelijk uitlegt. Van AI tot online veiligheid, van je iPad tot alles wat er nieuw bijkomt. Sluit je aan bij meer dan 2.000 mensen die het samen doen.</p>
+    <a href="#prijzen" class="btn-primary">Word lid van DigitaalSlim Plus+</a>
+    <p class="cta-note">Nu nog jaarlijks &euro;139 &middot; Op elk moment opzegbaar &middot; 30 dagen geld terug</p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FOOTER -->
+<!-- ============================================ -->
+<footer class="footer">
+  <div class="footer-text">
+    &copy;DigitaalSlim 2015 - 2026 &middot; Samen digitaal slimmer
+  </div>
+</footer>
+
+<!-- Sticky Mobile CTA -->
+<div class="mobile-cta" id="mobileCta">
+  <a href="#prijzen" class="btn-primary">Bekijk wat erbij zit</a>
+</div>
+
+<script>
+// Scroll Reveal - IntersectionObserver
+(function() {
+  var reveals = document.querySelectorAll('.reveal');
+  if (!reveals.length) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    reveals.forEach(function(el) { el.classList.add('visible'); });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(function(el) { observer.observe(el); });
+})();
+
+// Sticky Mobile CTA - show after scrolling past hero
+(function() {
+  var cta = document.getElementById('mobileCta');
+  var hero = document.querySelector('.hero');
+  if (!cta || !hero) return;
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        cta.classList.remove('visible');
+      } else {
+        cta.classList.add('visible');
+      }
+    });
+  }, { threshold: 0 });
+
+  observer.observe(hero);
+})();
+</script>
+</body>
+</html>
