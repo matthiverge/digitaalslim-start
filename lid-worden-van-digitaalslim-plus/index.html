@@ -1506,47 +1506,125 @@ a { text-decoration: none; }
 }
 
 .urgency-inline {
-  max-width: 720px;
-  margin: 0 auto;
-  background: var(--surface);
-  border: 1px solid var(--gold-line);
-  border-left: 4px solid var(--gold);
-  border-radius: var(--r2);
-  color: var(--ink);
-  text-align: left;
-  padding: 24px 32px;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.7;
-  box-shadow: var(--s2);
+  padding: 48px 24px;
   display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  justify-content: center;
+  background: #022C22;
 }
 
-.urgency-inline::before {
-  content: "\231B";
-  font-size: 28px;
+.urgency-inline-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(110,231,183,0.2);
+  border-radius: 18px;
+  padding: 28px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  max-width: 860px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.urgency-inline-card::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(16,185,129,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.urgency-inline-card::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(52,211,153,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.urgency-inline-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.urgency-inline-icon {
   flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: rgba(52,211,153,0.15);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(52,211,153,0.3);
+}
+
+.urgency-inline-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: #34D399;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.urgency-inline-content { flex: 1; }
+
+.urgency-inline-kicker {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #34D399;
+  margin-bottom: 4px;
+}
+
+.urgency-inline-content p {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.urgency-inline-content p strong {
+  color: #fff;
+  font-weight: 700;
 }
 
 .urgency-inline a {
-  display: inline-block;
-  background: var(--gold);
-  color: var(--gold-dark);
-  font-size: 13px;
-  font-weight: 700;
-  padding: 8px 20px;
-  border-radius: var(--rpill);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 13px 28px;
+  border-radius: 12px;
   text-decoration: none;
-  margin-left: auto;
-  transition: box-shadow var(--t), transform var(--t);
-  box-shadow: var(--s-gold);
   white-space: nowrap;
+  transition: transform var(--t), box-shadow var(--t);
+  box-shadow: 0 4px 20px rgba(16,185,129,0.4);
 }
 
-.urgency-inline a:hover { box-shadow: var(--s-gold-h); transform: translateY(-1px); }
+.urgency-inline a:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 28px rgba(16,185,129,0.55);
+}
 
 /* ═══════════════════════════════════════════════════════════
    TESTIMONIALS — Masonry-inspired grid
@@ -2244,9 +2322,10 @@ a { text-decoration: none; }
   .geen-school-visual { aspect-ratio: 16/9; order: -1; }
 
   /* Urgency inline */
-  .urgency-inline { padding: 20px 20px; font-size: 15px; flex-direction: column; text-align: center; gap: 12px; margin: 0 16px; }
-  .urgency-inline::before { font-size: 24px; }
-  .urgency-inline a { margin-left: 0; }
+  .urgency-inline { padding: 32px 16px; }
+  .urgency-inline-card { flex-direction: column; padding: 24px; gap: 16px; }
+  .urgency-inline-left { flex-direction: column; align-items: flex-start; }
+  .urgency-inline a { width: 100%; justify-content: center; }
 
   /* Prijs statement */
   .prijs-statement { padding: 56px 20px; }
@@ -2646,9 +2725,19 @@ a { text-decoration: none; }
 </section>
 
 <!-- ═══ URGENCY INLINE 1 ═══ -->
-<div class="urgency-inline r">
-  <span>De prijs stijgt binnenkort van &euro;139 naar &euro;169 per jaar. Schrijf je nu in en zet je prijs vast.</span>
-  <a href="#prijzen">Schrijf je nu in</a>
+<div class="urgency-inline">
+  <div class="urgency-inline-card r">
+    <div class="urgency-inline-left">
+      <div class="urgency-inline-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="urgency-inline-content">
+        <p class="urgency-inline-kicker">Prijsgarantie</p>
+        <p>De prijs stijgt binnenkort van <strong>&euro;139 naar &euro;169</strong>. Schrijf je nu in en zet je prijs vast.</p>
+      </div>
+    </div>
+    <a href="#prijzen">Schrijf je nu in &rarr;</a>
+  </div>
 </div>
 
 <!-- ═══ TESTIMONIALS ═══ -->
@@ -2708,9 +2797,19 @@ a { text-decoration: none; }
 </section>
 
 <!-- ═══ URGENCY INLINE 2 ═══ -->
-<div class="urgency-inline r">
-  <span>Laatste kans aan de huidige prijs. Wie er nu bij komt voor &euro;139, behoudt die prijs voor altijd.</span>
-  <a href="#prijzen">Bekijk de prijzen</a>
+<div class="urgency-inline">
+  <div class="urgency-inline-card r">
+    <div class="urgency-inline-left">
+      <div class="urgency-inline-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="urgency-inline-content">
+        <p class="urgency-inline-kicker">Beperkte tijd</p>
+        <p>Laatste kans aan de huidige prijs. Wie er nu bij komt voor <strong>&euro;139</strong>, behoudt die prijs voor altijd.</p>
+      </div>
+    </div>
+    <a href="#prijzen">Bekijk de prijzen &rarr;</a>
+  </div>
 </div>
 
 <!-- ═══ VERGELIJKING ═══ -->
