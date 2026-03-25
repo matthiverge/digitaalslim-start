@@ -965,10 +965,9 @@ a { text-decoration: none; }
   padding: 48px 52px;
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 48px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .geen-school-eyebrow {
@@ -985,20 +984,29 @@ a { text-decoration: none; }
   margin-bottom: 20px;
 }
 
+.geen-school-row {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
 .geen-school-tekst {
   font-size: 18px;
   color: rgba(255,255,255,0.55);
   line-height: 1.8;
 }
 
-.geen-school-tekst p + p {
-  margin-top: 16px;
+.geen-school-tekst h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 
-.geen-school-visual-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.geen-school-tekst p + p {
+  margin-top: 14px;
 }
 
 .geen-school-visual {
@@ -2344,9 +2352,11 @@ a { text-decoration: none; }
 
   /* Pijlers */
   .pijlers-grid { grid-template-columns: 1fr; }
-  .geen-school { padding: 28px 24px; grid-template-columns: 1fr; gap: 28px; }
+  .geen-school { padding: 28px 24px; gap: 32px; }
+  .geen-school-row { grid-template-columns: 1fr; gap: 24px; }
+  .geen-school-row .geen-school-visual { order: -1; }
   .geen-school-tekst { font-size: 16px; }
-  .geen-school-visual-stack { order: -1; }
+  .geen-school-tekst h3 { font-size: 20px; }
 
   /* Urgency inline */
   .urgency-inline { padding: 32px 16px; }
@@ -2599,15 +2609,26 @@ a { text-decoration: none; }
   </div>
 
   <div class="geen-school r">
-    <div class="geen-school-tekst">
-      <div class="geen-school-eyebrow">In de praktijk</div>
-      <p><strong>Hoe werkt het in de praktijk?</strong> Je logt gewoon in via je iPhone, iPad, smartphone, tablet of computer. Onze ledenomgeving met cursussen en community staat op onze website. Maar we hebben ook een eigen app die je installeert op je smartphone of tablet. Van daaruit heb je toegang tot alles wat we aanbieden. Je hoeft nergens naartoe. Je hoeft niet op een bepaald tijdstip klaar te zitten. <strong>Je bekijkt wat je wilt, wanneer je wilt, op je eigen tempo.</strong></p>
-      <p><strong>En voor alle duidelijkheid: dit is geen school.</strong> Er zijn geen lessen die je "moet" volgen, geen deadlines, geen schema. Je zorgt voor de kleinkinderen, je hebt het druk met mantelzorg, je hebt een hele week geen tijd? Prima. Alles wacht geduldig op jou.</p>
-      <p>En we weten hoe het gaat: je bekijkt een interessante video, maar een week later als je het zelf wilt doen, ben je een stapje vergeten. Dat is heel normaal als je niet met computers bent opgegroeid. Daarom is Plus+ jouw <strong>oneindige naslagwerk</strong>. Je hoeft niets uit je hoofd te leren. Ben je iets vergeten? Dan kijk je de video gewoon rustig opnieuw, of je pakt ons snelle Stappenplan erbij. Alles staat altijd voor je klaar. <strong>Op jouw moment, op jouw tempo.</strong></p>
-    </div>
-    <div class="geen-school-visual-stack">
+    <div class="geen-school-eyebrow">In de praktijk</div>
+
+    <!-- Rij 1: Hoe werkt het + iPad sfeerbeeld -->
+    <div class="geen-school-row">
+      <div class="geen-school-tekst">
+        <h3>Hoe werkt het in de praktijk?</h3>
+        <p>Je logt gewoon in via je iPhone, iPad, smartphone, tablet of computer. Onze ledenomgeving en community staan altijd voor je klaar, en we hebben zelfs een eigen app. Je hoeft nergens naartoe en op geen bepaald tijdstip klaar te zitten.</p>
+        <p>En voor alle duidelijkheid: dit is geen school. Er zijn geen deadlines, geen schema's en geen verplichte lessen. Je zorgt voor de kleinkinderen, of je hebt het druk? Prima. Alles wacht geduldig op jou. Je leert en ontdekt op je eigen tempo, in je eigen vertrouwde huiskamer.</p>
+      </div>
       <div class="geen-school-visual">
         <img src="afbeeldingen/lid-op-haar-ipad.jpeg" alt="Plus+ lid ontspannen met iPad" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Rij 2: Zwitsers zakmes + illustratie -->
+    <div class="geen-school-row">
+      <div class="geen-school-tekst">
+        <h3>Jouw digitale Zwitsers zakmes</h3>
+        <p>We weten hoe het gaat: je bekijkt een interessante video, maar een week later als je het zelf wilt doen, ben je een stapje vergeten. Dat is heel normaal als je niet met computers bent opgegroeid. Daarom hoef je bij ons niets uit je hoofd te leren.</p>
+        <p>Plus+ is ontworpen als jouw persoonlijke Zwitsers zakmes. Loop je ergens vast? Dan klap je simpelweg de app open. Je pakt de video er weer even bij, volgt ons snelle Stappenplan, of stelt je vraag in de community. De gereedschapskist staat altijd voor je klaar. Op jouw moment, op jouw tempo.</p>
       </div>
       <div class="geen-school-visual">
         <img src="afbeeldingen/zwitsers-zakmes.png" alt="Zwitsers zakmes met digitale tools als symbool voor Plus+" loading="lazy">
