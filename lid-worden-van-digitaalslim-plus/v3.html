@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word lid van DigitaalSlim Plus+ | Jouw digitale thuisbasis</title>
+<meta name="description" content="Word lid van DigitaalSlim Plus+ en krijg toegang tot de community, videocursussen, stappenplannen en persoonlijke hulp. Altijd op jouw tempo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg-light: #FFFFFF;
+    --bg-alt: #F9F8FE;
+    --text: #1A1627;
+    --text-secondary: #2E2845;
+    --text-muted: #6B6589;
+    --brand: #553CF7;
+    --brand-soft: rgba(85,60,247,0.07);
+    --accent: #FEBB0B;
+    --accent-hover: #FEC942;
+    --danger: #E53E3E;
+    --green: #16a34a;
+    --green-soft: rgba(34,197,94,0.06);
+    --green-border: rgba(34,197,94,0.2);
+    --border: #E4E0F0;
+    --shadow-sm: 0 2px 8px rgba(26,22,39,0.04);
+    --shadow-md: 0 8px 24px rgba(85,60,247,0.08);
+    --shadow-lg: 0 16px 40px rgba(85,60,247,0.12);
+    --shadow-hover: 0 12px 32px rgba(85,60,247,0.12);
+    --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    --delay-1: 0.1s;
+    --delay-2: 0.2s;
+    --delay-3: 0.3s;
+  }
+
+  body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-light);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* === ANIMATIONS === */
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* === STICKY BAR === */
+  .sticky-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--danger);
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .sticky-bar span {
+    color: rgba(255,255,255,0.95);
+    font-weight: 700;
+  }
+
+  .sticky-bar a {
+    background: white;
+    color: var(--danger);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all var(--transition);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .sticky-bar a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  /* === BUTTONS === */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 36px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--transition);
+    box-shadow: 0 4px 16px rgba(254,187,11,0.25);
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-3px) translateX(-2px);
+    box-shadow: 0 8px 28px rgba(254,187,11,0.35);
+  }
+
+  .btn-primary.btn-outline {
+    background: transparent;
+    color: var(--brand);
+    border: 2px solid var(--brand);
+    box-shadow: none;
+    padding: 14px 34px;
+  }
+
+  .btn-primary.btn-outline:hover {
+    background: var(--brand-soft);
+  }
+
+  /* === HERO === */
+  .hero {
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-alt) 50%, #F5F3FB 100%);
+    padding: 100px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 80%, rgba(85,60,247,0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .hero-logo {
+    height: 120px;
+    width: auto;
+    margin-bottom: 40px;
+    animation: slideInUp 0.6s ease-out;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(229,62,62,0.1);
+    border: 1px solid rgba(229,62,62,0.25);
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--danger);
+    margin-bottom: 32px;
+    animation: slideInUp 0.6s ease-out var(--delay-1);
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--text);
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    animation: slideInUp 0.6s ease-out var(--delay-2);
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, var(--brand) 0%, #8D6FFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+    animation: slideInUp 0.6s ease-out var(--delay-3);
+  }
+
+  .hero-results {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+    animation: slideInUp 0.7s ease-out var(--delay-3);
+  }
+
+  .hero-result {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 18px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .hero-result-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .hero-note {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  .hero-mockup {
+    max-width: 540px;
+    width: 100%;
+    margin-top: 64px;
+    position: relative;
+    animation: slideInUp 0.8s ease-out 0.4s backwards;
+  }
+
+  .hero-mockup img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .mockup-badge {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    background: var(--danger);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 4px 16px rgba(229,62,62,0.25);
+    transform: rotate(-8deg);
+    z-index: 10;
+  }
+
+  /* === TRUST BAR === */
+  .trust-bar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 40px 24px;
+    background: var(--bg-light);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  .trust-item-icon {
+    font-size: 18px;
+  }
+
+  /* === MATTHIAS MINI === */
+  .matthias-mini {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .matthias-mini-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--brand-soft) 0%, rgba(136,61,244,0.08) 100%);
+  }
+
+  .matthias-mini p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .matthias-mini strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* === HERKENNING SECTION === */
+  .herkenning-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 24px;
+    text-align: center;
+    background: var(--bg-alt);
+  }
+
+  .herkenning-section h2 {
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    color: var(--text);
+  }
+
+  .herkenning-intro {
+    font-size: 17px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  .herkenning-items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .herkenning-item {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: flex-start;
+    text-align: left;
+    transition: all var(--transition);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .herkenning-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand);
+  }
+
+  .herkenning-item::before {
+    content: attr(data-number);
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--brand);
+    line-height: 1;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 2px;
+  }
+
+  .herkenning-item-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .herkenning-item-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .herkenning-item p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .herkenning-closing {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 32px;
+  }
+
+  .herkenning-bridge {
+    background: var(--bg-light);
+    border: 2px solid var(--brand);
+    border-radius: 16px;
+    padding: 32px 28px;
+    margin-top: 32px;
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  .herkenning-bridge strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  /* === WAAROM SECTION === */
+  .waarom-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px 100px;
+  }
+
+  .waarom-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px 36px;
+    text-align: left;
+    box-shadow: var(--shadow-md);
+  }
+
+  .waarom-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .waarom-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  .waarom-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .waarom-card strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  /* === SHARED SECTION STYLES === */
+  .section-label {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--brand);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+  }
+
+  .section-heading {
+    text-align: center;
+    font-size: 44px;
+    font-weight: 900;
+    color: var(--text);
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .section-sub {
+    text-align: center;
+    font-size: 17px;
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin: 0 auto 56px;
+    line-height: 1.7;
+  }
+
+  .section-divider {
+    max-width: 120px;
+    height: 1px;
+    background: var(--border);
+    margin: 0 auto;
+  }
+
+  .section-cta {
+    text-align: center;
+    margin-top: 56px;
+  }
+
+  .cta-sub {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 14px;
+  }
+
+  /* === VIER PIJLERS === */
+  .pijlers-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 24px;
+    background: var(--bg-light);
+  }
+
+  .pijlers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .pijler-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 28px;
+    transition: all var(--transition);
+    position: relative;
+  }
+
+  .pijler-card::before {
+    content: attr(data-number);
+    position: absolute;
+    top: 28px;
+    right: 28px;
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--brand);
+    opacity: 0.15;
+    line-height: 1;
+  }
+
+  .pijler-card:hover {
+    transform: translateY(-6px) translateX(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--brand);
+  }
+
+  .pijler-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  .pijler-card h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .pijler-intro {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+
+  .pijler-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pijler-features li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    padding-left: 26px;
+    position: relative;
+  }
+
+  .pijler-features li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: var(--brand);
+    font-weight: 800;
+    font-size: 16px;
+  }
+
+  .pijler-stat {
+    display: inline-block;
+    margin-top: 12px;
+    background: var(--green-soft);
+    border: 1px solid var(--green-border);
+    border-radius: 8px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--green);
+  }
+
+  .pijler-teaser {
+    display: inline-block;
+    margin-top: 12px;
+    background: rgba(254,187,11,0.12);
+    border: 1px solid rgba(254,187,11,0.25);
+    border-radius: 8px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #B8860B;
+  }
+
+  .geen-school {
+    background: var(--brand-soft);
+    border: 1px solid rgba(85,60,247,0.15);
+    border-radius: 14px;
+    padding: 28px;
+    margin-top: 40px;
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    text-align: left;
+  }
+
+  .geen-school strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .pijlers-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* === COMMUNITY IN ACTIE === */
+  .community-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 24px;
+    background: var(--bg-alt);
+  }
+
+  .community-intro {
+    max-width: 680px;
+    margin: 0 auto 48px;
+    text-align: center;
+  }
+
+  .community-intro p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+
+  .video-card {
+    background: var(--bg-light);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+
+  .video-embed {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #0a0a0a;
+  }
+
+  .video-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .miranda-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .miranda-step {
+    background: var(--bg-light);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition);
+  }
+
+  .miranda-step:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .miranda-step-info {
+    padding: 28px;
+  }
+
+  .miranda-step-label {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--brand);
+    margin-bottom: 8px;
+  }
+
+  .miranda-step-info h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .miranda-step-info p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .miranda-step-img img {
+    width: 100%;
+    display: block;
+    border-top: 1px solid var(--border);
+  }
+
+  /* === KANALEN SECTION === */
+  .kanalen-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 24px;
+    background: var(--bg-light);
+  }
+
+  .kanalen-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+    margin-top: 56px;
+  }
+
+  .kanalen-screenshot {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    max-height: 580px;
+  }
+
+  .kanalen-screenshot img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 16px;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .kanalen-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .kanaal-item {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
+  }
+
+  .kanaal-item:hover {
+    transform: translateY(-3px) translateX(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand);
+  }
+
+  .kanaal-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 20px;
+  }
+
+  .kanaal-item h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 3px;
+    margin: 0;
+  }
+
+  .kanaal-item p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .veilig-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 48px;
+  }
+
+  .veilig-highlight {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    transition: all var(--transition);
+  }
+
+  .veilig-highlight:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand);
+  }
+
+  .veilig-highlight-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  .veilig-highlight p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .kanalen-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .veilig-highlights {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .veilig-highlights {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* === TESTIMONIALS === */
+  .testimonials-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 24px;
+    background: var(--bg-alt);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .testimonial-card {
+    background: var(--bg-light);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--brand);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .testimonial-text {
+    padding: 28px;
+  }
+
+  .testimonial-text blockquote {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    font-style: italic;
+    margin-bottom: 12px;
+    margin: 0 0 12px 0;
+  }
+
+  .testimonial-text .testimonial-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .testimonial-text .testimonial-role {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 4px 0 0 0;
+  }
+
+  .testimonial-featured {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, var(--brand) 0%, #8D6FFF 100%);
+    border: none;
+    border-radius: 16px;
+    padding: 36px;
+    color: white;
+  }
+
+  .testimonial-featured blockquote {
+    font-size: 17px;
+    color: rgba(255,255,255,0.95);
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 14px;
+    margin: 0 0 14px 0;
+  }
+
+  .testimonial-featured .testimonial-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+  }
+
+  .testimonial-featured .testimonial-role {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    margin: 4px 0 0 0;
+  }
+
+  .testimonial-placeholder {
+    grid-column: 1 / -1;
+    background: rgba(254,187,11,0.08);
+    border: 2px dashed rgba(254,187,11,0.3);
+    border-radius: 14px;
+    padding: 32px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .testimonial-featured {
+      grid-column: 1;
+    }
+
+    .testimonial-placeholder {
+      grid-column: 1;
+    }
+  }
+
+  /* === MATTHIAS SECTION === */
+  .matthias-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 24px;
+    background: var(--bg-light);
+  }
+
+  .matthias-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .matthias-photo {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+  }
+
+  .matthias-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, var(--brand-soft) 0%, rgba(136,61,244,0.08) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: var(--text-muted);
+  }
+
+  .matthias-content {
+    padding: 40px 36px;
+  }
+
+  .matthias-content h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 18px;
+  }
+
+  .matthias-content p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+
+  .matthias-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  .matthias-content strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  /* === ALLES INBEGREPEN === */
+  .alles-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 24px;
+    text-align: center;
+    background: var(--bg-alt);
+  }
+
+  .alles-section > p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    max-width: 680px;
+    margin: 0 auto 40px;
+  }
+
+  .alles-card {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px;
+    text-align: left;
+    box-shadow: var(--shadow-md);
+  }
+
+  .alles-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+
+  .alles-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .alles-card strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  /* === FAQ === */
+  .faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 24px;
+    background: var(--bg-light);
+  }
+
+  .faq-list {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .faq-item {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
+  }
+
+  .faq-item.open {
+    box-shadow: var(--shadow-md);
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 24px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    transition: color var(--transition);
+  }
+
+  .faq-question:hover {
+    color: var(--brand);
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--brand-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--brand);
+    transition: transform var(--transition);
+    font-weight: 700;
+  }
+
+  .faq-item.open .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .faq-item.open .faq-answer {
+    max-height: 600px;
+  }
+
+  .faq-answer-inner {
+    padding: 0 24px 22px;
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* === PRIJZEN === */
+  .prijzen-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 24px;
+    background: var(--bg-alt);
+  }
+
+  .prijzen-uitleg {
+    max-width: 680px;
+    margin: 0 auto 24px;
+    text-align: center;
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+  }
+
+  .prijzen-bevriezing {
+    max-width: 640px;
+    margin: 0 auto 56px;
+    text-align: center;
+    background: var(--green-soft);
+    border: 1px solid var(--green-border);
+    border-radius: 14px;
+    padding: 22px 28px;
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .prijzen-bevriezing strong {
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  .prijzen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    max-width: 720px;
+    margin: 0 auto 40px;
+  }
+
+  .prijs-card {
+    background: var(--bg-light);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 28px;
+    text-align: center;
+    position: relative;
+    transition: all var(--transition);
+  }
+
+  .prijs-card:hover {
+    transform: translateY(-6px) translateX(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--brand);
+  }
+
+  .prijs-card.popular {
+    border-color: var(--brand);
+    background: linear-gradient(135deg, var(--brand-soft) 0%, var(--bg-light) 100%);
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .prijs-card.popular::before {
+    content: 'Meest gekozen';
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--brand);
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 6px 18px;
+    border-radius: 50px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(85,60,247,0.3);
+  }
+
+  .prijs-period {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .prijs-badge {
+    display: inline-block;
+    background: rgba(254,187,11,0.12);
+    color: #B8860B;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+
+  .prijs-strikethrough {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .prijs-amount {
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+
+  .prijs-amount span {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+
+  .prijs-per {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+
+  .prijs-card .btn-primary {
+    width: 100%;
+    font-size: 15px;
+    padding: 14px 24px;
+  }
+
+  .prijs-note {
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .prijs-note + .prijs-note {
+    margin-top: 12px;
+  }
+
+  @media (max-width: 600px) {
+    .prijzen-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .prijs-card.popular {
+      transform: scale(1);
+    }
+  }
+
+  /* === GARANTIE === */
+  .garantie-section {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px 100px;
+    text-align: center;
+    background: var(--bg-light);
+  }
+
+  .garantie-card {
+    background: var(--green-soft);
+    border: 1px solid var(--green-border);
+    border-radius: 16px;
+    padding: 40px 36px;
+  }
+
+  .garantie-icon {
+    font-size: 44px;
+    margin-bottom: 16px;
+  }
+
+  .garantie-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 14px;
+  }
+
+  .garantie-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 12px;
+  }
+
+  .garantie-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .garantie-card strong {
+    color: var(--green);
+    font-weight: 700;
+  }
+
+  /* === CTA SECTION === */
+  .cta-section {
+    background: linear-gradient(135deg, var(--text) 0%, #1C1535 50%, var(--brand) 100%);
+    padding: 100px 24px;
+    text-align: center;
+  }
+
+  .cta-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .cta-inner h2 {
+    font-size: 40px;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+    line-height: 1.2;
+  }
+
+  .cta-inner p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+
+  .cta-inner .btn-primary {
+    font-size: 16px;
+    padding: 16px 40px;
+  }
+
+  .cta-note {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 16px;
+  }
+
+  /* === FOOTER === */
+  .footer {
+    text-align: center;
+    padding: 40px 24px;
+    border-top: 1px solid var(--border);
+    background: var(--bg-light);
+  }
+
+  .footer-text {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 1024px) {
+    .hero h1 {
+      font-size: 40px;
+    }
+
+    .section-heading {
+      font-size: 36px;
+    }
+
+    .prijs-amount {
+      font-size: 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 80px 20px 60px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      letter-spacing: -1px;
+    }
+
+    .hero-sub {
+      font-size: 16px;
+    }
+
+    .hero-logo {
+      height: 100px;
+    }
+
+    .section-heading {
+      font-size: 32px;
+    }
+
+    .section-sub {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+
+    .herkenning-section h2 {
+      font-size: 32px;
+    }
+
+    .cta-inner h2 {
+      font-size: 32px;
+    }
+
+    .prijs-amount {
+      font-size: 36px;
+    }
+
+    .trust-bar {
+      gap: 20px;
+      padding: 32px 20px;
+    }
+
+    .matthias-mini {
+      flex-direction: column;
+      text-align: center;
+      padding: 40px 20px 0;
+    }
+
+    .herkenning-item::before,
+    .pijler-card::before {
+      display: none;
+    }
+
+    .herkenning-items {
+      grid-template-columns: 1fr;
+    }
+
+    .pijlers-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: 60px 16px 40px;
+    }
+
+    .hero h1 {
+      font-size: 26px;
+    }
+
+    .hero-results {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .hero-result {
+      width: 100%;
+    }
+
+    .section-heading {
+      font-size: 26px;
+    }
+
+    .sticky-bar {
+      gap: 10px;
+      padding: 10px 16px;
+      font-size: 12px;
+    }
+
+    .sticky-bar a {
+      padding: 5px 12px;
+      font-size: 11px;
+    }
+
+    .veilig-highlights {
+      grid-template-columns: 1fr;
+    }
+
+    .trust-item {
+      font-size: 12px;
+    }
+
+    .matthias-content,
+    .alles-card {
+      padding: 28px 20px;
+    }
+
+    .prijs-amount {
+      font-size: 32px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  Laatste kans aan de huidige prijs. Schrijf je in en zet je prijs vast.
+  <a href="#prijzen">Schrijf je nu in</a>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-inner">
+    <img src="afbeeldingen/logo-digitaalslim-plus-geel.png" alt="DigitaalSlim Plus+" class="hero-logo">
+    <div class="hero-badge">
+      ⏰ Laatste kans: schrijf je in voor de prijsverhoging
+    </div>
+    <h1>Eindelijk iemand die het rustig en duidelijk aan je uitlegt.<br><span>Hulp die altijd klaarstaat, op jouw tempo.</span></h1>
+    <p class="hero-sub">De digitale wereld verandert snel, maar jij hoeft niet sneller te gaan rennen. Wij filteren de chaos voor je. DigitaalSlim Plus+ is je vaste plek voor al je digitale vragen. Een warme club van mensen die elkaar helpen.</p>
+
+    <div class="hero-results">
+      <div class="hero-result">
+        <span class="hero-result-icon">✓</span>
+        Weet meteen of die verdachte mail echt is
+      </div>
+      <div class="hero-result">
+        <span class="hero-result-icon">✓</span>
+        Leer in 3 minuten hoe een Apple-update werkt
+      </div>
+      <div class="hero-result">
+        <span class="hero-result-icon">✓</span>
+        Stel je vraag en krijg persoonlijk antwoord
+      </div>
+    </div>
+
+    <div class="hero-cta-group">
+      <a href="#prijzen" class="btn-primary">Bekijk wat erbij zit</a>
+      <p class="hero-note">Sluit je aan bij meer dan 2.000 leden. Op elk moment opzegbaar.</p>
+    </div>
+
+    <div class="hero-mockup">
+      <img src="afbeeldingen/DS-Plus-Mockup-2026.png" alt="DigitaalSlim Plus+ mockup">
+      <div class="mockup-badge">Schrijf je nu in en behoud de huidige prijs.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-item-icon">📅</span> Al meer dan 10 jaar actief</div>
+  <div class="trust-item"><span class="trust-item-icon">👥</span> 2.000+ DigitaalSlim Plus+ leden</div>
+  <div class="trust-item"><span class="trust-item-icon">⭐</span> 98% tevredenheid</div>
+</div>
+
+<!-- MATTHIAS MINI INTRO -->
+<div class="matthias-mini">
+  <div class="matthias-mini-photo" role="img" aria-label="Matthias Moens"></div>
+  <p><strong>Hoi, ik ben Matthias.</strong> Al meer dan tien jaar help ik mensen in Belgie en Nederland om veilig en met plezier met hun iPad, iPhone en Mac om te gaan.</p>
+</div>
+
+<!-- HERKENNING SECTION -->
+<section class="herkenning-section">
+  <h2>Herken je dit?</h2>
+  <p class="herkenning-intro">Je kent je iPad of iPhone ondertussen goed. De basis zit erin. Maar de wereld eromheen? Die draait door. En snel ook. Dat ligt niet aan jou. Het is gewoon een wereld die razendsnel verandert.</p>
+
+  <div class="herkenning-items">
+    <div class="herkenning-item" data-number="01">
+      <div class="herkenning-item-content">
+        <div class="herkenning-item-icon">🤖</div>
+        <p><strong>Overal hoor je over AI, maar je weet niet precies wat het voor jou betekent.</strong> Is het handig? Is het gevaarlijk? Of allebei? Zonder iemand om het aan te vragen, blijf je twijfelen en laat je handige functies links liggen.</p>
+      </div>
+    </div>
+
+    <div class="herkenning-item" data-number="02">
+      <div class="herkenning-item-content">
+        <div class="herkenning-item-icon">📧</div>
+        <p><strong>Phishing-mails worden steeds beter nagemaakt.</strong> Zelfs ervaren mensen trappen erin. Een verkeerde klik kan je honderden euro's kosten. En achteraf denk je: had ik dat maar even kunnen vragen.</p>
+      </div>
+    </div>
+
+    <div class="herkenning-item" data-number="03">
+      <div class="herkenning-item-content">
+        <div class="herkenning-item-icon">🔄</div>
+        <p><strong>Elke paar maanden verandert Apple weer iets, en dan ziet alles er net weer anders uit.</strong> Zelf uitzoeken kost je al snel een hele middag zoeken op internet, terwijl het antwoord in drie minuten te vinden is als je weet waar je moet kijken.</p>
+      </div>
+    </div>
+  </div>
+
+  <p class="herkenning-closing">Dat gevoel is heel begrijpelijk. De technologie van vandaag verandert zo snel dat een losse cursus al verouderd kan zijn voor je hem hebt afgemaakt. Zeker bij onderwerpen als AI en online veiligheid. Precies daarom bestaat DigitaalSlim Plus+: een lidmaatschap dat met je meegroeit. Nieuwe lessen worden toegevoegd zodra er iets verandert. De community geeft je antwoord op vragen die vandaag pas bestaan. En alles wat we in de toekomst bouwen, krijg je er automatisch bij. Geen extra kosten, geen nieuwe aankopen. Plus+ groeit gewoon mee.</p>
+
+  <div class="herkenning-bridge">
+    <strong>Precies daarom bestaat DigitaalSlim Plus+.</strong> Niet om je opnieuw te leren hoe je toestel werkt. Dat kun je al lang. Maar de technologie van vandaag verandert zo snel dat een losse cursus al verouderd kan zijn voor je hem hebt afgemaakt. Zeker bij onderwerpen als AI en online veiligheid. <strong>Plus+ groeit gewoon mee.</strong> Zodat jij altijd mee bent, veilig blijft, en altijd iemand hebt om te vragen: hoe zit dit?
+  </div>
+</section>
+
+<!-- WAAROM SECTION -->
+<section class="waarom-section">
+  <div class="waarom-card">
+    <h3>Waarom een lidmaatschap en geen losse cursus?</h3>
+    <p>Een cursus over hoe je je iPad bedient? Die werkt prima. Dat verandert niet zo snel. Maar alles rondom <strong>AI, online veiligheid en nieuwe Apple-updates</strong>? Dat verandert soms binnen weken.</p>
+    <p>Een losse cursus die je vandaag koopt, kan volgende maand al achterhaald zijn. Niet omdat de cursus slecht was, maar omdat de technologie sneller gaat dan ooit.</p>
+    <p><strong>Daarom hebben we Plus+ gebouwd.</strong> Een lidmaatschap dat met je meegroeit. Nieuwe lessen worden toegevoegd zodra er iets verandert. De community geeft je antwoord op vragen die vandaag pas bestaan. En alles wat we in de toekomst bouwen, krijg je er automatisch bij. <strong>Geen extra kosten, geen nieuwe aankopen.</strong></p>
+  </div>
+</section>
+
+<!-- VIER PIJLERS SECTION -->
+<section class="pijlers-section">
+  <div class="section-label">Wat zit er allemaal in?</div>
+  <h2 class="section-heading">Vier dingen die het verschil maken.</h2>
+  <p class="section-sub">Alles wat je nodig hebt om veilig mee te blijven doen. Op jouw tempo, met hulp wanneer je het nodig hebt.</p>
+
+  <div class="pijlers-grid">
+    <div class="pijler-card" data-number="01">
+      <div class="pijler-icon">💬</div>
+      <h3>Je eigen veilige haven</h3>
+      <p class="pijler-intro">Een afgesloten community, <strong>alleen voor leden</strong>. Geen Facebook, geen reclame, geen onbekenden.</p>
+      <ul class="pijler-features">
+        <li>Stel je vraag en krijg <strong>binnen 24 uur</strong> antwoord</li>
+        <li>Persoonlijke uitleg met tekst en schermafbeeldingen</li>
+        <li>Goede vragen worden omgezet in video's of Stappenplannen</li>
+      </ul>
+    </div>
+
+    <div class="pijler-card" data-number="02">
+      <div class="pijler-icon">✅</div>
+      <h3>Het Stappenplan</h3>
+      <p class="pijler-intro">Onze nieuwe manier van uitleggen. <strong>Geen lange video's meer.</strong></p>
+      <ul class="pijler-features">
+        <li>Korte, visuele stappen op je iPad, iPhone of Mac</li>
+        <li>Elke stap is een los blokje. Weet je iets al? Sla het over</li>
+        <li>Volg alles op <strong>je eigen tempo</strong></li>
+      </ul>
+      <span class="pijler-stat">98% van de ondervraagde leden vindt dit de fijnste manier om iets te leren</span>
+    </div>
+
+    <div class="pijler-card" data-number="03">
+      <div class="pijler-icon">📖</div>
+      <h3>Het Digitale Kookboek</h3>
+      <p class="pijler-intro">Toegang tot al onze videolessen. <strong>Zie het als een kookboek:</strong> je slaat het open bij wat je nodig hebt.</p>
+      <ul class="pijler-features">
+        <li>iPad, iPhone, Mac, iCloud, foto's, WhatsApp en meer</li>
+        <li>Geen volgorde, geen druk, geen verplichting</li>
+        <li><strong>Altijd bijgewerkt</strong> als Apple iets verandert of er iets nieuws bijkomt</li>
+      </ul>
+    </div>
+
+    <div class="pijler-card" data-number="04">
+      <div class="pijler-icon">🔐</div>
+      <h3>Mee met AI, veilig voor oplichting</h3>
+      <p class="pijler-intro">AI biedt kansen, maar maakt oplichting ook slimmer. <strong>Wij helpen je met beide kanten.</strong></p>
+      <ul class="pijler-features">
+        <li>Ontdek wat je met tools als ChatGPT kunt doen</li>
+        <li>Leer phishing en nep-berichten herkennen</li>
+        <li>Achter de schermen bouwen we aan de <strong>DigitaalSlim E-mailchecker</strong>. Als Plus+ lid ben je straks verzekerd van onbeperkte VIP-toegang</li>
+      </ul>
+      <span class="pijler-teaser">Binnenkort beschikbaar voor leden</span>
+    </div>
+  </div>
+
+  <div class="geen-school">
+    <strong>En voor alle duidelijkheid: dit is geen school.</strong> Er zijn geen lessen die je "moet" volgen, geen deadlines, geen schema. Zie het als een vangnet. Het is er wanneer je het nodig hebt. Je zorgt voor de kleinkinderen, je hebt het druk met mantelzorg, je hebt een hele week geen tijd? Prima. Alles wacht geduldig op jou. <strong>Op jouw moment, op jouw tempo.</strong>
+  </div>
+
+  <div class="section-cta">
+    <a href="#prijzen" class="btn-primary">Ja, ik wil met een gerust hart meedoen</a>
+    <p class="cta-sub">Vanaf 2,67 euro per week. Met 30 dagen bedenktijd. Je zit nergens aan vast.</p>
+  </div>
+</section>
+
+<!-- COMMUNITY IN ACTIE SECTION -->
+<section class="community-section">
+  <div class="section-label">Zo gaat het er in de praktijk aan toe</div>
+  <h2 class="section-heading">Miranda had een vraag. Kijk wat er gebeurde.</h2>
+  <div class="community-intro">
+    <p>Miranda had iCloud ingeschakeld, maar haar iPad zat nog steeds vol. Herkenbaar? Ze stelde haar vraag in de community. <strong>Binnen een paar uur</strong> had ze een duidelijk antwoord, met schermafbeeldingen en een video erbij.</p>
+  </div>
+
+  <div class="video-card">
+    <div class="video-embed">
+      <iframe src="https://player.vimeo.com/video/1174687520?badge=0&autopause=0&player_id=0&app_id=58479" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class="miranda-flow">
+    <div class="miranda-step">
+      <div class="miranda-step-info">
+        <div class="miranda-step-label">De vraag</div>
+        <h3>Miranda stelt haar vraag</h3>
+        <p>"Waarom nemen mijn foto's nog steeds opslagruimte in, terwijl ik iCloud heb ingeschakeld?" Een vraag die duizenden mensen herkennen, maar waar je online zelden een duidelijk antwoord op vindt.</p>
+      </div>
+      <div class="miranda-step-img">
+        <img src="afbeeldingen/screenshots/vraag-miranda.png" alt="Miranda stelt haar vraag in de community" loading="lazy">
+      </div>
+    </div>
+
+    <div class="miranda-step">
+      <div class="miranda-step-info">
+        <div class="miranda-step-label">Het antwoord</div>
+        <h3>Een duidelijke uitleg, met schermafbeeldingen</h3>
+        <p>Geen vaag antwoord van drie woorden, maar <strong>een rustige uitleg die Miranda stap voor stap kon volgen</strong> op haar eigen iPad.</p>
+      </div>
+      <div class="miranda-step-img">
+        <img src="afbeeldingen/screenshots/antwoord-miranda.png" alt="Geschreven antwoord met schermafbeeldingen" loading="lazy">
+      </div>
+    </div>
+
+    <div class="miranda-step">
+      <div class="miranda-step-info">
+        <div class="miranda-step-label">De reacties</div>
+        <h3>Niet alleen Miranda leerde iets bij</h3>
+        <p>Andere leden lazen mee en herkenden de vraag. Rachel: "Weer iets bijgeleerd." Marie-Jeanne: "Nu zit het er terug goed in."</p>
+      </div>
+      <div class="miranda-step-img">
+        <img src="afbeeldingen/screenshots/reacties-miranda.png" alt="Positieve reacties van leden" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KANALEN SECTION -->
+<section class="kanalen-section">
+  <div class="section-label">Veilig en overzichtelijk</div>
+  <h2 class="section-heading">Je eigen plek. Zonder Facebook.</h2>
+  <p class="section-sub">De community draait op een eigen platform met een eigen app. Geen Facebook, geen algoritmes, geen onbekenden. Alles is ingedeeld in duidelijke kanalen, zodat je snel vindt wat je zoekt.</p>
+
+  <div class="kanalen-layout">
+    <div>
+      <figure class="kanalen-screenshot">
+        <img src="afbeeldingen/screenshots/community-kanalen.png" alt="Alle kanalen in de community" loading="lazy">
+      </figure>
+    </div>
+
+    <div class="kanalen-list">
+      <div class="kanaal-item">
+        <div class="kanaal-icon">📱</div>
+        <div><h4>iPad & iPhone</h4><p>Instellingen, tips en alles wat je dagelijks gebruikt</p></div>
+      </div>
+      <div class="kanaal-item">
+        <div class="kanaal-icon">💻</div>
+        <div><h4>Mac</h4><p>Van sneltoetsen tot veelgestelde problemen</p></div>
+      </div>
+      <div class="kanaal-item">
+        <div class="kanaal-icon">☁️</div>
+        <div><h4>iCloud & Opslag</h4><p>Foto's, back-ups, opslag vrijmaken</p></div>
+      </div>
+      <div class="kanaal-item">
+        <div class="kanaal-icon">📸</div>
+        <div><h4>Foto's & Video</h4><p>Maken, bewerken, opslaan en delen</p></div>
+      </div>
+      <div class="kanaal-item">
+        <div class="kanaal-icon">📧</div>
+        <div><h4>Email & Privacy</h4><p>Veilig surfen, spam herkennen, e-mail instellen</p></div>
+      </div>
+      <div class="kanaal-item">
+        <div class="kanaal-icon">🤖</div>
+        <div><h4>AI & Slim Werken</h4><p>De nieuwste technologie, op een begrijpelijke manier</p></div>
+      </div>
+      <div class="kanaal-item">
+        <div class="kanaal-icon">☕</div>
+        <div><h4>Koffiehoekje</h4><p>Gezellig bijpraten met andere leden</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="veilig-highlights">
+    <div class="veilig-highlight">
+      <div class="veilig-highlight-icon">🔒</div>
+      <p>Alleen voor leden</p>
+    </div>
+    <div class="veilig-highlight">
+      <div class="veilig-highlight-icon">🚫</div>
+      <p>Geen reclame</p>
+    </div>
+    <div class="veilig-highlight">
+      <div class="veilig-highlight-icon">📱</div>
+      <p>Eigen app</p>
+    </div>
+    <div class="veilig-highlight">
+      <div class="veilig-highlight-icon">💬</div>
+      <p>Elke vraag is welkom</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section class="testimonials-section">
+  <div class="section-label">Leden aan het woord</div>
+  <h2 class="section-heading">Dit zeggen mensen die je voorgingen.</h2>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-featured">
+      <blockquote>"Na lang twijfelen om deze cursus te kopen, heb ik het toch gedaan. Wat me tegenhield was: er staat toch genoeg op internet, zonde van het geld. Maar toen ik betaald had en kon inloggen, schrok ik toch wel even. Wat een hoeveelheid informatie. Ik ga dit stap voor stap doen. Ik ben er blij mee."</blockquote>
+      <div class="testimonial-name">Hessel Elsinga</div>
+      <div class="testimonial-role">Plus+ lid</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        <blockquote>"De cursus is zo fijn opgedeeld in kleine stukken dat je makkelijk tussendoor even een paar lesjes kunt doen. Vind het gewoon jammer dat ik al door alle lessen heen ben."</blockquote>
+        <div class="testimonial-name">Claudia Schafers</div>
+        <div class="testimonial-role">Plus+ lid</div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        <blockquote>"Met vakmensen aan het roer! Een ware oplossing voor alle vragen en problemen die met Apple producten te maken hebben."</blockquote>
+        <div class="testimonial-name">Alfons Verheijden</div>
+        <div class="testimonial-role">Plus+ lid</div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        <blockquote>"Wij volgden de cursus op de pc en met onze iPad ernaast, zodat we alles meteen konden uitproberen. Het was net of Matthias naast ons zat. Een aanbeveling!"</blockquote>
+        <div class="testimonial-name">Riet Bouter</div>
+        <div class="testimonial-role">Plus+ lid</div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        <blockquote>"Ik (71 jaar) ben heel tevreden over alle informatie. Men hoeft niet alles in een keer te leren. Net de dingen die jou interesseren en nodig hebt. Mensen, niet twijfelen, gewoon doen!"</blockquote>
+        <div class="testimonial-name">Bea de Splenter</div>
+        <div class="testimonial-role">Plus+ lid</div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        <blockquote>"Het feit dat wij hiermee niet meer afhankelijk zijn van Facebook vind ik sowieso een plus!"</blockquote>
+        <div class="testimonial-name">Jos Wauben</div>
+        <div class="testimonial-role">Plus+ lid</div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        <blockquote>"Ik ben al van de beginjaren bij Matthias. Ik heb er nog geen moment spijt van gehad. Al het geen dat ik heb geleerd is door de goede uitleg van Matthias. Zeker een aanrader."</blockquote>
+        <div class="testimonial-name">Pierre Schouwenaar</div>
+        <div class="testimonial-role">Plus+ lid</div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-text">
+        <blockquote>"Voor een digibeet als ik een heel fijn platform."</blockquote>
+        <div class="testimonial-name">Monique Van der Knaap</div>
+        <div class="testimonial-role">Plus+ lid sinds 2 jaar</div>
+      </div>
+    </div>
+
+    <div class="testimonial-placeholder">
+      📝 <strong>Matthias:</strong> Hier kun je 2-3 echte transformatie-verhalen plaatsen uit de community. Denk aan: een lid dat phishing herkende dankzij de community, iemand die FaceTime met kleinkinderen leerde, of een lid dat dankzij het Stappenplan iets in 3 minuten oploste.
+    </div>
+  </div>
+
+  <div class="section-cta">
+    <a href="#prijzen" class="btn-primary">Bekijk wat het lidmaatschap inhoudt</a>
+    <p class="cta-sub">Vanaf 2,67 euro per week. Minder dan een koffietje. Op elk moment opzegbaar.</p>
+  </div>
+</section>
+
+<!-- MATTHIAS SECTION -->
+<section class="matthias-section">
+  <div class="matthias-card">
+    <div class="matthias-photo-placeholder">[Hier komt een warme foto van Matthias]</div>
+    <div class="matthias-content">
+      <h3>Dag, ik ben Matthias.</h3>
+      <p>DigitaalSlim is begonnen <strong>aan de keukentafel van mijn ouders</strong>. Mijn vader had een iPad gekregen, maar kwam er niet uit. Een echte computeralfabeet. De handleiding was te technisch, de uitleg die hij online vond begreep hij niet. Dus ging ik naast hem zitten. Rustig, in gewone taal, stap voor stap.</p>
+      <p>Dat is ondertussen meer dan tien jaar geleden. Met DigitaalSlim helpen we vandaag <strong>meer dan 2.000 mensen in Belgie en Nederland</strong>. Maar er is iets veranderd. De digitale wereld gaat nu zo snel dat het niet meer genoeg is om af en toe een cursus te volgen. AI die alles op z'n kop zet, phishing die steeds moeilijker te herkennen is, updates om de paar maanden.</p>
+      <p>Wat je eigenlijk nodig hebt, is <strong>iemand die met je meegaat</strong>. Iemand aan wie je kunt vragen: klopt dit? Is dit veilig? Hoe werkt dit nu weer? Dat is wat DigitaalSlim Plus+ is geworden. Een club van mensen die elkaar helpen, met een team dat er altijd voor je is. <strong>Precies zoals ik destijds naast mijn vader zat.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ALLES INBEGREPEN SECTION -->
+<section class="alles-section">
+  <div class="section-label">Geen verrassingen</div>
+  <h2 class="section-heading">Eenmaal lid, altijd toegang tot alles.</h2>
+  <p><strong>Je hoeft nooit meer losse cursussen te kopen.</strong> Geen eindeloze e-mails met nieuwe lanceringen of kortingsacties. Je betaalt een vast bedrag en hoort erbij. Alles wat we maken, is automatisch ook voor jou.</p>
+
+  <div class="alles-card">
+    <p><strong>De community</strong> waar je elke vraag kunt stellen en binnen 24 uur een persoonlijk antwoord krijgt.</p>
+    <p><strong>Alle videolessen</strong> over iPad, iPhone, Mac, iCloud, WhatsApp, foto's, ChatGPT, online beveiliging en meer.</p>
+    <p><strong>Alle Stappenplannen</strong> die we maken. Nu en alles wat er nog bij komt.</p>
+    <p><strong>Persoonlijke hulp</strong> als je ergens niet uitkomt.</p>
+    <p><strong>En alles wat we in de toekomst toevoegen.</strong> Nieuwe lessen, nieuwe Stappenplannen, nieuwe tools. Als lid krijg je daar automatisch toegang toe. Zonder extra kosten, zonder dat je iets hoeft te doen.</p>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+  <div class="section-label">Veelgestelde vragen</div>
+  <h2 class="section-heading">Misschien vraag je je dit af</h2>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Ik heb al een cursus gekocht bij DigitaalSlim. Wat voegt dit toe?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Goed nieuws: je cursussen blijven gewoon beschikbaar. Plus+ bouwt daarop voort. Je krijgt er de community bij (waar je vragen kunt stellen en persoonlijk antwoord krijgt), het nieuwe Stappenplan, en toegang tot alles wat we in de toekomst toevoegen. Zie het als het verschil tussen een kookboek en een persoonlijke kok: <strong>het kookboek heb je al, de kok helpt je wanneer het recept niet lukt.</strong></div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Ik heb een klein budget. Is dit het waard?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">We begrijpen dat. Daarom even in perspectief: het jaarlijkse lidmaatschap komt neer op <strong>2,67 euro per week</strong>. Minder dan een koffietje. En daarvoor heb je altijd iemand die met je meekijkt, hoef je nooit meer losse cursussen te kopen, en heb je toegang tot alles wat we maken. Plus: als het toch niet bij je past, krijg je binnen 30 dagen je volledige bedrag terug.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Wat als ik het niet genoeg gebruik?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Dat hoeft ook helemaal niet. Veel leden gebruiken het <strong>als vangnet</strong>: het is er wanneer je het nodig hebt. Heb je een vraag? Stel hem in de community. Wil je eens rustig een video bekijken? Die staat klaar wanneer het jou uitkomt. <strong>Er is geen schema, geen deadline, geen verplichting.</strong></div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Kan ik op elk moment opzeggen?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Ja, altijd. Je stuurt een mailtje of je regelt het in je account, en klaar. Je behoudt gewoon toegang tot het einde van de periode waarvoor je hebt betaald. <strong>Geen boete, geen vragen, geen moeilijk gedoe.</strong></div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Heb ik een Facebook-account nodig?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Nee, helemaal niet. De community draait op <strong>een eigen platform dat volledig losstaat van Facebook</strong>. Je hebt alleen een e-mailadres nodig om in te loggen. Er is ook een eigen app voor iPhone en iPad.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Wat als ik ergens vastloop?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Dan stel je je vraag in de community. Zo simpel is het. Je krijgt een duidelijk antwoord met tekst en schermafbeeldingen. En als het een vraag is die meer mensen herkennen, maken we er een video of Stappenplan van.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Is het niet te technisch voor mij?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Helemaal niet. Een groot deel van onze leden noemt zichzelf "beginner", en dat is prima. <strong>Alles is gemaakt voor mensen die het rustig willen leren</strong>, stap voor stap. Onze Stappenplannen leiden je in kleine, duidelijke stappen door een onderwerp.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Ik ben al Plus+ lid. Wat verandert er voor mij?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Goed nieuws: als bestaand lid behoud je gewoon je huidige prijs. De community is er als extra bijgekomen en je hebt er al toegang toe. Je cursussen blijven beschikbaar op de vertrouwde plek.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Waarom gaat de prijs binnenkort omhoog?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Simpel gezegd: omdat er steeds meer bij komt. Een eigen community, het nieuwe Stappenplan, persoonlijke hulp en nog veel meer dat in de maak is. De prijs gaat binnenkort naar 159 euro per jaar, omdat dat past bij alles wat erin zit. Maar <strong>wie er nu bij komt voor 139 euro, behoudt die prijs zolang je lid blijft</strong>. Dat is onze manier om vroege leden te bedanken.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Is het veilig om online te betalen?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Ja, helemaal veilig. We gebruiken Plug&Pay, een Nederlands betaalplatform dat werkt met <strong>de strengste beveiligingsstandaarden</strong>. Je gegevens worden versleuteld en nooit met derden gedeeld. Je kunt betalen met iDEAL, creditcard of Bancontact.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+        Wat is de volgende stap als ik lid word?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Zodra je betaling is afgerond, ontvang je binnen een paar seconden een mailtje met je inloggegevens. Daarmee kun je meteen aan de slag op het cursusplatform, en je krijgt een uitnodiging voor de community. Lukt er iets niet? Stuur ons een mailtje en we helpen je er doorheen. Daar zijn we voor.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIJZEN SECTION -->
+<section class="prijzen-section" id="prijzen">
+  <div class="section-label">Word lid</div>
+  <h2 class="section-heading">Eerlijke prijzen. Geen verrassingen.</h2>
+
+  <p class="prijzen-uitleg">DigitaalSlim Plus+ groeit stevig door. Een eigen community, het nieuwe Stappenplan, persoonlijke hulp, en er komt nog veel meer aan. Logisch dat de prijs daar binnenkort bij gaat passen: 159 euro per jaar.</p>
+
+  <div class="prijzen-bevriezing">
+    <strong>Maar wie er nu bij komt, betaalt 139 euro per jaar. En dat blijft zo.</strong> Zolang je lid bent, gaat jouw prijs niet omhoog. Dat is ons bedankje aan iedereen die er vroeg bij is.
+  </div>
+
+  <div class="prijzen-grid">
+    <div class="prijs-card">
+      <div class="prijs-period">Per kwartaal</div>
+      <div class="prijs-badge">Lanceerprijs</div>
+      <div class="prijs-strikethrough">45 euro/kwartaal</div>
+      <div class="prijs-amount">39 <span>euro/kwartaal</span></div>
+      <div class="prijs-per">Dat is nog geen 3 euro per week</div>
+      <a href="CHECKOUT_URL_KWARTAAL" class="btn-primary btn-outline">Word lid</a>
+    </div>
+
+    <div class="prijs-card popular">
+      <div class="prijs-period">Per jaar</div>
+      <div class="prijs-badge">Lanceerprijs</div>
+      <div class="prijs-strikethrough">159 euro/jaar</div>
+      <div class="prijs-amount">139 <span>euro/jaar</span></div>
+      <div class="prijs-per">Dat is 2,67 euro per week. Minder dan een koffietje.</div>
+      <a href="CHECKOUT_URL_JAAR" class="btn-primary">Word lid</a>
+    </div>
+  </div>
+
+  <p class="prijs-note">Op elk moment opzegbaar. Geen kleine lettertjes, geen verplichtingen. Je behoudt altijd toegang tot het einde van de periode waarvoor je hebt betaald.</p>
+  <p class="prijs-note">Niet tevreden? Binnen 30 dagen krijg je je volledige bedrag terug. Zonder vragen.</p>
+</section>
+
+<!-- GARANTIE SECTION -->
+<section class="garantie-section">
+  <div class="garantie-card">
+    <div class="garantie-icon">🛡️</div>
+    <h3>Niet overtuigd? Dan krijg je je geld terug.</h3>
+    <p>We willen dat je met een gerust hart kunt instappen. Daarom krijg je <strong>30 dagen om alles rustig te ontdekken</strong>. Bekijk de video's, stel een vraag in de community, probeer het Stappenplan. Past het toch niet bij je? Stuur ons binnen 30 dagen een mailtje en je krijgt het volledige bedrag terug. Zonder vragen, zonder kleine lettertjes.</p>
+  </div>
+</section>
+
+<!-- FINAL CTA SECTION -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2>Je hoeft het niet alleen uit te zoeken.</h2>
+    <p>Er is altijd iemand die meekijkt. Altijd op jouw tempo. Van AI tot online veiligheid, van je iPad tot alles wat er nieuw bijkomt. Sluit je aan bij meer dan 2.000 mensen die het samen doen.</p>
+    <a href="#prijzen" class="btn-primary">Word lid van DigitaalSlim Plus+</a>
+    <p class="cta-note">139 euro/jaar (lanceerprijs) · Op elk moment opzegbaar · 30 dagen geld terug</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-text">
+    DigitaalSlim © 2026 · Samen digitaal sterker<br>
+  </div>
+</footer>
+
+</body>
+</html>
