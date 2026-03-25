@@ -1465,29 +1465,47 @@ a { text-decoration: none; }
 }
 
 .urgency-inline {
-  background: linear-gradient(135deg, #2D1B9E 0%, #5B21B6 50%, #7C3AED 100%);
-  color: #fff;
-  text-align: center;
-  padding: 22px 40px;
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--gold-line);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--r2);
+  color: var(--ink);
+  text-align: left;
+  padding: 24px 32px;
   font-size: 16px;
-  font-weight: 600;
-  line-height: 1.6;
+  font-weight: 500;
+  line-height: 1.7;
+  box-shadow: var(--s2);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.urgency-inline::before {
+  content: "\231B";
+  font-size: 28px;
+  flex-shrink: 0;
 }
 
 .urgency-inline a {
   display: inline-block;
-  background: #fff;
-  color: #4C1D95;
+  background: var(--gold);
+  color: var(--gold-dark);
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 700;
   padding: 8px 20px;
-  border-radius: var(--r1);
+  border-radius: var(--rpill);
   text-decoration: none;
-  margin-top: 10px;
-  transition: background var(--t), transform var(--t);
+  margin-left: auto;
+  transition: box-shadow var(--t), transform var(--t);
+  box-shadow: var(--s-gold);
+  white-space: nowrap;
 }
 
-.urgency-inline a:hover { background: #f5f5f5; transform: scale(1.02); }
+.urgency-inline a:hover { box-shadow: var(--s-gold-h); transform: translateY(-1px); }
 
 /* ═══════════════════════════════════════════════════════════
    TESTIMONIALS — Masonry-inspired grid
@@ -2183,6 +2201,11 @@ a { text-decoration: none; }
   .geen-school { padding: 24px 24px; font-size: 16px; grid-template-columns: 1fr; gap: 24px; }
   .geen-school-visual { aspect-ratio: 16/9; }
 
+  /* Urgency inline */
+  .urgency-inline { padding: 20px 20px; font-size: 15px; flex-direction: column; text-align: center; gap: 12px; margin: 0 16px; }
+  .urgency-inline::before { font-size: 24px; }
+  .urgency-inline a { margin-left: 0; }
+
   /* Prijs statement */
   .prijs-statement { padding: 56px 20px; }
   .prijs-statement-inner { grid-template-columns: 1fr; gap: 24px; padding: 36px 28px; text-align: center; }
@@ -2580,8 +2603,8 @@ a { text-decoration: none; }
 
 <!-- ═══ URGENCY INLINE 1 ═══ -->
 <div class="urgency-inline r">
-  De prijs stijgt binnenkort van &euro;139 naar &euro;169 per jaar. Schrijf je nu in en zet je prijs vast.
-  <br><a href="#prijzen">Schrijf je nu in</a>
+  <span>De prijs stijgt binnenkort van &euro;139 naar &euro;169 per jaar. Schrijf je nu in en zet je prijs vast.</span>
+  <a href="#prijzen">Schrijf je nu in</a>
 </div>
 
 <!-- ═══ TESTIMONIALS ═══ -->
@@ -2642,8 +2665,8 @@ a { text-decoration: none; }
 
 <!-- ═══ URGENCY INLINE 2 ═══ -->
 <div class="urgency-inline r">
-  Laatste kans aan de huidige prijs. Wie er nu bij komt voor &euro;139, behoudt die prijs voor altijd.
-  <br><a href="#prijzen">Bekijk de prijzen</a>
+  <span>Laatste kans aan de huidige prijs. Wie er nu bij komt voor &euro;139, behoudt die prijs voor altijd.</span>
+  <a href="#prijzen">Bekijk de prijzen</a>
 </div>
 
 <!-- ═══ VERGELIJKING ═══ -->
