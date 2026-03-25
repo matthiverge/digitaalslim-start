@@ -210,41 +210,83 @@ a { text-decoration: none; }
   transform: translateY(-2px);
 }
 
-/* ─── URGENCY BAR ─── */
+/* ─── URGENCY BAR (Sticky) ─── */
 .urgency-bar {
-  background: linear-gradient(135deg, #2D1B9E 0%, #5B21B6 50%, #7C3AED 100%);
-  color: #fff;
-  text-align: center;
-  padding: 11px 24px;
-  font-size: 14px;
-  font-weight: 600;
+  background: rgba(2,44,34,0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(52,211,153,0.18);
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
+  gap: 16px;
   position: sticky;
   top: 0;
   z-index: 300;
-  line-height: 1.5;
+  overflow: hidden;
 }
 
-.urgency-bar strong { font-weight: 800; }
+.urgency-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(16,185,129,0.06) 0%, transparent 40%, rgba(16,185,129,0.04) 100%);
+  pointer-events: none;
+}
 
-.urgency-bar a {
-  background: #fff;
-  color: #4C1D95;
-  font-size: 12px;
+.urgency-bar-badge {
+  flex-shrink: 0;
+  background: rgba(52,211,153,0.15);
+  border: 1px solid rgba(52,211,153,0.3);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 10px;
   font-weight: 800;
-  padding: 5px 16px;
-  border-radius: var(--r1);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #34D399;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+.urgency-bar-sep {
+  width: 1px;
+  height: 18px;
+  background: rgba(52,211,153,0.2);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.urgency-bar-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+
+.urgency-bar-text strong { color: #fff; font-weight: 700; }
+
+.urgency-bar-btn {
+  flex-shrink: 0;
+  background: #10B981;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 7px 16px;
+  border-radius: 7px;
   text-decoration: none;
   white-space: nowrap;
-  margin-left: 6px;
-  transition: background var(--t), transform var(--t);
-  display: inline-block;
+  transition: background 0.2s, transform 0.2s;
+  position: relative;
+  z-index: 1;
 }
-.urgency-bar a:hover { background: #f5f5f5; transform: scale(1.02); }
+
+.urgency-bar-btn:hover { background: #059669; transform: scale(1.02); }
 
 /* ═══════════════════════════════════════════════════════════
    HERO — Full-bleed dark canvas with light content
@@ -2284,8 +2326,11 @@ a { text-decoration: none; }
   .container, .container-sm, .container-xs { padding: 0 20px; }
 
   /* Urgency bar */
-  .urgency-bar { font-size: 12px; padding: 9px 16px; }
-  .urgency-bar a { font-size: 11px; padding: 4px 12px; }
+  .urgency-bar { padding: 8px 12px; gap: 10px; }
+  .urgency-bar-badge { font-size: 9px; padding: 3px 8px; }
+  .urgency-bar-sep { display: none; }
+  .urgency-bar-text { font-size: 12px; }
+  .urgency-bar-btn { font-size: 11px; padding: 6px 12px; }
 
   /* Hero */
   .hero-inner { grid-template-columns: 1fr; gap: 0; padding: 48px 20px 0; text-align: center; }
@@ -2383,8 +2428,10 @@ a { text-decoration: none; }
 
 <!-- ═══ URGENCY BAR ═══ -->
 <div class="urgency-bar">
-  Laatste kans aan de huidige prijs. <strong>Schrijf je in en zet je prijs vast.</strong>
-  <a href="#prijzen">Schrijf je nu in</a>
+  <span class="urgency-bar-badge">Prijsverhoging</span>
+  <div class="urgency-bar-sep"></div>
+  <p class="urgency-bar-text">Laatste kans aan de huidige prijs. <strong>Schrijf je in en zet je prijs vast.</strong></p>
+  <a href="#prijzen" class="urgency-bar-btn">Schrijf je nu in &rarr;</a>
 </div>
 
 <!-- ═══ HERO ═══ -->
