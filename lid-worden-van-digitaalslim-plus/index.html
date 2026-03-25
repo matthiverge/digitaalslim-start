@@ -1801,6 +1801,167 @@ a { text-decoration: none; }
 .vergelijking-blok strong { color: var(--ink); }
 
 /* ═══════════════════════════════════════════════════════════
+   COMMUNITY GALERIJ — Visual proof cards
+   ═══════════════════════════════════════════════════════════ */
+
+.community-galerij {
+  background: var(--surface-2);
+  padding: 112px 40px;
+}
+
+.community-galerij-header {
+  max-width: 740px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+
+.community-galerij-header h2 {
+  margin-top: 16px;
+  margin-bottom: 14px;
+}
+
+.community-galerij-header p {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.community-grid {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+/* Snapshot card = simulated community post */
+.snap-card {
+  background: #111019;
+  border-radius: var(--r3);
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+  box-shadow: var(--s3);
+  transition: transform var(--t), box-shadow var(--t);
+}
+
+.snap-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--s4);
+}
+
+.snap-card-label {
+  padding: 16px 24px 0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #34D399;
+}
+
+.snap-card-label.label-blue { color: var(--violet-3); }
+.snap-card-label.label-gold { color: var(--gold); }
+.snap-card-label.label-pink { color: #F472B6; }
+
+/* Simulated forum post */
+.snap-post {
+  padding: 20px 24px;
+}
+
+.snap-post-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.snap-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.snap-avatar-green { background: linear-gradient(135deg, #059669, #10B981); }
+.snap-avatar-violet { background: linear-gradient(135deg, var(--violet), var(--violet-2)); }
+.snap-avatar-gold { background: linear-gradient(135deg, #B8860B, var(--gold)); }
+.snap-avatar-pink { background: linear-gradient(135deg, #DB2777, #F472B6); }
+
+.snap-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.3;
+}
+
+.snap-meta {
+  font-size: 11px;
+  color: rgba(255,255,255,0.30);
+  font-weight: 500;
+}
+
+.snap-text {
+  font-size: 15px;
+  color: rgba(255,255,255,0.60);
+  line-height: 1.65;
+}
+
+.snap-text strong { color: rgba(255,255,255,0.85); }
+
+/* Reply block */
+.snap-reply {
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 18px 24px;
+}
+
+.snap-reply .snap-post-header { margin-bottom: 8px; }
+
+.snap-reply .snap-name { color: var(--gold); }
+
+.snap-reply .snap-text {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
+
+/* Reactions bar */
+.snap-reactions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.snap-reaction {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  font-weight: 500;
+}
+
+.snap-reaction-emoji { font-size: 16px; }
+
+/* Image in card */
+.snap-image {
+  padding: 0 24px 4px;
+}
+
+.snap-image img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ═══════════════════════════════════════════════════════════
    FAQ — Accordion, elegant
    ═══════════════════════════════════════════════════════════ */
 
@@ -2390,6 +2551,13 @@ a { text-decoration: none; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .testi-featured { grid-column: 1; padding: 28px 24px; }
 
+  /* Community Galerij */
+  .community-galerij { padding: 72px 20px; }
+  .community-grid { grid-template-columns: 1fr; gap: 20px; }
+  .snap-post { padding: 16px 20px; }
+  .snap-reply { padding: 14px 20px; }
+  .snap-image { padding: 0 20px 4px; }
+
   /* FAQ */
   .faq-q { padding: 18px 22px; font-size: 15px; }
   .faq-a-inner { padding: 16px 22px 20px; font-size: 15px; }
@@ -2875,6 +3043,149 @@ a { text-decoration: none; }
       <p>Tienduizenden mensen kochten al een losse cursus bij ons, voor gemiddeld &euro;97 per stuk. Daar waren ze blij mee, maar een losse cursus staat stil in de tijd. Zodra Apple een grote update uitbrengt, kan die cursus al verouderd raken. En er zit geen community bij waar je terecht kunt met vragen.</p>
       <p>Bij DigitaalSlim Plus+ krijg je voor <strong>jaarlijks &euro;139</strong> alles in een pakket: alle cursussen, alle Stappenplannen, de community, persoonlijke hulp, en de nieuwe E-mailchecker app. Altijd up-to-date, altijd binnen handbereik. <strong>En alles wat we in de toekomst bouwen, krijg je er automatisch bij.</strong></p>
     </div>
+  </div>
+</section>
+
+<!-- ═══ COMMUNITY GALERIJ ═══ -->
+<section class="community-galerij">
+  <div class="community-galerij-header r">
+    <div class="eyebrow">Mis nooit meer een stap</div>
+    <h2>Jouw 24/7 Gemoedsrust &amp; Gezelligheid: De Community in Actie</h2>
+    <p>Kijk mee hoe onze leden en ons team elkaar helpen. Geen vraag is te simpel, en we rusten niet voordat het opgelost is.</p>
+  </div>
+
+  <div class="community-grid">
+
+    <!-- Kaart 1: De Phishing-Check -->
+    <div class="snap-card r">
+      <div class="snap-card-label">Kanaal: Oplichting</div>
+      <div class="snap-post">
+        <div class="snap-post-header">
+          <div class="snap-avatar snap-avatar-green">H</div>
+          <div>
+            <div class="snap-name">Harry</div>
+            <div class="snap-meta">vandaag om 09:14</div>
+          </div>
+        </div>
+        <div class="snap-text">Ik kreeg net deze mail van "mijn bank" dat mijn rekening geblokkeerd is. Het logo ziet er echt uit. <strong>Is dit oplichting?</strong> Ik durf nergens op te klikken...</div>
+      </div>
+      <div class="snap-image">
+        <img src="afbeeldingen/ChatGPT-voor-en-na.png" alt="Verdachte phishing-mail" loading="lazy">
+      </div>
+      <div class="snap-reply">
+        <div class="snap-post-header">
+          <div class="snap-avatar snap-avatar-gold">M</div>
+          <div>
+            <div class="snap-name">Matthias (team)</div>
+            <div class="snap-meta">vandaag om 09:22</div>
+          </div>
+        </div>
+        <div class="snap-text">Goed dat je niet geklikt hebt, Harry! Dit is 100% phishing. Je bank vraagt nooit via mail om je gegevens te bevestigen. <strong>Verwijder deze mail gerust.</strong> Je hebt precies goed gehandeld.</div>
+      </div>
+      <div class="snap-reactions">
+        <div class="snap-reaction"><span class="snap-reaction-emoji">👍</span> 12</div>
+        <div class="snap-reaction"><span class="snap-reaction-emoji">❤️</span> 8</div>
+        <div class="snap-reaction"><span class="snap-reaction-emoji">🙏</span> 5</div>
+      </div>
+    </div>
+
+    <!-- Kaart 2: De Voor-en-Na van het Stappenplan -->
+    <div class="snap-card r">
+      <div class="snap-card-label label-blue">Kanaal: Vragen over de community</div>
+      <div class="snap-post">
+        <div class="snap-post-header">
+          <div class="snap-avatar snap-avatar-pink">T</div>
+          <div>
+            <div class="snap-name">Truus</div>
+            <div class="snap-meta">gisteren om 14:37</div>
+          </div>
+        </div>
+        <div class="snap-text">Ik probeer al een uur om mijn iCloud-opslag te begrijpen, maar die Apple-handleiding is echt onleesbaar. <strong>Heeft iemand een simpelere uitleg?</strong></div>
+      </div>
+      <div class="snap-image">
+        <img src="afbeeldingen/ChatGPT-voor-en-na.png" alt="Voor-en-na: Apple handleiding vs DigitaalSlim Stappenplan" loading="lazy">
+      </div>
+      <div class="snap-reply">
+        <div class="snap-post-header">
+          <div class="snap-avatar snap-avatar-gold">M</div>
+          <div>
+            <div class="snap-name">Matthias (team)</div>
+            <div class="snap-meta">gisteren om 14:51</div>
+          </div>
+        </div>
+        <div class="snap-text">Ha Truus, snap ik helemaal! Hier is ons Stappenplan over iCloud, speciaal gemaakt zodat je het in 5 minuutjes snapt. <strong>Stap voor stap, met plaatjes erbij.</strong></div>
+      </div>
+      <div class="snap-reactions">
+        <div class="snap-reaction"><span class="snap-reaction-emoji">👍</span> 9</div>
+        <div class="snap-reaction"><span class="snap-reaction-emoji">🎉</span> 6</div>
+      </div>
+    </div>
+
+    <!-- Kaart 3: De Gezellige Community Trots -->
+    <div class="snap-card r">
+      <div class="snap-card-label label-gold">Kanaal: Koffiehoekje</div>
+      <div class="snap-post">
+        <div class="snap-post-header">
+          <div class="snap-avatar snap-avatar-violet">M</div>
+          <div>
+            <div class="snap-name">Mieke</div>
+            <div class="snap-meta">maandag om 10:05</div>
+          </div>
+        </div>
+        <div class="snap-text">Ik wil even delen dat ik gisteren <strong>helemaal zelf een WhatsApp-groep heb aangemaakt</strong> voor mijn wandelclub! Drie maanden geleden durfde ik niet eens een foto te versturen. Bedankt aan iedereen hier die me geholpen heeft. 🎉</div>
+      </div>
+      <div class="snap-image">
+        <img src="afbeeldingen/ChatGPT-voor-en-na.png" alt="Mieke deelt haar trots moment" loading="lazy">
+      </div>
+      <div class="snap-reactions">
+        <div class="snap-reaction"><span class="snap-reaction-emoji">❤️</span> 24</div>
+        <div class="snap-reaction"><span class="snap-reaction-emoji">🎉</span> 18</div>
+        <div class="snap-reaction"><span class="snap-reaction-emoji">👏</span> 11</div>
+      </div>
+      <div class="snap-reply">
+        <div class="snap-post-header">
+          <div class="snap-avatar snap-avatar-green">J</div>
+          <div>
+            <div class="snap-name">Jos</div>
+            <div class="snap-meta">maandag om 10:12</div>
+          </div>
+        </div>
+        <div class="snap-text">Proficiat Mieke! Zo herkenbaar. Ik was vorig jaar ook zo trots toen ik mijn eerste videogesprek voerde met de kleinkinderen. <strong>Het is nooit te laat om bij te leren!</strong></div>
+      </div>
+    </div>
+
+    <!-- Kaart 4: De Een-op-Een Snelheid -->
+    <div class="snap-card r">
+      <div class="snap-card-label label-pink">Kanaal: iPad &amp; iPhone</div>
+      <div class="snap-post">
+        <div class="snap-post-header">
+          <div class="snap-avatar snap-avatar-green">J</div>
+          <div>
+            <div class="snap-name">Jan</div>
+            <div class="snap-meta">vrijdag om 16:42</div>
+          </div>
+        </div>
+        <div class="snap-text">Mijn iPad reageert al de hele middag heel traag. Apps sluiten duurt eeuwen en soms bevriest het scherm helemaal. <strong>Wat kan ik doen?</strong></div>
+      </div>
+      <div class="snap-reply">
+        <div class="snap-post-header">
+          <div class="snap-avatar snap-avatar-gold">M</div>
+          <div>
+            <div class="snap-name">Matthias (team)</div>
+            <div class="snap-meta">vrijdag om 16:48</div>
+          </div>
+        </div>
+        <div class="snap-text">Hoi Jan! Dit is bijna altijd op te lossen met een simpele herstart. Ik heb er een kort filmpje over gemaakt dat je precies laat zien hoe: <strong>bekijk de video-uitleg hier.</strong> Na 2 minuten doet je iPad het weer als nieuw!</div>
+      </div>
+      <div class="snap-image">
+        <img src="afbeeldingen/ChatGPT-voor-en-na.png" alt="Link naar video-uitleg iPad herstart" loading="lazy">
+      </div>
+      <div class="snap-reactions">
+        <div class="snap-reaction"><span class="snap-reaction-emoji">👍</span> 7</div>
+        <div class="snap-reaction"><span class="snap-reaction-emoji">🙏</span> 4</div>
+      </div>
+    </div>
+
   </div>
 </section>
 
