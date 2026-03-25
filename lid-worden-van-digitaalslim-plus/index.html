@@ -1104,13 +1104,20 @@ a { text-decoration: none; }
 
 .prijs-urgentie-tag {
   display: inline-block;
-  background: var(--red);
+  background: linear-gradient(135deg, #10B981, #059669);
   color: #fff;
-  font-size: 13px;
-  font-weight: 700;
-  padding: 8px 18px;
-  border-radius: var(--r1);
-  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 800;
+  padding: 12px 28px;
+  border-radius: 12px;
+  margin-top: 12px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(16,185,129,0.4);
+}
+.prijs-urgentie-tag:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 28px rgba(16,185,129,0.55);
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -2624,7 +2631,7 @@ a { text-decoration: none; }
     <div class="prijs-statement-text">
       <p>Alle cursussen, Stappenplannen, de community, persoonlijke hulp en de nieuwe E-mailchecker app. <strong>Alles inbegrepen, geen verborgen kosten.</strong></p>
       <p>Binnenkort wordt dit &euro;169. <strong>Wie er nu bij komt, behoudt &euro;139 voor altijd.</strong></p>
-      <span class="prijs-urgentie-tag">Binnenkort &euro;169. Schrijf je nu in</span>
+      <a href="#prijzen" class="prijs-urgentie-tag">Binnenkort &euro;169. Schrijf je nu in &rarr;</a>
     </div>
   </div>
 </section>
