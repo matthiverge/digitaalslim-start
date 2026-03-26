@@ -568,6 +568,110 @@ a { text-decoration: none; }
 }
 
 /* ═══════════════════════════════════════════════════════════
+   VERHUIZING — Facebook → eigen platform aankondigingsblok
+   ═══════════════════════════════════════════════════════════ */
+
+.verhuizing-banner {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  border-top: 1px solid rgba(22,163,74,0.15);
+  border-bottom: 1px solid rgba(22,163,74,0.15);
+  padding: 28px 0;
+}
+
+.verhuizing-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.verhuizing-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border: 1.5px solid rgba(22,163,74,0.25);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-top: 2px;
+  box-shadow: 0 2px 8px rgba(22,163,74,0.1);
+}
+
+.verhuizing-content {
+  flex: 1;
+}
+
+.verhuizing-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #15803d;
+  background: rgba(22,163,74,0.1);
+  border-radius: 20px;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+}
+
+.verhuizing-label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #16a34a;
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.verhuizing-content p {
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.verhuizing-content strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+.verhuizing-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.verhuizing-pill {
+  font-size: 12px;
+  font-weight: 600;
+  color: #15803d;
+  background: #fff;
+  border: 1px solid rgba(22,163,74,0.3);
+  border-radius: 20px;
+  padding: 4px 12px;
+}
+
+@media (max-width: 600px) {
+  .verhuizing-inner {
+    flex-direction: column;
+    gap: 14px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
    OVERZICHT — Quick summary after hero
    ═══════════════════════════════════════════════════════════ */
 
@@ -3048,6 +3152,24 @@ a { text-decoration: none; }
     </div>
   </div>
 </section>
+
+<!-- ═══ VERHUIZING ═══ -->
+<div class="verhuizing-banner">
+  <div class="verhuizing-inner">
+    <div class="verhuizing-icon">🏡</div>
+    <div class="verhuizing-content">
+      <div class="verhuizing-label">Nieuws van DigitaalSlim</div>
+      <p>Je hebt het misschien al gemerkt: we zijn stap voor stap aan het verhuizen van Facebook naar <strong>ons eigen platform</strong>. Waarom? Omdat we vinden dat jouw vragen en gesprekken niet thuishoren tussen reclames en algoritmes. De nieuwe community draait op een <strong>eigen, afgesloten plek</strong> met een <strong>eigen app</strong>. De Facebook-groep blijft voorlopig nog bestaan, maar alle nieuwe hulp, video&rsquo;s en stappenplannen verschijnen voortaan in de community.</p>
+      <div class="verhuizing-pills">
+        <span class="verhuizing-pill">✓ Rustiger</span>
+        <span class="verhuizing-pill">✓ Veiliger</span>
+        <span class="verhuizing-pill">✓ Overzichtelijker</span>
+        <span class="verhuizing-pill">✓ Geen algoritmes</span>
+        <span class="verhuizing-pill">✓ Eigen app</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ═══ OVERZICHT ═══ -->
 <section class="overzicht">
