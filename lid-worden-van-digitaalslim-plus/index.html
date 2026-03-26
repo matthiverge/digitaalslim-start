@@ -212,10 +212,10 @@ a { text-decoration: none; }
 
 /* ─── URGENCY BAR (Sticky) ─── */
 .urgency-bar {
-  background: rgba(255,255,255,0.96);
+  background: rgba(2,44,34,0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(74,44,245,0.12);
+  border-bottom: 1px solid rgba(52,211,153,0.18);
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -225,28 +225,27 @@ a { text-decoration: none; }
   top: 0;
   z-index: 300;
   overflow: hidden;
-  box-shadow: 0 1px 12px rgba(13,11,20,0.07);
 }
 
 .urgency-bar::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(74,44,245,0.03) 0%, transparent 40%, rgba(240,180,41,0.03) 100%);
+  background: linear-gradient(90deg, rgba(16,185,129,0.06) 0%, transparent 40%, rgba(16,185,129,0.04) 100%);
   pointer-events: none;
 }
 
 .urgency-bar-badge {
   flex-shrink: 0;
-  background: rgba(74,44,245,0.08);
-  border: 1px solid rgba(74,44,245,0.18);
+  background: rgba(52,211,153,0.15);
+  border: 1px solid rgba(52,211,153,0.30);
   border-radius: 6px;
   padding: 4px 10px;
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--violet);
+  color: #34D399;
   white-space: nowrap;
   position: relative;
   z-index: 1;
@@ -255,7 +254,7 @@ a { text-decoration: none; }
 .urgency-bar-sep {
   width: 1px;
   height: 18px;
-  background: rgba(74,44,245,0.15);
+  background: rgba(52,211,153,0.20);
   flex-shrink: 0;
   position: relative;
   z-index: 1;
@@ -264,17 +263,17 @@ a { text-decoration: none; }
 .urgency-bar-text {
   font-size: 14px;
   font-weight: 500;
-  color: var(--ink-3);
+  color: rgba(255,255,255,0.85);
   line-height: 1.4;
   position: relative;
   z-index: 1;
 }
 
-.urgency-bar-text strong { color: var(--ink); font-weight: 700; }
+.urgency-bar-text strong { color: #fff; font-weight: 700; }
 
 .urgency-bar-btn {
   flex-shrink: 0;
-  background: var(--violet);
+  background: #10B981;
   color: #fff;
   font-size: 13px;
   font-weight: 800;
@@ -282,13 +281,12 @@ a { text-decoration: none; }
   border-radius: 7px;
   text-decoration: none;
   white-space: nowrap;
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  transition: background 0.2s, transform 0.2s;
   position: relative;
   z-index: 1;
-  box-shadow: 0 2px 10px rgba(74,44,245,0.25);
 }
 
-.urgency-bar-btn:hover { background: var(--violet-2); transform: scale(1.02); box-shadow: 0 4px 16px rgba(74,44,245,0.35); }
+.urgency-bar-btn:hover { background: #059669; transform: scale(1.02); }
 
 /* ═══════════════════════════════════════════════════════════
    HERO — Full-bleed dark canvas with light content
@@ -350,13 +348,13 @@ a { text-decoration: none; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(240,180,41,0.12);
-  border: 1px solid rgba(240,180,41,0.30);
+  background: rgba(13,11,20,0.07);
+  border: 1px solid rgba(13,11,20,0.14);
   border-radius: var(--rpill);
   padding: 6px 14px;
   font-size: 12px;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--ink);
   margin-bottom: 18px;
   letter-spacing: 0.01em;
 }
@@ -365,7 +363,7 @@ a { text-decoration: none; }
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--ink);
   animation: pulse-dot 2s ease-in-out infinite;
   flex-shrink: 0;
 }
@@ -2661,7 +2659,7 @@ a { text-decoration: none; }
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-content r">
-      <img src="afbeeldingen/DS-Logo-HD---White.png" alt="DigitaalSlim Plus+" class="hero-logo">
+      <img src="afbeeldingen/DS-Logo-HD---Black.png" alt="DigitaalSlim Plus+" class="hero-logo">
       <div class="hero-pill"><span class="hero-pill-dot"></span>Al meer dan 2.000 tevreden plussers gingen je voor</div>
       <h1>Eindelijk iemand die het rustig en duidelijk aan je uitlegt.<br><em>Hulp die altijd klaarstaat, op jouw tempo.</em></h1>
       <p class="hero-sub">De digitale wereld verandert snel, maar jij hoeft niet sneller te gaan rennen. <strong>Wij filteren de chaos voor je.</strong> DigitaalSlim Plus+ is je vaste plek voor al je digitale vragen. Een warme club van mensen die elkaar helpen.</p>
