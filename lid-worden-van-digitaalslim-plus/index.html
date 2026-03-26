@@ -848,8 +848,10 @@ a { text-decoration: none; }
 }
 .community-proof-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 20px;
+  max-width: 640px;
+  margin: 0 auto;
 }
 .community-proof-grid img {
   width: 100%;
@@ -861,14 +863,6 @@ a { text-decoration: none; }
 .community-proof-grid img:hover {
   transform: translateY(-3px);
   box-shadow: var(--s3);
-}
-@media (max-width: 768px) {
-  .community-proof-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    max-width: 480px;
-    margin: 0 auto;
-  }
 }
 
 /* ═══════════════════════════════════════════════════════════
