@@ -831,6 +831,46 @@ a { text-decoration: none; }
 
 .herkenning-bridge strong { color: var(--ink); }
 
+/* ─── COMMUNITY PROOF (screenshot strips) ─── */
+.community-proof {
+  max-width: 1040px;
+  margin: 48px auto 0;
+  padding: 0 20px;
+}
+.community-proof-label {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.community-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.community-proof-grid img {
+  width: 100%;
+  border-radius: var(--r2);
+  box-shadow: var(--s2);
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.community-proof-grid img:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--s3);
+}
+@media (max-width: 768px) {
+  .community-proof-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════
    MATTHIAS — Asymmetric editorial layout
    ═══════════════════════════════════════════════════════════ */
@@ -3226,6 +3266,16 @@ a { text-decoration: none; }
   <div class="herkenning-bridge r">
     <strong>Dat gevoel is heel begrijpelijk.</strong> De technologie van vandaag verandert zo snel dat een losse cursus al verouderd kan zijn voor je hem hebt afgemaakt. Zeker bij onderwerpen als AI en online veiligheid. Precies daarom bestaat DigitaalSlim Plus+: een lidmaatschap dat met je meegroeit. Nieuwe lessen worden toegevoegd zodra er iets verandert. De community geeft je antwoord op vragen die vandaag pas bestaan. En alles wat we in de toekomst bouwen, krijg je er automatisch bij. <strong>Geen extra kosten, geen nieuwe aankopen. Plus+ groeit gewoon mee.</strong>
   </div>
+
+  <div class="community-proof">
+    <div class="community-proof-label">Dit zeggen leden over hun ervaring</div>
+    <div class="community-proof-grid">
+      <img src="afbeeldingen/Testimonials/1-rina.png" alt="Rina: Ik maak me niet meer druk als ik vast kom te zitten" loading="lazy">
+      <img src="afbeeldingen/Testimonials/2-elise.png" alt="Elise: Je vraag wordt steeds beantwoord en je probleem opgelost" loading="lazy">
+      <img src="afbeeldingen/Testimonials/8-armand.png" alt="Armand: Als je een vraag hebt kan je er altijd terecht, een hele geruststelling" loading="lazy">
+    </div>
+  </div>
+
 </section>
 
 <!-- ═══ MATTHIAS ═══ -->
