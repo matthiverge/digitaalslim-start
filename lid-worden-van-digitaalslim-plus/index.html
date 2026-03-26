@@ -2520,7 +2520,41 @@ a { text-decoration: none; }
   margin-bottom: 40px;
 }
 
-/* Gedachte & Geruststelling blokken */
+/* Brief lay-out */
+.brief-body {
+  max-width: 700px;
+  margin: 0 auto 52px;
+  text-align: left;
+}
+
+.brief-intro {
+  font-size: 17px;
+  color: var(--ink-3);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.brief-kop {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin: 36px 0 10px;
+}
+
+.brief-kop:first-of-type {
+  margin-top: 0;
+}
+
+.brief-body p {
+  font-size: 16px;
+  color: var(--ink-3);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Gedachte & Geruststelling blokken (legacy) */
 .gg-list {
   display: flex;
   flex-direction: column;
@@ -3585,57 +3619,21 @@ a { text-decoration: none; }
     <div class="final-cta-eyebrow">Een persoonlijk woord van Matthias</div>
     <h2>Zullen we de volgende stap samen zetten?</h2>
 
-    <!-- Gedachte & Geruststelling blokken -->
-    <div class="gg-list">
+    <!-- Vloeiende brief met tussentitels -->
+    <div class="brief-body r">
+      <p class="brief-intro">Misschien denk je na het lezen van deze pagina: <em>"Ach Matthias, ik werk al jaren met mijn iPad of iPhone. Waarom zou ik nog lid worden?"</em> En je hebt helemaal gelijk. Je kent de basis al lang.</p>
 
-      <!-- Blok 1: De Epiphany -->
-      <div class="gg-blok r">
-        <div class="gg-gedachte">
-          <div class="gg-gedachte-label">Jouw gedachte</div>
-          <p>"Ach Matthias, ik werk al jaren met mijn iPad. Waarom zou ik nog lid worden?"</p>
-        </div>
-        <div class="gg-geruststelling">
-          <strong>Je apparaat is niet het probleem &mdash; de wereld eromheen wel.</strong>
-          <p>De ontwikkelingen gaan razendsnel. AI biedt kansen, maar oplichting wordt gehaaider. Elk jaar een nieuw besturingssysteem. Wij zorgen dat jij moeiteloos en veilig bijblijft.</p>
-        </div>
-      </div>
+      <h3 class="brief-kop">De wereld verandert, jij hoeft alleen maar bij te blijven.</h3>
+      <p>Het is namelijk niet jouw apparaat dat het probleem is, het is de wereld eromheen. De ontwikkelingen gaan razendsnel. AI biedt prachtige kansen, maar oplichting en phishing worden daardoor ook gehaaider. Elk jaar is er een nieuw besturingssysteem. Wij zorgen dat jij moeiteloos en veilig bijblijft, zonder dat je expert hoeft te worden.</p>
 
-      <!-- Blok 2: De Tijd -->
-      <div class="gg-blok r">
-        <div class="gg-gedachte">
-          <div class="gg-gedachte-label">Jouw gedachte</div>
-          <p>"Ik wil best hulp, maar ik wil geen uren per week kwijt zijn aan weer een cursus."</p>
-        </div>
-        <div class="gg-geruststelling">
-          <strong>Maximale gemoedsrust, minimale tijdsinvestering.</strong>
-          <p>We verwachten niet dat je uren rondhangt. Je klapt de app open wanneer j&oacute;&uacute;w probleem opspeelt, pakt er een kort stappenplan bij, en gaat weer lekker verder met je dag.</p>
-        </div>
-      </div>
+      <h3 class="brief-kop">Dit is al 10 jaar onze grootste passie.</h3>
+      <p>Al tien jaar lang is het onze missie om hier rust in te brengen. We hebben al duizenden mensen geholpen. Jouw veilige haven staat klaar. Een plek waar je meteen terechtkunt als je vastloopt. En het mooie is: met jouw vraag help je direct andere leden, want wij maken daar weer nieuwe, duidelijke stappenplannen van.</p>
 
-      <!-- Blok 3: De Passie & Waarde -->
-      <div class="gg-blok r">
-        <div class="gg-gedachte">
-          <div class="gg-gedachte-label">Jouw gedachte</div>
-          <p>"Hoe weet ik zeker dat ik hier echt goed en betrouwbaar geholpen word?"</p>
-        </div>
-        <div class="gg-geruststelling">
-          <strong>Dit is al 10 jaar onze passie.</strong>
-          <p>We hebben al duizenden mensen geholpen. Jouw veilige haven staat klaar. En het mooie is: met jouw vraag help je via onze video's direct ook andere leden.</p>
-        </div>
-      </div>
+      <h3 class="brief-kop">Maximale gemoedsrust, zonder dat het je tijd kost.</h3>
+      <p>We verwachten absoluut niet dat je uren op ons platform gaat rondhangen of weer &lsquo;naar school&rsquo; gaat. Integendeel. Je klapt simpelweg de app open wanneer j&oacute;&uacute;w probleem opspeelt, pakt er een kort stappenplan of video bij, je probleem is opgelost en je gaat weer lekker verder met je dag.</p>
 
-      <!-- Blok 4: Het Risico -->
-      <div class="gg-blok r">
-        <div class="gg-gedachte">
-          <div class="gg-gedachte-label">Jouw gedachte</div>
-          <p>"Wat als het toch niets voor mij blijkt te zijn?"</p>
-        </div>
-        <div class="gg-geruststelling">
-          <strong>Je loopt geen enkel risico.</strong>
-          <p>Probeer het 30 dagen. Voelt het niet goed? Stuur &eacute;&eacute;n e-mail en je krijgt direct je geld terug. Zonder kleine lettertjes.</p>
-        </div>
-      </div>
-
+      <h3 class="brief-kop">Probeer het gewoon 30 dagen, zonder risico.</h3>
+      <p>Je krijgt van mij 30 dagen de tijd om rustig rond te kijken. Voelt het toch niet als de juiste plek voor jou? Dan stuur je &eacute;&eacute;n e-mail en stort ik je volledige bedrag direct terug. Zonder kleine lettertjes, zonder lastige vragen. Je kunt je niet miskopen.</p>
     </div>
 
     <!-- Urgentie kader -->
