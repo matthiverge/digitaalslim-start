@@ -1418,9 +1418,9 @@ a { text-decoration: none; }
   max-width: 1040px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 420px 1fr;
+  grid-template-columns: 380px 1fr;
   gap: 56px;
-  align-items: start;
+  align-items: stretch;
   position: relative;
   z-index: 1;
 }
@@ -1432,16 +1432,18 @@ a { text-decoration: none; }
   border: 1px solid var(--border);
   position: sticky;
   top: 80px;
-  max-height: 560px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .kanalen-screenshot img {
   width: 100%;
-  height: 100%;
-  max-height: 560px;
+  flex: 1;
   display: block;
   object-fit: cover;
   object-position: top center;
+  min-height: 0;
 }
 
 .kanalen-list {
@@ -1502,6 +1504,32 @@ a { text-decoration: none; }
   font-size: 13px;
   color: var(--muted);
   line-height: 1.45;
+}
+
+.kanaal-group-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 4px 0 2px;
+  margin-top: 8px;
+}
+
+.kanaal-group-label:first-child { margin-top: 0; }
+
+.kanaal-emoji {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--r1);
+  background: rgba(74,44,245,0.08);
+  border: 1px solid rgba(74,44,245,0.14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 20px;
+  line-height: 1;
 }
 
 /* Veiligheid highlights */
@@ -2996,13 +3024,35 @@ a { text-decoration: none; }
       </figure>
     </div>
     <div class="kanalen-list">
-      <div class="kanaal r"><div class="kanaal-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><div><h4>iPad &amp; iPhone</h4><p>Instellingen, tips en alles wat je dagelijks gebruikt</p></div></div>
-      <div class="kanaal r d1"><div class="kanaal-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div><h4>Mac</h4><p>Van sneltoetsen tot veelgestelde problemen</p></div></div>
-      <div class="kanaal r d2"><div class="kanaal-icon"><svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div><div><h4>iCloud &amp; Opslag</h4><p>Foto's, back-ups, opslag vrijmaken</p></div></div>
-      <div class="kanaal r"><div class="kanaal-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><div><h4>Foto's &amp; Video</h4><p>Maken, bewerken, opslaan en delen</p></div></div>
-      <div class="kanaal r d1"><div class="kanaal-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><h4>Email &amp; Privacy</h4><p>Veilig surfen, spam herkennen, e-mail instellen</p></div></div>
-      <div class="kanaal r d2"><div class="kanaal-icon"><svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 1 4 4v2H8V6a4 4 0 0 1 4-4z"/><rect x="3" y="8" width="18" height="14" rx="2"/><circle cx="12" cy="16" r="2"/></svg></div><div><h4>AI &amp; Slim Werken</h4><p>De nieuwste technologie, op een begrijpelijke manier</p></div></div>
-      <div class="kanaal r"><div class="kanaal-icon"><svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></div><div><h4>Koffiehoekje</h4><p>Gezellig bijpraten met andere leden</p></div></div>
+
+      <div class="kanaal-group-label">👋 Welkom &amp; Community</div>
+      <div class="kanaal r"><div class="kanaal-emoji">👋</div><div><h4>Stel je voor</h4><p>Vertel wie je bent en maak kennis met de community</p></div></div>
+      <div class="kanaal r d1"><div class="kanaal-emoji">📣</div><div><h4>Aankondigingen</h4><p>Nieuws en updates van het DigitaalSlim team</p></div></div>
+      <div class="kanaal r d2"><div class="kanaal-emoji">☕</div><div><h4>Koffiehoekje</h4><p>Gezellig bijpraten met andere leden</p></div></div>
+      <div class="kanaal r"><div class="kanaal-emoji">💬</div><div><h4>Vragen over de community</h4><p>Hoe werkt het platform? Wij helpen je op weg</p></div></div>
+
+      <div class="kanaal-group-label">📱 Apparaten</div>
+      <div class="kanaal r d1"><div class="kanaal-emoji">📱</div><div><h4>iPad &amp; iPhone</h4><p>Instellingen, tips en alles wat je dagelijks gebruikt</p></div></div>
+      <div class="kanaal r d2"><div class="kanaal-emoji">🖥️</div><div><h4>Mac</h4><p>Van sneltoetsen tot veelgestelde problemen</p></div></div>
+      <div class="kanaal r"><div class="kanaal-emoji">⌚</div><div><h4>Apple Watch</h4><p>Alles over je horloge en gezondheidsdata</p></div></div>
+      <div class="kanaal r d1"><div class="kanaal-emoji">📺</div><div><h4>Apple TV</h4><p>Streamen, instellen en genieten</p></div></div>
+      <div class="kanaal r d2"><div class="kanaal-emoji">🍎</div><div><h4>Apple Nieuws</h4><p>Laatste updates en nieuwe functies</p></div></div>
+
+      <div class="kanaal-group-label">🔒 Veilig Online</div>
+      <div class="kanaal r"><div class="kanaal-emoji">🔍</div><div><h4>Echt of Nep?</h4><p>Phishing herkennen, verdachte mails checken</p></div></div>
+      <div class="kanaal r d1"><div class="kanaal-emoji">🚨</div><div><h4>Actuele Waarschuwingen</h4><p>Oplichting en gevaren die nu de ronde doen</p></div></div>
+      <div class="kanaal r d2"><div class="kanaal-emoji">🔐</div><div><h4>Wachtwoorden &amp; Beveiliging</h4><p>Veilig inloggen en je accounts beschermen</p></div></div>
+      <div class="kanaal r"><div class="kanaal-emoji">💛</div><div><h4>Mijn verhaal (Veilig &amp; Zo)</h4><p>Deel je ervaringen met online veiligheid</p></div></div>
+
+      <div class="kanaal-group-label">💡 Onderwerpen</div>
+      <div class="kanaal r d1"><div class="kanaal-emoji">📸</div><div><h4>Foto's &amp; Video</h4><p>Maken, bewerken, opslaan en delen</p></div></div>
+      <div class="kanaal r d2"><div class="kanaal-emoji">🤖</div><div><h4>AI &amp; Slim Werken</h4><p>De nieuwste technologie, begrijpelijk uitgelegd</p></div></div>
+      <div class="kanaal r"><div class="kanaal-emoji">☁️</div><div><h4>iCloud &amp; Accounts</h4><p>Foto's, back-ups en opslag beheren</p></div></div>
+      <div class="kanaal r d1"><div class="kanaal-emoji">✉️</div><div><h4>Email &amp; Internet</h4><p>Veilig surfen, spam herkennen, e-mail instellen</p></div></div>
+
+      <div class="kanaal-group-label">🆘 Hulp nodig</div>
+      <div class="kanaal r d2"><div class="kanaal-emoji">❓</div><div><h4>Overige vragen</h4><p>Staat je vraag er niet bij? Stel hem hier!</p></div></div>
+
     </div>
   </div>
 
