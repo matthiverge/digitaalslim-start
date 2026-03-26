@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonials — 5 UI Varianten | DigitaalSlim Plus+</title>
+<style>
+/* ─── RESET & BASE ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  background: #f4f4f8;
+  color: #1a1a2e;
+}
+
+/* ─── DESIGN TOKENS ─── */
+:root {
+  --violet:       #7C3AED;
+  --violet-dark:  #5B21B6;
+  --violet-light: #ede9fe;
+  --violet-mid:   #c4b5fd;
+  --gold:         #F0B429;
+  --gold-light:   #fffbeb;
+  --green:        #059669;
+  --green-light:  #d1fae5;
+  --text-dark:    #1a1a2e;
+  --text-mid:     #4a5568;
+  --text-light:   #94a3b8;
+  --border:       #e8e8f0;
+  --white:        #ffffff;
+  --bg:           #f4f4f8;
+}
+
+/* ─── STICKY NAV ─── */
+.nav {
+  position: sticky; top: 0; z-index: 200;
+  background: #1a1a2e;
+  display: flex; gap: 0;
+  overflow-x: auto;
+  border-bottom: 2px solid #2d2d4e;
+}
+.nav button {
+  flex: 1; min-width: 160px;
+  padding: 14px 16px;
+  background: transparent;
+  color: rgba(255,255,255,.55);
+  border: none; border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-size: 13px; font-weight: 700;
+  white-space: nowrap;
+  transition: all .2s;
+  letter-spacing: .02em;
+}
+.nav button:hover { color: #fff; background: rgba(255,255,255,.06); }
+.nav button.active { color: #F0B429; border-bottom-color: #F0B429; }
+
+/* ─── VARIANT WRAPPER ─── */
+.variant { display: none; }
+.variant.active { display: block; }
+
+.section-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 72px 24px 80px;
+}
+.section-wrap.narrow { max-width: 780px; }
+
+/* ─── SHARED TYPOGRAPHY ─── */
+.eyebrow {
+  text-align: center;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--violet); margin-bottom: 14px;
+}
+.heading {
+  text-align: center;
+  font-size: clamp(28px, 4.5vw, 44px);
+  font-weight: 900; color: var(--text-dark);
+  line-height: 1.15; letter-spacing: -.03em;
+  margin-bottom: 14px;
+}
+.subtext {
+  text-align: center;
+  font-size: 17px; color: var(--text-mid);
+  line-height: 1.65; max-width: 560px;
+  margin: 0 auto 52px;
+}
+
+/* ─── SHARED CTA BLOCK ─── */
+.cta-block {
+  margin-top: 60px;
+  background: var(--violet-light);
+  border: 1px solid var(--violet-mid);
+  border-radius: 22px;
+  padding: 44px 36px;
+  text-align: center;
+}
+.cta-block p { font-size: 16px; color: var(--text-mid); margin-bottom: 22px; line-height: 1.6; }
+.cta-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--text-dark);
+  font-weight: 800; font-size: 17px;
+  padding: 17px 42px; border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 6px 24px rgba(240,180,41,.4);
+  transition: transform .2s, box-shadow .2s;
+}
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(240,180,41,.5); }
+.cta-note { font-size: 13px; color: var(--text-light); margin-top: 12px; }
+
+/* ─── BADGES ─── */
+.badge-verified {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: var(--green-light); color: var(--green);
+  font-size: 11px; font-weight: 700;
+  padding: 3px 10px; border-radius: 20px;
+}
+.badge-lid {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: var(--violet-light); color: var(--violet);
+  font-size: 11px; font-weight: 700;
+  padding: 3px 10px; border-radius: 20px;
+}
+.stars { color: #f59e0b; font-size: 14px; letter-spacing: 1px; }
+
+
+/* ════════════════════════════════════════════════════════
+   VARIANT 1 — Masonry Kaarten
+   3 kolommen, witte kaarten met schaduw en hover-effect
+════════════════════════════════════════════════════════ */
+.v1-grid {
+  columns: 3; column-gap: 22px;
+}
+@media (max-width: 900px) { .v1-grid { columns: 2; } }
+@media (max-width: 560px) { .v1-grid { columns: 1; } }
+
+.v1-card {
+  break-inside: avoid;
+  margin-bottom: 22px;
+  background: var(--white);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,.08);
+  border: 1px solid var(--border);
+  transition: transform .25s, box-shadow .25s;
+}
+.v1-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(124,58,237,.14);
+}
+.v1-card img {
+  width: 100%; display: block;
+  border-bottom: 1px solid var(--border);
+}
+.v1-card-foot {
+  padding: 12px 16px 16px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+
+/* ════════════════════════════════════════════════════════
+   VARIANT 2 — Horizontale Scroll Carousel
+   Vaste breedte kaarten, horizontaal scrollen, snap
+════════════════════════════════════════════════════════ */
+.v2-hint {
+  text-align: center;
+  font-size: 14px; color: var(--text-light);
+  margin-bottom: 24px;
+}
+.v2-track {
+  display: flex; gap: 20px;
+  overflow-x: auto; padding-bottom: 20px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+.v2-track:active { cursor: grabbing; }
+.v2-track::-webkit-scrollbar { height: 5px; }
+.v2-track::-webkit-scrollbar-track { background: #e8e8f0; border-radius: 3px; }
+.v2-track::-webkit-scrollbar-thumb { background: var(--violet-mid); border-radius: 3px; }
+
+.v2-card {
+  flex: 0 0 380px;
+  scroll-snap-align: start;
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 3px 20px rgba(0,0,0,.09);
+  border: 2px solid transparent;
+  transition: border-color .2s, box-shadow .2s;
+}
+.v2-card:hover {
+  border-color: var(--violet);
+  box-shadow: 0 8px 32px rgba(124,58,237,.15);
+}
+.v2-card img { width: 100%; display: block; }
+.v2-card-foot {
+  padding: 14px 18px 18px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 560px) { .v2-card { flex: 0 0 300px; } }
+
+
+/* ════════════════════════════════════════════════════════
+   VARIANT 3 — Featured Hero + Raster
+   Eerste testimonial groot uitgelicht op paarse achtergrond,
+   overige 5 in 3-koloms grid eronder
+════════════════════════════════════════════════════════ */
+.v3-hero {
+  background: linear-gradient(135deg, var(--violet-dark) 0%, var(--violet) 100%);
+  border-radius: 24px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 40px rgba(91,33,182,.3);
+}
+@media (max-width: 700px) { .v3-hero { grid-template-columns: 1fr; } }
+
+.v3-hero-img {
+  padding: 36px;
+  display: flex; align-items: center;
+}
+.v3-hero-img img {
+  width: 100%; border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.35);
+}
+.v3-hero-text {
+  padding: 40px 36px 40px 12px;
+  display: flex; flex-direction: column;
+  justify-content: center; color: #fff;
+}
+@media (max-width: 700px) { .v3-hero-text { padding: 0 28px 36px; } }
+.v3-hero-eyebrow {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--violet-mid); margin-bottom: 14px;
+}
+.v3-hero-stars { color: #fbbf24; font-size: 20px; margin-bottom: 14px; }
+.v3-hero-quote {
+  font-size: 20px; font-weight: 700;
+  line-height: 1.45; margin-bottom: 16px;
+}
+.v3-hero-name {
+  font-size: 14px; color: rgba(255,255,255,.7);
+  font-weight: 600;
+}
+
+.v3-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+}
+@media (max-width: 700px) { .v3-grid { grid-template-columns: 1fr; } }
+
+.v3-card {
+  background: var(--white);
+  border-radius: 16px; overflow: hidden;
+  box-shadow: 0 2px 14px rgba(0,0,0,.07);
+  border: 1px solid var(--border);
+  transition: transform .2s;
+}
+.v3-card:hover { transform: translateY(-4px); }
+.v3-card img { width: 100%; display: block; }
+.v3-card-foot {
+  padding: 10px 14px 14px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+}
+
+
+/* ════════════════════════════════════════════════════════
+   VARIANT 4 — Bento Grid
+   Asymmetrisch grid met stat-tegels gemengd met testimonials
+════════════════════════════════════════════════════════ */
+.v4-bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+@media (max-width: 700px) { .v4-bento { grid-template-columns: 1fr; } }
+
+.v4-cell {
+  background: var(--white);
+  border-radius: 20px; overflow: hidden;
+  box-shadow: 0 2px 14px rgba(0,0,0,.07);
+  border: 1px solid var(--border);
+  transition: transform .2s, box-shadow .2s;
+}
+.v4-cell:hover { transform: scale(1.015); box-shadow: 0 6px 28px rgba(0,0,0,.1); }
+.v4-cell img { width: 100%; display: block; }
+.v4-cell-foot { padding: 10px 14px 14px; }
+
+.v4-cell.span2 { grid-column: span 2; }
+@media (max-width: 700px) { .v4-cell.span2 { grid-column: span 1; } }
+
+.v4-stat {
+  background: linear-gradient(135deg, var(--violet-dark), var(--violet));
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center; padding: 36px 24px;
+  min-height: 160px;
+}
+.v4-stat .num {
+  font-size: 52px; font-weight: 900;
+  color: #fff; line-height: 1;
+}
+.v4-stat .lbl {
+  font-size: 14px; color: var(--violet-mid);
+  margin-top: 8px; font-weight: 600;
+  line-height: 1.4;
+}
+
+.v4-gold {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  text-align: center; padding: 28px 20px;
+  min-height: 140px;
+}
+.v4-gold .icon { font-size: 32px; margin-bottom: 10px; }
+.v4-gold p { font-size: 15px; font-weight: 700; color: #92400e; line-height: 1.4; }
+
+
+/* ════════════════════════════════════════════════════════
+   VARIANT 5 — Wall of Love
+   Statistieken balk bovenaan + 2-koloms grid met gekleurde rand
+════════════════════════════════════════════════════════ */
+.v5-stats-bar {
+  display: flex; justify-content: center;
+  gap: 48px; flex-wrap: wrap;
+  margin-bottom: 52px;
+  padding: 32px 24px;
+  background: var(--white);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+.v5-stat { text-align: center; }
+.v5-stat .num {
+  font-size: 38px; font-weight: 900;
+  color: var(--violet); line-height: 1;
+}
+.v5-stat .lbl {
+  font-size: 13px; color: var(--text-mid);
+  font-weight: 500; margin-top: 4px;
+}
+
+.v5-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
+}
+@media (max-width: 700px) { .v5-grid { grid-template-columns: 1fr; } }
+
+.v5-card {
+  background: var(--white);
+  border-radius: 16px; overflow: hidden;
+  box-shadow: 0 2px 14px rgba(0,0,0,.07);
+  border-left: 5px solid var(--violet);
+  transition: box-shadow .2s, transform .2s;
+}
+.v5-card:nth-child(2) { border-left-color: var(--gold); }
+.v5-card:nth-child(3) { border-left-color: var(--green); }
+.v5-card:nth-child(4) { border-left-color: var(--violet); }
+.v5-card:nth-child(5) { border-left-color: var(--gold); }
+.v5-card:nth-child(6) { border-left-color: var(--green); }
+.v5-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(124,58,237,.14);
+}
+.v5-card img { width: 100%; display: block; }
+.v5-card-foot {
+  padding: 10px 14px 14px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ─── STICKY NAV ─── -->
+<nav class="nav">
+  <button class="active" onclick="show(1,this)">1 — Masonry Kaarten</button>
+  <button onclick="show(2,this)">2 — Scroll Carousel</button>
+  <button onclick="show(3,this)">3 — Featured + Grid</button>
+  <button onclick="show(4,this)">4 — Bento Grid</button>
+  <button onclick="show(5,this)">5 — Wall of Love</button>
+</nav>
+
+
+<!-- ════════════════════════════════════════════════════════
+     VARIANT 1 — Masonry Kaarten
+     Drie kolommen, witte kaarten met schaduw
+════════════════════════════════════════════════════════ -->
+<div class="variant active" id="v1">
+<div class="section-wrap">
+  <p class="eyebrow">Leden aan het woord</p>
+  <h2 class="heading">Dit zeggen mensen die je voorgingen.</h2>
+  <p class="subtext">Echte leden, echte ervaringen — rechtstreeks uit onze community.</p>
+
+  <div class="v1-grid">
+    <div class="v1-card">
+      <img src="testi-1-rina.png" alt="Rina Vermeulen">
+      <div class="v1-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd lid</span>
+      </div>
+    </div>
+    <div class="v1-card">
+      <img src="testi-2-elise.png" alt="Elise De Ras">
+      <div class="v1-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd lid</span>
+      </div>
+    </div>
+    <div class="v1-card">
+      <img src="testi-3-mady.png" alt="Mady De Geest">
+      <div class="v1-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd lid</span>
+      </div>
+    </div>
+    <div class="v1-card">
+      <img src="testi-4-eddie.png" alt="Eddie Van Melis">
+      <div class="v1-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd lid</span>
+      </div>
+    </div>
+    <div class="v1-card">
+      <img src="testi-5-jenny.png" alt="Jenny Aarsbergen">
+      <div class="v1-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd lid</span>
+      </div>
+    </div>
+    <div class="v1-card">
+      <img src="testi-6-nicole.png" alt="Nicole Dullekens">
+      <div class="v1-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd lid</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <p>Dit zijn echte leden die spontaan hun ervaring deelden in de community.<br>Jij kunt er ook deel van zijn.</p>
+    <a href="#" class="cta-btn">Ja, ik word lid van DigitaalSlim Plus+</a>
+    <p class="cta-note">Nu nog €139 per jaar &nbsp;·&nbsp; Op elk moment opzegbaar &nbsp;·&nbsp; 30 dagen niet-goed-geld-terug</p>
+  </div>
+</div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     VARIANT 2 — Horizontale Scroll Carousel
+     Kaarten op een rij, horizontaal scrollen
+════════════════════════════════════════════════════════ -->
+<div class="variant" id="v2">
+<div class="section-wrap">
+  <p class="eyebrow">Leden aan het woord</p>
+  <h2 class="heading">Dit zeggen mensen die je voorgingen.</h2>
+  <p class="subtext">Scroll door de ervaringen van echte Plus+ leden.</p>
+
+  <p class="v2-hint">← Sleep of scroll om meer te lezen →</p>
+
+  <div class="v2-track">
+    <div class="v2-card">
+      <img src="testi-1-rina.png" alt="Rina Vermeulen">
+      <div class="v2-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-lid">Plus+ lid</span>
+      </div>
+    </div>
+    <div class="v2-card">
+      <img src="testi-2-elise.png" alt="Elise De Ras">
+      <div class="v2-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-lid">Plus+ lid</span>
+      </div>
+    </div>
+    <div class="v2-card">
+      <img src="testi-3-mady.png" alt="Mady De Geest">
+      <div class="v2-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-lid">Plus+ lid</span>
+      </div>
+    </div>
+    <div class="v2-card">
+      <img src="testi-4-eddie.png" alt="Eddie Van Melis">
+      <div class="v2-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-lid">Plus+ lid</span>
+      </div>
+    </div>
+    <div class="v2-card">
+      <img src="testi-5-jenny.png" alt="Jenny Aarsbergen">
+      <div class="v2-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-lid">Plus+ lid</span>
+      </div>
+    </div>
+    <div class="v2-card">
+      <img src="testi-6-nicole.png" alt="Nicole Dullekens">
+      <div class="v2-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-lid">Plus+ lid</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <p>Dit zijn echte leden die spontaan hun ervaring deelden in de community.<br>Jij kunt er ook deel van zijn.</p>
+    <a href="#" class="cta-btn">Ja, ik word lid van DigitaalSlim Plus+</a>
+    <p class="cta-note">Nu nog €139 per jaar &nbsp;·&nbsp; Op elk moment opzegbaar &nbsp;·&nbsp; 30 dagen niet-goed-geld-terug</p>
+  </div>
+</div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     VARIANT 3 — Featured Hero + Grid
+     Rina groot uitgelicht op paarse achtergrond,
+     overige 5 in 3-koloms grid eronder
+════════════════════════════════════════════════════════ -->
+<div class="variant" id="v3">
+<div class="section-wrap">
+  <p class="eyebrow">Leden aan het woord</p>
+  <h2 class="heading">Dit zeggen mensen die je voorgingen.</h2>
+  <p class="subtext">Echte leden, echte ervaringen.</p>
+
+  <div class="v3-hero">
+    <div class="v3-hero-img">
+      <img src="testi-1-rina.png" alt="Rina Vermeulen">
+    </div>
+    <div class="v3-hero-text">
+      <div class="v3-hero-eyebrow">⭐ Uitgelichte ervaring</div>
+      <div class="v3-hero-stars">★★★★★</div>
+      <p class="v3-hero-quote">"Ik maak me niet meer druk als ik vastloop met mijn iPhone, iPad of iWatch."</p>
+      <p class="v3-hero-name">— Rina Vermeulen, Plus+ lid</p>
+    </div>
+  </div>
+
+  <div class="v3-grid">
+    <div class="v3-card">
+      <img src="testi-2-elise.png" alt="Elise De Ras">
+      <div class="v3-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd</span>
+      </div>
+    </div>
+    <div class="v3-card">
+      <img src="testi-3-mady.png" alt="Mady De Geest">
+      <div class="v3-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd</span>
+      </div>
+    </div>
+    <div class="v3-card">
+      <img src="testi-4-eddie.png" alt="Eddie Van Melis">
+      <div class="v3-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd</span>
+      </div>
+    </div>
+    <div class="v3-card">
+      <img src="testi-5-jenny.png" alt="Jenny Aarsbergen">
+      <div class="v3-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd</span>
+      </div>
+    </div>
+    <div class="v3-card">
+      <img src="testi-6-nicole.png" alt="Nicole Dullekens">
+      <div class="v3-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <p>Dit zijn echte leden die spontaan hun ervaring deelden in de community.<br>Jij kunt er ook deel van zijn.</p>
+    <a href="#" class="cta-btn">Ja, ik word lid van DigitaalSlim Plus+</a>
+    <p class="cta-note">Nu nog €139 per jaar &nbsp;·&nbsp; Op elk moment opzegbaar &nbsp;·&nbsp; 30 dagen niet-goed-geld-terug</p>
+  </div>
+</div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     VARIANT 4 — Bento Grid
+     Asymmetrisch grid: brede + smalle cellen,
+     stat-tegels en goud-tegel gemengd met testimonials
+════════════════════════════════════════════════════════ -->
+<div class="variant" id="v4">
+<div class="section-wrap">
+  <p class="eyebrow">Leden aan het woord</p>
+  <h2 class="heading">Dit zeggen mensen die je voorgingen.</h2>
+  <p class="subtext">Echte leden, echte ervaringen.</p>
+
+  <div class="v4-bento">
+    <!-- Rij 1 -->
+    <div class="v4-cell span2">
+      <img src="testi-1-rina.png" alt="Rina Vermeulen">
+      <div class="v4-cell-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd lid</span>
+      </div>
+    </div>
+    <div class="v4-cell v4-stat">
+      <div class="num">2.000+</div>
+      <div class="lbl">tevreden Plus+ leden</div>
+    </div>
+    <!-- Rij 2 -->
+    <div class="v4-cell">
+      <img src="testi-2-elise.png" alt="Elise De Ras">
+      <div class="v4-cell-foot"><span class="stars">★★★★★</span></div>
+    </div>
+    <div class="v4-cell v4-gold">
+      <div class="icon">☕</div>
+      <p>Voor de prijs van één kopje koffie per week</p>
+    </div>
+    <div class="v4-cell">
+      <img src="testi-3-mady.png" alt="Mady De Geest">
+      <div class="v4-cell-foot"><span class="stars">★★★★★</span></div>
+    </div>
+    <!-- Rij 3 -->
+    <div class="v4-cell v4-stat">
+      <div class="num">98%</div>
+      <div class="lbl">tevredenheid</div>
+    </div>
+    <div class="v4-cell span2">
+      <img src="testi-4-eddie.png" alt="Eddie Van Melis">
+      <div class="v4-cell-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd lid</span>
+      </div>
+    </div>
+    <!-- Rij 4 -->
+    <div class="v4-cell">
+      <img src="testi-5-jenny.png" alt="Jenny Aarsbergen">
+      <div class="v4-cell-foot"><span class="stars">★★★★★</span></div>
+    </div>
+    <div class="v4-cell span2">
+      <img src="testi-6-nicole.png" alt="Nicole Dullekens">
+      <div class="v4-cell-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd lid</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <p>Dit zijn echte leden die spontaan hun ervaring deelden in de community.<br>Jij kunt er ook deel van zijn.</p>
+    <a href="#" class="cta-btn">Ja, ik word lid van DigitaalSlim Plus+</a>
+    <p class="cta-note">Nu nog €139 per jaar &nbsp;·&nbsp; Op elk moment opzegbaar &nbsp;·&nbsp; 30 dagen niet-goed-geld-terug</p>
+  </div>
+</div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     VARIANT 5 — Wall of Love
+     Statistieken balk bovenaan + 2-koloms grid
+     met gekleurde linker rand per kaart
+════════════════════════════════════════════════════════ -->
+<div class="variant" id="v5">
+<div class="section-wrap">
+  <p class="eyebrow">Leden aan het woord</p>
+  <h2 class="heading">Dit zeggen mensen die je voorgingen.</h2>
+  <p class="subtext">Echte leden, echte ervaringen — rechtstreeks uit onze community.</p>
+
+  <div class="v5-stats-bar">
+    <div class="v5-stat">
+      <div class="num">2.000+</div>
+      <div class="lbl">Plus+ leden</div>
+    </div>
+    <div class="v5-stat">
+      <div class="num">98%</div>
+      <div class="lbl">tevredenheid</div>
+    </div>
+    <div class="v5-stat">
+      <div class="num">10 jaar</div>
+      <div class="lbl">ervaring</div>
+    </div>
+    <div class="v5-stat">
+      <div class="num">35+</div>
+      <div class="lbl">ervaringen gedeeld</div>
+    </div>
+  </div>
+
+  <div class="v5-grid">
+    <div class="v5-card">
+      <img src="testi-1-rina.png" alt="Rina Vermeulen">
+      <div class="v5-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd</span>
+      </div>
+    </div>
+    <div class="v5-card">
+      <img src="testi-2-elise.png" alt="Elise De Ras">
+      <div class="v5-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd</span>
+      </div>
+    </div>
+    <div class="v5-card">
+      <img src="testi-3-mady.png" alt="Mady De Geest">
+      <div class="v5-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd</span>
+      </div>
+    </div>
+    <div class="v5-card">
+      <img src="testi-4-eddie.png" alt="Eddie Van Melis">
+      <div class="v5-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd</span>
+      </div>
+    </div>
+    <div class="v5-card">
+      <img src="testi-5-jenny.png" alt="Jenny Aarsbergen">
+      <div class="v5-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd</span>
+      </div>
+    </div>
+    <div class="v5-card">
+      <img src="testi-6-nicole.png" alt="Nicole Dullekens">
+      <div class="v5-card-foot">
+        <span class="stars">★★★★★</span>
+        <span class="badge-verified">✓ Geverifieerd</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <p>Dit zijn echte leden die spontaan hun ervaring deelden in de community.<br>Jij kunt er ook deel van zijn.</p>
+    <a href="#" class="cta-btn">Ja, ik word lid van DigitaalSlim Plus+</a>
+    <p class="cta-note">Nu nog €139 per jaar &nbsp;·&nbsp; Op elk moment opzegbaar &nbsp;·&nbsp; 30 dagen niet-goed-geld-terug</p>
+  </div>
+</div>
+</div>
+
+
+<script>
+function show(n, btn) {
+  document.querySelectorAll('.variant').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById('v' + n).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
