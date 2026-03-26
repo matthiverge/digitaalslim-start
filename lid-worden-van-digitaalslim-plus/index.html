@@ -2520,25 +2520,135 @@ a { text-decoration: none; }
   margin-bottom: 40px;
 }
 
-.final-cta-body {
-  text-align: left;
-  max-width: 720px;
-  margin: 0 auto 48px;
+/* Gedachte & Geruststelling blokken */
+.gg-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 32px;
+  max-width: 760px;
+  margin: 0 auto 56px;
+  text-align: left;
 }
 
-.final-cta-body p {
-  font-size: 17px;
+.gg-blok {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.gg-gedachte {
+  background: #f5f3ff;
+  border: 1px solid rgba(74,44,245,0.15);
+  border-radius: 18px 18px 18px 4px;
+  padding: 20px 24px;
+  position: relative;
+}
+
+.gg-gedachte::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 20px;
+  width: 16px;
+  height: 12px;
+  background: #f5f3ff;
+  border-left: 1px solid rgba(74,44,245,0.15);
+  border-bottom: 1px solid rgba(74,44,245,0.15);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.gg-gedachte-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(74,44,245,0.5);
+  margin-bottom: 8px;
+}
+
+.gg-gedachte p {
+  font-size: 15px;
+  font-style: italic;
   color: var(--ink-3);
-  line-height: 1.8;
+  line-height: 1.65;
   margin: 0;
 }
 
-.final-cta-body p strong {
+.gg-geruststelling {
+  padding: 4px 0 0 8px;
+}
+
+.gg-geruststelling strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 800;
   color: var(--ink);
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.gg-geruststelling p {
+  font-size: 15px;
+  color: var(--ink-3);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Urgentie kader */
+.final-cta-urgency {
+  max-width: 620px;
+  margin: 0 auto 48px;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 1px solid rgba(240,180,41,0.4);
+  border-radius: var(--r3);
+  padding: 32px 36px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.final-cta-urgency::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold) 0%, #f59e0b 100%);
+}
+
+.final-cta-urgency-label {
+  font-size: 10px;
   font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #92400e;
+  margin-bottom: 12px;
+}
+
+.final-cta-urgency p {
+  font-size: 16px;
+  color: #78350f;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.final-cta-urgency strong {
+  color: #92400e;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .gg-blok {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .gg-gedachte {
+    border-radius: 18px 18px 4px 18px;
+  }
+  .gg-geruststelling {
+    padding: 0 0 0 4px;
+    border-left: 3px solid rgba(74,44,245,0.2);
+  }
 }
 
 .final-cta-highlights {
@@ -3475,22 +3585,63 @@ a { text-decoration: none; }
     <div class="final-cta-eyebrow">Een persoonlijk woord van Matthias</div>
     <h2>Zullen we de volgende stap samen zetten?</h2>
 
-    <div class="final-cta-body">
-      <p>Misschien denk je na het lezen van deze pagina: <em>"Ach Matthias, ik heb al jaren een iPad of iPhone. Ik kan best een e-mail versturen, iets opzoeken of foto's bekijken. Waarom zou ik nog lid worden?"</em> En je hebt helemaal gelijk. De tijd dat een tablet of smartphone compleet nieuw en eng was, ligt ver achter ons. Je kent de basis al lang.</p>
+    <!-- Gedachte & Geruststelling blokken -->
+    <div class="gg-list">
 
-      <p><strong>Maar het is niet jouw apparaat dat het probleem is. Het is de wereld eromheen.</strong> De digitale ontwikkelingen gaan razendsnel. Door Artificial Intelligence (AI) ontstaan er prachtige nieuwe mogelijkheden, maar phishing en oplichting worden daardoor ook steeds echter en gehaaider. Elk najaar is er weer een nieuw besturingssysteem. Knopjes veranderen, instellingen staan ineens ergens anders en apps vernieuwen.</p>
+      <!-- Blok 1: De Epiphany -->
+      <div class="gg-blok r">
+        <div class="gg-gedachte">
+          <div class="gg-gedachte-label">Jouw gedachte</div>
+          <p>"Ach Matthias, ik werk al jaren met mijn iPad. Waarom zou ik nog lid worden?"</p>
+        </div>
+        <div class="gg-geruststelling">
+          <strong>Je apparaat is niet het probleem &mdash; de wereld eromheen wel.</strong>
+          <p>De ontwikkelingen gaan razendsnel. AI biedt kansen, maar oplichting wordt gehaaider. Elk jaar een nieuw besturingssysteem. Wij zorgen dat jij moeiteloos en veilig bijblijft.</p>
+        </div>
+      </div>
 
-      <p>Dit is onze passie, en we doen dit al <strong>10 jaar</strong>. Al tien jaar lang is het onze absolute missie om hier rust in te brengen. We hebben in die tijd al duizenden mensen geholpen. Wij willen jouw veilige haven zijn. Een plek waar je meteen terechtkunt als je vastloopt. En het mooie is: met jouw vraag help je direct andere leden. Goede vragen zetten we namelijk razendsnel om in nieuwe video's of stappenplannen. Zo waarschuwen, helpen en inspireren we elkaar continu.</p>
+      <!-- Blok 2: De Tijd -->
+      <div class="gg-blok r">
+        <div class="gg-gedachte">
+          <div class="gg-gedachte-label">Jouw gedachte</div>
+          <p>"Ik wil best hulp, maar ik wil geen uren per week kwijt zijn aan weer een cursus."</p>
+        </div>
+        <div class="gg-geruststelling">
+          <strong>Maximale gemoedsrust, minimale tijdsinvestering.</strong>
+          <p>We verwachten niet dat je uren rondhangt. Je klapt de app open wanneer j&oacute;&uacute;w probleem opspeelt, pakt er een kort stappenplan bij, en gaat weer lekker verder met je dag.</p>
+        </div>
+      </div>
 
-      <p>Maar let op: <strong>dit kost je vrijwel geen tijd.</strong> We verwachten absoluut niet dat je uren op ons platform gaat rondhangen. Integendeel. Je hoeft er nauwelijks tijd in te steken. Je logt simpelweg in wanneer jij ergens tegenaan loopt. Je klapt je digitale zakmes open, je stelt je vraag of pakt er een kort stappenplan bij, je probleem is opgelost, en je gaat weer lekker verder met je dag. <strong>Maximale gemoedsrust, minimale tijdsinvestering.</strong></p>
+      <!-- Blok 3: De Passie & Waarde -->
+      <div class="gg-blok r">
+        <div class="gg-gedachte">
+          <div class="gg-gedachte-label">Jouw gedachte</div>
+          <p>"Hoe weet ik zeker dat ik hier echt goed en betrouwbaar geholpen word?"</p>
+        </div>
+        <div class="gg-geruststelling">
+          <strong>Dit is al 10 jaar onze passie.</strong>
+          <p>We hebben al duizenden mensen geholpen. Jouw veilige haven staat klaar. En het mooie is: met jouw vraag help je via onze video's direct ook andere leden.</p>
+        </div>
+      </div>
 
-      <p><strong>Geef het gewoon een kans. Je loopt geen enkel risico.</strong> Je krijgt van mij 30 dagen de tijd om rustig rond te kijken. Voelt het toch niet als de juiste plek voor jou? Dan stuur je één e-mail en stort ik je volledige bedrag direct terug. Zonder kleine lettertjes, zonder lastige vragen.</p>
+      <!-- Blok 4: Het Risico -->
+      <div class="gg-blok r">
+        <div class="gg-gedachte">
+          <div class="gg-gedachte-label">Jouw gedachte</div>
+          <p>"Wat als het toch niets voor mij blijkt te zijn?"</p>
+        </div>
+        <div class="gg-geruststelling">
+          <strong>Je loopt geen enkel risico.</strong>
+          <p>Probeer het 30 dagen. Voelt het niet goed? Stuur &eacute;&eacute;n e-mail en je krijgt direct je geld terug. Zonder kleine lettertjes.</p>
+        </div>
+      </div>
 
-      <p>Dit is wel het juiste moment om in te stappen. Om onze kwaliteit en persoonlijke hulp te blijven garanderen, stijgt de prijs binnenkort naar &euro;169. Als je vandaag instapt, ben je die verhoging voor en sluit je nog aan voor de huidige <strong>&euro;139 per jaar</strong>. Liever niet alles in één keer? Dan kun je er ook voor kiezen om per kwartaal <strong>&euro;39</strong> te betalen.</p>
+    </div>
 
-      <p>Oftewel: voor de prijs van amper <strong>één kopje koffie per week</strong>, heb je altijd een heel team van Apple-experts in je broekzak zitten.</p>
-
-      <p>Laat de razendsnelle techniek je niet meer onzeker maken. Klik op de knop hieronder, en we zien je heel graag aan de binnenkant.</p>
+    <!-- Urgentie kader -->
+    <div class="final-cta-urgency r">
+      <div class="final-cta-urgency-label">&#9200; Het juiste moment</div>
+      <p>Om kwaliteit te garanderen, stijgt de prijs binnenkort naar <strong>&euro;169</strong>. Stap vandaag in en zet jouw prijs vast op de huidige <strong>&euro;139 per jaar</strong>. Liever per kwartaal? Dat kan voor <strong>&euro;39</strong>. Voor amper &eacute;&eacute;n kopje koffie per week heb je een heel team van Apple-experts in je broekzak.</p>
     </div>
 
     <div class="final-cta-highlights">
