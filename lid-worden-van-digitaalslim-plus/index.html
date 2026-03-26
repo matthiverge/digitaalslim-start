@@ -568,6 +568,67 @@ a { text-decoration: none; }
 }
 
 /* ═══════════════════════════════════════════════════════════
+   OVERZICHT — Quick summary after hero
+   ═══════════════════════════════════════════════════════════ */
+
+.overzicht {
+  background: var(--surface-2);
+  padding: 64px 40px;
+}
+
+.overzicht-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.overzicht-inner h2 {
+  font-size: 24px;
+  margin-bottom: 28px;
+}
+
+.overzicht-lijst {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.overzicht-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.overzicht-item-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--green-soft);
+  border: 1px solid var(--green-line);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.overzicht-item-icon svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--green);
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ═══════════════════════════════════════════════════════════
    HERKENNING — Centered, airy, white background
    ═══════════════════════════════════════════════════════════ */
 
@@ -2942,7 +3003,7 @@ a { text-decoration: none; }
       <img src="afbeeldingen/logo-digitaalslim-plus-geel.png" alt="DigitaalSlim Plus+" class="hero-logo">
       <div class="hero-pill"><span class="hero-pill-dot"></span>Al meer dan 2.000 tevreden plussers gingen je voor</div>
       <h1>Eindelijk iemand die het rustig en duidelijk aan je uitlegt.<br><em>Hulp die altijd klaarstaat, op jouw tempo.</em></h1>
-      <p class="hero-sub">De digitale wereld verandert snel, maar jij hoeft niet sneller te gaan rennen. <strong>Wij filteren de chaos voor je.</strong> DigitaalSlim Plus+ is je vaste plek voor al je digitale vragen. Een warme club van mensen die elkaar helpen.</p>
+      <p class="hero-sub">De digitale wereld verandert snel, maar jij hoeft niet sneller te gaan rennen. <strong>Wij filteren de chaos voor je.</strong> DigitaalSlim Plus+ is je vaste plek voor al je digitale vragen. Met een eigen community: een besloten online plek, alleen voor leden, waar je vragen kunt stellen en andere leden en ons team je helpen. Vergelijk het met een gezellig prikbord waar iedereen op kan reageren. Geen Facebook, geen reclame, geen pottenkijkers.</p>
 
       <div class="hero-chips">
         <div class="hero-chip">
@@ -2985,6 +3046,35 @@ a { text-decoration: none; }
     <div class="hero-trust-item">
       <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
       98% tevredenheid
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OVERZICHT ═══ -->
+<section class="overzicht">
+  <div class="overzicht-inner r">
+    <h2>Wat krijg je als Plus+ lid?</h2>
+    <div class="overzicht-lijst">
+      <div class="overzicht-item">
+        <div class="overzicht-item-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span>Alle videocursussen over je iPhone, iPad en Mac</span>
+      </div>
+      <div class="overzicht-item">
+        <div class="overzicht-item-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span>Stappenplannen die je stap voor stap door elk onderwerp leiden</span>
+      </div>
+      <div class="overzicht-item">
+        <div class="overzicht-item-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span>Een besloten community waar je al je vragen kunt stellen</span>
+      </div>
+      <div class="overzicht-item">
+        <div class="overzicht-item-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span>De nieuwe E-mailchecker: stuur een verdachte mail door en wij checken het voor je</span>
+      </div>
+      <div class="overzicht-item">
+        <div class="overzicht-item-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span>Persoonlijke hulp van ons team, elke dag</span>
+      </div>
     </div>
   </div>
 </section>
@@ -3035,7 +3125,7 @@ a { text-decoration: none; }
 
       <p class="r"><strong>Met DigitaalSlim Plus+ keren we terug naar die absolute essentie.</strong> Wat we voor mijn familie doen, doen we nu voor jou. We bouwen de lessen niet enkel rondom een vast lesprogramma, maar we luisteren naar jouw dagelijkse vragen in de community en maken daar direct nieuwe, simpele oplossingen voor. Precies zoals ik deed voor mijn vader vanuit Barcelona.</p>
 
-      <p class="r">En nee, ik doe dit allang niet meer in mijn eentje. DigitaalSlim is uitgegroeid tot een prachtig bedrijf. Er staat nu een heel team van toegewijde mensen klaar die zich elke dag met volle inzet en datzelfde eindeloze geduld over jouw vragen buigen. Denk aan de behulpzame kleinzoon of dochter die je altijd even kunt bellen. Alleen hoef je ons niet te bellen. <strong>We staan elke dag voor je klaar in de community.</strong></p>
+      <p class="r">En nee, ik doe dit allang niet meer alleen. Achter DigitaalSlim staat een gedreven team dat zich elke dag met volle inzet en eindeloos geduld over jouw vragen buigt. Geen chatbot, geen helpdesk, maar echte mensen. Denk aan de behulpzame kleinzoon of dochter die je altijd even kunt bellen. Alleen hoef je ons niet te bellen. <strong>We staan elke dag voor je klaar in de community.</strong></p>
     </div>
 
     <div class="matthias-visual r d2">
@@ -3049,7 +3139,7 @@ a { text-decoration: none; }
 <section class="pijlers">
   <div class="pijlers-header r">
     <div class="eyebrow" style="color:#5C4200;background:rgba(240,180,41,0.15);border-color:rgba(240,180,41,0.35);">Wat zit er allemaal in?</div>
-    <h2>Vier dingen die het verschil maken.</h2>
+    <h2>Dit zit er allemaal in.</h2>
     <p>Alles wat je nodig hebt om veilig mee te blijven doen. Op jouw tempo, met hulp wanneer je het nodig hebt.</p>
   </div>
 
@@ -3091,7 +3181,7 @@ a { text-decoration: none; }
         <div class="pijler-icon-wrap"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
         <span class="pijler-eyebrow">Jouw digitale Zwitsers zakmes</span>
         <h3>Toegang tot al onze cursussen</h3>
-        <p class="pijler-intro">Toegang tot al onze cursussen en videolessen. Zie dit niet als huiswerk dat je moet afvinken, maar als je persoonlijke gereedschapskist. Je klapt hem pas open als je vastloopt. Pak precies de video die je nodig hebt, en ga weer rustig verder.</p>
+        <p class="pijler-intro">Toegang tot al onze cursussen en videolessen. Net als een kookboek: je slaat het open bij het recept dat je nodig hebt. Zo werken onze cursussen ook. Je kiest zelf wat je wilt leren, pakt precies de video die je nodig hebt, en gaat weer rustig verder.</p>
         <ul class="pijler-list">
           <li>Van je iPad, iPhone en Mac tot online veiligheid, fotografie en handige apps</li>
           <li>Geen verplichte volgorde, geen schema, geen druk</li>
@@ -3106,9 +3196,9 @@ a { text-decoration: none; }
         <div class="pijler-icon-wrap"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <span class="pijler-eyebrow">Beschermd tegen phishing</span>
         <h3>De gloednieuwe E-mailchecker app</h3>
-        <p class="pijler-intro">Er is een echte phishingplaag aan de gang. Maar jij hoeft geen expert te worden om beschermd te blijven. <strong>Wij houden de wacht voor je.</strong></p>
+        <p class="pijler-intro">Heb je een verdachte mail gekregen? Stuur hem gewoon door naar ons. Binnen een paar minuten krijg je van ons te horen of het nep is of echt. Geen gedoe, geen technische kennis nodig. <strong>Gewoon doorsturen en wij kijken voor je.</strong></p>
         <ul class="pijler-list">
-          <li>De nieuwe <strong>DigitaalSlim E-mailchecker app</strong>: controleer onbeperkt of een e-mail echt is. Of het nu 1 mail is of 50 per dag</li>
+          <li>De nieuwe <strong>DigitaalSlim E-mailchecker app</strong>: stuur een verdachte mail door en wij vertellen je of het veilig is. Of het nu 1 mail is of 50 per dag</li>
           <li>Twijfel je over iets anders? Vraag het in de community. <strong>Niet alleen e-mails</strong>, maar ook sms'jes, WhatsApp-berichten of verdachte websites</li>
           <li>Is het te priv&eacute; om in de community te plaatsen? Stuur ons een e-mail en we helpen je &eacute;&eacute;n op &eacute;&eacute;n verder</li>
         </ul>
@@ -3272,7 +3362,7 @@ a { text-decoration: none; }
       <div class="kanaal r d1"><div class="kanaal-emoji">🖥️</div><div><h4>Mac</h4><p>Van sneltoetsen tot veelgestelde problemen</p></div></div>
       <div class="kanaal r d2"><div class="kanaal-emoji">🔍</div><div><h4>Echt of Nep?</h4><p>Phishing herkennen, verdachte mails checken</p></div></div>
       <div class="kanaal r"><div class="kanaal-emoji">🚨</div><div><h4>Actuele Waarschuwingen</h4><p>Oplichting en gevaren die nu de ronde doen</p></div></div>
-      <div class="kanaal r d1"><div class="kanaal-emoji">🤖</div><div><h4>AI &amp; Slim Werken</h4><p>De nieuwste technologie, begrijpelijk uitgelegd</p></div></div>
+      <div class="kanaal r d1"><div class="kanaal-emoji">🤖</div><div><h4>AI &amp; Slim Werken</h4><p>Leer wat je kunt met tools als ChatGPT, fotobewerking en meer</p></div></div>
       <div class="kanaal r d2"><div class="kanaal-emoji">☁️</div><div><h4>iCloud &amp; Accounts</h4><p>Foto's, back-ups en opslag beheren</p></div></div>
       <div class="kanaal r"><div class="kanaal-emoji">☕</div><div><h4>Koffiehoekje</h4><p>Gezellig bijpraten met andere leden</p></div></div>
       <div class="kanaal r d1"><div class="kanaal-emoji">❓</div><div><h4>Overige vragen</h4><p>Staat je vraag er niet bij? Stel hem hier!</p></div></div>
@@ -3287,22 +3377,6 @@ a { text-decoration: none; }
     <div class="veilig-item r d3"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><p>Elke vraag is welkom</p></div>
   </div>
 </section>
-
-<!-- ═══ URGENCY INLINE 1 ═══ -->
-<div class="urgency-inline">
-  <div class="urgency-inline-card r">
-    <div class="urgency-inline-left">
-      <div class="urgency-inline-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <div class="urgency-inline-content">
-        <p class="urgency-inline-kicker">Prijsgarantie</p>
-        <p>De prijs stijgt binnenkort van <strong>&euro;139 naar &euro;169</strong>. Schrijf je nu in en zet je prijs vast.</p>
-      </div>
-    </div>
-    <a href="#prijzen">Schrijf je nu in &rarr;</a>
-  </div>
-</div>
 
 <!-- ═══ TESTIMONIALS ═══ -->
 <section class="testimonials">
@@ -3359,22 +3433,6 @@ a { text-decoration: none; }
     <p class="testimonials-cta-note">Op elk moment opzegbaar. 30 dagen niet-goed-geld-terug.</p>
   </div>
 </section>
-
-<!-- ═══ URGENCY INLINE 2 ═══ -->
-<div class="urgency-inline">
-  <div class="urgency-inline-card r">
-    <div class="urgency-inline-left">
-      <div class="urgency-inline-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      </div>
-      <div class="urgency-inline-content">
-        <p class="urgency-inline-kicker">Beperkte tijd</p>
-        <p>Laatste kans aan de huidige prijs. Wie er nu bij komt voor <strong>&euro;139</strong>, behoudt die prijs voor altijd.</p>
-      </div>
-    </div>
-    <a href="#prijzen">Bekijk de prijzen &rarr;</a>
-  </div>
-</div>
 
 <!-- ═══ VERGELIJKING ═══ -->
 <section class="vergelijking">
@@ -3548,7 +3606,7 @@ a { text-decoration: none; }
     <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is het niet te technisch voor mij?<span class="faq-toggle">+</span></button><div class="faq-a"><div class="faq-a-inner">Helemaal niet. Een groot deel van onze leden noemt zichzelf "beginner", en dat is prima. <strong>Alles is gemaakt voor mensen die het rustig willen leren</strong>, stap voor stap. Onze Stappenplannen leiden je in kleine, duidelijke stappen door een onderwerp.</div></div></div>
     <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Ik ben al Plus+ lid. Wat verandert er voor mij?<span class="faq-toggle">+</span></button><div class="faq-a"><div class="faq-a-inner">Goed nieuws: als bestaand lid behoud je gewoon je huidige prijs. De community is er als extra bijgekomen en je hebt er al toegang toe. Je cursussen blijven beschikbaar op de vertrouwde plek.</div></div></div>
     <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Waarom gaat de prijs binnenkort omhoog?<span class="faq-toggle">+</span></button><div class="faq-a"><div class="faq-a-inner">Simpel gezegd: omdat er steeds meer bij komt. Een eigen community, het nieuwe Stappenplan, persoonlijke hulp, de nieuwe E-mailchecker app om phishing-mails op te sporen en nog veel meer dat in de maak is. Binnenkort past de prijs daar bij: jaarlijks &euro;169. Maar <strong>wie er nu bij komt voor &euro;139, behoudt die prijs zolang je lid blijft</strong>. Dat is onze manier om vroege leden te bedanken.</div></div></div>
-    <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is het veilig om online te betalen?<span class="faq-toggle">+</span></button><div class="faq-a"><div class="faq-a-inner">Ja, helemaal veilig. We gebruiken Plug&amp;Pay, een Nederlands betaalplatform dat werkt met <strong>de strengste beveiligingsstandaarden</strong>. Je gegevens worden versleuteld en nooit met derden gedeeld. Je kunt betalen met iDEAL, creditcard of Bancontact.</div></div></div>
+    <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is het veilig om online te betalen?<span class="faq-toggle">+</span></button><div class="faq-a"><div class="faq-a-inner">Ja, helemaal veilig. Je betaalt gewoon met iDEAL, Bancontact of creditcard. Het werkt precies zoals je gewend bent bij een webwinkel. <strong>Je gegevens worden versleuteld en nooit met anderen gedeeld.</strong></div></div></div>
     <div class="faq-item"><button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Wat is de volgende stap als ik lid word?<span class="faq-toggle">+</span></button><div class="faq-a"><div class="faq-a-inner">Zodra je betaling is afgerond, ontvang je binnen een paar seconden een mailtje met je inloggegevens. Daarmee kun je meteen aan de slag op het cursusplatform, en je krijgt een uitnodiging voor de community. Nog nooit een community gebruikt? Geen probleem. We hebben eenvoudige stappenplannen met korte video's die je precies laten zien hoe je toegang krijgt en hoe alles werkt. Meer dan 2.000 leden gingen je al voor, en bij vrijwel iedereen ging het heel vlot. Loop je toch ergens vast? Stuur ons gewoon een mailtje of een berichtje, dan helpen we je er persoonlijk doorheen.</div></div></div>
   </div>
 </section>
