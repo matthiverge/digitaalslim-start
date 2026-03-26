@@ -2491,32 +2491,122 @@ a { text-decoration: none; }
 }
 
 .final-cta-inner {
-  max-width: 620px;
+  max-width: 780px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
+.final-cta-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--violet);
+  background: rgba(74,44,245,0.08);
+  border: 1px solid rgba(74,44,245,0.18);
+  border-radius: 100px;
+  padding: 6px 16px;
+  margin-bottom: 28px;
+}
+
 .final-cta h2 {
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(28px, 4vw, 48px);
   font-weight: 800;
   color: var(--ink);
   letter-spacing: -2px;
-  line-height: 1.12;
-  margin-bottom: 20px;
-}
-
-.final-cta p {
-  font-size: 18px;
-  color: var(--ink-3);
-  line-height: 1.75;
+  line-height: 1.1;
   margin-bottom: 40px;
 }
 
-.final-cta-note {
+.final-cta-body {
+  text-align: left;
+  max-width: 720px;
+  margin: 0 auto 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.final-cta-body p {
+  font-size: 17px;
+  color: var(--ink-3);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.final-cta-body p strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.final-cta-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.final-cta-highlight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 10px 20px;
   font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  box-shadow: var(--s1);
+}
+
+.final-cta-highlight svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--violet-3);
+  stroke-width: 2.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.final-cta-cta-block {
+  text-align: center;
+}
+
+.final-cta-note {
+  font-size: 13px;
   color: var(--muted);
-  margin-top: 18px;
+  margin-top: 16px;
+}
+
+.final-cta-guarantee {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(34,197,94,0.08);
+  border: 1px solid rgba(34,197,94,0.25);
+  border-radius: var(--r2);
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #15803d;
+  margin-top: 24px;
+}
+
+.final-cta-guarantee svg {
+  width: 18px;
+  height: 18px;
+  stroke: #16a34a;
+  stroke-width: 2.5;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -3382,10 +3472,42 @@ a { text-decoration: none; }
 <!-- ═══ FINAL CTA ═══ -->
 <section class="final-cta">
   <div class="final-cta-inner r">
-    <h2>Je hoeft het niet alleen uit te zoeken.</h2>
-    <p>Eindelijk iemand die het rustig en duidelijk uitlegt. Van AI tot online veiligheid, van je iPad tot alles wat er nieuw bijkomt. Sluit je aan bij meer dan 2.000 mensen die het samen doen.</p>
-    <a href="#prijzen" class="btn btn-gold" style="font-size:18px;padding:20px 48px;">Word lid van DigitaalSlim Plus+</a>
-    <p class="final-cta-note">Nu nog &euro;139 per jaar &middot; Op elk moment opzegbaar &middot; 30 dagen geld terug</p>
+    <div class="final-cta-eyebrow">Een persoonlijk woord van Matthias</div>
+    <h2>Zullen we de volgende stap samen zetten?</h2>
+
+    <div class="final-cta-body">
+      <p>Misschien denk je na het lezen van deze pagina: <em>"Ach Matthias, ik heb al jaren een iPad of iPhone. Ik kan best een e-mail versturen, iets opzoeken of foto's bekijken. Waarom zou ik nog lid worden?"</em> En je hebt helemaal gelijk. De tijd dat een tablet of smartphone compleet nieuw en eng was, ligt ver achter ons. Je kent de basis al lang.</p>
+
+      <p><strong>Maar het is niet jouw apparaat dat het probleem is. Het is de wereld eromheen.</strong> De digitale ontwikkelingen gaan razendsnel. Door Artificial Intelligence (AI) ontstaan er prachtige nieuwe mogelijkheden, maar phishing en oplichting worden daardoor ook steeds echter en gehaaider. Elk najaar is er weer een nieuw besturingssysteem. Knopjes veranderen, instellingen staan ineens ergens anders en apps vernieuwen.</p>
+
+      <p>Dit is onze passie, en we doen dit al <strong>10 jaar</strong>. Al tien jaar lang is het onze absolute missie om hier rust in te brengen. We hebben in die tijd al duizenden mensen geholpen. Wij willen jouw veilige haven zijn. Een plek waar je meteen terechtkunt als je vastloopt. En het mooie is: met jouw vraag help je direct andere leden. Goede vragen zetten we namelijk razendsnel om in nieuwe video's of stappenplannen. Zo waarschuwen, helpen en inspireren we elkaar continu.</p>
+
+      <p>Maar let op: <strong>dit kost je vrijwel geen tijd.</strong> We verwachten absoluut niet dat je uren op ons platform gaat rondhangen. Integendeel. Je hoeft er nauwelijks tijd in te steken. Je logt simpelweg in wanneer jij ergens tegenaan loopt. Je klapt je digitale zakmes open, je stelt je vraag of pakt er een kort stappenplan bij, je probleem is opgelost, en je gaat weer lekker verder met je dag. <strong>Maximale gemoedsrust, minimale tijdsinvestering.</strong></p>
+
+      <p><strong>Geef het gewoon een kans. Je loopt geen enkel risico.</strong> Je krijgt van mij 30 dagen de tijd om rustig rond te kijken. Voelt het toch niet als de juiste plek voor jou? Dan stuur je één e-mail en stort ik je volledige bedrag direct terug. Zonder kleine lettertjes, zonder lastige vragen.</p>
+
+      <p>Dit is wel het juiste moment om in te stappen. Om onze kwaliteit en persoonlijke hulp te blijven garanderen, stijgt de prijs binnenkort naar &euro;169. Als je vandaag instapt, ben je die verhoging voor en sluit je nog aan voor de huidige <strong>&euro;139 per jaar</strong>. Liever niet alles in één keer? Dan kun je er ook voor kiezen om per kwartaal <strong>&euro;39</strong> te betalen.</p>
+
+      <p>Oftewel: voor de prijs van amper <strong>één kopje koffie per week</strong>, heb je altijd een heel team van Apple-experts in je broekzak zitten.</p>
+
+      <p>Laat de razendsnelle techniek je niet meer onzeker maken. Klik op de knop hieronder, en we zien je heel graag aan de binnenkant.</p>
+    </div>
+
+    <div class="final-cta-highlights">
+      <div class="final-cta-highlight"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>30 dagen niet-goed-geld-terug</div>
+      <div class="final-cta-highlight"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Op elk moment opzegbaar</div>
+      <div class="final-cta-highlight"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>2.000+ leden gingen je voor</div>
+      <div class="final-cta-highlight"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>Eigen app, geen Facebook</div>
+    </div>
+
+    <div class="final-cta-cta-block">
+      <a href="#prijzen" class="btn btn-gold" style="font-size:18px;padding:20px 52px;">Ja, ik word lid van DigitaalSlim Plus+</a>
+      <p class="final-cta-note">Nu nog &euro;139 per jaar &nbsp;&middot;&nbsp; Op elk moment opzegbaar &nbsp;&middot;&nbsp; 30 dagen niet-goed-geld-terug</p>
+      <div class="final-cta-guarantee r">
+        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span>Niet tevreden? Stuur één e-mail en je krijgt je volledige bedrag direct terug. Zonder kleine lettertjes.</span>
+      </div>
+    </div>
   </div>
 </section>
 
