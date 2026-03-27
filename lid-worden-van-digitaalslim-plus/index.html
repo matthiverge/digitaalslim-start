@@ -2030,25 +2030,14 @@ a { text-decoration: none; }
 
 /* ── Puur design (test) ── */
 .wall-card-pure {
-  border-radius: var(--r3);
-  overflow: hidden;
-  box-shadow:
-    0 0 0 1px rgba(74,44,245,0.08),
-    0 4px 24px rgba(74,44,245,0.10),
-    0 1px 4px rgba(0,0,0,0.03);
-  transition: transform 0.3s cubic-bezier(0.22,0.68,0,1.2), box-shadow 0.3s;
+  transition: transform 0.3s cubic-bezier(0.22,0.68,0,1.2);
 }
 .wall-card-pure:hover {
   transform: translateY(-4px);
-  box-shadow:
-    0 0 0 1px rgba(74,44,245,0.14),
-    0 12px 40px rgba(74,44,245,0.16),
-    0 2px 8px rgba(0,0,0,0.04);
 }
 .wall-card-pure img {
   width: 100%;
   display: block;
-  border-radius: var(--r3);
 }
 .wall-card-pure .wall-card-bar {
   display: none;
