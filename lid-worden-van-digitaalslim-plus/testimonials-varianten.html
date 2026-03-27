@@ -44,7 +44,6 @@ body {
 .testi-card {
   background: #fff;
   border-radius: 22px;
-  overflow: hidden;
   box-shadow:
     0 0 0 1px rgba(124,58,237,.1),
     0 8px 32px rgba(124,58,237,.12),
@@ -58,12 +57,16 @@ body {
     0 20px 56px rgba(124,58,237,.2),
     0 4px 12px rgba(0,0,0,.06);
 }
-.testi-card img { width: 100%; display: block; }
+.testi-card img {
+  width: 100%; display: block;
+  border-radius: 22px 22px 0 0;
+}
 
 .testi-bar {
   background: linear-gradient(90deg, #4C1D95 0%, #6D28D9 100%);
   padding: 10px 22px;
   display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border-radius: 0 0 22px 22px;
 }
 .testi-stars { color: #fbbf24; font-size: 16px; letter-spacing: 2px; }
 .testi-badge {
