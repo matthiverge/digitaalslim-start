@@ -3,33 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Testimonials — 5 Nieuwe Varianten | DigitaalSlim Plus+</title>
+<title>Testimonials — 4 Verfijnde Variaties | DigitaalSlim Plus+</title>
 <style>
-/* ─── RESET & BASE ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   background: #f0f0f5;
   color: #1a1a2e;
-}
-
-/* ─── DESIGN TOKENS ─── */
-:root {
-  --violet:       #7C3AED;
-  --violet-dark:  #5B21B6;
-  --violet-light: #ede9fe;
-  --violet-mid:   #c4b5fd;
-  --gold:         #F0B429;
-  --gold-light:   #fffbeb;
-  --green:        #059669;
-  --green-light:  #d1fae5;
-  --text-dark:    #1a1a2e;
-  --text-mid:     #4a5568;
-  --text-light:   #94a3b8;
-  --border:       #e2e2ec;
-  --white:        #ffffff;
-  --bg:           #f0f0f5;
-  --r:            20px;
 }
 
 /* ─── STICKY NAV ─── */
@@ -41,8 +21,8 @@ body {
   overflow-x: auto;
 }
 .nav button {
-  flex: 1; min-width: 170px;
-  padding: 15px 16px;
+  flex: 1; min-width: 200px;
+  padding: 16px 20px;
   background: transparent;
   color: rgba(255,255,255,.5);
   border: none; border-bottom: 3px solid transparent;
@@ -59,59 +39,43 @@ body {
 .variant { display: none; }
 .variant.active { display: block; }
 
-/* ─── SHARED SECTION WRAP ─── */
+/* ─── GEDEELDE SECTIE ─── */
 .wrap {
-  max-width: 860px;
+  max-width: 780px;
   margin: 0 auto;
-  padding: 72px 24px 80px;
+  padding: 72px 24px 88px;
 }
-.wrap.wide { max-width: 960px; }
-
-/* ─── SHARED TYPOGRAPHY ─── */
 .eyebrow {
   text-align: center;
   font-size: 11px; font-weight: 700;
   letter-spacing: .14em; text-transform: uppercase;
-  color: var(--violet); margin-bottom: 14px;
+  color: #7C3AED; margin-bottom: 14px;
 }
 .heading {
   text-align: center;
   font-size: clamp(26px, 4vw, 40px);
-  font-weight: 900; color: var(--text-dark);
+  font-weight: 900; color: #1a1a2e;
   line-height: 1.15; letter-spacing: -.03em;
   margin-bottom: 12px;
 }
 .subtext {
   text-align: center;
-  font-size: 16px; color: var(--text-mid);
-  line-height: 1.65; max-width: 520px;
+  font-size: 16px; color: #4a5568;
+  line-height: 1.65; max-width: 500px;
   margin: 0 auto 52px;
 }
-
-/* ─── SHARED BADGES ─── */
-.badge {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-size: 11px; font-weight: 700;
-  padding: 3px 10px; border-radius: 20px;
-}
-.badge-green { background: #d1fae5; color: #059669; }
-.badge-violet { background: var(--violet-light); color: var(--violet); }
-.stars { color: #f59e0b; font-size: 15px; letter-spacing: 1px; }
-
-/* ─── SHARED CTA ─── */
 .cta-block {
   margin-top: 64px;
-  background: var(--violet-light);
-  border: 1px solid var(--violet-mid);
+  background: #ede9fe;
+  border: 1px solid #c4b5fd;
   border-radius: 22px;
   padding: 44px 36px;
   text-align: center;
 }
-.cta-block p { font-size: 16px; color: var(--text-mid); margin-bottom: 22px; line-height: 1.6; }
+.cta-block p { font-size: 16px; color: #4a5568; margin-bottom: 22px; line-height: 1.6; }
 .cta-btn {
   display: inline-block;
-  background: var(--gold);
-  color: var(--text-dark);
+  background: #F0B429; color: #1a1a2e;
   font-weight: 800; font-size: 17px;
   padding: 17px 42px; border-radius: 50px;
   text-decoration: none;
@@ -119,235 +83,209 @@ body {
   transition: transform .2s, box-shadow .2s;
 }
 .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(240,180,41,.5); }
-.cta-note { font-size: 13px; color: var(--text-light); margin-top: 12px; }
+.cta-note { font-size: 13px; color: #94a3b8; margin-top: 12px; }
 
 
 /* ════════════════════════════════════════════════════════
-   VARIANT 1 — Één kolom, gestapeld
-   Alle 6 testimonials onder elkaar, volle breedte,
-   witte kaart met subtiele schaduw en paarse linker accent-lijn
+   VARIANT A — Klassiek verfijnd
+   Witte kaart, ronde hoeken, zachte schaduw.
+   Paarse balk met gradient, sterren links, badge rechts.
+   Subtiele paarse rand bovenaan de kaart.
 ════════════════════════════════════════════════════════ */
-.v1-list { display: flex; flex-direction: column; gap: 20px; }
+.va-list { display: flex; flex-direction: column; gap: 24px; }
 
-.v1-card {
-  background: var(--white);
-  border-radius: var(--r);
+.va-card {
+  background: #fff;
+  border-radius: 20px;
   overflow: hidden;
-  border-left: 5px solid var(--violet);
-  box-shadow: 0 2px 16px rgba(0,0,0,.07);
-  transition: transform .2s, box-shadow .2s;
-}
-.v1-card:nth-child(2) { border-left-color: var(--gold); }
-.v1-card:nth-child(3) { border-left-color: var(--green); }
-.v1-card:nth-child(4) { border-left-color: var(--violet); }
-.v1-card:nth-child(5) { border-left-color: var(--gold); }
-.v1-card:nth-child(6) { border-left-color: var(--green); }
-.v1-card:hover { transform: translateX(4px); box-shadow: 0 6px 28px rgba(0,0,0,.1); }
-.v1-card img { width: 100%; display: block; }
-.v1-card-foot {
-  padding: 12px 20px 16px;
-  display: flex; align-items: center;
-  justify-content: space-between;
-  background: #fafafa;
-  border-top: 1px solid var(--border);
-}
-
-
-/* ════════════════════════════════════════════════════════
-   VARIANT 2 — Twee kolommen, gelijke hoogte
-   Kaarten naast elkaar in 2 kolommen, screenshots op volle
-   kaardbreedte, lichte achtergrond met ronde hoeken
-════════════════════════════════════════════════════════ */
-.v2-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-}
-@media (max-width: 640px) { .v2-grid { grid-template-columns: 1fr; } }
-
-.v2-card {
-  background: var(--white);
-  border-radius: var(--r);
-  overflow: hidden;
-  box-shadow: 0 3px 18px rgba(0,0,0,.08);
-  border: 1px solid var(--border);
+  border-top: 3px solid #7C3AED;
+  box-shadow: 0 4px 24px rgba(0,0,0,.08), 0 1px 4px rgba(0,0,0,.04);
   transition: transform .25s, box-shadow .25s;
 }
-.v2-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 32px rgba(124,58,237,.13);
+.va-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(124,58,237,.14), 0 2px 8px rgba(0,0,0,.05);
 }
-.v2-card img { width: 100%; display: block; }
-.v2-card-foot {
-  padding: 12px 16px 16px;
-  display: flex; align-items: center;
-  justify-content: space-between;
+.va-card img { width: 100%; display: block; }
+.va-bar {
+  background: linear-gradient(90deg, #5B21B6 0%, #7C3AED 60%, #8B5CF6 100%);
+  padding: 14px 22px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.va-stars { color: #fbbf24; font-size: 16px; letter-spacing: 2px; }
+.va-badge {
+  background: rgba(255,255,255,.18);
+  color: #fff; font-size: 12px; font-weight: 700;
+  padding: 4px 14px; border-radius: 20px;
+  letter-spacing: .03em;
 }
 
 
 /* ════════════════════════════════════════════════════════
-   VARIANT 3 — Één kolom, genummerd tijdlijn
-   Elke testimonial heeft een groot nummer links en een
-   verticale lijn die ze verbindt — visueel verhaal
+   VARIANT B — Zwevende kaart met glow
+   Licht grijze pagina-achtergrond. Kaarten lijken te zweven
+   dankzij een paarse glow-schaduw. Balk is iets hoger,
+   met naam van het lid erin als extra detail.
 ════════════════════════════════════════════════════════ */
-.v3-timeline { position: relative; }
-.v3-timeline::before {
-  content: '';
-  position: absolute;
-  left: 28px; top: 0; bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--violet), var(--violet-mid), transparent);
-}
-@media (max-width: 560px) { .v3-timeline::before { left: 18px; } }
+.vb-list { display: flex; flex-direction: column; gap: 32px; }
 
-.v3-item {
-  display: flex; gap: 24px;
-  margin-bottom: 28px;
-  position: relative;
-}
-@media (max-width: 560px) { .v3-item { gap: 14px; } }
-
-.v3-num {
-  flex: 0 0 58px;
-  width: 58px; height: 58px;
-  border-radius: 50%;
-  background: var(--violet);
-  color: #fff;
-  font-size: 20px; font-weight: 900;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 16px rgba(124,58,237,.35);
-  position: relative; z-index: 1;
-  flex-shrink: 0;
-}
-@media (max-width: 560px) { .v3-num { flex: 0 0 38px; width: 38px; height: 38px; font-size: 15px; } }
-
-.v3-card {
-  flex: 1;
-  background: var(--white);
-  border-radius: var(--r);
+.vb-card {
+  background: #fff;
+  border-radius: 22px;
   overflow: hidden;
-  box-shadow: 0 2px 16px rgba(0,0,0,.07);
-  border: 1px solid var(--border);
-  transition: box-shadow .2s;
+  box-shadow:
+    0 0 0 1px rgba(124,58,237,.1),
+    0 8px 32px rgba(124,58,237,.12),
+    0 2px 8px rgba(0,0,0,.04);
+  transition: transform .3s cubic-bezier(.22,.68,0,1.2), box-shadow .3s;
 }
-.v3-card:hover { box-shadow: 0 6px 28px rgba(124,58,237,.12); }
-.v3-card img { width: 100%; display: block; }
-.v3-card-foot {
-  padding: 10px 16px 14px;
-  display: flex; align-items: center;
-  justify-content: space-between;
-  background: #fafafa;
-  border-top: 1px solid var(--border);
+.vb-card:hover {
+  transform: translateY(-6px) scale(1.005);
+  box-shadow:
+    0 0 0 1px rgba(124,58,237,.2),
+    0 20px 56px rgba(124,58,237,.2),
+    0 4px 12px rgba(0,0,0,.06);
+}
+.vb-card img { width: 100%; display: block; }
+.vb-bar {
+  background: linear-gradient(90deg, #4C1D95 0%, #6D28D9 100%);
+  padding: 16px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.vb-left { display: flex; flex-direction: column; gap: 3px; }
+.vb-stars { color: #fde68a; font-size: 15px; letter-spacing: 2px; }
+.vb-name { color: rgba(255,255,255,.7); font-size: 12px; font-weight: 600; }
+.vb-badge {
+  background: #F0B429; color: #1a1a2e;
+  font-size: 11px; font-weight: 800;
+  padding: 5px 14px; border-radius: 20px;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(240,180,41,.4);
 }
 
 
 /* ════════════════════════════════════════════════════════
-   VARIANT 4 — Twee kolommen, paarse achtergrond
-   Donker/paars sectie-achtergrond, witte kaarten met
-   gouden sterren — premium uitstraling
+   VARIANT C — Minimalistische lijn-stijl
+   Geen zware schaduw, maar een dunne paarse rand rondom.
+   Balk is slanker en transparant-frosted, met een subtiel
+   ster-patroon als achtergrond-accent.
 ════════════════════════════════════════════════════════ */
-.v4-section {
-  background: linear-gradient(160deg, #1e1040 0%, #2d1b69 100%);
-  padding: 80px 24px;
+.vc-list { display: flex; flex-direction: column; gap: 20px; }
+
+.vc-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1.5px solid #ddd6fe;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
 }
-.v4-wrap { max-width: 900px; margin: 0 auto; }
-.v4-eyebrow {
+.vc-card:hover {
+  border-color: #7C3AED;
+  box-shadow: 0 6px 28px rgba(124,58,237,.12);
+  transform: translateY(-3px);
+}
+.vc-card img { width: 100%; display: block; }
+.vc-bar {
+  background: #faf5ff;
+  border-top: 1.5px solid #ddd6fe;
+  padding: 12px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.vc-stars { color: #7C3AED; font-size: 16px; letter-spacing: 2px; }
+.vc-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #ede9fe; color: #5B21B6;
+  font-size: 12px; font-weight: 700;
+  padding: 4px 14px; border-radius: 20px;
+}
+.vc-badge::before {
+  content: '✓';
+  width: 16px; height: 16px;
+  background: #7C3AED; color: #fff;
+  border-radius: 50%;
+  font-size: 10px; font-weight: 900;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+
+
+/* ════════════════════════════════════════════════════════
+   VARIANT D — Warm & uitnodigend
+   Ivoorwitte achtergrond voor de sectie. Kaarten met een
+   warme gouden accent-lijn bovenaan. Balk combineert
+   diep paars met een gouden ster-icoon — warm en vertrouwd.
+════════════════════════════════════════════════════════ */
+.vd-section { background: #fffdf7; padding: 72px 24px 88px; }
+.vd-wrap { max-width: 780px; margin: 0 auto; }
+
+.vd-eyebrow {
   text-align: center;
   font-size: 11px; font-weight: 700;
   letter-spacing: .14em; text-transform: uppercase;
-  color: var(--violet-mid); margin-bottom: 14px;
+  color: #D97706; margin-bottom: 14px;
 }
-.v4-heading {
+.vd-heading {
   text-align: center;
   font-size: clamp(26px, 4vw, 40px);
-  font-weight: 900; color: #fff;
+  font-weight: 900; color: #1a1a2e;
   line-height: 1.15; letter-spacing: -.03em;
   margin-bottom: 12px;
 }
-.v4-subtext {
+.vd-subtext {
   text-align: center;
-  font-size: 16px; color: rgba(255,255,255,.6);
-  line-height: 1.65; max-width: 520px;
-  margin: 0 auto 48px;
+  font-size: 16px; color: #4a5568;
+  line-height: 1.65; max-width: 500px;
+  margin: 0 auto 52px;
 }
-.v4-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-@media (max-width: 640px) { .v4-grid { grid-template-columns: 1fr; } }
 
-.v4-card {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: var(--r);
+.vd-list { display: flex; flex-direction: column; gap: 24px; }
+
+.vd-card {
+  background: #fff;
+  border-radius: 20px;
   overflow: hidden;
-  backdrop-filter: blur(10px);
-  transition: background .2s, transform .2s;
+  border-top: 3px solid #F0B429;
+  box-shadow: 0 4px 20px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.04);
+  transition: transform .25s, box-shadow .25s;
 }
-.v4-card:hover {
-  background: rgba(255,255,255,.1);
+.vd-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0,0,0,.1);
 }
-.v4-card img { width: 100%; display: block; }
-.v4-card-foot {
-  padding: 12px 16px 16px;
-  display: flex; align-items: center;
-  justify-content: space-between;
+.vd-card img { width: 100%; display: block; }
+.vd-bar {
+  background: linear-gradient(90deg, #3B0764 0%, #6D28D9 100%);
+  padding: 14px 22px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
 }
-.v4-stars { color: #fbbf24; font-size: 15px; letter-spacing: 1px; }
-.v4-badge {
-  display: inline-flex; align-items: center; gap: 5px;
-  background: rgba(196,181,253,.15); color: var(--violet-mid);
-  font-size: 11px; font-weight: 700;
-  padding: 3px 10px; border-radius: 20px;
+.vd-bar-left { display: flex; align-items: center; gap: 10px; }
+.vd-star-icon {
+  width: 28px; height: 28px;
+  background: #F0B429;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  box-shadow: 0 2px 8px rgba(240,180,41,.5);
+  flex-shrink: 0;
 }
-.v4-cta-block {
-  margin-top: 56px;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+.vd-stars { color: #fde68a; font-size: 15px; letter-spacing: 2px; }
+.vd-badge {
+  background: rgba(255,255,255,.15); color: #fff;
+  font-size: 12px; font-weight: 700;
+  padding: 4px 14px; border-radius: 20px;
+  letter-spacing: .03em;
+}
+
+.vd-cta {
+  margin-top: 64px;
+  background: #fff;
+  border: 1px solid #fde68a;
   border-radius: 22px;
   padding: 44px 36px;
   text-align: center;
+  box-shadow: 0 4px 20px rgba(240,180,41,.1);
 }
-.v4-cta-block p { font-size: 16px; color: rgba(255,255,255,.65); margin-bottom: 22px; line-height: 1.6; }
-.v4-cta-note { font-size: 13px; color: rgba(255,255,255,.35); margin-top: 12px; }
-
-
-/* ════════════════════════════════════════════════════════
-   VARIANT 5 — Één kolom, grote kaarten met quote-overlay
-   Elke kaart heeft de screenshot + een paarse quote-banner
-   eronder met naam en sterren — rustig en leesbaar
-════════════════════════════════════════════════════════ */
-.v5-list { display: flex; flex-direction: column; gap: 28px; }
-
-.v5-card {
-  background: var(--white);
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0,0,0,.09);
-  border: 1px solid var(--border);
-  transition: box-shadow .25s, transform .25s;
-}
-.v5-card:hover {
-  box-shadow: 0 12px 40px rgba(124,58,237,.15);
-  transform: translateY(-3px);
-}
-.v5-card img { width: 100%; display: block; }
-.v5-banner {
-  background: linear-gradient(90deg, var(--violet-dark), var(--violet));
-  padding: 18px 24px;
-  display: flex; align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-.v5-banner-stars { color: #fbbf24; font-size: 16px; letter-spacing: 1px; }
-.v5-banner-badge {
-  display: inline-flex; align-items: center; gap: 5px;
-  background: rgba(255,255,255,.15); color: #fff;
-  font-size: 11px; font-weight: 700;
-  padding: 4px 12px; border-radius: 20px;
-}
+.vd-cta p { font-size: 16px; color: #4a5568; margin-bottom: 22px; line-height: 1.6; }
+.vd-cta-note { font-size: 13px; color: #94a3b8; margin-top: 12px; }
 
 </style>
 </head>
@@ -355,64 +293,64 @@ body {
 
 <!-- ─── STICKY NAV ─── -->
 <nav class="nav">
-  <button class="active" onclick="show(1,this)">1 — Één kolom + accent</button>
-  <button onclick="show(2,this)">2 — Twee kolommen</button>
-  <button onclick="show(3,this)">3 — Genummerde tijdlijn</button>
-  <button onclick="show(4,this)">4 — Donker premium</button>
-  <button onclick="show(5,this)">5 — Één kolom + banner</button>
+  <button class="active" onclick="show('a',this)">A — Klassiek verfijnd</button>
+  <button onclick="show('b',this)">B — Zwevend met glow</button>
+  <button onclick="show('c',this)">C — Minimalistisch</button>
+  <button onclick="show('d',this)">D — Warm &amp; gouden accent</button>
 </nav>
 
 
 <!-- ════════════════════════════════════════════════════════
-     VARIANT 1 — Één kolom, gestapeld met gekleurde accent-lijn
+     VARIANT A — Klassiek verfijnd
+     Paarse gradient balk, paarse rand bovenaan, zachte schaduw
 ════════════════════════════════════════════════════════ -->
-<div class="variant active" id="v1">
+<div class="variant active" id="va">
 <div class="wrap">
   <p class="eyebrow">Leden aan het woord</p>
   <h2 class="heading">Dit zeggen mensen die je voorgingen.</h2>
   <p class="subtext">Echte leden, echte ervaringen — rechtstreeks uit onze community.</p>
 
-  <div class="v1-list">
-    <div class="v1-card">
+  <div class="va-list">
+    <div class="va-card">
       <img src="testi-1-rina.png" alt="Rina Vermeulen">
-      <div class="v1-card-foot">
-        <span class="stars">★★★★★</span>
-        <span class="badge badge-green">✓ Geverifieerd lid</span>
+      <div class="va-bar">
+        <span class="va-stars">★★★★★</span>
+        <span class="va-badge">✓ Geverifieerd lid</span>
       </div>
     </div>
-    <div class="v1-card">
+    <div class="va-card">
       <img src="testi-2-elise.png" alt="Elise De Ras">
-      <div class="v1-card-foot">
-        <span class="stars">★★★★★</span>
-        <span class="badge badge-green">✓ Geverifieerd lid</span>
+      <div class="va-bar">
+        <span class="va-stars">★★★★★</span>
+        <span class="va-badge">✓ Geverifieerd lid</span>
       </div>
     </div>
-    <div class="v1-card">
+    <div class="va-card">
       <img src="testi-3-mady.png" alt="Mady De Geest">
-      <div class="v1-card-foot">
-        <span class="stars">★★★★★</span>
-        <span class="badge badge-green">✓ Geverifieerd lid</span>
+      <div class="va-bar">
+        <span class="va-stars">★★★★★</span>
+        <span class="va-badge">✓ Geverifieerd lid</span>
       </div>
     </div>
-    <div class="v1-card">
+    <div class="va-card">
       <img src="testi-4-eddie.png" alt="Eddie Van Melis">
-      <div class="v1-card-foot">
-        <span class="stars">★★★★★</span>
-        <span class="badge badge-green">✓ Geverifieerd lid</span>
+      <div class="va-bar">
+        <span class="va-stars">★★★★★</span>
+        <span class="va-badge">✓ Geverifieerd lid</span>
       </div>
     </div>
-    <div class="v1-card">
+    <div class="va-card">
       <img src="testi-5-jenny.png" alt="Jenny Aarsbergen">
-      <div class="v1-card-foot">
-        <span class="stars">★★★★★</span>
-        <span class="badge badge-green">✓ Geverifieerd lid</span>
+      <div class="va-bar">
+        <span class="va-stars">★★★★★</span>
+        <span class="va-badge">✓ Geverifieerd lid</span>
       </div>
     </div>
-    <div class="v1-card">
+    <div class="va-card">
       <img src="testi-6-nicole.png" alt="Nicole Dullekens">
-      <div class="v1-card-foot">
-        <span class="stars">★★★★★</span>
-        <span class="badge badge-green">✓ Geverifieerd lid</span>
+      <div class="va-bar">
+        <span class="va-stars">★★★★★</span>
+        <span class="va-badge">✓ Geverifieerd lid</span>
       </div>
     </div>
   </div>
@@ -427,136 +365,74 @@ body {
 
 
 <!-- ════════════════════════════════════════════════════════
-     VARIANT 2 — Twee kolommen, witte kaarten
+     VARIANT B — Zwevende kaart met paarse glow
+     Diepe paarse balk, gouden badge, spring-animatie
 ════════════════════════════════════════════════════════ -->
-<div class="variant" id="v2">
-<div class="wrap wide">
-  <p class="eyebrow">Leden aan het woord</p>
-  <h2 class="heading">Dit zeggen mensen die je voorgingen.</h2>
-  <p class="subtext">Echte leden, echte ervaringen — rechtstreeks uit onze community.</p>
-
-  <div class="v2-grid">
-    <div class="v2-card">
-      <img src="testi-1-rina.png" alt="Rina Vermeulen">
-      <div class="v2-card-foot">
-        <span class="stars">★★★★★</span>
-        <span class="badge badge-green">✓ Geverifieerd lid</span>
-      </div>
-    </div>
-    <div class="v2-card">
-      <img src="testi-2-elise.png" alt="Elise De Ras">
-      <div class="v2-card-foot">
-        <span class="stars">★★★★★</span>
-        <span class="badge badge-green">✓ Geverifieerd lid</span>
-      </div>
-    </div>
-    <div class="v2-card">
-      <img src="testi-3-mady.png" alt="Mady De Geest">
-      <div class="v2-card-foot">
-        <span class="stars">★★★★★</span>
-        <span class="badge badge-green">✓ Geverifieerd lid</span>
-      </div>
-    </div>
-    <div class="v2-card">
-      <img src="testi-4-eddie.png" alt="Eddie Van Melis">
-      <div class="v2-card-foot">
-        <span class="stars">★★★★★</span>
-        <span class="badge badge-green">✓ Geverifieerd lid</span>
-      </div>
-    </div>
-    <div class="v2-card">
-      <img src="testi-5-jenny.png" alt="Jenny Aarsbergen">
-      <div class="v2-card-foot">
-        <span class="stars">★★★★★</span>
-        <span class="badge badge-green">✓ Geverifieerd lid</span>
-      </div>
-    </div>
-    <div class="v2-card">
-      <img src="testi-6-nicole.png" alt="Nicole Dullekens">
-      <div class="v2-card-foot">
-        <span class="stars">★★★★★</span>
-        <span class="badge badge-green">✓ Geverifieerd lid</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="cta-block">
-    <p>Dit zijn echte leden die spontaan hun ervaring deelden in de community.<br>Jij kunt er ook deel van zijn.</p>
-    <a href="#" class="cta-btn">Ja, ik word lid van DigitaalSlim Plus+</a>
-    <p class="cta-note">Nu nog €139 per jaar &nbsp;·&nbsp; Op elk moment opzegbaar &nbsp;·&nbsp; 30 dagen niet-goed-geld-terug</p>
-  </div>
-</div>
-</div>
-
-
-<!-- ════════════════════════════════════════════════════════
-     VARIANT 3 — Genummerde tijdlijn, één kolom
-════════════════════════════════════════════════════════ -->
-<div class="variant" id="v3">
+<div class="variant" id="vb">
 <div class="wrap">
   <p class="eyebrow">Leden aan het woord</p>
   <h2 class="heading">Dit zeggen mensen die je voorgingen.</h2>
   <p class="subtext">Echte leden, echte ervaringen — rechtstreeks uit onze community.</p>
 
-  <div class="v3-timeline">
-    <div class="v3-item">
-      <div class="v3-num">1</div>
-      <div class="v3-card">
-        <img src="testi-1-rina.png" alt="Rina Vermeulen">
-        <div class="v3-card-foot">
-          <span class="stars">★★★★★</span>
-          <span class="badge badge-green">✓ Geverifieerd lid</span>
+  <div class="vb-list">
+    <div class="vb-card">
+      <img src="testi-1-rina.png" alt="Rina Vermeulen">
+      <div class="vb-bar">
+        <div class="vb-left">
+          <span class="vb-stars">★★★★★</span>
+          <span class="vb-name">Rina Vermeulen</span>
         </div>
+        <span class="vb-badge">Plus+ lid</span>
       </div>
     </div>
-    <div class="v3-item">
-      <div class="v3-num">2</div>
-      <div class="v3-card">
-        <img src="testi-2-elise.png" alt="Elise De Ras">
-        <div class="v3-card-foot">
-          <span class="stars">★★★★★</span>
-          <span class="badge badge-green">✓ Geverifieerd lid</span>
+    <div class="vb-card">
+      <img src="testi-2-elise.png" alt="Elise De Ras">
+      <div class="vb-bar">
+        <div class="vb-left">
+          <span class="vb-stars">★★★★★</span>
+          <span class="vb-name">Elise De Ras</span>
         </div>
+        <span class="vb-badge">Plus+ lid</span>
       </div>
     </div>
-    <div class="v3-item">
-      <div class="v3-num">3</div>
-      <div class="v3-card">
-        <img src="testi-3-mady.png" alt="Mady De Geest">
-        <div class="v3-card-foot">
-          <span class="stars">★★★★★</span>
-          <span class="badge badge-green">✓ Geverifieerd lid</span>
+    <div class="vb-card">
+      <img src="testi-3-mady.png" alt="Mady De Geest">
+      <div class="vb-bar">
+        <div class="vb-left">
+          <span class="vb-stars">★★★★★</span>
+          <span class="vb-name">Mady De Geest</span>
         </div>
+        <span class="vb-badge">Plus+ lid</span>
       </div>
     </div>
-    <div class="v3-item">
-      <div class="v3-num">4</div>
-      <div class="v3-card">
-        <img src="testi-4-eddie.png" alt="Eddie Van Melis">
-        <div class="v3-card-foot">
-          <span class="stars">★★★★★</span>
-          <span class="badge badge-green">✓ Geverifieerd lid</span>
+    <div class="vb-card">
+      <img src="testi-4-eddie.png" alt="Eddie Van Melis">
+      <div class="vb-bar">
+        <div class="vb-left">
+          <span class="vb-stars">★★★★★</span>
+          <span class="vb-name">Eddie Van Melis</span>
         </div>
+        <span class="vb-badge">Plus+ lid</span>
       </div>
     </div>
-    <div class="v3-item">
-      <div class="v3-num">5</div>
-      <div class="v3-card">
-        <img src="testi-5-jenny.png" alt="Jenny Aarsbergen">
-        <div class="v3-card-foot">
-          <span class="stars">★★★★★</span>
-          <span class="badge badge-green">✓ Geverifieerd lid</span>
+    <div class="vb-card">
+      <img src="testi-5-jenny.png" alt="Jenny Aarsbergen">
+      <div class="vb-bar">
+        <div class="vb-left">
+          <span class="vb-stars">★★★★★</span>
+          <span class="vb-name">Jenny Aarsbergen</span>
         </div>
+        <span class="vb-badge">Plus+ lid</span>
       </div>
     </div>
-    <div class="v3-item">
-      <div class="v3-num">6</div>
-      <div class="v3-card">
-        <img src="testi-6-nicole.png" alt="Nicole Dullekens">
-        <div class="v3-card-foot">
-          <span class="stars">★★★★★</span>
-          <span class="badge badge-green">✓ Geverifieerd lid</span>
+    <div class="vb-card">
+      <img src="testi-6-nicole.png" alt="Nicole Dullekens">
+      <div class="vb-bar">
+        <div class="vb-left">
+          <span class="vb-stars">★★★★★</span>
+          <span class="vb-name">Nicole Dullekens</span>
         </div>
+        <span class="vb-badge">Plus+ lid</span>
       </div>
     </div>
   </div>
@@ -571,120 +447,55 @@ body {
 
 
 <!-- ════════════════════════════════════════════════════════
-     VARIANT 4 — Donker/paars, twee kolommen, premium
+     VARIANT C — Minimalistisch, paarse rand + lichte balk
 ════════════════════════════════════════════════════════ -->
-<div class="variant" id="v4">
-<div class="v4-section">
-  <div class="v4-wrap">
-    <p class="v4-eyebrow">Leden aan het woord</p>
-    <h2 class="v4-heading">Dit zeggen mensen die je voorgingen.</h2>
-    <p class="v4-subtext">Echte leden, echte ervaringen — rechtstreeks uit onze community.</p>
-
-    <div class="v4-grid">
-      <div class="v4-card">
-        <img src="testi-1-rina.png" alt="Rina Vermeulen">
-        <div class="v4-card-foot">
-          <span class="v4-stars">★★★★★</span>
-          <span class="v4-badge">✓ Geverifieerd lid</span>
-        </div>
-      </div>
-      <div class="v4-card">
-        <img src="testi-2-elise.png" alt="Elise De Ras">
-        <div class="v4-card-foot">
-          <span class="v4-stars">★★★★★</span>
-          <span class="v4-badge">✓ Geverifieerd lid</span>
-        </div>
-      </div>
-      <div class="v4-card">
-        <img src="testi-3-mady.png" alt="Mady De Geest">
-        <div class="v4-card-foot">
-          <span class="v4-stars">★★★★★</span>
-          <span class="v4-badge">✓ Geverifieerd lid</span>
-        </div>
-      </div>
-      <div class="v4-card">
-        <img src="testi-4-eddie.png" alt="Eddie Van Melis">
-        <div class="v4-card-foot">
-          <span class="v4-stars">★★★★★</span>
-          <span class="v4-badge">✓ Geverifieerd lid</span>
-        </div>
-      </div>
-      <div class="v4-card">
-        <img src="testi-5-jenny.png" alt="Jenny Aarsbergen">
-        <div class="v4-card-foot">
-          <span class="v4-stars">★★★★★</span>
-          <span class="v4-badge">✓ Geverifieerd lid</span>
-        </div>
-      </div>
-      <div class="v4-card">
-        <img src="testi-6-nicole.png" alt="Nicole Dullekens">
-        <div class="v4-card-foot">
-          <span class="v4-stars">★★★★★</span>
-          <span class="v4-badge">✓ Geverifieerd lid</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="v4-cta-block">
-      <p>Dit zijn echte leden die spontaan hun ervaring deelden in de community.<br>Jij kunt er ook deel van zijn.</p>
-      <a href="#" class="cta-btn">Ja, ik word lid van DigitaalSlim Plus+</a>
-      <p class="v4-cta-note">Nu nog €139 per jaar &nbsp;·&nbsp; Op elk moment opzegbaar &nbsp;·&nbsp; 30 dagen niet-goed-geld-terug</p>
-    </div>
-  </div>
-</div>
-</div>
-
-
-<!-- ════════════════════════════════════════════════════════
-     VARIANT 5 — Één kolom, grote kaarten met paarse banner
-════════════════════════════════════════════════════════ -->
-<div class="variant" id="v5">
+<div class="variant" id="vc">
 <div class="wrap">
   <p class="eyebrow">Leden aan het woord</p>
   <h2 class="heading">Dit zeggen mensen die je voorgingen.</h2>
   <p class="subtext">Echte leden, echte ervaringen — rechtstreeks uit onze community.</p>
 
-  <div class="v5-list">
-    <div class="v5-card">
+  <div class="vc-list">
+    <div class="vc-card">
       <img src="testi-1-rina.png" alt="Rina Vermeulen">
-      <div class="v5-banner">
-        <span class="v5-banner-stars">★★★★★</span>
-        <span class="v5-banner-badge">✓ Geverifieerd lid</span>
+      <div class="vc-bar">
+        <span class="vc-stars">★★★★★</span>
+        <span class="vc-badge">Geverifieerd lid</span>
       </div>
     </div>
-    <div class="v5-card">
+    <div class="vc-card">
       <img src="testi-2-elise.png" alt="Elise De Ras">
-      <div class="v5-banner">
-        <span class="v5-banner-stars">★★★★★</span>
-        <span class="v5-banner-badge">✓ Geverifieerd lid</span>
+      <div class="vc-bar">
+        <span class="vc-stars">★★★★★</span>
+        <span class="vc-badge">Geverifieerd lid</span>
       </div>
     </div>
-    <div class="v5-card">
+    <div class="vc-card">
       <img src="testi-3-mady.png" alt="Mady De Geest">
-      <div class="v5-banner">
-        <span class="v5-banner-stars">★★★★★</span>
-        <span class="v5-banner-badge">✓ Geverifieerd lid</span>
+      <div class="vc-bar">
+        <span class="vc-stars">★★★★★</span>
+        <span class="vc-badge">Geverifieerd lid</span>
       </div>
     </div>
-    <div class="v5-card">
+    <div class="vc-card">
       <img src="testi-4-eddie.png" alt="Eddie Van Melis">
-      <div class="v5-banner">
-        <span class="v5-banner-stars">★★★★★</span>
-        <span class="v5-banner-badge">✓ Geverifieerd lid</span>
+      <div class="vc-bar">
+        <span class="vc-stars">★★★★★</span>
+        <span class="vc-badge">Geverifieerd lid</span>
       </div>
     </div>
-    <div class="v5-card">
+    <div class="vc-card">
       <img src="testi-5-jenny.png" alt="Jenny Aarsbergen">
-      <div class="v5-banner">
-        <span class="v5-banner-stars">★★★★★</span>
-        <span class="v5-banner-badge">✓ Geverifieerd lid</span>
+      <div class="vc-bar">
+        <span class="vc-stars">★★★★★</span>
+        <span class="vc-badge">Geverifieerd lid</span>
       </div>
     </div>
-    <div class="v5-card">
+    <div class="vc-card">
       <img src="testi-6-nicole.png" alt="Nicole Dullekens">
-      <div class="v5-banner">
-        <span class="v5-banner-stars">★★★★★</span>
-        <span class="v5-banner-badge">✓ Geverifieerd lid</span>
+      <div class="vc-bar">
+        <span class="vc-stars">★★★★★</span>
+        <span class="vc-badge">Geverifieerd lid</span>
       </div>
     </div>
   </div>
@@ -694,15 +505,100 @@ body {
     <a href="#" class="cta-btn">Ja, ik word lid van DigitaalSlim Plus+</a>
     <p class="cta-note">Nu nog €139 per jaar &nbsp;·&nbsp; Op elk moment opzegbaar &nbsp;·&nbsp; 30 dagen niet-goed-geld-terug</p>
   </div>
+</div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════
+     VARIANT D — Warm & gouden accent
+     Ivoorwitte achtergrond, gouden rand bovenaan,
+     diepe paarse balk met gouden ster-icoon
+════════════════════════════════════════════════════════ -->
+<div class="variant" id="vd">
+<div class="vd-section">
+<div class="vd-wrap">
+  <p class="vd-eyebrow">Leden aan het woord</p>
+  <h2 class="vd-heading">Dit zeggen mensen die je voorgingen.</h2>
+  <p class="vd-subtext">Echte leden, echte ervaringen — rechtstreeks uit onze community.</p>
+
+  <div class="vd-list">
+    <div class="vd-card">
+      <img src="testi-1-rina.png" alt="Rina Vermeulen">
+      <div class="vd-bar">
+        <div class="vd-bar-left">
+          <span class="vd-star-icon">★</span>
+          <span class="vd-stars">★★★★★</span>
+        </div>
+        <span class="vd-badge">✓ Geverifieerd lid</span>
+      </div>
+    </div>
+    <div class="vd-card">
+      <img src="testi-2-elise.png" alt="Elise De Ras">
+      <div class="vd-bar">
+        <div class="vd-bar-left">
+          <span class="vd-star-icon">★</span>
+          <span class="vd-stars">★★★★★</span>
+        </div>
+        <span class="vd-badge">✓ Geverifieerd lid</span>
+      </div>
+    </div>
+    <div class="vd-card">
+      <img src="testi-3-mady.png" alt="Mady De Geest">
+      <div class="vd-bar">
+        <div class="vd-bar-left">
+          <span class="vd-star-icon">★</span>
+          <span class="vd-stars">★★★★★</span>
+        </div>
+        <span class="vd-badge">✓ Geverifieerd lid</span>
+      </div>
+    </div>
+    <div class="vd-card">
+      <img src="testi-4-eddie.png" alt="Eddie Van Melis">
+      <div class="vd-bar">
+        <div class="vd-bar-left">
+          <span class="vd-star-icon">★</span>
+          <span class="vd-stars">★★★★★</span>
+        </div>
+        <span class="vd-badge">✓ Geverifieerd lid</span>
+      </div>
+    </div>
+    <div class="vd-card">
+      <img src="testi-5-jenny.png" alt="Jenny Aarsbergen">
+      <div class="vd-bar">
+        <div class="vd-bar-left">
+          <span class="vd-star-icon">★</span>
+          <span class="vd-stars">★★★★★</span>
+        </div>
+        <span class="vd-badge">✓ Geverifieerd lid</span>
+      </div>
+    </div>
+    <div class="vd-card">
+      <img src="testi-6-nicole.png" alt="Nicole Dullekens">
+      <div class="vd-bar">
+        <div class="vd-bar-left">
+          <span class="vd-star-icon">★</span>
+          <span class="vd-stars">★★★★★</span>
+        </div>
+        <span class="vd-badge">✓ Geverifieerd lid</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="vd-cta">
+    <p>Dit zijn echte leden die spontaan hun ervaring deelden in de community.<br>Jij kunt er ook deel van zijn.</p>
+    <a href="#" class="cta-btn">Ja, ik word lid van DigitaalSlim Plus+</a>
+    <p class="vd-cta-note">Nu nog €139 per jaar &nbsp;·&nbsp; Op elk moment opzegbaar &nbsp;·&nbsp; 30 dagen niet-goed-geld-terug</p>
+  </div>
+</div>
 </div>
 </div>
 
 
 <script>
-function show(n, btn) {
+function show(id, btn) {
   document.querySelectorAll('.variant').forEach(v => v.classList.remove('active'));
   document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
-  document.getElementById('v' + n).classList.add('active');
+  document.getElementById('v' + id).classList.add('active');
   btn.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
