@@ -856,10 +856,14 @@ a { text-decoration: none; }
 .community-proof-grid img {
   width: 100%;
   display: block;
-  transition: transform 0.2s ease;
+  border-radius: var(--r3);
+  border: 1px solid rgba(74,44,245,0.10);
+  box-shadow: 0 4px 24px rgba(74,44,245,0.08), 0 1px 4px rgba(0,0,0,0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .community-proof-grid img:hover {
   transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(74,44,245,0.14), 0 2px 8px rgba(0,0,0,0.04);
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -1972,10 +1976,14 @@ a { text-decoration: none; }
 .wall-grid img {
   width: 100%;
   display: block;
-  transition: transform 0.2s ease;
+  border-radius: var(--r3);
+  border: 1px solid rgba(74,44,245,0.10);
+  box-shadow: 0 4px 24px rgba(74,44,245,0.08), 0 1px 4px rgba(0,0,0,0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .wall-grid img:hover {
   transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(74,44,245,0.14), 0 2px 8px rgba(0,0,0,0.04);
 }
 
 .wall-card {
