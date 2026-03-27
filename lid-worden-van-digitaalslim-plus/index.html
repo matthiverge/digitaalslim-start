@@ -2028,26 +2028,30 @@ a { text-decoration: none; }
   box-shadow: 0 2px 10px rgba(240,180,41,0.55);
 }
 
-/* ── Verfijnd design (test) ── */
-.wall-card-slim .wall-card-bar {
-  background: transparent;
-  padding: 10px 20px;
-  border-top: 2px solid rgba(74,44,245,0.12);
-  border-radius: 0 0 22px 22px;
+/* ── Puur design (test) ── */
+.wall-card-pure {
+  border-radius: var(--r3);
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(74,44,245,0.08),
+    0 4px 24px rgba(74,44,245,0.10),
+    0 1px 4px rgba(0,0,0,0.03);
+  transition: transform 0.3s cubic-bezier(0.22,0.68,0,1.2), box-shadow 0.3s;
 }
-.wall-card-slim .wall-stars {
-  font-size: 13px;
-  color: var(--gold);
-  letter-spacing: 1.5px;
+.wall-card-pure:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 0 1px rgba(74,44,245,0.14),
+    0 12px 40px rgba(74,44,245,0.16),
+    0 2px 8px rgba(0,0,0,0.04);
 }
-.wall-card-slim .wall-badge {
-  background: rgba(74,44,245,0.06);
-  color: var(--violet);
-  font-size: 11px;
-  font-weight: 700;
-  box-shadow: none;
-  padding: 4px 12px;
-  border: 1px solid rgba(74,44,245,0.12);
+.wall-card-pure img {
+  width: 100%;
+  display: block;
+  border-radius: var(--r3);
+}
+.wall-card-pure .wall-card-bar {
+  display: none;
 }
 
 .wall-card.hidden {
@@ -3381,16 +3385,16 @@ a { text-decoration: none; }
     </div>
   </div>
 
-  <!-- ══ TEST: 2-kolommen verfijnd design ══ -->
+  <!-- ══ TEST: 2-kolommen puur design ══ -->
   <div class="community-proof" style="padding-top:80px;border-top:2px dashed #ddd;margin-top:40px;">
-    <div class="community-proof-label">Variant B: verfijnd design (test)</div>
-    <div class="community-proof-grid" style="grid-template-columns: 1fr 1fr; max-width: 1040px; gap: 16px;">
-      <div class="wall-card wall-card-slim"><img src="afbeeldingen/Testimonials/22. Ervaring Community - Viviane.png" alt="Ervaring van Viviane" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
-      <div class="wall-card wall-card-slim"><img src="afbeeldingen/Testimonials/5. Ervaring Community - Jenny A.png" alt="Ervaring van Jenny" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
-      <div class="wall-card wall-card-slim"><img src="afbeeldingen/Testimonials/1. Ervaring Community - Rina.png" alt="Ervaring van Rina" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
-      <div class="wall-card wall-card-slim"><img src="afbeeldingen/Testimonials/30. Ervaring Community - Aukje.png" alt="Ervaring van Aukje" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
-      <div class="wall-card wall-card-slim"><img src="afbeeldingen/Testimonials/21. Ervaring Community - Gerda.png" alt="Ervaring van Gerda" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
-      <div class="wall-card wall-card-slim"><img src="afbeeldingen/Testimonials/45. Ervaring Community - Marleen.png" alt="Ervaring van Marleen" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+    <div class="community-proof-label">Variant C: puur screenshot (test)</div>
+    <div class="community-proof-grid" style="grid-template-columns: 1fr 1fr; max-width: 1040px; gap: 20px;">
+      <div class="wall-card-pure"><img src="afbeeldingen/Testimonials/22. Ervaring Community - Viviane.png" alt="Ervaring van Viviane" loading="lazy"></div>
+      <div class="wall-card-pure"><img src="afbeeldingen/Testimonials/5. Ervaring Community - Jenny A.png" alt="Ervaring van Jenny" loading="lazy"></div>
+      <div class="wall-card-pure"><img src="afbeeldingen/Testimonials/1. Ervaring Community - Rina.png" alt="Ervaring van Rina" loading="lazy"></div>
+      <div class="wall-card-pure"><img src="afbeeldingen/Testimonials/30. Ervaring Community - Aukje.png" alt="Ervaring van Aukje" loading="lazy"></div>
+      <div class="wall-card-pure"><img src="afbeeldingen/Testimonials/21. Ervaring Community - Gerda.png" alt="Ervaring van Gerda" loading="lazy"></div>
+      <div class="wall-card-pure"><img src="afbeeldingen/Testimonials/45. Ervaring Community - Marleen.png" alt="Ervaring van Marleen" loading="lazy"></div>
     </div>
   </div>
   <!-- ══ EINDE TEST ══ -->
