@@ -172,7 +172,7 @@ a { text-decoration: none; }
 .btn-gold {
   background: var(--gold);
   color: var(--dark);
-  padding: 18px 40px;
+  padding: 20px 72px;
   box-shadow: var(--s-gold);
 }
 .btn-gold:hover {
@@ -835,7 +835,7 @@ a { text-decoration: none; }
 .community-proof {
   max-width: 1040px;
   margin: 48px auto 0;
-  padding: 0 20px;
+  padding: 0 20px 64px;
 }
 .community-proof-label {
   text-align: center;
@@ -1307,6 +1307,13 @@ a { text-decoration: none; }
   color: var(--muted);
   margin-top: 6px;
   font-weight: 500;
+}
+
+.prijs-big-alt {
+  font-size: 15px;
+  color: var(--muted);
+  margin-top: 8px;
+  font-weight: 600;
 }
 
 .prijs-statement-text {
@@ -1921,21 +1928,21 @@ a { text-decoration: none; }
 }
 
 /* ═══════════════════════════════════════════════════════════
-   TESTIMONIALS — Masonry-inspired grid
+   WALL OF LOVE — Screenshot testimonials with load-more
    ═══════════════════════════════════════════════════════════ */
 
-.testimonials {
+.wall-of-love {
   background: var(--surface-2);
   padding: 112px 40px;
 }
 
-.testimonials-header {
+.wall-header {
   text-align: center;
   max-width: 600px;
-  margin: 0 auto 64px;
+  margin: 0 auto 20px;
 }
 
-.testimonials-header h2 {
+.wall-header h2 {
   font-size: clamp(26px, 3.5vw, 40px);
   font-weight: 800;
   letter-spacing: -1.5px;
@@ -1944,79 +1951,154 @@ a { text-decoration: none; }
   margin: 16px 0 0;
 }
 
-.testimonials-grid {
-  max-width: 1040px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.testi {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r3);
-  padding: 28px 26px;
-  box-shadow: var(--s1);
-  transition: box-shadow var(--t), transform var(--t);
-}
-
-.testi:hover {
-  box-shadow: var(--s3);
-  transform: translateY(-3px);
-}
-
-.testi blockquote {
-  font-size: 15px;
-  color: var(--ink-3);
-  line-height: 1.72;
-  font-style: italic;
-  margin-bottom: 18px;
-}
-
-.testi-name {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.testi-role {
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 2px;
-}
-
-/* Featured testimonial spans 2 cols */
-.testi-featured {
-  grid-column: 1 / 3;
-  background: linear-gradient(135deg, rgba(74,44,245,0.04) 0%, rgba(107,76,248,0.03) 100%);
-  border-color: var(--violet-line);
-  padding: 36px 40px;
-  position: relative;
-}
-
-.testi-featured::before {
-  content: '\201C';
-  position: absolute;
-  top: 16px;
-  left: 28px;
-  font-size: 80px;
-  line-height: 1;
-  font-family: Georgia, serif;
-  color: rgba(74,44,245,0.08);
-}
-
-.testi-featured blockquote {
+.wall-header p {
   font-size: 17px;
-  line-height: 1.78;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-top: 12px;
 }
 
-.testimonials-cta {
+.wall-counter {
   text-align: center;
-  margin-top: 56px;
+  font-size: 14px;
+  color: var(--muted-2);
+  margin-bottom: 40px;
 }
 
-.testimonials-cta-note {
+.wall-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 664px;
+  margin: 0 auto;
+}
+
+.wall-card {
+  background: var(--surface);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(74,44,245,0.10),
+    0 8px 32px rgba(74,44,245,0.12),
+    0 2px 8px rgba(0,0,0,0.04);
+  transition: transform 0.3s cubic-bezier(0.22,0.68,0,1.2), box-shadow 0.3s;
+}
+
+.wall-card:hover {
+  transform: translateY(-6px) scale(1.005);
+  box-shadow:
+    0 0 0 1px rgba(74,44,245,0.20),
+    0 20px 56px rgba(74,44,245,0.20),
+    0 4px 12px rgba(0,0,0,0.06);
+}
+
+.wall-card img {
+  width: 100%;
+  display: block;
+  border-radius: 22px 22px 0 0;
+}
+
+.wall-card-bar {
+  background: linear-gradient(90deg, #4C1D95 0%, #6D28D9 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 22px;
+  border-radius: 0 0 22px 22px;
+}
+
+.wall-stars {
+  font-size: 16px;
+  color: #fbbf24;
+  letter-spacing: 2px;
+}
+
+.wall-badge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  border-radius: var(--rpill);
+  padding: 5px 14px;
+  white-space: nowrap;
+  box-shadow: 0 2px 10px rgba(240,180,41,0.55);
+}
+
+.wall-card.hidden {
+  display: none;
+}
+
+.wall-card.fade-in {
+  animation: wallFadeIn 0.4s ease forwards;
+}
+
+@keyframes wallFadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+.wall-load-more {
+  text-align: center;
+  margin-top: 28px;
+}
+
+.wall-load-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--f);
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--violet);
+  border: none;
+  border-radius: var(--rpill);
+  padding: 18px 48px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(74,44,245,0.30);
+  transition: background var(--t), transform var(--t), box-shadow var(--t);
+}
+
+.wall-load-btn:hover {
+  background: var(--violet-2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(74,44,245,0.40);
+}
+
+.wall-load-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: #fff;
+  transition: transform 0.3s ease;
+}
+
+.wall-load-btn:hover svg {
+  transform: translateY(3px);
+}
+
+.wall-mid-cta {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.wall-mid-cta p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+.wall-final-cta {
+  text-align: center;
+  margin-top: 48px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.wall-final-cta p {
   font-size: 14px;
   color: var(--muted);
   margin-top: 14px;
@@ -3040,7 +3122,7 @@ a { text-decoration: none; }
   .hero-trust-item { padding: 0; margin: 0; }
 
   /* Sections */
-  .herkenning, .matthias, .pijlers, .zakmes, .levend, .kanalen, .testimonials, .vergelijking, .faq, .prijzen, .final-cta { padding: 72px 20px; }
+  .herkenning, .matthias, .pijlers, .zakmes, .levend, .kanalen, .wall-of-love, .vergelijking, .faq, .prijzen, .final-cta { padding: 72px 20px; }
 
   /* Herkenning */
   .herkenning-grid { grid-template-columns: 1fr; }
@@ -3086,9 +3168,9 @@ a { text-decoration: none; }
   .kanalen-screenshot { position: static; }
   .veilig-row { grid-template-columns: repeat(2, 1fr); }
 
-  /* Testimonials */
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .testi-featured { grid-column: 1; padding: 28px 24px; }
+  /* Wall of Love */
+  .wall-card-bar { padding: 10px 16px; }
+  .wall-badge { font-size: 11px; padding: 4px 10px; }
 
   /* Community Galerij */
   .community-galerij { padding: 72px 20px; }
@@ -3117,7 +3199,7 @@ a { text-decoration: none; }
 
 @media (max-width: 480px) {
   .herkenning-top h2, .matthias-inner h2, .pijlers-header h2, .zakmes-header h2,
-  .levend-content h2, .kanalen-header h2, .testimonials-header h2,
+  .levend-content h2, .kanalen-header h2, .wall-header h2,
   .vergelijking-inner h2, .faq-header h2, .prijzen-header h2 { font-size: 22px; }
   .veilig-row { grid-template-columns: 1fr 1fr; }
 }
@@ -3139,7 +3221,7 @@ a { text-decoration: none; }
   <div class="hero-inner">
     <div class="hero-content r">
       <img src="afbeeldingen/logo-digitaalslim-plus-geel.png" alt="DigitaalSlim Plus+" class="hero-logo">
-      <div class="hero-pill"><span class="hero-pill-dot"></span>Al meer dan 2.000 tevreden leden gingen je voor</div>
+      <div class="hero-pill"><span class="hero-pill-dot"></span>Al meer dan 2.000 tevreden plussers gingen je voor</div>
       <h1>Eindelijk een vaste plek waar je altijd terecht kunt.<br><em>Gloednieuwe community, online videolessen en persoonlijke hulp.</em></h1>
       <p class="hero-sub">De digitale wereld verandert snel, maar jij hoeft niet sneller te gaan rennen. <strong>Wij filteren de chaos voor je.</strong> DigitaalSlim Plus+ is je vaste plek voor al je digitale vragen. Altijd op jouw tempo, met een heel team dat voor je klaarstaat.</p>
 
@@ -3255,6 +3337,10 @@ a { text-decoration: none; }
       <div class="herk-icon"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg></div>
       <p><strong>Elke paar maanden verandert Apple weer iets</strong>, en dan ziet alles er net weer anders uit. Zelf uitzoeken kost je al snel een hele middag zoeken op internet, terwijl het antwoord in drie minuten te vinden is als je weet waar je moet kijken.</p>
     </div>
+    <div class="herk-card r d3">
+      <div class="herk-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <p><strong>Je wilt niet steeds je zoon of dochter lastigvallen</strong> met je digitale vragen. Maar zij hebben het druk, en zelf uitzoeken kost je vaak een hele middag. Je wilt het graag zelf kunnen, op je eigen tempo.</p>
+    </div>
   </div>
 
   <div class="herkenning-bridge r">
@@ -3264,11 +3350,28 @@ a { text-decoration: none; }
   <div class="community-proof">
     <div class="community-proof-label">Dit zeggen leden over hun ervaring</div>
     <div class="community-proof-grid">
-      <img src="afbeeldingen/Testimonials/1-rina.png" alt="Rina: Ik maak me niet meer druk als ik vast kom te zitten" loading="lazy">
-      <img src="afbeeldingen/Testimonials/2-elise.png" alt="Elise: Je vraag wordt steeds beantwoord en je probleem opgelost" loading="lazy">
-      <img src="afbeeldingen/Testimonials/8-armand.png" alt="Armand: Als je een vraag hebt kan je er altijd terecht, een hele geruststelling" loading="lazy">
+      <div class="wall-card"><img src="afbeeldingen/Testimonials/22. Ervaring Community - Viviane.png" alt="Ervaring van Viviane" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+      <div class="wall-card"><img src="afbeeldingen/Testimonials/1. Ervaring Community - Rina.png" alt="Ervaring van Rina" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+      <div class="wall-card"><img src="afbeeldingen/Testimonials/21. Ervaring Community - Gerda.png" alt="Ervaring van Gerda" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+    </div>
+    <div style="text-align:center;margin-top:24px;">
+      <a href="#prijzen" class="btn btn-gold" style="font-size:15px;padding:14px 45px;">Schrijf je nu in</a>
     </div>
   </div>
+
+  <!-- ══ TEST: 2-kolommen variant (intern vergelijken) ══ -->
+  <div class="community-proof" style="padding-top:80px;border-top:2px dashed #ddd;margin-top:40px;">
+    <div class="community-proof-label">Variant B: twee kolommen (test)</div>
+    <div class="community-proof-grid" style="grid-template-columns: 1fr 1fr; max-width: 1040px; gap: 16px;">
+      <div class="wall-card"><img src="afbeeldingen/Testimonials/22. Ervaring Community - Viviane.png" alt="Ervaring van Viviane" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+      <div class="wall-card"><img src="afbeeldingen/Testimonials/5. Ervaring Community - Jenny A.png" alt="Ervaring van Jenny" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+      <div class="wall-card"><img src="afbeeldingen/Testimonials/1. Ervaring Community - Rina.png" alt="Ervaring van Rina" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+      <div class="wall-card"><img src="afbeeldingen/Testimonials/30. Ervaring Community - Aukje.png" alt="Ervaring van Aukje" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+      <div class="wall-card"><img src="afbeeldingen/Testimonials/21. Ervaring Community - Gerda.png" alt="Ervaring van Gerda" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+      <div class="wall-card"><img src="afbeeldingen/Testimonials/45. Ervaring Community - Marleen.png" alt="Ervaring van Marleen" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+    </div>
+  </div>
+  <!-- ══ EINDE TEST ══ -->
 
 </section>
 
@@ -3299,6 +3402,16 @@ a { text-decoration: none; }
     </div>
   </div>
 </section>
+
+<!-- ═══ TEAM TESTIMONIALS ═══ -->
+<div class="community-proof" style="padding:64px 20px 0;">
+  <div class="community-proof-label">Wat leden zeggen over het team</div>
+  <div class="community-proof-grid">
+    <div class="wall-card"><img src="afbeeldingen/Testimonials/40. Ervaring Community - Guy.png" alt="Ervaring van Guy" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+    <div class="wall-card"><img src="afbeeldingen/Testimonials/17. Ervaring Community - Jos.png" alt="Ervaring van Jos" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+    <div class="wall-card"><img src="afbeeldingen/Testimonials/88. Ervaring Community - Jacqueline C.png" alt="Ervaring van Jacqueline C." loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+  </div>
+</div>
 
 <!-- ═══ VIER PIJLERS ═══ -->
 <section class="pijlers">
@@ -3383,7 +3496,7 @@ a { text-decoration: none; }
         <p>En voor alle duidelijkheid: dit is geen school. Er zijn geen deadlines, geen schema's en geen verplichte lessen. Je zorgt voor de kleinkinderen, of je hebt het druk? Prima. Alles wacht geduldig op jou. Je leert en ontdekt op je eigen tempo, in je eigen vertrouwde huiskamer.</p>
       </div>
       <div class="geen-school-visual">
-        <img src="afbeeldingen/lid-op-haar-ipad.jpeg" alt="Plus+ lid ontspannen met iPad" loading="lazy">
+        <img src="afbeeldingen/lid op haar ipad.jpeg" alt="Plus+ lid ontspannen met iPad" loading="lazy">
       </div>
     </div>
 
@@ -3404,6 +3517,15 @@ a { text-decoration: none; }
     <a href="#prijzen" class="btn btn-gold">Ja, ik wil erbij zijn</a>
     <p class="pijlers-cta-note">30 dagen bedenktijd. Op elk moment opzegbaar.</p>
   </div>
+
+  <div class="community-proof" style="padding-top:64px;">
+    <div class="community-proof-label">Wat leden zeggen over de cursussen</div>
+    <div class="community-proof-grid">
+      <div class="wall-card"><img src="afbeeldingen/Testimonials/18. Ervaring Community - Patricia.png" alt="Ervaring van Patricia" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+      <div class="wall-card"><img src="afbeeldingen/Testimonials/24. Ervaring Community - Christine.png" alt="Ervaring van Christine" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+      <div class="wall-card"><img src="afbeeldingen/Testimonials/16. Ervaring Community - Dominique.png" alt="Ervaring van Dominique" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+    </div>
+  </div>
 </section>
 
 <!-- ═══ PRIJS STATEMENT ═══ -->
@@ -3412,11 +3534,12 @@ a { text-decoration: none; }
     <div class="prijs-big">
       <div class="prijs-big-amount">&euro;139</div>
       <div class="prijs-big-period">per jaar</div>
+      <div class="prijs-big-alt">of &euro;39 per kwartaal</div>
     </div>
     <div class="prijs-statement-text">
       <p>Alle cursussen, Stappenplannen, de community, persoonlijke hulp en de nieuwe E-mailchecker app. <strong>Alles inbegrepen, geen verborgen kosten.</strong></p>
-      <p>Binnenkort wordt dit &euro;169. <strong>Wie er nu bij komt, behoudt &euro;139 voor altijd.</strong></p>
-      <a href="#prijzen" class="prijs-urgentie-tag">Binnenkort &euro;169. Schrijf je nu in &rarr;</a>
+      <p>Binnenkort wordt dit &euro;169 per jaar en &euro;45 per kwartaal. <strong>Wie er nu bij komt, behoudt de huidige prijs voor altijd.</strong></p>
+      <a href="#prijzen" class="prijs-urgentie-tag">Prijs stijgt binnenkort. Schrijf je nu in &rarr;</a>
     </div>
   </div>
 </section>
@@ -3541,63 +3664,816 @@ a { text-decoration: none; }
     <div class="veilig-item r d2"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg><p>Eigen app</p></div>
     <div class="veilig-item r d3"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><p>Elke vraag is welkom</p></div>
   </div>
-</section>
 
-<!-- ═══ TESTIMONIALS ═══ -->
-<section class="testimonials">
-  <div class="testimonials-header r">
-    <div class="eyebrow">Leden aan het woord</div>
-    <h2>Dit zeggen mensen die je voorgingen.</h2>
-  </div>
-
-  <div class="testimonials-grid">
-    <div class="testi testi-featured r">
-      <blockquote>"Na lang twijfelen om deze cursus te kopen, heb ik het toch gedaan. Wat me tegenhield was: er staat toch genoeg op internet, zonde van het geld. Maar toen ik betaald had en kon inloggen, schrok ik toch wel even. Wat een hoeveelheid informatie. Ik ga dit stap voor stap doen. Ik ben er blij mee."</blockquote>
-      <div class="testi-name">Hessel Elsinga</div>
-      <div class="testi-role">Plus+ lid</div>
+  <div class="community-proof" style="padding-top:48px;">
+    <div class="community-proof-label">Leden over de overstap van Facebook</div>
+    <div class="community-proof-grid">
+      <div class="wall-card"><img src="afbeeldingen/Testimonials/11. Ervaring Community - Ellen.png" alt="Ervaring van Ellen" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+      <div class="wall-card"><img src="afbeeldingen/Testimonials/85. Ervaring Community - Elly.png" alt="Ervaring van Elly" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
     </div>
-    <div class="testi r d1">
-      <blockquote>"Het feit dat wij hiermee niet meer afhankelijk zijn van Facebook vind ik sowieso een plus!"</blockquote>
-      <div class="testi-name">Jos Wauben</div>
-      <div class="testi-role">Plus+ lid</div>
-    </div>
-    <div class="testi r">
-      <blockquote>"De cursus is zo fijn opgedeeld in kleine stukken dat je makkelijk tussendoor even een paar lesjes kunt doen. Vind het gewoon jammer dat ik al door alle lessen heen ben."</blockquote>
-      <div class="testi-name">Claudia Sch&auml;fers</div>
-      <div class="testi-role">Plus+ lid</div>
-    </div>
-    <div class="testi r d1">
-      <blockquote>"Met vakmensen aan het roer! Een ware oplossing voor alle vragen en problemen die met Apple producten te maken hebben."</blockquote>
-      <div class="testi-name">Alfons Verheijden</div>
-      <div class="testi-role">Plus+ lid</div>
-    </div>
-    <div class="testi r d2">
-      <blockquote>"Wij volgden de cursus op de pc en met onze iPad ernaast, zodat we alles meteen konden uitproberen. Het was net of Matthias naast ons zat. Een aanbeveling!"</blockquote>
-      <div class="testi-name">Riet Bouter</div>
-      <div class="testi-role">Plus+ lid</div>
-    </div>
-    <div class="testi r">
-      <blockquote>"Ik (71 jaar) ben heel tevreden over alle informatie. Men hoeft niet alles in een keer te leren. Net de dingen die jou interesseren en nodig hebt. Mensen, niet twijfelen, gewoon doen!"</blockquote>
-      <div class="testi-name">Bea de Splenter</div>
-      <div class="testi-role">Plus+ lid</div>
-    </div>
-    <div class="testi r d1">
-      <blockquote>"Ik ben al van de beginjaren bij Matthias. Ik heb er nog geen moment spijt van gehad. Al het geen dat ik heb geleerd is door de goede uitleg van Matthias. Zeker een aanrader."</blockquote>
-      <div class="testi-name">Pierre Schouwenaar</div>
-      <div class="testi-role">Plus+ lid</div>
-    </div>
-    <div class="testi r d2">
-      <blockquote>"Voor een digibeet als ik een heel fijn platform."</blockquote>
-      <div class="testi-name">Monique Van der Knaap</div>
-      <div class="testi-role">Plus+ lid sinds 2 jaar</div>
-    </div>
-  </div>
-
-  <div class="testimonials-cta r">
-    <a href="#prijzen" class="btn btn-gold">Schrijf je nu in</a>
-    <p class="testimonials-cta-note">Op elk moment opzegbaar. 30 dagen niet-goed-geld-terug.</p>
   </div>
 </section>
+
+<!-- ═══ WALL OF LOVE ═══ -->
+<section class="wall-of-love" id="wall-of-love">
+  <div class="wall-header r">
+    <div class="eyebrow">Meer dan 100 ervaringen</div>
+    <h2>Dit zeggen onze leden.</h2>
+    <p>We vroegen het ze. Dit is wat ze antwoordden.</p>
+  </div>
+  <div class="wall-counter" id="wallCounter">Je bekijkt 10 van 102 ervaringen</div>
+
+  <div class="wall-grid" id="wallGrid">
+    <div class="wall-card" data-wall-item>
+      <img src="afbeeldingen/Testimonials/1. Ervaring Community - Rina.png" alt="Ervaring van Rina" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card" data-wall-item>
+      <img src="afbeeldingen/Testimonials/2. Ervaring Community - Elise.png" alt="Ervaring van Elise" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card" data-wall-item>
+      <img src="afbeeldingen/Testimonials/3. Ervaring Community - Mady.png" alt="Ervaring van Mady" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card" data-wall-item>
+      <img src="afbeeldingen/Testimonials/4. Ervaring Community - Eddie.png" alt="Ervaring van Eddie" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card" data-wall-item>
+      <img src="afbeeldingen/Testimonials/5. Ervaring Community - Jenny A.png" alt="Ervaring van Jenny" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card" data-wall-item>
+      <img src="afbeeldingen/Testimonials/6. Ervaring Community - Nicole D.png" alt="Ervaring van Nicole" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card" data-wall-item>
+      <img src="afbeeldingen/Testimonials/8. Ervaring Community - Armand.png" alt="Ervaring van Armand" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card" data-wall-item>
+      <img src="afbeeldingen/Testimonials/9. Ervaring Community - Herman.png" alt="Ervaring van Herman" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card" data-wall-item>
+      <img src="afbeeldingen/Testimonials/10. Ervaring Community - Jenny DP.png" alt="Ervaring van Jenny" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card" data-wall-item>
+      <img src="afbeeldingen/Testimonials/11. Ervaring Community - Ellen.png" alt="Ervaring van Ellen" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/12. Ervaring Community - Helene.png" alt="Ervaring van Helene" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/13. Ervaring Community - Raoul.png" alt="Ervaring van Raoul" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/14. Ervaring Community - Jakelien.png" alt="Ervaring van Jakelien" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/15. Ervaring Community - Linda.png" alt="Ervaring van Linda" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/16. Ervaring Community - Dominique.png" alt="Ervaring van Dominique" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/17. Ervaring Community - Jos.png" alt="Ervaring van Jos" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/18. Ervaring Community - Patricia.png" alt="Ervaring van Patricia" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/19. Ervaring Community - Rianne.png" alt="Ervaring van Rianne" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/20. Ervaring Community - Nicole S.png" alt="Ervaring van Nicole" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/21. Ervaring Community - Gerda.png" alt="Ervaring van Gerda" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/22. Ervaring Community - Viviane.png" alt="Ervaring van Viviane" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/23. Ervaring Community - Myri.png" alt="Ervaring van Myri" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/24. Ervaring Community - Christine.png" alt="Ervaring van Christine" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/25. Ervaring Community - Luud.png" alt="Ervaring van Luud" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/26. Ervaring Community - Elizabeth.png" alt="Ervaring van Elizabeth" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/27. Ervaring Community - Leny.png" alt="Ervaring van Leny" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/29. Ervaring Community - Rachel.png" alt="Ervaring van Rachel" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/30. Ervaring Community - Aukje.png" alt="Ervaring van Aukje" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/31. Ervaring Community - Myriam.png" alt="Ervaring van Myriam" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/32. Ervaring Community - Veerle.png" alt="Ervaring van Veerle" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/33. Ervaring Community - Luc.png" alt="Ervaring van Luc" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/34. Ervaring Community - Joseph.png" alt="Ervaring van Joseph" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/35. Ervaring Community - Carla.png" alt="Ervaring van Carla" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/36. Ervaring Community - Henk.png" alt="Ervaring van Henk" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/37. Ervaring Community - Eric.png" alt="Ervaring van Eric" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/38. Ervaring Community - Bea.png" alt="Ervaring van Bea" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/39. Ervaring Community - Gommara.png" alt="Ervaring van Gommara" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/40. Ervaring Community - Guy.png" alt="Ervaring van Guy" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/41. Ervaring Community - Patricia DB.png" alt="Ervaring van Patricia" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/42. Ervaring Community - Paula.png" alt="Ervaring van Paula" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/43. Ervaring Community - Rudy.png" alt="Ervaring van Rudy" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/44. Ervaring Community - Hilda.png" alt="Ervaring van Hilda" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/45. Ervaring Community - Marleen.png" alt="Ervaring van Marleen" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/46. Ervaring Community - Heike.png" alt="Ervaring van Heike" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/47. Ervaring Community - Martine J.png" alt="Ervaring van Martine" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/48. Ervaring Community - Miranda.png" alt="Ervaring van Miranda" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/49. Ervaring Community - Dianne.png" alt="Ervaring van Dianne" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/50. Ervaring Community - Leen.png" alt="Ervaring van Leen" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/51. Ervaring Community - Eddy.png" alt="Ervaring van Eddy" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/52. Ervaring Community - Arina.png" alt="Ervaring van Arina" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/54. Ervaring Community - Lucienne.png" alt="Ervaring van Lucienne" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/55. Ervaring Community - Elisabeth.png" alt="Ervaring van Elisabeth" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/57. Ervaring Community - Rob.png" alt="Ervaring van Rob" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/58. Ervaring Community - Maria.png" alt="Ervaring van Maria" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/59. Ervaring Community - Tiny.png" alt="Ervaring van Tiny" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/60. Ervaring Community - Christine A.png" alt="Ervaring van Christine" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/61. Ervaring Community - Marie Louise.png" alt="Ervaring van Marie" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/62. Ervaring Community - Guido.png" alt="Ervaring van Guido" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/63. Ervaring Community - Jef.png" alt="Ervaring van Jef" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/64. Ervaring Community - Frieda.png" alt="Ervaring van Frieda" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/65. Ervaring Community - Marleen M.png" alt="Ervaring van Marleen" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/66. Ervaring Community - Annelies.png" alt="Ervaring van Annelies" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/67. Ervaring Community - Udo.png" alt="Ervaring van Udo" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/68. Ervaring Community - Annemie.png" alt="Ervaring van Annemie" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/69. Ervaring Community - Joke M.png" alt="Ervaring van Joke" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/70. Ervaring Community - Annie.png" alt="Ervaring van Annie" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/72. Ervaring Community - Kit.png" alt="Ervaring van Kit" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/73. Ervaring Community - Nicole Sm.png" alt="Ervaring van Nicole" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/74. Ervaring Community - Kristien.png" alt="Ervaring van Kristien" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/75. Ervaring Community - Chris.png" alt="Ervaring van Chris" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/76. Ervaring Community - Magda.png" alt="Ervaring van Magda" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/77. Ervaring Community - Pieter.png" alt="Ervaring van Pieter" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/78. Ervaring Community - Hilde V.png" alt="Ervaring van Hilde" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/79. Ervaring Community - Lutgart.png" alt="Ervaring van Lutgart" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/80. Ervaring Community - Pierre.png" alt="Ervaring van Pierre" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/81. Ervaring Community - Martine D.png" alt="Ervaring van Martine" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/82. Ervaring Community - Hilaire.png" alt="Ervaring van Hilaire" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/84. Ervaring Community - Jos S.png" alt="Ervaring van Jos" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/85. Ervaring Community - Elly.png" alt="Ervaring van Elly" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/86. Ervaring Community - Ellie.png" alt="Ervaring van Ellie" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/87. Ervaring Community - Jaap en Renee.png" alt="Ervaring van Jaap" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/88. Ervaring Community - Jacqueline C.png" alt="Ervaring van Jacqueline" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/89. Ervaring Community - Tuur.png" alt="Ervaring van Tuur" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/90. Ervaring Community - Jacqueline D.png" alt="Ervaring van Jacqueline" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/91. Ervaring Community - Diane VB.png" alt="Ervaring van Diane" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/92. Ervaring Community - Harry.png" alt="Ervaring van Harry" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/93. Ervaring Community - Rooske.png" alt="Ervaring van Rooske" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/94. Ervaring Community - Myra.png" alt="Ervaring van Myra" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/95. Ervaring Community - Martine DV.png" alt="Ervaring van Martine" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/97. Ervaring Community - Carline.png" alt="Ervaring van Carline" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/98. Ervaring Community - Diane D.png" alt="Ervaring van Diane" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/100. Ervaring Community - Trees.png" alt="Ervaring van Trees" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/101. Ervaring Community - Nadine.png" alt="Ervaring van Nadine" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/102. Ervaring Community - Lou.png" alt="Ervaring van Lou" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/103. Ervaring Community - Lucien.png" alt="Ervaring van Lucien" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/104. Ervaring Community - Joke P.png" alt="Ervaring van Joke" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/105. Ervaring Community - Gina.png" alt="Ervaring van Gina" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/108. Ervaring Community - Rudi.png" alt="Ervaring van Rudi" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/109. Ervaring Community - Diana.png" alt="Ervaring van Diana" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/111. Ervaring Community - Hilde N.png" alt="Ervaring van Hilde" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/112. Ervaring Community - Nele.png" alt="Ervaring van Nele" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+    <div class="wall-card hidden" data-wall-item>
+      <img src="afbeeldingen/Testimonials/113. Ervaring Community - Nicole Sm2.png" alt="Ervaring van Nicole" loading="lazy">
+      <div class="wall-card-bar">
+        <span class="wall-stars">★★★★★</span>
+        <span class="wall-badge">✓ Lid van DigitaalSlim Plus+</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wall-load-more" id="wallLoadMore">
+    <button class="wall-load-btn" id="wallLoadBtn" onclick="loadMoreTestimonials()">
+      Lees er nog 10...
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </div>
+
+  <div class="wall-final-cta r" id="wallFinalCta" style="display:none;">
+    <a href="#prijzen" class="btn btn-gold">Word lid van DigitaalSlim Plus+</a>
+    <p>Op elk moment opzegbaar. 30 dagen niet-goed-geld-terug.</p>
+  </div>
+</section>
+
+<script>
+(function() {
+  const BATCH = 10;
+  let shown = 10;
+  const items = document.querySelectorAll('[data-wall-item]');
+  const total = items.length;
+  const btn = document.getElementById('wallLoadBtn');
+  const loadMore = document.getElementById('wallLoadMore');
+  const counter = document.getElementById('wallCounter');
+  const finalCta = document.getElementById('wallFinalCta');
+  const grid = document.getElementById('wallGrid');
+
+  const messages = [
+    'Er zijn er nog meer...',
+    'We zijn er nog niet...',
+    'Het blijft maar komen...',
+    'Oké, nog een paar dan...',
+    'Je gelooft het bijna niet...',
+    'We stoppen bijna...',
+    'De laatste loodjes...',
+    'En dan zijn er nóg...',
+    'De allerlaatste...'
+  ];
+  let msgIndex = 0;
+
+  // Insert mid-CTA after item 50
+  const midCta = document.createElement('div');
+  midCta.className = 'wall-mid-cta hidden';
+  midCta.setAttribute('data-mid-cta', '');
+  midCta.innerHTML = '<a href="#prijzen" class="btn btn-gold">Schrijf je nu in</a><p>Op elk moment opzegbaar. 30 dagen niet-goed-geld-terug.</p>';
+  if (items.length > 50) {
+    items[49].after(midCta);
+  }
+
+  window.loadMoreTestimonials = function() {
+    const end = Math.min(shown + BATCH, total);
+    for (let i = shown; i < end; i++) {
+      items[i].classList.remove('hidden');
+      items[i].classList.add('fade-in');
+      // Show mid-CTA when passing item 50
+      if (i === 49) {
+        midCta.classList.remove('hidden');
+        midCta.classList.add('fade-in');
+      }
+    }
+    shown = end;
+    counter.textContent = 'Je bekijkt ' + shown + ' van ' + total + ' ervaringen';
+
+    if (shown >= total) {
+      loadMore.style.display = 'none';
+      finalCta.style.display = 'block';
+    } else {
+      btn.innerHTML = messages[msgIndex] + ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+      msgIndex = Math.min(msgIndex + 1, messages.length - 1);
+    }
+
+    // Smooth scroll to the first new item
+    items[end - BATCH].scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+})();
+</script>
 
 <!-- ═══ VERGELIJKING ═══ -->
 <section class="vergelijking">
@@ -3607,6 +4483,7 @@ a { text-decoration: none; }
     <div class="vergelijking-blok r">
       <p>Tienduizenden mensen kochten al een losse cursus bij ons, voor gemiddeld &euro;97 per stuk. Daar waren ze blij mee, maar een losse cursus staat stil in de tijd. Zodra Apple een grote update uitbrengt, kan die cursus al verouderd raken. En er zit geen community bij waar je terecht kunt met vragen.</p>
       <p>Bij DigitaalSlim Plus+ krijg je voor <strong>jaarlijks &euro;139</strong> alles in een pakket: alle cursussen, alle Stappenplannen, de community, persoonlijke hulp, en de nieuwe E-mailchecker app. Altijd up-to-date, altijd binnen handbereik. <strong>En alles wat we in de toekomst bouwen, krijg je er automatisch bij.</strong></p>
+      <p>En het mooiste? Onze leden zeggen massaal dat ze er <strong>enorm veel van bijleren</strong>. Niet alleen als vangnet wanneer je vastloopt, maar als bron van kennis die je elke dag gebruikt. Veel leden zijn er al jaren bij en willen niet meer weg. Dat zegt meer dan welk verkooppraatje dan ook.</p>
     </div>
   </div>
 </section>
@@ -3776,6 +4653,19 @@ a { text-decoration: none; }
   </div>
 </section>
 
+<!-- ═══ TWIJFELWEGNEMERS ═══ -->
+<div class="community-proof" style="padding:64px 20px;">
+  <div class="community-proof-label">Niet twijfelen, gewoon doen!</div>
+  <div class="community-proof-grid">
+    <div class="wall-card"><img src="afbeeldingen/Testimonials/9. Ervaring Community - Herman.png" alt="Ervaring van Herman" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+    <div class="wall-card"><img src="afbeeldingen/Testimonials/14. Ervaring Community - Jakelien.png" alt="Ervaring van Jakelien" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+    <div class="wall-card"><img src="afbeeldingen/Testimonials/32. Ervaring Community - Veerle.png" alt="Ervaring van Veerle" loading="lazy"><div class="wall-card-bar"><span class="wall-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="wall-badge">&#10003; Lid van DigitaalSlim Plus+</span></div></div>
+  </div>
+  <div style="text-align:center;margin-top:24px;">
+    <a href="#prijzen" class="btn btn-gold" style="font-size:15px;padding:14px 45px;">Word lid van DigitaalSlim Plus+</a>
+  </div>
+</div>
+
 <!-- ═══ PRIJZEN ═══ -->
 <section class="prijzen" id="prijzen">
   <div class="prijzen-header r">
@@ -3873,8 +4763,8 @@ a { text-decoration: none; }
     </div>
 
     <div class="final-cta-cta-block">
-      <a href="#prijzen" class="btn btn-gold" style="font-size:18px;padding:20px 52px;">Ja, ik word lid van DigitaalSlim Plus+</a>
-      <p class="final-cta-note">Nu nog &euro;139 per jaar &nbsp;&middot;&nbsp; Op elk moment opzegbaar &nbsp;&middot;&nbsp; 30 dagen niet-goed-geld-terug</p>
+      <a href="#prijzen" class="btn btn-gold" style="font-size:18px;padding:20px 73px;">Ja, ik word lid van DigitaalSlim Plus+</a>
+      <p class="final-cta-note">Nu nog &euro;139 per jaar of &euro;39 per kwartaal &nbsp;&middot;&nbsp; Op elk moment opzegbaar &nbsp;&middot;&nbsp; 30 dagen niet-goed-geld-terug</p>
       <div class="final-cta-guarantee r">
         <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         <span>Niet tevreden? Stuur één e-mail en je krijgt je volledige bedrag direct terug. Zonder kleine lettertjes.</span>
