@@ -212,86 +212,106 @@ a { text-decoration: none; }
 
 /* ─── COMPACT OVERZICHT (4 icoontjes) ─── */
 .overzicht {
-  padding: 72px 0 80px;
-  background: var(--surface);
+  padding: 80px 0 88px;
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+.overzicht::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(74,44,245,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(240,180,41,0.08) 0%, transparent 70%);
+  pointer-events: none;
 }
 .overzicht-header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 52px;
+  position: relative;
 }
 .overzicht-header h2 {
-  font-size: clamp(24px, 4vw, 32px);
+  font-size: clamp(26px, 4.5vw, 36px);
   font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-  margin-top: 16px;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+  margin-top: 18px;
 }
 .overzicht-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  max-width: 960px;
+  gap: 20px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 40px;
+  position: relative;
 }
 .overzicht-item {
   text-align: center;
-  padding: 32px 16px;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
+  padding: 40px 20px 36px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--r3);
-  transition: box-shadow var(--t), transform var(--t);
+  transition: background var(--t), border-color var(--t), transform var(--t);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .overzicht-item:hover {
-  box-shadow: var(--s2);
-  transform: translateY(-3px);
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.15);
+  transform: translateY(-4px);
 }
 .overzicht-icon {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 16px;
-  background: var(--violet-soft);
-  border: 1px solid var(--violet-line);
-  border-radius: 16px;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 20px;
+  background: var(--violet);
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 8px 24px rgba(74,44,245,0.35);
 }
 .overzicht-icon svg {
-  width: 26px;
-  height: 26px;
-  stroke: var(--violet);
+  width: 32px;
+  height: 32px;
+  stroke: #FFFFFF;
   stroke-width: 2;
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 .overzicht-icon-gold {
-  background: var(--gold-soft);
-  border-color: var(--gold-line);
+  background: var(--gold);
+  box-shadow: 0 8px 24px rgba(240,180,41,0.35);
 }
 .overzicht-icon-gold svg {
-  stroke: var(--gold-dark);
+  stroke: var(--dark);
 }
 .overzicht-item h3 {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 6px;
+  color: #FFFFFF;
+  margin-bottom: 8px;
   letter-spacing: -0.01em;
 }
 .overzicht-item p {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.55;
 }
 @media (max-width: 700px) {
+  .overzicht { padding: 64px 0 72px; }
   .overzicht-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    padding: 0 24px;
+    gap: 14px;
+    padding: 0 20px;
   }
-  .overzicht-item { padding: 24px 12px; }
+  .overzicht-item { padding: 28px 14px 24px; }
+  .overzicht-icon { width: 60px; height: 60px; border-radius: 16px; }
+  .overzicht-icon svg { width: 28px; height: 28px; }
 }
 
 /* ─── URGENCY BAR (Sticky) ─── */
@@ -3840,7 +3860,7 @@ a { text-decoration: none; }
 <!-- ═══ COMPACT OVERZICHT ═══ -->
 <section class="overzicht">
   <div class="overzicht-header r">
-    <div class="eyebrow" style="color:#5C4200;background:rgba(240,180,41,0.15);border-color:rgba(240,180,41,0.35);">Dat is precies waarom Plus+ bestaat</div>
+    <div class="eyebrow" style="color:var(--gold);background:rgba(240,180,41,0.12);border-color:rgba(240,180,41,0.25);">Dat is precies waarom Plus+ bestaat</div>
     <h2>Dit is wat je krijgt:</h2>
   </div>
 
