@@ -2087,16 +2087,70 @@ a { text-decoration: none; }
   .veilig-row { grid-template-columns: 1fr 1fr; }
 }
 
+
+/* ─── LANGUAGE TOGGLE ─── */
+.lang-toggle {
+  flex-shrink: 0;
+  display: flex;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(52,211,153,0.20);
+  border-radius: 7px;
+  overflow: hidden;
+  margin-left: 8px;
+  position: relative;
+  z-index: 1;
+}
+.lang-btn {
+  font-family: var(--f);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: rgba(255,255,255,0.50);
+  transition: background 0.2s, color 0.2s;
+}
+.lang-btn.active {
+  background: rgba(52,211,153,0.18);
+  color: #34D399;
+}
+.lang-btn:hover:not(.active) {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.7);
+}
+@media (max-width: 768px) {
+  .lang-toggle {
+    position: fixed;
+    bottom: 80px;
+    right: 16px;
+    z-index: 350;
+    background: rgba(2,44,34,0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(52,211,153,0.25);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    margin-left: 0;
+  }
+  .lang-btn { padding: 8px 14px; font-size: 12px; }
+}
+
 </style>
 </head>
 <body>
 
 <!-- ═══ URGENCY BAR ═══ -->
 <div class="urgency-bar">
-  <div class="urgency-bar-badge">Prijsverhoging</div>
+  <div class="urgency-bar-badge" data-i18n="ub-badge">Prijsverhoging</div>
   <div class="urgency-bar-sep"></div>
-  <div class="urgency-bar-text">De prijs stijgt binnenkort van <strong>&euro;139</strong> naar <strong>&euro;169</strong> per jaar. Wie nu instapt, houdt het huidige tarief.</div>
-  <a href="#prijzen" class="urgency-bar-btn">Schrijf je in</a>
+  <div class="urgency-bar-text" data-i18n="ub-text">De prijs stijgt binnenkort van <strong>&euro;139</strong> naar <strong>&euro;169</strong> per jaar. Wie nu instapt, houdt het huidige tarief.</div>
+  <a href="#prijzen" class="urgency-bar-btn" data-i18n="ub-btn">Schrijf je in</a>
+  <div class="lang-toggle" id="langToggle">
+    <button class="lang-btn active" data-lang="nl">NL</button>
+    <button class="lang-btn" data-lang="en">ENG</button>
+  </div>
 </div>
 
 <!-- ═══ HERO ═══ -->
@@ -2106,13 +2160,13 @@ a { text-decoration: none; }
       <img src="afbeeldingen/logo-digitaalslim-plus-geel.png" alt="DigitaalSlim Plus+" class="hero-logo">
       <div class="hero-pill">
         <span class="hero-pill-dot"></span>
-        Al meer dan 2.000 leden
+        <span data-i18n="hero-pill">Al meer dan 2.000 leden</span>
       </div>
-      <h1>Je hoeft dit niet alleen uit te zoeken.</h1>
-      <p class="hero-sub">Elke dag helpen we meer dan 2.000 mensen met hun iPad, iPhone en Mac. Niet met een cursus die je moet uitzitten, maar met <strong>persoonlijke hulp</strong> op het moment dat jij het nodig hebt.</p>
+      <h1 data-i18n="hero-h1">Je hoeft dit niet alleen uit te zoeken.</h1>
+      <p class="hero-sub" data-i18n="hero-sub">Elke dag helpen we meer dan 2.000 mensen met hun iPad, iPhone en Mac. Niet met een cursus die je moet uitzitten, maar met <strong>persoonlijke hulp</strong> op het moment dat jij het nodig hebt.</p>
       <div class="hero-cta-row">
-        <a href="#prijzen" class="btn btn-gold">Ontdek hoe het werkt</a>
-        <span class="hero-cta-note">Op elk moment opzegbaar</span>
+        <a href="#prijzen" class="btn btn-gold" data-i18n="hero-cta">Ontdek hoe het werkt</a>
+        <span class="hero-cta-note" data-i18n="hero-note">Op elk moment opzegbaar</span>
       </div>
     </div>
     <div class="hero-visual r d1">
@@ -2124,15 +2178,15 @@ a { text-decoration: none; }
   <div class="hero-trust">
     <div class="hero-trust-item">
       <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      Al meer dan 10 jaar actief
+      <span data-i18n="hero-trust-1">Al meer dan 10 jaar actief</span>
     </div>
     <div class="hero-trust-item">
       <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      Meer dan 2.000 leden
+      <span data-i18n="hero-trust-2">Meer dan 2.000 leden</span>
     </div>
     <div class="hero-trust-item">
       <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      98% beveelt het aan
+      <span data-i18n="hero-trust-3">98% beveelt het aan</span>
     </div>
   </div>
 </section>
@@ -2140,8 +2194,8 @@ a { text-decoration: none; }
 <!-- ═══ HERKENNING ═══ -->
 <section class="herkenning">
   <div class="herkenning-top r">
-    <div class="eyebrow">Herken je dit?</div>
-    <h2>Ken je dat gevoel?</h2>
+    <div class="eyebrow" data-i18n="herk-eyebrow">Herken je dit?</div>
+    <h2 data-i18n="herk-h2">Ken je dat gevoel?</h2>
   </div>
 
   <div class="herkenning-grid">
@@ -2155,7 +2209,7 @@ a { text-decoration: none; }
           <text x="85" y="25" text-anchor="middle" font-size="16" fill="#0A0814" font-weight="800">!</text>
         </svg>
       </div>
-      <p>Je opent je mail en ziet een bericht van "je bank". <strong>Je hartslag gaat even omhoog.</strong> Het logo klopt, de taal klinkt officieel. Maar iets voelt niet goed. Je wilt het aan iemand laten zien, maar aan wie?</p>
+      <p data-i18n="herk-card-1">Je opent je mail en ziet een bericht van "je bank". <strong>Je hartslag gaat even omhoog.</strong> Het logo klopt, de taal klinkt officieel. Maar iets voelt niet goed. Je wilt het aan iemand laten zien, maar aan wie?</p>
     </div>
 
     <!-- Kaart 2: Update verandert alles -->
@@ -2168,7 +2222,7 @@ a { text-decoration: none; }
           <line x1="60" y1="25" x2="60" y2="50" stroke="#F0B429" stroke-width="2.5" stroke-linecap="round"/>
         </svg>
       </div>
-      <p>Je zet je iPad aan en opeens <strong>ziet alles er anders uit.</strong> Knoppen zijn verplaatst, menu's zijn veranderd. Wat gisteren werkte, werkt vandaag niet meer. En nergens een uitleg te vinden.</p>
+      <p data-i18n="herk-card-2">Je zet je iPad aan en opeens <strong>ziet alles er anders uit.</strong> Knoppen zijn verplaatst, menu's zijn veranderd. Wat gisteren werkte, werkt vandaag niet meer. En nergens een uitleg te vinden.</p>
     </div>
 
     <!-- Kaart 3: Je kind zucht -->
@@ -2183,7 +2237,7 @@ a { text-decoration: none; }
           <path d="M74 49 Q80 46 86 49" fill="none" stroke="#F0B429" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </div>
-      <p>Je vraagt je zoon of dochter iets over je telefoon. Ze helpen je, maar <strong>je ziet de blik. Die kleine zucht.</strong> Je besluit dat je het de volgende keer zelf uitzoekt. Maar hoe?</p>
+      <p data-i18n="herk-card-3">Je vraagt je zoon of dochter iets over je telefoon. Ze helpen je, maar <strong>je ziet de blik. Die kleine zucht.</strong> Je besluit dat je het de volgende keer zelf uitzoekt. Maar hoe?</p>
     </div>
 
     <!-- Kaart 4: Datalekken -->
@@ -2201,7 +2255,7 @@ a { text-decoration: none; }
           <path d="M90 60 L70 80" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round"/>
         </svg>
       </div>
-      <p>Je leest in de krant dat er weer miljoenen wachtwoorden zijn gestolen. <strong>Zijn jouw wachtwoorden wel veilig?</strong> Maar je weet niet eens waar je dat zou moeten controleren.</p>
+      <p data-i18n="herk-card-4">Je leest in de krant dat er weer miljoenen wachtwoorden zijn gestolen. <strong>Zijn jouw wachtwoorden wel veilig?</strong> Maar je weet niet eens waar je dat zou moeten controleren.</p>
     </div>
 
     <!-- Kaart 5: AI overal -->
@@ -2218,7 +2272,7 @@ a { text-decoration: none; }
           <circle cx="90" cy="8" r="3" fill="#8B6FFA" opacity="0.3"/>
         </svg>
       </div>
-      <p>Iedereen heeft het over ChatGPT en kunstmatige intelligentie. Je hoort het op het nieuws, je kleinkinderen praten erover. <strong>Je wilt het begrijpen,</strong> maar waar begin je?</p>
+      <p data-i18n="herk-card-5">Iedereen heeft het over ChatGPT en kunstmatige intelligentie. Je hoort het op het nieuws, je kleinkinderen praten erover. <strong>Je wilt het begrijpen,</strong> maar waar begin je?</p>
     </div>
 
     <!-- Kaart 6: Cursus vergeten -->
@@ -2233,12 +2287,12 @@ a { text-decoration: none; }
           <polyline points="65,75 70,80 65,85" fill="none" stroke="#F0B429" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-      <p>Je hebt ooit een cursus gevolgd over je iPad. Het was nuttig, maar na een paar weken <strong>wist je de helft niet meer.</strong> En sindsdien is er al weer een grote update geweest.</p>
+      <p data-i18n="herk-card-6">Je hebt ooit een cursus gevolgd over je iPad. Het was nuttig, maar na een paar weken <strong>wist je de helft niet meer.</strong> En sindsdien is er al weer een grote update geweest.</p>
     </div>
   </div>
 
   <div class="herkenning-bridge r">
-    Als je jezelf herkent in ook maar een van deze situaties, dan is <strong>wat hieronder komt precies voor jou gemaakt.</strong>
+    <span data-i18n="herk-bridge">Als je jezelf herkent in ook maar een van deze situaties, dan is <strong>wat hieronder komt precies voor jou gemaakt.</strong></span>
   </div>
 </section>
 
@@ -2249,22 +2303,22 @@ a { text-decoration: none; }
       <div class="matthias-header">
         <img src="afbeeldingen/matthias.png" alt="Matthias" class="matthias-avatar">
         <div class="matthias-label">
-          <h2>"Die worsteling ken ik van dichtbij."</h2>
-          <p>Matthias Moens, oprichter DigitaalSlim</p>
+          <h2 data-i18n="matt-h2">"Die worsteling ken ik van dichtbij."</h2>
+          <p data-i18n="matt-role">Matthias Moens, oprichter DigitaalSlim</p>
         </div>
       </div>
       <div class="matthias-text">
-        <p>Iets meer dan tien jaar geleden kocht mijn vader zijn allereerste iPad. Hij was er dolblij mee. Maar al snel kwamen de vragen. Het probleem: ik woonde op dat moment in Barcelona. Ik kon niet even langskomen om het voor te doen.</p>
-        <p>Dus begon ik video's te maken. Simpel, duidelijk, stap voor stap. Zodat hij het op zijn eigen tempo kon volgen. Dat werkte zo goed, dat andere mensen erom begonnen te vragen. En toen nog meer mensen. En nog meer.</p>
-        <p>Zo ontstond DigitaalSlim. Maar gaandeweg leerde ik iets wat mijn hele aanpak veranderde.</p>
-        <div class="matthias-quote">Een cursus helpt. Maar een cursus staat stil.</div>
-        <p>Apple brengt elk jaar een grote update uit. Criminelen verzinnen elke week nieuwe trucs. En jij hebt morgen weer een andere vraag dan vandaag. Wat je nodig hebt is geen map met video's die langzaam verouderen. <strong>Wat je nodig hebt is een plek waar altijd iemand klaarstaat.</strong></p>
-        <p>Dat is wat DigitaalSlim Plus+ is geworden. Niet een cursus, maar een levend platform. Jij stelt je vraag, en wij maken daar een video, een stappenplan of een persoonlijk antwoord van. Met een team dat elke dag aanwezig is. Geen chatbot. Geen wachtrij. Echte mensen met eindeloos geduld.</p>
+        <p data-i18n="matt-p1">Iets meer dan tien jaar geleden kocht mijn vader zijn allereerste iPad. Hij was er dolblij mee. Maar al snel kwamen de vragen. Het probleem: ik woonde op dat moment in Barcelona. Ik kon niet even langskomen om het voor te doen.</p>
+        <p data-i18n="matt-p2">Dus begon ik video's te maken. Simpel, duidelijk, stap voor stap. Zodat hij het op zijn eigen tempo kon volgen. Dat werkte zo goed, dat andere mensen erom begonnen te vragen. En toen nog meer mensen. En nog meer.</p>
+        <p data-i18n="matt-p3">Zo ontstond DigitaalSlim. Maar gaandeweg leerde ik iets wat mijn hele aanpak veranderde.</p>
+        <div class="matthias-quote" data-i18n="matt-quote">Een cursus helpt. Maar een cursus staat stil.</div>
+        <p data-i18n="matt-p4">Apple brengt elk jaar een grote update uit. Criminelen verzinnen elke week nieuwe trucs. En jij hebt morgen weer een andere vraag dan vandaag. Wat je nodig hebt is geen map met video's die langzaam verouderen. <strong>Wat je nodig hebt is een plek waar altijd iemand klaarstaat.</strong></p>
+        <p data-i18n="matt-p5">Dat is wat DigitaalSlim Plus+ is geworden. Niet een cursus, maar een levend platform. Jij stelt je vraag, en wij maken daar een video, een stappenplan of een persoonlijk antwoord van. Met een team dat elke dag aanwezig is. Geen chatbot. Geen wachtrij. Echte mensen met eindeloos geduld.</p>
       </div>
     </div>
     <div class="matthias-visual r d1">
       <img src="afbeeldingen/papa-en-gezin.jpg" alt="Matthias met zijn gezin">
-      <p class="matthias-caption">Mijn vader heeft inmiddels drie iPads versleten. En hij belt me nog steeds.</p>
+      <p class="matthias-caption" data-i18n="matt-caption">Mijn vader heeft inmiddels drie iPads versleten. En hij belt me nog steeds.</p>
     </div>
   </div>
 </section>
@@ -2272,9 +2326,9 @@ a { text-decoration: none; }
 <!-- ═══ SCENARIO ═══ -->
 <section class="scenario">
   <div class="scenario-header r">
-    <div class="eyebrow">Zo werkt het in de praktijk</div>
-    <h2>Stel je voor: het is dinsdagmiddag.</h2>
-    <p>Je zit rustig met een kop koffie achter je iPad. Er komt een mail binnen van "Bpost". Je pakje kan niet worden bezorgd, staat er. Je moet je adres bevestigen via een link.</p>
+    <div class="eyebrow" data-i18n="sc-eyebrow">Zo werkt het in de praktijk</div>
+    <h2 data-i18n="sc-h2">Stel je voor: het is dinsdagmiddag.</h2>
+    <p data-i18n="sc-intro">Je zit rustig met een kop koffie achter je iPad. Er komt een mail binnen van "Bpost". Je pakje kan niet worden bezorgd, staat er. Je moet je adres bevestigen via een link.</p>
   </div>
 
   <div class="scenario-timeline">
@@ -2282,9 +2336,9 @@ a { text-decoration: none; }
       <div class="scenario-num scenario-num-1">1</div>
       <div class="scenario-card">
         <div class="scenario-card-body">
-          <div class="scenario-step-label scenario-step-label-gold">Vroeger</div>
-          <h3>De twijfel</h3>
-          <p>Je had misschien getwijfeld. Of geklikt. Of het aan je dochter gevraagd en je een beetje geschaamd. Het logo zag er echt uit. De taal klonk officieel. Maar iets voelde niet goed.</p>
+          <div class="scenario-step-label scenario-step-label-gold" data-i18n="sc-label-1">Vroeger</div>
+          <h3 data-i18n="sc-h3-1">De twijfel</h3>
+          <p data-i18n="sc-p1">Je had misschien getwijfeld. Of geklikt. Of het aan je dochter gevraagd en je een beetje geschaamd. Het logo zag er echt uit. De taal klonk officieel. Maar iets voelde niet goed.</p>
         </div>
       </div>
     </div>
@@ -2293,9 +2347,9 @@ a { text-decoration: none; }
       <div class="scenario-num scenario-num-2">2</div>
       <div class="scenario-card">
         <div class="scenario-card-body">
-          <div class="scenario-step-label scenario-step-label-violet">Nu</div>
-          <h3>Je stuurt de mail door</h3>
-          <p>Je opent de <strong>E-mailchecker</strong> en stuurt de verdachte mail door. Binnen een paar minuten krijg je een helder antwoord: <strong>dit is phishing. Niet klikken.</strong></p>
+          <div class="scenario-step-label scenario-step-label-violet" data-i18n="sc-label-2">Nu</div>
+          <h3 data-i18n="sc-h3-2">Je stuurt de mail door</h3>
+          <p data-i18n="sc-p2">Je opent de <strong>E-mailchecker</strong> en stuurt de verdachte mail door. Binnen een paar minuten krijg je een helder antwoord: <strong>dit is phishing. Niet klikken.</strong></p>
         </div>
       </div>
     </div>
@@ -2304,9 +2358,9 @@ a { text-decoration: none; }
       <div class="scenario-num scenario-num-3">3</div>
       <div class="scenario-card">
         <div class="scenario-card-body">
-          <div class="scenario-step-label scenario-step-label-violet">De community</div>
-          <h3>Je deelt het in de community</h3>
-          <p>Je plaatst een berichtje: "Heeft iemand anders ook deze Bpost-mail gekregen?" Binnen een uur reageren vier leden. Ja, zij ook. Een van hen schrijft: <strong>"Gelukkig dat je dit deelt, ik was bijna gaan klikken."</strong></p>
+          <div class="scenario-step-label scenario-step-label-violet" data-i18n="sc-label-3">De community</div>
+          <h3 data-i18n="sc-h3-3">Je deelt het in de community</h3>
+          <p data-i18n="sc-p3">Je plaatst een berichtje: "Heeft iemand anders ook deze Bpost-mail gekregen?" Binnen een uur reageren vier leden. Ja, zij ook. Een van hen schrijft: <strong>"Gelukkig dat je dit deelt, ik was bijna gaan klikken."</strong></p>
         </div>
       </div>
     </div>
@@ -2317,16 +2371,16 @@ a { text-decoration: none; }
       </div>
       <div class="scenario-card">
         <div class="scenario-card-body">
-          <div class="scenario-step-label scenario-step-label-green">Het resultaat</div>
-          <h3>Jouw oplettendheid beschermt honderden anderen</h3>
-          <p>Diezelfde middag maakt Matthias er een korte waarschuwingsvideo van. Die gaat naar alle 2.000+ leden. <strong>Jouw vraag wordt andermans bescherming.</strong></p>
+          <div class="scenario-step-label scenario-step-label-green" data-i18n="sc-label-4">Het resultaat</div>
+          <h3 data-i18n="sc-h3-4">Jouw oplettendheid beschermt honderden anderen</h3>
+          <p data-i18n="sc-p4">Diezelfde middag maakt Matthias er een korte waarschuwingsvideo van. Die gaat naar alle 2.000+ leden. <strong>Jouw vraag wordt andermans bescherming.</strong></p>
         </div>
       </div>
     </div>
   </div>
 
   <div class="scenario-result r">
-    <p><span>Dat is Plus+.</span> Jij stelt een vraag, en samen maken we er iets van waar iedereen beter van wordt.</p>
+    <p data-i18n="sc-result"><span>Dat is Plus+.</span> Jij stelt een vraag, en samen maken we er iets van waar iedereen beter van wordt.</p>
   </div>
 </section>
 
@@ -2337,18 +2391,18 @@ a { text-decoration: none; }
       <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
     </div>
     <div class="veilige-haven-content">
-      <h3>Hier hoef je je nooit te schamen.</h3>
-      <p>Wist je dat de meeste mensen die bijna in een phishing-mail trappen, het aan niemand vertellen? Niet aan hun partner. Niet aan hun kinderen. Ze schamen zich. Ze denken: "Hoe kon ik zo dom zijn?"</p>
-      <p>Maar dom heeft er niets mee te maken. Die mails zijn ontworpen om je te misleiden. Door professionals die er hun werk van hebben gemaakt.</p>
-      <p>In de DigitaalSlim community stel je je vraag zonder oordeel. Geen "had je dat niet kunnen zien?". Geen zuchtende kleinkinderen. Alleen mensen die precies begrijpen hoe het voelt. Want eerlijk? Die twijfel heeft iedereen weleens. Wij ook.</p>
-      <p class="veilige-haven-closer">De eerste stap is altijd de moeilijkste. Maar hier wordt die stap beloond.</p>
+      <h3 data-i18n="vh-h3">Hier hoef je je nooit te schamen.</h3>
+      <p data-i18n="vh-p1">Wist je dat de meeste mensen die bijna in een phishing-mail trappen, het aan niemand vertellen? Niet aan hun partner. Niet aan hun kinderen. Ze schamen zich. Ze denken: "Hoe kon ik zo dom zijn?"</p>
+      <p data-i18n="vh-p2">Maar dom heeft er niets mee te maken. Die mails zijn ontworpen om je te misleiden. Door professionals die er hun werk van hebben gemaakt.</p>
+      <p data-i18n="vh-p3">In de DigitaalSlim community stel je je vraag zonder oordeel. Geen "had je dat niet kunnen zien?". Geen zuchtende kleinkinderen. Alleen mensen die precies begrijpen hoe het voelt. Want eerlijk? Die twijfel heeft iedereen weleens. Wij ook.</p>
+      <p class="veilige-haven-closer" data-i18n="vh-closer">De eerste stap is altijd de moeilijkste. Maar hier wordt die stap beloond.</p>
     </div>
   </div>
 </section>
 
 <!-- ═══ TESTIMONIALS ═══ -->
 <div class="testimonials-section">
-  <div class="testimonials-label r">Zo ervaren leden het zelf</div>
+  <div class="testimonials-label r" data-i18n="ts-label">Zo ervaren leden het zelf</div>
   <div class="testimonials-grid r">
     <img src="afbeeldingen/Testimonials/22. Ervaring Community - Viviane.png" alt="Ervaring van Viviane" loading="lazy">
     <img src="afbeeldingen/Testimonials/1. Ervaring Community - Rina.png" alt="Ervaring van Rina" loading="lazy">
@@ -2362,8 +2416,8 @@ a { text-decoration: none; }
 <!-- ═══ WAT ZIT ERIN (4 Pijlers) ═══ -->
 <section class="pijlers">
   <div class="pijlers-header r">
-    <div class="eyebrow" style="color:var(--gold);background:rgba(240,180,41,0.12);border-color:rgba(240,180,41,0.25);">Alles wat je nodig hebt</div>
-    <h2>Alles op een plek.</h2>
+    <div class="eyebrow" style="color:var(--gold);background:rgba(240,180,41,0.12);border-color:rgba(240,180,41,0.25);" data-i18n="pij-eyebrow">Alles wat je nodig hebt</div>
+    <h2 data-i18n="pij-h2">Alles op een plek.</h2>
   </div>
 
   <div class="pijlers-grid">
@@ -2371,47 +2425,47 @@ a { text-decoration: none; }
       <div class="pijler-icon">
         <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       </div>
-      <h3>De community</h3>
-      <p>Een eigen, beschermde plek waar je elke vraag kunt stellen. Geen Facebook, geen advertenties, geen algoritmes die bepalen wat je ziet. Je krijgt persoonlijk antwoord van Matthias en het team, vaak nog dezelfde dag. En het mooiste: jouw vragen bepalen welke video's en stappenplannen wij als volgende maken.</p>
+      <h3 data-i18n="pij-h3-1">De community</h3>
+      <p data-i18n="pij-p1">Een eigen, beschermde plek waar je elke vraag kunt stellen. Geen Facebook, geen advertenties, geen algoritmes die bepalen wat je ziet. Je krijgt persoonlijk antwoord van Matthias en het team, vaak nog dezelfde dag. En het mooiste: jouw vragen bepalen welke video's en stappenplannen wij als volgende maken.</p>
     </div>
 
     <div class="pijler-card r d1">
       <div class="pijler-icon">
         <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
       </div>
-      <h3>Alle cursussen</h3>
-      <p>Toegang tot al onze videolessen over je iPad, iPhone, Mac en meer. Geen vaste volgorde, geen deadlines. Je pakt de video die je nodig hebt en gaat weer verder. En telkens als Apple iets verandert, passen wij de video's aan.</p>
+      <h3 data-i18n="pij-h3-2">Alle cursussen</h3>
+      <p data-i18n="pij-p2">Toegang tot al onze videolessen over je iPad, iPhone, Mac en meer. Geen vaste volgorde, geen deadlines. Je pakt de video die je nodig hebt en gaat weer verder. En telkens als Apple iets verandert, passen wij de video's aan.</p>
     </div>
 
     <div class="pijler-card r d2">
       <div class="pijler-icon">
         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
       </div>
-      <h3>Stappenplannen</h3>
-      <p>Soms heb je geen video nodig, maar gewoon een duidelijke uitleg met plaatjes. Dat zijn onze stappenplannen. Elke stap een los blokje. Weet je iets al? Sla het over. Korter dan een video, praktischer dan een handleiding.</p>
+      <h3 data-i18n="pij-h3-3">Stappenplannen</h3>
+      <p data-i18n="pij-p3">Soms heb je geen video nodig, maar gewoon een duidelijke uitleg met plaatjes. Dat zijn onze stappenplannen. Elke stap een los blokje. Weet je iets al? Sla het over. Korter dan een video, praktischer dan een handleiding.</p>
     </div>
 
     <div class="pijler-card r d3">
       <div class="pijler-icon pijler-icon-gold">
         <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       </div>
-      <h3>De E-mailchecker</h3>
-      <p>Verdachte mail ontvangen? Stuur hem door naar onze E-mailchecker en je weet binnen een paar minuten of het veilig is. Geen technische kennis nodig. Je stuurt door, wij checken het, klaar.</p>
+      <h3 data-i18n="pij-h3-4">De E-mailchecker</h3>
+      <p data-i18n="pij-p4">Verdachte mail ontvangen? Stuur hem door naar onze E-mailchecker en je weet binnen een paar minuten of het veilig is. Geen technische kennis nodig. Je stuurt door, wij checken het, klaar.</p>
     </div>
   </div>
 
   <div class="pijlers-bottom r">
-    <p>Geen school. Geen huiswerk. Geen deadlines. <strong>Jij bepaalt wanneer, hoe en wat.</strong> En als je drie maanden niets doet en dan terugkomt met een vraag? Dan staan we er gewoon weer.</p>
-    <a href="#prijzen" class="btn btn-gold">Ja, dit wil ik</a>
+    <p data-i18n="pij-bottom">Geen school. Geen huiswerk. Geen deadlines. <strong>Jij bepaalt wanneer, hoe en wat.</strong> En als je drie maanden niets doet en dan terugkomt met een vraag? Dan staan we er gewoon weer.</p>
+    <a href="#prijzen" class="btn btn-gold" data-i18n="pij-cta">Ja, dit wil ik</a>
   </div>
 </section>
 
 <!-- ═══ DE COMMUNITY (visueel) ═══ -->
 <section class="kanalen">
   <div class="kanalen-header r">
-    <div class="eyebrow">De community</div>
-    <h2>Een plek voor elke vraag.</h2>
-    <p>De community is ingedeeld in duidelijke kanalen. Je hoeft niet te zoeken, je gaat naar het kanaal dat bij je vraag past.</p>
+    <div class="eyebrow" data-i18n="kan-eyebrow">De community</div>
+    <h2 data-i18n="kan-h2">Een plek voor elke vraag.</h2>
+    <p data-i18n="kan-sub">De community is ingedeeld in duidelijke kanalen. Je hoeft niet te zoeken, je gaat naar het kanaal dat bij je vraag past.</p>
   </div>
 
   <div class="kanalen-layout">
@@ -2420,56 +2474,56 @@ a { text-decoration: none; }
     </div>
 
     <div class="kanalen-list r d1">
-      <div class="kanaal-group-label">Algemeen</div>
+      <div class="kanaal-group-label" data-i18n="kan-grp-1">Algemeen</div>
       <div class="kanaal">
         <div class="kanaal-emoji">&#128075;</div>
-        <div><h4>Stel je voor</h4><p>Laat weten wie je bent en waarmee je werkt</p></div>
+        <div><h4 data-i18n="kan-ch1-h">Stel je voor</h4><p data-i18n="kan-ch1-p">Laat weten wie je bent en waarmee je werkt</p></div>
       </div>
       <div class="kanaal">
         <div class="kanaal-emoji">&#9749;</div>
-        <div><h4>Koffiehoekje</h4><p>Gezellig bijpraten over van alles</p></div>
+        <div><h4 data-i18n="kan-ch2-h">Koffiehoekje</h4><p data-i18n="kan-ch2-p">Gezellig bijpraten over van alles</p></div>
       </div>
 
-      <div class="kanaal-group-label">Apparaten</div>
+      <div class="kanaal-group-label" data-i18n="kan-grp-2">Apparaten</div>
       <div class="kanaal">
         <div class="kanaal-emoji">&#128241;</div>
-        <div><h4>iPad &amp; iPhone</h4><p>Vragen over je tablet en telefoon</p></div>
+        <div><h4 data-i18n="kan-ch3-h">iPad &amp; iPhone</h4><p data-i18n="kan-ch3-p">Vragen over je tablet en telefoon</p></div>
       </div>
       <div class="kanaal">
         <div class="kanaal-emoji">&#128187;</div>
-        <div><h4>Mac</h4><p>Alles over je MacBook of iMac</p></div>
+        <div><h4 data-i18n="kan-ch4-h">Mac</h4><p data-i18n="kan-ch4-p">Alles over je MacBook of iMac</p></div>
       </div>
 
-      <div class="kanaal-group-label">Onderwerpen</div>
+      <div class="kanaal-group-label" data-i18n="kan-grp-3">Onderwerpen</div>
       <div class="kanaal">
         <div class="kanaal-emoji">&#128274;</div>
-        <div><h4>Privacy &amp; Veiligheid</h4><p>Wachtwoorden, oplichting en bescherming</p></div>
+        <div><h4 data-i18n="kan-ch5-h">Privacy &amp; Veiligheid</h4><p data-i18n="kan-ch5-p">Wachtwoorden, oplichting en bescherming</p></div>
       </div>
       <div class="kanaal">
         <div class="kanaal-emoji">&#129302;</div>
-        <div><h4>AI &amp; Slim Werken</h4><p>ChatGPT, automatisering en slimme tips</p></div>
+        <div><h4 data-i18n="kan-ch6-h">AI &amp; Slim Werken</h4><p data-i18n="kan-ch6-p">ChatGPT, automatisering en slimme tips</p></div>
       </div>
 
-      <div class="kanalen-meer">+ en nog 10 andere kanalen</div>
+      <div class="kanalen-meer" data-i18n="kan-meer">+ en nog 10 andere kanalen</div>
     </div>
   </div>
 
   <div class="veilig-row r">
     <div class="veilig-item">
       <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      <p>Alleen voor leden</p>
+      <p data-i18n="kan-badge-1">Alleen voor leden</p>
     </div>
     <div class="veilig-item">
       <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      <p>Geen reclame</p>
+      <p data-i18n="kan-badge-2">Geen reclame</p>
     </div>
     <div class="veilig-item">
       <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-      <p>Eigen app</p>
+      <p data-i18n="kan-badge-3">Eigen app</p>
     </div>
     <div class="veilig-item">
       <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      <p>Elke vraag is welkom</p>
+      <p data-i18n="kan-badge-4">Elke vraag is welkom</p>
     </div>
   </div>
 </section>
@@ -2477,64 +2531,64 @@ a { text-decoration: none; }
 <!-- ═══ VERGELIJKING ═══ -->
 <section class="vergelijking">
   <div class="vergelijking-inner r">
-    <h2>Meer dan een losse cursus.</h2>
-    <p>Een gemiddelde cursus kost &euro;97 en is na drie maanden verouderd. Bij DigitaalSlim Plus+ krijg je voor <strong>&euro;139 per jaar</strong> niet een cursus, maar een complete omgeving: alle cursussen, de community, stappenplannen, persoonlijke hulp, en de E-mailchecker. Altijd actueel. En alles wat we in de toekomst toevoegen, krijg je er automatisch bij.</p>
-    <div class="vergelijking-reframe">Dat is minder dan 40 cent per dag. Minder dan een kop koffie per week.</div>
+    <h2 data-i18n="vgl-h2">Meer dan een losse cursus.</h2>
+    <p data-i18n="vgl-p">Een gemiddelde cursus kost &euro;97 en is na drie maanden verouderd. Bij DigitaalSlim Plus+ krijg je voor <strong>&euro;139 per jaar</strong> niet een cursus, maar een complete omgeving: alle cursussen, de community, stappenplannen, persoonlijke hulp, en de E-mailchecker. Altijd actueel. En alles wat we in de toekomst toevoegen, krijg je er automatisch bij.</p>
+    <div class="vergelijking-reframe" data-i18n="vgl-reframe">Dat is minder dan 40 cent per dag. Minder dan een kop koffie per week.</div>
   </div>
 </section>
 
 <!-- ═══ PRIJZEN ═══ -->
 <section class="prijzen" id="prijzen">
   <div class="prijzen-header r">
-    <div class="eyebrow" style="color:#5C4200;background:rgba(240,180,41,0.15);border-color:rgba(240,180,41,0.35);">Kies wat bij je past</div>
-    <h2>Eerlijke prijzen. Geen verrassingen.</h2>
-    <p>Sluit je aan bij meer dan 2.000 leden die met een gerust hart achter hun toestel zitten.</p>
+    <div class="eyebrow" style="color:#5C4200;background:rgba(240,180,41,0.15);border-color:rgba(240,180,41,0.35);" data-i18n="prijs-eyebrow">Kies wat bij je past</div>
+    <h2 data-i18n="prijs-h2">Eerlijke prijzen. Geen verrassingen.</h2>
+    <p data-i18n="prijs-sub">Sluit je aan bij meer dan 2.000 leden die met een gerust hart achter hun toestel zitten.</p>
   </div>
 
   <div class="prijzen-urgency r">
-    &#9200; De prijs stijgt binnenkort van &euro;139 naar &euro;169 per jaar. <strong>Wie nu instapt, zet het huidige tarief vast.</strong>
+    <span data-i18n="prijs-urgency">&#9200; De prijs stijgt binnenkort van &euro;139 naar &euro;169 per jaar. <strong>Wie nu instapt, zet het huidige tarief vast.</strong></span>
   </div>
 
   <div class="prijzen-bevriezing r">
-    <strong>Zolang je lid bent, gaat jouw prijs niet omhoog.</strong> Dat is ons bedankje aan iedereen die er vroeg bij is.
+    <span data-i18n="prijs-freeze"><strong>Zolang je lid bent, gaat jouw prijs niet omhoog.</strong> Dat is ons bedankje aan iedereen die er vroeg bij is.</span>
   </div>
 
   <div class="prijzen-checklist r">
-    <div class="prijs-check">Alle videolessen en cursussen</div>
-    <div class="prijs-check">De community met persoonlijke hulp</div>
-    <div class="prijs-check">Alle Stappenplannen</div>
-    <div class="prijs-check">De nieuwe E-mailchecker</div>
-    <div class="prijs-check">Exclusieve waarschuwingsmails</div>
-    <div class="prijs-check">Een team dat elke dag klaarstaat</div>
+    <div class="prijs-check" data-i18n="prijs-check-1">Alle videolessen en cursussen</div>
+    <div class="prijs-check" data-i18n="prijs-check-2">De community met persoonlijke hulp</div>
+    <div class="prijs-check" data-i18n="prijs-check-3">Alle Stappenplannen</div>
+    <div class="prijs-check" data-i18n="prijs-check-4">De nieuwe E-mailchecker</div>
+    <div class="prijs-check" data-i18n="prijs-check-5">Exclusieve waarschuwingsmails</div>
+    <div class="prijs-check" data-i18n="prijs-check-6">Een team dat elke dag klaarstaat</div>
   </div>
 
   <div class="prijzen-cards">
     <div class="prijs-card prijs-card-basic r">
-      <div class="prijs-period">Elk kwartaal</div>
-      <div class="prijs-badge-tag">Zet jouw prijs vast</div>
-      <div class="prijs-was">Wordt binnenkort &euro;45</div>
+      <div class="prijs-period" data-i18n="prijs-period-q">Elk kwartaal</div>
+      <div class="prijs-badge-tag" data-i18n="prijs-badge">Zet jouw prijs vast</div>
+      <div class="prijs-was" data-i18n="prijs-was-q">Wordt binnenkort &euro;45</div>
       <div class="prijs-amount">&euro;39</div>
-      <div class="prijs-per">Dat is nog geen &euro;3 per week</div>
-      <div class="prijs-besparing">Ideaal om vrijblijvend te starten</div>
-      <a href="CHECKOUT_URL_KWARTAAL" class="btn btn-outline-violet">Word lid</a>
+      <div class="prijs-per" data-i18n="prijs-per-q">Dat is nog geen &euro;3 per week</div>
+      <div class="prijs-besparing" data-i18n="prijs-saving-q">Ideaal om vrijblijvend te starten</div>
+      <a href="CHECKOUT_URL_KWARTAAL" class="btn btn-outline-violet" data-i18n="prijs-btn-q">Word lid</a>
     </div>
     <div class="prijs-card prijs-card-popular r d1">
-      <div class="prijs-popular-badge">Meest gekozen</div>
-      <div class="prijs-period">Jaarlijks</div>
-      <div class="prijs-badge-tag">Zet jouw prijs vast</div>
-      <div class="prijs-was">Wordt binnenkort &euro;169</div>
+      <div class="prijs-popular-badge" data-i18n="prijs-popular">Meest gekozen</div>
+      <div class="prijs-period" data-i18n="prijs-period-y">Jaarlijks</div>
+      <div class="prijs-badge-tag" data-i18n="prijs-badge">Zet jouw prijs vast</div>
+      <div class="prijs-was" data-i18n="prijs-was-y">Wordt binnenkort &euro;169</div>
       <div class="prijs-amount">&euro;139</div>
-      <div class="prijs-per">Dat is &euro;2,67 per week. Minder dan een koffietje.</div>
-      <div class="prijs-besparing">Bespaar &euro;20 per jaar</div>
-      <a href="CHECKOUT_URL_JAAR" class="btn btn-gold">Word lid</a>
+      <div class="prijs-per" data-i18n="prijs-per-y">Dat is &euro;2,67 per week. Minder dan een koffietje.</div>
+      <div class="prijs-besparing" data-i18n="prijs-saving-y">Bespaar &euro;20 per jaar</div>
+      <a href="CHECKOUT_URL_JAAR" class="btn btn-gold" data-i18n="prijs-btn-y">Word lid</a>
     </div>
   </div>
 
-  <p class="prijs-note">Op elk moment opzegbaar. Geen kleine lettertjes, geen verplichtingen.</p>
+  <p class="prijs-note" data-i18n="prijs-note">Op elk moment opzegbaar. Geen kleine lettertjes, geen verplichtingen.</p>
 
   <div class="prijs-garantie r">
     <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-    <div><strong>30 dagen niet-goed-geld-terug.</strong> Niet tevreden? Stuur ons een mailtje en je krijgt je volledige bedrag terug. Zonder vragen.</div>
+    <div data-i18n="prijs-garantie"><strong>30 dagen niet-goed-geld-terug.</strong> Niet tevreden? Stuur ons een mailtje en je krijgt je volledige bedrag terug. Zonder vragen.</div>
   </div>
 </section>
 
@@ -2542,9 +2596,9 @@ a { text-decoration: none; }
 <section class="dag1">
   <div class="dag1-inner">
     <div class="dag1-header r">
-      <div class="eyebrow">Na je aanmelding</div>
-      <h2>Zo ziet jouw eerste dag eruit.</h2>
-      <p>Je bent net lid geworden. Dit is wat er gebeurt.</p>
+      <div class="eyebrow" data-i18n="dag-eyebrow">Na je aanmelding</div>
+      <h2 data-i18n="dag-h2">Zo ziet jouw eerste dag eruit.</h2>
+      <p data-i18n="dag-sub">Je bent net lid geworden. Dit is wat er gebeurt.</p>
     </div>
 
     <div class="dag1-timeline">
@@ -2553,8 +2607,8 @@ a { text-decoration: none; }
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
         <div class="dag1-text">
-          <h4>Welkomstmail</h4>
-          <p>Direct na je aanmelding ontvang je een persoonlijke welkomstmail met alles wat je nodig hebt.</p>
+          <h4 data-i18n="dag-h4-1">Welkomstmail</h4>
+          <p data-i18n="dag-p1">Direct na je aanmelding ontvang je een persoonlijke welkomstmail met alles wat je nodig hebt.</p>
         </div>
       </div>
 
@@ -2563,8 +2617,8 @@ a { text-decoration: none; }
           <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
         </div>
         <div class="dag1-text">
-          <h4>Inloggen</h4>
-          <p>Je opent de community via de app of de browser. Dat duurt twee minuten.</p>
+          <h4 data-i18n="dag-h4-2">Inloggen</h4>
+          <p data-i18n="dag-p2">Je opent de community via de app of de browser. Dat duurt twee minuten.</p>
         </div>
       </div>
 
@@ -2573,8 +2627,8 @@ a { text-decoration: none; }
           <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
         <div class="dag1-text">
-          <h4>Rondkijken</h4>
-          <p>Je bekijkt de rondleidingsvideo en ziet hoe alles werkt. De kanalen, de cursussen, de stappenplannen.</p>
+          <h4 data-i18n="dag-h4-3">Rondkijken</h4>
+          <p data-i18n="dag-p3">Je bekijkt de rondleidingsvideo en ziet hoe alles werkt. De kanalen, de cursussen, de stappenplannen.</p>
         </div>
       </div>
 
@@ -2583,8 +2637,8 @@ a { text-decoration: none; }
           <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
         <div class="dag1-text">
-          <h4>Je eerste vraag</h4>
-          <p>Je stelt je eerste vraag. Dat mag over alles gaan. Binnen een paar uur krijg je antwoord.</p>
+          <h4 data-i18n="dag-h4-4">Je eerste vraag</h4>
+          <p data-i18n="dag-p4">Je stelt je eerste vraag. Dat mag over alles gaan. Binnen een paar uur krijg je antwoord.</p>
         </div>
       </div>
 
@@ -2593,8 +2647,8 @@ a { text-decoration: none; }
           <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
         <div class="dag1-text">
-          <h4>Je vaste plek</h4>
-          <p>Vanaf nu heb je een plek waar je altijd terecht kunt. Elke dag, elke vraag.</p>
+          <h4 data-i18n="dag-h4-5">Je vaste plek</h4>
+          <p data-i18n="dag-p5">Vanaf nu heb je een plek waar je altijd terecht kunt. Elke dag, elke vraag.</p>
         </div>
       </div>
     </div>
@@ -2604,42 +2658,42 @@ a { text-decoration: none; }
 <!-- ═══ FAQ ═══ -->
 <section class="faq">
   <div class="faq-header r">
-    <div class="eyebrow">Veelgestelde vragen</div>
-    <h2>Nog vragen? We hebben antwoorden.</h2>
+    <div class="eyebrow" data-i18n="faq-eyebrow">Veelgestelde vragen</div>
+    <h2 data-i18n="faq-h2">Nog vragen? We hebben antwoorden.</h2>
   </div>
 
   <div class="faq-list">
     <div class="faq-item r">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Heb ik technische kennis nodig?<span class="faq-toggle">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Nee. DigitaalSlim is gemaakt voor mensen die gewoon hun toestel willen gebruiken zonder technisch te worden. Je stelt je vraag in je eigen woorden en krijgt een helder antwoord.</div></div>
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span data-i18n="faq-q1">Heb ik technische kennis nodig?</span><span class="faq-toggle">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner" data-i18n="faq-a1">Nee. DigitaalSlim is gemaakt voor mensen die gewoon hun toestel willen gebruiken zonder technisch te worden. Je stelt je vraag in je eigen woorden en krijgt een helder antwoord.</div></div>
     </div>
     <div class="faq-item r d1">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Werkt dit ook voor Mac of alleen iPad?<span class="faq-toggle">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">We helpen je met je iPad, iPhone, Mac, Apple Watch en Apple TV. Alles van Apple.</div></div>
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span data-i18n="faq-q2">Werkt dit ook voor Mac of alleen iPad?</span><span class="faq-toggle">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner" data-i18n="faq-a2">We helpen je met je iPad, iPhone, Mac, Apple Watch en Apple TV. Alles van Apple.</div></div>
     </div>
     <div class="faq-item r d2">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Heb ik Facebook nodig?<span class="faq-toggle">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Nee. De community draait op een eigen platform (The Huddle) met een eigen app. Geen Facebook, geen WhatsApp-groepen.</div></div>
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span data-i18n="faq-q3">Heb ik Facebook nodig?</span><span class="faq-toggle">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner" data-i18n="faq-a3">Nee. De community draait op een eigen platform (The Huddle) met een eigen app. Geen Facebook, geen WhatsApp-groepen.</div></div>
     </div>
     <div class="faq-item r d3">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Kan ik het eerst proberen?<span class="faq-toggle">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Ja. Je hebt 30 dagen niet-goed-geld-terug. Voelt het niet goed? Stuur een mail en je krijgt je volledige bedrag terug.</div></div>
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span data-i18n="faq-q4">Kan ik het eerst proberen?</span><span class="faq-toggle">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner" data-i18n="faq-a4">Ja. Je hebt 30 dagen niet-goed-geld-terug. Voelt het niet goed? Stuur een mail en je krijgt je volledige bedrag terug.</div></div>
     </div>
     <div class="faq-item r">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Wat als ik een vraag heb die niemand anders heeft?<span class="faq-toggle">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Dan beantwoorden we die alsnog. Persoonlijk. En als het een vraag is die meer leden kan helpen, maken we er een video of stappenplan van.</div></div>
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span data-i18n="faq-q5">Wat als ik een vraag heb die niemand anders heeft?</span><span class="faq-toggle">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner" data-i18n="faq-a5">Dan beantwoorden we die alsnog. Persoonlijk. En als het een vraag is die meer leden kan helpen, maken we er een video of stappenplan van.</div></div>
     </div>
     <div class="faq-item r d1">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Hoe snel krijg ik antwoord?<span class="faq-toggle">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Meestal binnen een paar uur op werkdagen. Vaak sneller. Het team is elke werkdag aanwezig in de community.</div></div>
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span data-i18n="faq-q6">Hoe snel krijg ik antwoord?</span><span class="faq-toggle">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner" data-i18n="faq-a6">Meestal binnen een paar uur op werkdagen. Vaak sneller. Het team is elke werkdag aanwezig in de community.</div></div>
     </div>
     <div class="faq-item r d2">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is mijn informatie veilig?<span class="faq-toggle">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Ja. De community is volledig afgeschermd. Alleen leden kunnen meedoen. Geen advertenties, geen data die gedeeld wordt met derden.</div></div>
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span data-i18n="faq-q7">Is mijn informatie veilig?</span><span class="faq-toggle">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner" data-i18n="faq-a7">Ja. De community is volledig afgeschermd. Alleen leden kunnen meedoen. Geen advertenties, geen data die gedeeld wordt met derden.</div></div>
     </div>
     <div class="faq-item r d3">
-      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">Kan ik op elk moment opzeggen?<span class="faq-toggle">+</span></button>
-      <div class="faq-a"><div class="faq-a-inner">Ja. Geen kleine lettertjes, geen opzegtermijn. Je stuurt een mail en het is geregeld.</div></div>
+      <button class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span data-i18n="faq-q8">Kan ik op elk moment opzeggen?</span><span class="faq-toggle">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner" data-i18n="faq-a8">Ja. Geen kleine lettertjes, geen opzegtermijn. Je stuurt een mail en het is geregeld.</div></div>
     </div>
   </div>
 </section>
@@ -2647,9 +2701,9 @@ a { text-decoration: none; }
 <!-- ═══ WALL OF LOVE ═══ -->
 <section class="wall-of-love" id="wall-of-love">
   <div class="wall-header r">
-    <div class="eyebrow">Meer dan 100 ervaringen</div>
-    <h2>Wat 2.000+ leden over ons zeggen.</h2>
-    <p>We vroegen het ze. Dit is wat ze antwoordden.</p>
+    <div class="eyebrow" data-i18n="wall-eyebrow">Meer dan 100 ervaringen</div>
+    <h2 data-i18n="wall-h2">Wat 2.000+ leden over ons zeggen.</h2>
+    <p data-i18n="wall-sub">We vroegen het ze. Dit is wat ze antwoordden.</p>
   </div>
   <div class="wall-counter" id="wallCounter">Je bekijkt 12 van 102 ervaringen</div>
 
@@ -2760,14 +2814,14 @@ a { text-decoration: none; }
 
   <div class="wall-load-more" id="wallLoadMore">
     <button class="wall-load-btn" id="wallLoadBtn" onclick="loadMoreTestimonials()">
-      Lees er nog 12...
+      <span data-i18n="wall-btn-initial">Lees er nog 12...</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
     </button>
   </div>
 
   <div class="wall-final-cta r" id="wallFinalCta" style="display:none;">
-    <a href="#prijzen" class="btn btn-gold">Word lid van DigitaalSlim Plus+</a>
-    <p>Op elk moment opzegbaar. 30 dagen niet-goed-geld-terug.</p>
+    <a href="#prijzen" class="btn btn-gold" data-i18n="wall-final-btn">Word lid van DigitaalSlim Plus+</a>
+    <p data-i18n="wall-final-note">Op elk moment opzegbaar. 30 dagen niet-goed-geld-terug.</p>
   </div>
 </section>
 
@@ -2829,32 +2883,32 @@ a { text-decoration: none; }
 <!-- ═══ FINAL CTA ═══ -->
 <section class="final-cta">
   <div class="final-cta-inner r">
-    <div class="final-cta-eyebrow">Een persoonlijk woord van Matthias</div>
-    <h2>Nog even twijfelen? Dat begrijp ik.</h2>
+    <div class="final-cta-eyebrow" data-i18n="cta-eyebrow">Een persoonlijk woord van Matthias</div>
+    <h2 data-i18n="cta-h2">Nog even twijfelen? Dat begrijp ik.</h2>
 
     <div class="brief-body">
-      <p>Misschien denk je: <em>"Ik red me wel."</em> En misschien klopt dat. Je kent je iPad al best goed. Je bent niet iemand die zomaar overal voor betaalt.</p>
-      <p>Maar laat me je dit vragen. De volgende keer dat je een mail krijgt die niet helemaal klopt. Of dat je iPad opeens anders werkt na een update. Of dat je iets leest over AI en denkt <em>"zou ik dat ook moeten kunnen?"</em>...</p>
-      <p><strong>Zou het niet fijn zijn om dan een plek te hebben waar je gewoon even kunt vragen?</strong></p>
-      <p>Niet aan je kinderen. Niet aan Google. Maar aan een team dat precies begrijpt waar je mee zit. En aan duizenden medeleden die precies dezelfde vragen hebben als jij.</p>
-      <p><strong>Probeer het 30 dagen.</strong> Voelt het niet als jouw plek? Dan stuur je een mail en je krijgt je volledige bedrag terug. Dat beloof ik je.</p>
+      <p data-i18n="cta-p1">Misschien denk je: <em>"Ik red me wel."</em> En misschien klopt dat. Je kent je iPad al best goed. Je bent niet iemand die zomaar overal voor betaalt.</p>
+      <p data-i18n="cta-p2">Maar laat me je dit vragen. De volgende keer dat je een mail krijgt die niet helemaal klopt. Of dat je iPad opeens anders werkt na een update. Of dat je iets leest over AI en denkt <em>"zou ik dat ook moeten kunnen?"</em>...</p>
+      <p data-i18n="cta-p3"><strong>Zou het niet fijn zijn om dan een plek te hebben waar je gewoon even kunt vragen?</strong></p>
+      <p data-i18n="cta-p4">Niet aan je kinderen. Niet aan Google. Maar aan een team dat precies begrijpt waar je mee zit. En aan duizenden medeleden die precies dezelfde vragen hebben als jij.</p>
+      <p data-i18n="cta-p5"><strong>Probeer het 30 dagen.</strong> Voelt het niet als jouw plek? Dan stuur je een mail en je krijgt je volledige bedrag terug. Dat beloof ik je.</p>
     </div>
 
-    <div class="brief-signoff">Groetjes,<br>Matthias</div>
+    <div class="brief-signoff" data-i18n="cta-signoff">Groetjes,<br>Matthias</div>
 
     <div class="final-cta-highlights">
-      <div class="final-cta-highlight"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>30 dagen niet-goed-geld-terug</div>
-      <div class="final-cta-highlight"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Op elk moment opzegbaar</div>
-      <div class="final-cta-highlight"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>2.000+ leden gingen je voor</div>
-      <div class="final-cta-highlight"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>Eigen app, geen Facebook</div>
+      <div class="final-cta-highlight"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span data-i18n="cta-hl-1">30 dagen niet-goed-geld-terug</span></div>
+      <div class="final-cta-highlight"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span data-i18n="cta-hl-2">Op elk moment opzegbaar</span></div>
+      <div class="final-cta-highlight"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span data-i18n="cta-hl-3">2.000+ leden gingen je voor</span></div>
+      <div class="final-cta-highlight"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg><span data-i18n="cta-hl-4">Eigen app, geen Facebook</span></div>
     </div>
 
     <div class="final-cta-cta-block">
-      <a href="#prijzen" class="btn btn-gold" style="font-size:18px;padding:20px 73px;">Ja, ik word lid van DigitaalSlim Plus+</a>
-      <p class="final-cta-note">Nu nog &euro;139 per jaar of &euro;39 per kwartaal &nbsp;&middot;&nbsp; Op elk moment opzegbaar &nbsp;&middot;&nbsp; 30 dagen niet-goed-geld-terug</p>
+      <a href="#prijzen" class="btn btn-gold" style="font-size:18px;padding:20px 73px;" data-i18n="cta-btn">Ja, ik word lid van DigitaalSlim Plus+</a>
+      <p class="final-cta-note" data-i18n="cta-note">Nu nog &euro;139 per jaar of &euro;39 per kwartaal &nbsp;&middot;&nbsp; Op elk moment opzegbaar &nbsp;&middot;&nbsp; 30 dagen niet-goed-geld-terug</p>
       <div class="final-cta-guarantee r">
         <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <span>Niet tevreden? Stuur een e-mail en je krijgt je volledige bedrag direct terug.</span>
+        <span data-i18n="cta-guarantee-text">Niet tevreden? Stuur een e-mail en je krijgt je volledige bedrag direct terug.</span>
       </div>
     </div>
   </div>
@@ -2867,7 +2921,7 @@ a { text-decoration: none; }
 
 <!-- ═══ STICKY MOBILE BAR ═══ -->
 <div class="mobile-bar" id="mobileBar">
-  <a href="#prijzen" class="btn btn-gold">Word lid</a>
+  <a href="#prijzen" class="btn btn-gold" data-i18n="mobile-btn">Word lid</a>
 </div>
 
 <script>
@@ -2895,6 +2949,280 @@ a { text-decoration: none; }
     entries.forEach(function(e){ bar.classList.toggle('visible', !e.isIntersecting); });
   }, { threshold: 0 });
   obs.observe(hero);
+})();
+</script>
+
+<script>
+// ═══ TRANSLATIONS ═══
+// ═══ TRANSLATIONS ═══
+var TR = {
+  "ub-badge": "Price increase",
+  "ub-text": "The price is going up from <strong>&euro;139</strong> to <strong>&euro;169</strong>/year soon. Join now to lock in the current rate.",
+  "ub-btn": "Join now",
+  "hero-pill": "Over 2,000 members already",
+  "hero-h1": "You don't have to figure this out alone.",
+  "hero-sub": "Every day, we help over 2,000 people with their iPad, iPhone, and Mac. Not with a course you have to sit through, but with <strong>personal help</strong> the moment you need it.",
+  "hero-cta": "See how it works",
+  "hero-note": "Cancel anytime",
+  "hero-trust-1": "Active for over 10 years",
+  "hero-trust-2": "More than 2,000 members",
+  "hero-trust-3": "98% recommend it",
+  "herk-eyebrow": "Sound familiar?",
+  "herk-h2": "Does this feel familiar?",
+  "herk-card-1": "You open your inbox and see a message from \"your bank.\" <strong>Your heart skips a beat.</strong> The logo looks real, the language sounds official. But something feels off. You want to show it to someone, but who?",
+  "herk-card-2": "You turn on your iPad and suddenly <strong>everything looks different.</strong> Buttons have moved, menus have changed. What worked yesterday doesn't work today. And there's no explanation anywhere.",
+  "herk-card-3": "You ask your son or daughter something about your phone. They help you, but <strong>you see the look. That little sigh.</strong> You decide you'll figure it out yourself next time. But how?",
+  "herk-card-4": "You read in the paper that millions of passwords have been stolen again. <strong>Are your passwords safe?</strong> But you don't even know where you'd check.",
+  "herk-card-5": "Everyone's talking about ChatGPT and artificial intelligence. It's on the news, your grandchildren are talking about it. <strong>You want to understand it,</strong> but where do you even begin?",
+  "herk-card-6": "You took a course about your iPad once. It was useful, but after a few weeks <strong>you'd forgotten half of it.</strong> And there's been another big update since then.",
+  "herk-bridge": "If you recognized yourself in even one of these situations, then <strong>what comes next was made exactly for you.</strong>",
+  "matt-h2": "\"I know that struggle firsthand.\"",
+  "matt-role": "Matthias Moens, founder of DigitaalSlim",
+  "matt-p1": "A little over ten years ago, my father bought his very first iPad. He was thrilled. But the questions came quickly. The problem: I was living in Barcelona at the time. I couldn't just pop over and show him how things worked.",
+  "matt-p2": "So I started making videos. Simple, clear, step by step. So he could follow along at his own pace. It worked so well that other people started asking for them too. And then more people. And more.",
+  "matt-p3": "That's how DigitaalSlim was born. But along the way, I learned something that changed my entire approach.",
+  "matt-quote": "A course helps. But a course stands still.",
+  "matt-p4": "Apple releases a major update every year. Criminals come up with new tricks every week. And tomorrow, you'll have a different question than today. What you need isn't a folder of videos that slowly become outdated. <strong>What you need is a place where someone is always there for you.</strong>",
+  "matt-p5": "That's what DigitaalSlim Plus+ has become. Not a course, but a living platform. You ask your question, and we turn it into a video, a step-by-step guide, or a personal answer. With a team that shows up every single day. No chatbot. No waiting line. Real people with endless patience.",
+  "matt-caption": "My father has worn out three iPads by now. And he still calls me.",
+  "sc-eyebrow": "How it works in practice",
+  "sc-h2": "Imagine this: it's Tuesday afternoon.",
+  "sc-intro": "You're sitting with a cup of coffee behind your iPad. An email comes in from \"the postal service.\" They say your package can't be delivered. You need to confirm your address through a link.",
+  "sc-label-1": "Before",
+  "sc-h3-1": "The doubt",
+  "sc-p1": "You might have hesitated. Or clicked. Or asked your daughter and felt a little embarrassed. The logo looked real. The language sounded official. But something felt wrong.",
+  "sc-label-2": "Now",
+  "sc-h3-2": "You forward the email",
+  "sc-p2": "You open the <strong>Email Checker</strong> and forward the suspicious email. Within a few minutes, you get a clear answer: <strong>this is phishing. Don't click.</strong>",
+  "sc-label-3": "The community",
+  "sc-h3-3": "You share it in the community",
+  "sc-p3": "You post a message: \"Did anyone else get this email from the postal service?\" Within an hour, four members respond. Yes, they did too. One of them writes: <strong>\"Thank goodness you shared this. I was about to click.\"</strong>",
+  "sc-label-4": "The result",
+  "sc-h3-4": "Your alertness protects hundreds of others",
+  "sc-p4": "That same afternoon, Matthias turns it into a short warning video. It goes out to all 2,000+ members. <strong>Your question becomes someone else's protection.</strong>",
+  "sc-result": "<span>That's Plus+.</span> You ask a question, and together we turn it into something that makes everyone safer.",
+  "vh-h3": "You never have to feel embarrassed here.",
+  "vh-p1": "Did you know that most people who nearly fall for a phishing email never tell anyone? Not their partner. Not their children. They feel ashamed. They think: \"How could I be so stupid?\"",
+  "vh-p2": "But it has nothing to do with being stupid. Those emails are designed to deceive you. By professionals who do this for a living.",
+  "vh-p3": "In the DigitaalSlim community, you ask your question without judgment. No \"how could you not see that?\". No sighing grandchildren. Just people who understand exactly how it feels. Because honestly? Everyone has that moment of doubt sometimes. Even us.",
+  "vh-closer": "The first step is always the hardest. But here, that step is rewarded.",
+  "ts-label": "What members say",
+  "pij-eyebrow": "Everything you need",
+  "pij-h2": "Everything in one place.",
+  "pij-h3-1": "The community",
+  "pij-p1": "A private, protected space where you can ask any question. No Facebook, no ads, no algorithms deciding what you see. You get a personal answer from Matthias and the team, often the same day. And the best part: your questions decide what videos and guides we create next.",
+  "pij-h3-2": "All courses",
+  "pij-p2": "Access to all our video lessons about your iPad, iPhone, Mac, and more. No fixed order, no deadlines. You pick the video you need and move on. And every time Apple changes something, we update the videos.",
+  "pij-h3-3": "Step-by-step guides",
+  "pij-p3": "Sometimes you don't need a video. Just a clear explanation with pictures. That's what our step-by-step guides are. Each step is its own block. Already know something? Skip it. Shorter than a video, more practical than a manual.",
+  "pij-h3-4": "The Email Checker",
+  "pij-p4": "Got a suspicious email? Forward it to our Email Checker and you'll know within minutes whether it's safe. No technical knowledge needed. You forward it, we check it. Done.",
+  "pij-bottom": "No school. No homework. No deadlines. <strong>You decide when, how, and what.</strong> And if you don't use it for three months and then come back with a question? We'll be right there.",
+  "pij-cta": "Yes, I want this",
+  "kan-eyebrow": "The community",
+  "kan-h2": "A place for every question.",
+  "kan-sub": "The community is organized into clear channels. No need to search. Just go to the channel that matches your question.",
+  "kan-grp-1": "General",
+  "kan-ch1-h": "Introduce yourself",
+  "kan-ch1-p": "Let everyone know who you are and what you use",
+  "kan-ch2-h": "Coffee corner",
+  "kan-ch2-p": "Chat about anything and everything",
+  "kan-grp-2": "Devices",
+  "kan-ch3-h": "iPad & iPhone",
+  "kan-ch3-p": "Questions about your tablet and phone",
+  "kan-ch4-h": "Mac",
+  "kan-ch4-p": "Everything about your MacBook or iMac",
+  "kan-grp-3": "Topics",
+  "kan-ch5-h": "Privacy & Security",
+  "kan-ch5-p": "Passwords, scams, and protection",
+  "kan-ch6-h": "AI & Smart Working",
+  "kan-ch6-p": "ChatGPT, automation, and smart tips",
+  "kan-meer": "+ and 10 more channels",
+  "kan-badge-1": "Members only",
+  "kan-badge-2": "No ads",
+  "kan-badge-3": "Dedicated app",
+  "kan-badge-4": "Every question is welcome",
+  "vgl-h2": "More than just a course.",
+  "vgl-p": "A typical course costs &euro;97 and is outdated within three months. With DigitaalSlim Plus+, you get everything for <strong>&euro;139 per year</strong>: all courses, the community, step-by-step guides, personal help, and the Email Checker. Always up to date. And everything we add in the future is automatically included.",
+  "vgl-reframe": "That's less than 40 cents a day. Less than a cup of coffee a week.",
+  "prijs-eyebrow": "Choose what works for you",
+  "prijs-h2": "Fair prices. No surprises.",
+  "prijs-sub": "Join over 2,000 members who use their devices with peace of mind.",
+  "prijs-urgency": "&#9200; The price is going up from &euro;139 to &euro;169/year soon. <strong>Join now to lock in the current rate.</strong>",
+  "prijs-freeze": "<strong>As long as you're a member, your price never goes up.</strong> That's our thank-you to everyone who joins early.",
+  "prijs-check-1": "All video lessons and courses",
+  "prijs-check-2": "The community with personal help",
+  "prijs-check-3": "All step-by-step guides",
+  "prijs-check-4": "The new Email Checker",
+  "prijs-check-5": "Exclusive warning emails",
+  "prijs-check-6": "A team that's there every day",
+  "prijs-period-q": "Quarterly",
+  "prijs-badge": "Lock in your price",
+  "prijs-was-q": "Going up to &euro;45 soon",
+  "prijs-per-q": "That's less than &euro;3 per week",
+  "prijs-saving-q": "Ideal for trying it out",
+  "prijs-btn-q": "Join now",
+  "prijs-period-y": "Yearly",
+  "prijs-was-y": "Going up to &euro;169 soon",
+  "prijs-per-y": "That's &euro;2.67 per week. Less than a cup of coffee.",
+  "prijs-saving-y": "Save &euro;20 per year",
+  "prijs-btn-y": "Join now",
+  "prijs-note": "Cancel anytime. No fine print, no commitments.",
+  "prijs-garantie": "<strong>30-day money-back guarantee.</strong> Not satisfied? Send us an email and you'll get a full refund. No questions asked.",
+  "dag-eyebrow": "After signing up",
+  "dag-h2": "Here's what your first day looks like.",
+  "dag-sub": "You just joined. Here's what happens.",
+  "dag-h4-1": "Welcome email",
+  "dag-p1": "Right after signing up, you'll receive a personal welcome email with everything you need.",
+  "dag-h4-2": "Log in",
+  "dag-p2": "You open the community through the app or your browser. Takes about two minutes.",
+  "dag-h4-3": "Look around",
+  "dag-p3": "You watch the tour video and see how everything works. The channels, the courses, the guides.",
+  "dag-h4-4": "Your first question",
+  "dag-p4": "You ask your first question. It can be about anything. Within a few hours, you'll have an answer.",
+  "dag-h4-5": "Your go-to place",
+  "dag-p5": "From now on, you have a place you can always turn to. Every day, every question.",
+  "faq-eyebrow": "Frequently asked questions",
+  "faq-h2": "Still have questions? We have answers.",
+  "faq-q1": "Do I need any technical knowledge?",
+  "faq-a1": "No. DigitaalSlim is made for people who just want to use their device without getting technical. Ask your question in your own words and get a clear answer.",
+  "faq-q2": "Does this work for Mac too, or just iPad?",
+  "faq-a2": "We help with iPad, iPhone, Mac, Apple Watch, and Apple TV. Everything Apple.",
+  "faq-q3": "Do I need Facebook?",
+  "faq-a3": "No. The community runs on its own platform (The Huddle) with a dedicated app. No Facebook, no WhatsApp groups.",
+  "faq-q4": "Can I try it first?",
+  "faq-a4": "Yes. You have a 30-day money-back guarantee. Doesn't feel right? Send an email and get a full refund.",
+  "faq-q5": "What if I have a question nobody else has?",
+  "faq-a5": "We'll still answer it. Personally. And if it's a question that could help more members, we'll turn it into a video or guide.",
+  "faq-q6": "How quickly will I get an answer?",
+  "faq-a6": "Usually within a few hours on weekdays. Often faster. The team is in the community every workday.",
+  "faq-q7": "Is my information safe?",
+  "faq-a7": "Yes. The community is completely private. Only members can participate. No ads, no data shared with third parties.",
+  "faq-q8": "Can I cancel anytime?",
+  "faq-a8": "Yes. No fine print, no notice period. Send an email and it's done.",
+  "wall-eyebrow": "More than 100 experiences",
+  "wall-h2": "What 2,000+ members are saying.",
+  "wall-sub": "We asked them. Here's what they said.",
+  "wall-btn-initial": "Show 12 more...",
+  "wall-final-btn": "Join DigitaalSlim Plus+",
+  "wall-final-note": "Cancel anytime. 30-day money-back guarantee.",
+  "cta-eyebrow": "A personal note from Matthias",
+  "cta-h2": "Still on the fence? I get it.",
+  "cta-p1": "Maybe you're thinking: <em>\"I'll manage.\"</em> And maybe that's true. You know your iPad pretty well already. You're not someone who pays for just anything.",
+  "cta-p2": "But let me ask you this. Next time you get an email that doesn't quite look right. Or your iPad suddenly works differently after an update. Or you read something about AI and think <em>\"should I know how to do that?\"</em>...",
+  "cta-p3": "<strong>Wouldn't it be nice to have a place where you can just ask?</strong>",
+  "cta-p4": "Not your kids. Not Google. But a team that truly understands what you're dealing with. And thousands of fellow members who have the exact same questions as you.",
+  "cta-p5": "<strong>Try it for 30 days.</strong> If it doesn't feel like your place, send an email and you'll get every cent back. That's my promise to you.",
+  "cta-signoff": "Best,<br>Matthias",
+  "cta-hl-1": "30-day money-back guarantee",
+  "cta-hl-2": "Cancel anytime",
+  "cta-hl-3": "2,000+ members before you",
+  "cta-hl-4": "Dedicated app, no Facebook",
+  "cta-btn": "Yes, I'm joining DigitaalSlim Plus+",
+  "cta-note": "Now still &euro;139/year or &euro;39/quarter &nbsp;&middot;&nbsp; Cancel anytime &nbsp;&middot;&nbsp; 30-day money-back guarantee",
+  "cta-guarantee-text": "Not satisfied? Send an email and you'll get a full refund.",
+  "mobile-btn": "Join now",
+  "wall-counter-tpl": "You're viewing {shown} of {total} experiences",
+  "wall-msgs": ["There are more...", "We're not done yet...", "They keep coming...", "Okay, a few more...", "You almost can't believe it...", "Almost done...", "The final stretch...", "And there are still more...", "The very last ones..."],
+};
+
+
+// Add the "prijs-popular" translation
+TR["prijs-popular"] = "Most popular";
+
+(function() {
+  var currentLang = 'nl';
+  var NL = {}; // store original Dutch innerHTML
+
+  // Capture all original Dutch texts on load
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    NL[el.getAttribute('data-i18n')] = el.innerHTML;
+  });
+
+  // Toggle logic
+  var toggle = document.getElementById('langToggle');
+  if (!toggle) return;
+
+  toggle.addEventListener('click', function(e) {
+    var btn = e.target.closest('.lang-btn');
+    if (!btn) return;
+    var lang = btn.getAttribute('data-lang');
+    if (lang === currentLang) return;
+
+    currentLang = lang;
+    toggle.querySelectorAll('.lang-btn').forEach(function(b) {
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+
+    document.querySelectorAll('[data-i18n]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n');
+      if (lang === 'en' && TR[key]) {
+        el.innerHTML = TR[key];
+      } else if (lang === 'nl' && NL[key]) {
+        el.innerHTML = NL[key];
+      }
+    });
+
+    // Update wall counter text
+    updateWallCounter(lang);
+
+    // Update <html lang>
+    document.documentElement.lang = (lang === 'en') ? 'en' : 'nl';
+  });
+
+  // Update wall counter when language changes
+  function updateWallCounter(lang) {
+    var counter = document.getElementById('wallCounter');
+    if (!counter) return;
+    var match = counter.textContent.match(/\d+/g);
+    if (match && match.length >= 2) {
+      var shown = match[0], total = match[1];
+      if (lang === 'en') {
+        counter.textContent = TR["wall-counter-tpl"].replace("{shown}", shown).replace("{total}", total);
+      } else {
+        counter.textContent = "Je bekijkt " + shown + " van " + total + " ervaringen";
+      }
+    }
+  }
+
+  // Patch the wall load-more to be bilingual
+  var origLoadMore = window.loadMoreTestimonials;
+  if (origLoadMore) {
+    var wallMessages_nl = [
+      'Er zijn er nog meer...',
+      'We zijn er nog niet...',
+      'Het blijft maar komen...',
+      'Ok\u00e9, nog een paar dan...',
+      'Je gelooft het bijna niet...',
+      'We stoppen bijna...',
+      'De laatste loodjes...',
+      'En dan zijn er n\u00f3g...',
+      'De allerlaatste...'
+    ];
+    var wallMessages_en = TR["wall-msgs"] || [];
+    var wallMsgIdx = 0;
+
+    window.loadMoreTestimonials = function() {
+      origLoadMore();
+      // After original runs, patch the button text and counter for current lang
+      if (currentLang === 'en') {
+        var btn = document.getElementById('wallLoadBtn');
+        if (btn && btn.querySelector('span[data-i18n]')) {
+          // Update button text
+        }
+        updateWallCounter('en');
+        // Update load-more button message
+        if (btn) {
+          var msgs = wallMessages_en;
+          var svgPart = ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+          if (wallMsgIdx < msgs.length) {
+            btn.innerHTML = msgs[wallMsgIdx] + svgPart;
+          }
+        }
+      }
+      wallMsgIdx++;
+    };
+  }
 })();
 </script>
 </body>
