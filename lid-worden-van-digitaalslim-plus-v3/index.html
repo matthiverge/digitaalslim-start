@@ -776,9 +776,25 @@ a { text-decoration: none; }
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: var(--r3);
-  padding: 32px 28px;
+  padding: 0 0 32px;
   transition: box-shadow var(--t), transform var(--t), border-color var(--t);
   box-shadow: var(--s1);
+  overflow: hidden;
+}
+
+.herk-illus {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(74,44,245,0.05) 0%, rgba(107,76,248,0.08) 50%, rgba(240,180,41,0.05) 100%);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+.herk-illus svg {
+  width: 120px;
+  height: 100px;
 }
 
 .herk-card:hover {
@@ -796,7 +812,7 @@ a { text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 0 28px 20px;
 }
 
 .herk-icon svg {
@@ -813,6 +829,7 @@ a { text-decoration: none; }
   font-size: 16px;
   color: var(--ink-3);
   line-height: 1.72;
+  padding: 0 28px;
 }
 
 .herk-card strong { color: var(--ink); }
@@ -3537,30 +3554,174 @@ a { text-decoration: none; }
   </div>
 
   <div class="herkenning-grid">
+
+    <!-- Kaart 1: (Klein)kinderen -->
     <div class="herk-card r">
+      <div class="herk-illus">
+        <svg viewBox="0 0 120 100" fill="none">
+          <!-- Persoon links (ouder, wachtend) -->
+          <circle cx="35" cy="32" r="10" fill="#E8E4F4"/>
+          <rect x="25" y="44" width="20" height="24" rx="10" fill="#E8E4F4"/>
+          <!-- Telefoon in hand -->
+          <rect x="29" y="58" width="12" height="18" rx="2" fill="#4A2CF5" opacity="0.15"/>
+          <rect x="31" y="61" width="8" height="10" rx="1" fill="#4A2CF5" opacity="0.25"/>
+          <!-- Vraagteken boven hoofd -->
+          <text x="35" y="20" text-anchor="middle" font-size="14" font-weight="700" fill="#4A2CF5" opacity="0.5">?</text>
+          <!-- Persoon rechts (kind, druk) -->
+          <circle cx="80" cy="35" r="9" fill="#D4CEEC"/>
+          <rect x="71" y="46" width="18" height="22" rx="9" fill="#D4CEEC"/>
+          <!-- Laptop -->
+          <rect x="68" y="56" width="24" height="15" rx="2" fill="#4A2CF5" opacity="0.12"/>
+          <rect x="64" y="71" width="32" height="2" rx="1" fill="#4A2CF5" opacity="0.15"/>
+          <!-- Streepjes rond kind = druk -->
+          <line x1="95" y1="38" x2="102" y2="35" stroke="#9490A8" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="94" y1="44" x2="101" y2="44" stroke="#9490A8" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="95" y1="50" x2="101" y2="53" stroke="#9490A8" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Afstand-stippellijn -->
+          <line x1="50" y1="50" x2="64" y2="50" stroke="#D4CEEC" stroke-width="1.5" stroke-dasharray="3 3"/>
+        </svg>
+      </div>
       <div class="herk-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
       <p><strong>Je wilt niet steeds je zoon of dochter lastigvallen</strong> met digitale vragen. Zij hebben het druk, en als ze helpen gaat het vaak te snel. Je wilt het graag zelf kunnen, op je eigen tempo, zonder iemand tot last te zijn.</p>
     </div>
+
+    <!-- Kaart 2: Phishing -->
     <div class="herk-card r d1">
+      <div class="herk-illus">
+        <svg viewBox="0 0 120 100" fill="none">
+          <!-- Envelop -->
+          <rect x="20" y="25" width="50" height="35" rx="4" fill="#fff" stroke="#E8E4F4" stroke-width="2"/>
+          <polyline points="20,25 45,47 70,25" fill="none" stroke="#D4CEEC" stroke-width="2"/>
+          <!-- Rode waarschuwing op envelop -->
+          <circle cx="62" cy="30" r="10" fill="#F87171" opacity="0.15"/>
+          <text x="62" y="35" text-anchor="middle" font-size="14" font-weight="800" fill="#DC2626">!</text>
+          <!-- Vishengel (phishing metafoor) -->
+          <line x1="90" y1="12" x2="90" y2="55" stroke="#9490A8" stroke-width="1.5"/>
+          <line x1="90" y1="12" x2="75" y2="12" stroke="#9490A8" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M75 12 Q72 20 68 28" fill="none" stroke="#9490A8" stroke-width="1" stroke-dasharray="2 2"/>
+          <!-- Haakje -->
+          <path d="M90 55 Q90 62 86 62 Q82 62 82 57" fill="none" stroke="#F0B429" stroke-width="2" stroke-linecap="round"/>
+          <!-- Euro teken als aas -->
+          <text x="82" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="#F0B429" opacity="0.6">&euro;</text>
+        </svg>
+      </div>
       <div class="herk-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
       <p><strong>Phishing-mails worden steeds beter nagemaakt.</strong> Zelfs ervaren mensen trappen erin. E&eacute;n verkeerde klik kan je honderden euro's kosten. En achteraf denk je: had ik dat maar even kunnen vragen.</p>
     </div>
+
+    <!-- Kaart 3: Apple updates -->
     <div class="herk-card r d2">
+      <div class="herk-illus">
+        <svg viewBox="0 0 120 100" fill="none">
+          <!-- iPad oud -->
+          <rect x="12" y="20" width="36" height="50" rx="5" fill="#fff" stroke="#D4CEEC" stroke-width="2"/>
+          <rect x="17" y="27" width="26" height="32" rx="2" fill="#E8E4F4"/>
+          <!-- Scherm oud: simpele icoontjes -->
+          <rect x="19" y="30" width="8" height="8" rx="2" fill="#4A2CF5" opacity="0.15"/>
+          <rect x="30" y="30" width="8" height="8" rx="2" fill="#F0B429" opacity="0.2"/>
+          <rect x="19" y="41" width="8" height="8" rx="2" fill="#16A34A" opacity="0.15"/>
+          <rect x="30" y="41" width="8" height="8" rx="2" fill="#4A2CF5" opacity="0.1"/>
+          <!-- Pijl -->
+          <path d="M54 45 L66 45" stroke="#4A2CF5" stroke-width="2" stroke-linecap="round"/>
+          <polyline points="62,40 68,45 62,50" fill="none" stroke="#4A2CF5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- iPad nieuw (alles anders) -->
+          <rect x="72" y="20" width="36" height="50" rx="5" fill="#fff" stroke="#4A2CF5" stroke-width="2" opacity="0.7"/>
+          <rect x="77" y="27" width="26" height="32" rx="2" fill="#F3F1FB"/>
+          <!-- Scherm nieuw: compleet andere layout -->
+          <rect x="79" y="29" width="22" height="12" rx="2" fill="#4A2CF5" opacity="0.12"/>
+          <rect x="79" y="44" width="10" height="6" rx="1" fill="#F0B429" opacity="0.2"/>
+          <rect x="91" y="44" width="10" height="6" rx="1" fill="#16A34A" opacity="0.15"/>
+          <circle cx="85" y="56" r="2" fill="#4A2CF5" opacity="0.2"/>
+          <!-- Vraagtekens -->
+          <text x="90" y="18" text-anchor="middle" font-size="11" font-weight="700" fill="#4A2CF5" opacity="0.4">?</text>
+          <text x="100" y="14" text-anchor="middle" font-size="9" font-weight="700" fill="#4A2CF5" opacity="0.3">?</text>
+        </svg>
+      </div>
       <div class="herk-icon"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg></div>
       <p><strong>Elke paar maanden verandert Apple weer iets</strong>, en dan ziet alles er net weer anders uit. Zelf uitzoeken kost je al snel een hele middag, terwijl het antwoord in drie minuten te vinden is als je weet waar je moet kijken.</p>
     </div>
+
+    <!-- Kaart 4: AI -->
     <div class="herk-card r d3">
+      <div class="herk-illus">
+        <svg viewBox="0 0 120 100" fill="none">
+          <!-- Robot/AI icoon -->
+          <rect x="38" y="28" width="44" height="36" rx="8" fill="#F3F1FB" stroke="#D4CEEC" stroke-width="1.5"/>
+          <!-- Ogen -->
+          <circle cx="50" cy="42" r="5" fill="#4A2CF5" opacity="0.2"/>
+          <circle cx="70" cy="42" r="5" fill="#4A2CF5" opacity="0.2"/>
+          <circle cx="50" cy="42" r="2.5" fill="#4A2CF5" opacity="0.5"/>
+          <circle cx="70" cy="42" r="2.5" fill="#4A2CF5" opacity="0.5"/>
+          <!-- Mond -->
+          <line x1="50" y1="54" x2="70" y2="54" stroke="#D4CEEC" stroke-width="2" stroke-linecap="round"/>
+          <!-- Antenne -->
+          <line x1="60" y1="28" x2="60" y2="18" stroke="#D4CEEC" stroke-width="1.5"/>
+          <circle cx="60" cy="16" r="3" fill="#F0B429" opacity="0.4"/>
+          <!-- Bubbels rondom -->
+          <text x="22" y="30" font-size="9" fill="#4A2CF5" opacity="0.35">AI</text>
+          <text x="88" y="28" font-size="8" fill="#4A2CF5" opacity="0.3">ChatGPT</text>
+          <text x="16" y="60" font-size="7" fill="#9490A8" opacity="0.5">Siri</text>
+          <text x="92" y="58" font-size="7" fill="#9490A8" opacity="0.5">Gemini</text>
+          <!-- Vraagteken -->
+          <text x="60" y="88" text-anchor="middle" font-size="16" font-weight="700" fill="#4A2CF5" opacity="0.25">?</text>
+        </svg>
+      </div>
       <div class="herk-icon"><svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 1 4 4v2H8V6a4 4 0 0 1 4-4z"/><rect x="3" y="8" width="18" height="14" rx="2"/><circle cx="12" cy="16" r="2"/></svg></div>
       <p><strong>Overal hoor je over AI</strong>, maar je weet niet precies wat het voor jou betekent. Is het handig? Is het gevaarlijk? Of allebei? Zonder iemand om het aan te vragen, blijf je twijfelen en laat je handige functies links liggen.</p>
     </div>
+
+    <!-- Kaart 5: Cursus vergeten -->
     <div class="herk-card r d4">
+      <div class="herk-illus">
+        <svg viewBox="0 0 120 100" fill="none">
+          <!-- Hoofd silhouet -->
+          <circle cx="60" cy="36" r="18" fill="#F3F1FB" stroke="#D4CEEC" stroke-width="1.5"/>
+          <!-- Hersenen met gaten (vergeten) -->
+          <path d="M50 32 Q54 26 60 28 Q66 26 70 32 Q72 38 68 42 Q64 46 60 44 Q56 46 52 42 Q48 38 50 32Z" fill="#E8E4F4"/>
+          <!-- Stippellijnen = kennis die weglekt -->
+          <line x1="48" y1="50" x2="38" y2="65" stroke="#D4CEEC" stroke-width="1" stroke-dasharray="2 2"/>
+          <line x1="60" y1="54" x2="60" y2="72" stroke="#D4CEEC" stroke-width="1" stroke-dasharray="2 2"/>
+          <line x1="72" y1="50" x2="82" y2="65" stroke="#D4CEEC" stroke-width="1" stroke-dasharray="2 2"/>
+          <!-- Kleine blokjes die wegvallen (kennis) -->
+          <rect x="34" y="66" width="8" height="6" rx="1" fill="#4A2CF5" opacity="0.1" transform="rotate(-10 38 69)"/>
+          <rect x="56" y="73" width="8" height="6" rx="1" fill="#F0B429" opacity="0.12"/>
+          <rect x="78" y="66" width="8" height="6" rx="1" fill="#4A2CF5" opacity="0.08" transform="rotate(12 82 69)"/>
+          <!-- Pijl naar beneden -->
+          <polyline points="60,78 60,90" fill="none" stroke="#9490A8" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+          <polyline points="56,86 60,90 64,86" fill="none" stroke="#9490A8" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+        </svg>
+      </div>
       <div class="herk-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
       <p><strong>Je hebt al eens een cursus gevolgd</strong>, maar een paar weken later ben je de helft weer vergeten. Dat is heel normaal. Alleen heb je nu niemand om even snel te vragen: "Hoe was dat ook alweer?"</p>
     </div>
+
+    <!-- Kaart 6: Datalekken -->
     <div class="herk-card r d4">
+      <div class="herk-illus">
+        <svg viewBox="0 0 120 100" fill="none">
+          <!-- Schild met barst -->
+          <path d="M60 12 L85 24 L85 52 Q85 72 60 85 Q35 72 35 52 L35 24 Z" fill="#F3F1FB" stroke="#D4CEEC" stroke-width="1.5"/>
+          <!-- Barst in het schild -->
+          <polyline points="60,30 56,42 64,48 58,62" fill="none" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+          <!-- Slotje open -->
+          <rect x="52" y="45" width="16" height="12" rx="2" fill="#4A2CF5" opacity="0.15"/>
+          <path d="M56 45 L56 40 Q56 35 60 35 Q64 35 64 40 L64 42" fill="none" stroke="#4A2CF5" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+          <!-- Nieuws-header -->
+          <rect x="5" y="8" width="28" height="18" rx="2" fill="#fff" stroke="#E8E4F4" stroke-width="1"/>
+          <line x1="8" y1="14" x2="30" y2="14" stroke="#DC2626" stroke-width="1.5" opacity="0.4"/>
+          <line x1="8" y1="18" x2="24" y2="18" stroke="#D4CEEC" stroke-width="1"/>
+          <line x1="8" y1="21" x2="28" y2="21" stroke="#D4CEEC" stroke-width="1"/>
+          <!-- Nieuws-header 2 -->
+          <rect x="87" y="8" width="28" height="18" rx="2" fill="#fff" stroke="#E8E4F4" stroke-width="1"/>
+          <line x1="90" y1="14" x2="112" y2="14" stroke="#DC2626" stroke-width="1.5" opacity="0.4"/>
+          <line x1="90" y1="18" x2="106" y2="18" stroke="#D4CEEC" stroke-width="1"/>
+          <line x1="90" y1="21" x2="110" y2="21" stroke="#D4CEEC" stroke-width="1"/>
+        </svg>
+      </div>
       <div class="herk-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
       <p><strong>In het nieuws lees je over datalekken en gehackte accounts.</strong> Je vraagt je af: moet ik nu mijn wachtwoord veranderen? Is mijn account nog veilig? Maar aan wie vraag je dat?</p>
     </div>
+
   </div>
 
 </section>
