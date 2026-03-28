@@ -320,7 +320,7 @@ a { text-decoration: none; }
   margin: 0 auto;
   padding: 72px 40px 0;
   display: grid;
-  grid-template-columns: 1fr 440px;
+  grid-template-columns: 1fr 480px;
   gap: 48px;
   align-items: center;
 }
@@ -393,6 +393,57 @@ a { text-decoration: none; }
   font-size: 14px;
   color: var(--muted);
   line-height: 1.5;
+}
+
+/* Result chips */
+.hero-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 28px;
+}
+
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 9px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-3);
+  width: fit-content;
+  transition: background var(--t), border-color var(--t), box-shadow var(--t);
+}
+
+.hero-chip:hover {
+  background: var(--surface-3);
+  border-color: var(--border-2);
+  box-shadow: var(--s2);
+}
+
+.hero-chip-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: var(--violet-glow);
+  border: 1px solid var(--violet-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero-chip-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--violet-3);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .hero-visual {
@@ -2029,6 +2080,8 @@ a { text-decoration: none; }
   .hero-logo { height: 64px; margin-bottom: 20px; }
   .hero h1 { font-size: 26px; letter-spacing: -1px; }
   .hero-sub { font-size: 16px; text-align: center; }
+  .hero-chips { align-items: center; }
+  .hero-chip { font-size: 14px; }
   .hero-cta-row { flex-direction: column; align-items: center; }
   .hero-visual { order: -1; padding: 0 20px; }
   .hero-mockup { max-width: 280px; margin: 0 auto; }
@@ -2164,6 +2217,21 @@ a { text-decoration: none; }
       </div>
       <h1 data-i18n="hero-h1">Je hoeft dit niet alleen uit te zoeken.</h1>
       <p class="hero-sub" data-i18n="hero-sub">Elke dag helpen we meer dan 2.000 mensen met hun iPad, iPhone en Mac. Niet met een cursus die je moet uitzitten, maar met <strong>persoonlijke hulp</strong> op het moment dat jij het nodig hebt.</p>
+      <div class="hero-chips">
+        <div class="hero-chip">
+          <div class="hero-chip-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <span data-i18n="hero-chip-1">Weet meteen of die verdachte mail echt is</span>
+        </div>
+        <div class="hero-chip">
+          <div class="hero-chip-icon"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg></div>
+          <span data-i18n="hero-chip-2">Leer in 3 minuten hoe een Apple-update werkt</span>
+        </div>
+        <div class="hero-chip">
+          <div class="hero-chip-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <span data-i18n="hero-chip-3">Stel je vraag en krijg persoonlijk antwoord</span>
+        </div>
+      </div>
+
       <div class="hero-cta-row">
         <a href="#prijzen" class="btn btn-gold" data-i18n="hero-cta">Ontdek hoe het werkt</a>
         <span class="hero-cta-note" data-i18n="hero-note">Op elk moment opzegbaar</span>
@@ -3127,8 +3195,11 @@ var TR = {
 };
 
 
-// Add the "prijs-popular" translation
+// Extra translations
 TR["prijs-popular"] = "Most popular";
+TR["hero-chip-1"] = "Know instantly if that suspicious email is real";
+TR["hero-chip-2"] = "Learn in 3 minutes how an Apple update works";
+TR["hero-chip-3"] = "Ask your question and get a personal answer";
 
 (function() {
   var currentLang = 'nl';
