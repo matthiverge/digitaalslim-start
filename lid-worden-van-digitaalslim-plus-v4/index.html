@@ -213,7 +213,7 @@ a { text-decoration: none; }
 /* ─── COMPACT OVERZICHT (4 icoontjes) ─── */
 .overzicht {
   padding: 80px 0 88px;
-  background: var(--dark);
+  background: #0A0814;
   position: relative;
   overflow: hidden;
 }
@@ -222,7 +222,7 @@ a { text-decoration: none; }
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(74,44,245,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(74,44,245,0.12) 0%, transparent 70%),
     radial-gradient(ellipse 50% 40% at 80% 20%, rgba(240,180,41,0.08) 0%, transparent 70%);
   pointer-events: none;
 }
@@ -230,6 +230,7 @@ a { text-decoration: none; }
   text-align: center;
   margin-bottom: 52px;
   position: relative;
+  z-index: 1;
 }
 .overzicht-header h2 {
   font-size: clamp(26px, 4.5vw, 36px);
@@ -246,33 +247,34 @@ a { text-decoration: none; }
   margin: 0 auto;
   padding: 0 40px;
   position: relative;
+  z-index: 1;
 }
 .overzicht-item {
   text-align: center;
   padding: 40px 20px 36px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: var(--r3);
-  transition: background var(--t), border-color var(--t), transform var(--t);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 20px;
+  transition: background 0.28s ease, border-color 0.28s ease, transform 0.28s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .overzicht-item:hover {
-  background: rgba(255,255,255,0.07);
-  border-color: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.18);
   transform: translateY(-4px);
 }
 .overzicht-icon {
   width: 72px;
   height: 72px;
   margin-bottom: 20px;
-  background: var(--violet);
+  background: #4A2CF5;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(74,44,245,0.35);
+  box-shadow: 0 8px 24px rgba(74,44,245,0.40);
 }
 .overzicht-icon svg {
   width: 32px;
@@ -284,11 +286,11 @@ a { text-decoration: none; }
   stroke-linejoin: round;
 }
 .overzicht-icon-gold {
-  background: var(--gold);
-  box-shadow: 0 8px 24px rgba(240,180,41,0.35);
+  background: #F0B429;
+  box-shadow: 0 8px 24px rgba(240,180,41,0.40);
 }
 .overzicht-icon-gold svg {
-  stroke: var(--dark);
+  stroke: #0A0814;
 }
 .overzicht-item h3 {
   font-size: 18px;
@@ -299,7 +301,7 @@ a { text-decoration: none; }
 }
 .overzicht-item p {
   font-size: 15px;
-  color: rgba(255,255,255,0.55);
+  color: #9490A8;
   line-height: 1.55;
 }
 @media (max-width: 700px) {
