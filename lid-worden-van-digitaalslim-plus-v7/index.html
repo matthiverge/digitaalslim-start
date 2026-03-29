@@ -2968,90 +2968,82 @@ a { text-decoration: none; }
 </section>
 
 <!-- SECTIE 11: PRIJZEN (VOLLEDIG) -->
-<section id="prijzen" style="background: white; padding: 112px 40px;">
+<section id="prijzen" style="background: linear-gradient(180deg, #F9F8FD 0%, #FFFFFF 100%); padding: 112px 40px;">
   <div class="container">
-    <div style="text-align: center; max-width: 680px; margin: 0 auto 64px;">
+    <div style="text-align: center; max-width: 680px; margin: 0 auto 56px;">
       <div class="eyebrow r">Kies wat bij je past</div>
       <h2 style="font-size: 40px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.15; color: #0D0B14; margin: 16px 0 18px;" class="r">Eerlijke prijzen. Geen verrassingen.</h2>
       <p style="font-size: 17px; color: #3D3856; line-height: 1.75;" class="r">
         Sluit je aan bij meer dan 2.000 leden die met een gerust hart achter hun toestel zitten.
       </p>
     </div>
-    
-    <div style="max-width: 900px; margin: 0 auto 48px; text-align: center;">
-      <div class="r d1" style="background: linear-gradient(135deg, rgba(74,44,245,0.04) 0%, rgba(240,180,41,0.03) 100%); border: 1px solid rgba(74,44,245,0.15); border-radius: 16px; padding: 24px; margin-bottom: 24px;">
-        <p style="font-size: 16px; color: #3D3856; margin-bottom: 8px;">
-          <strong style="color: #0D0B14;">Urgentie:</strong> De prijs stijgt binnenkort van 139 euro naar 169 euro. Wie nu instapt, zet het huidige tarief vast.
-        </p>
-      </div>
-      
-      <div class="r d2" style="background: linear-gradient(135deg, rgba(22,163,74,0.04) 0%, rgba(16,185,129,0.03) 100%); border: 1px solid rgba(22,163,74,0.15); border-radius: 16px; padding: 24px;">
-        <p style="font-size: 16px; color: #3D3856;">
-          <strong style="color: #0D0B14;">Bevriezing:</strong> Zolang je lid bent, gaat jouw prijs niet omhoog. Dat is ons bedankje aan iedereen die er vroeg bij is.
-        </p>
-      </div>
-    </div>
-    
-    <div style="max-width: 900px; margin: 0 auto 64px;">
-      <div class="r d3" style="background: #F9F8FD; border: 1px solid #E8E4F4; border-radius: 16px; padding: 32px;">
-        <h3 style="font-size: 18px; font-weight: 800; color: #0D0B14; margin-bottom: 20px;">Alles inbegrepen:</h3>
-        <ul style="list-style: none; padding: 0; columns: 2; gap: 32px;">
-          <li style="font-size: 16px; color: #3D3856; line-height: 1.75; margin-bottom: 12px; padding-left: 28px; position: relative;">
-            <span style="position: absolute; left: 0; color: #16A34A;">✓</span>
-            Alle videolessen en cursussen
-          </li>
-          <li style="font-size: 16px; color: #3D3856; line-height: 1.75; margin-bottom: 12px; padding-left: 28px; position: relative;">
-            <span style="position: absolute; left: 0; color: #16A34A;">✓</span>
-            De community met persoonlijke hulp
-          </li>
-          <li style="font-size: 16px; color: #3D3856; line-height: 1.75; margin-bottom: 12px; padding-left: 28px; position: relative;">
-            <span style="position: absolute; left: 0; color: #16A34A;">✓</span>
-            Alle stappenplannen
-          </li>
-          <li style="font-size: 16px; color: #3D3856; line-height: 1.75; margin-bottom: 12px; padding-left: 28px; position: relative;">
-            <span style="position: absolute; left: 0; color: #16A34A;">✓</span>
-            De nieuwe E-mailchecker
-          </li>
-          <li style="font-size: 16px; color: #3D3856; line-height: 1.75; margin-bottom: 12px; padding-left: 28px; position: relative;">
-            <span style="position: absolute; left: 0; color: #16A34A;">✓</span>
-            Exclusieve waarschuwingsmails
-          </li>
-          <li style="font-size: 16px; color: #3D3856; line-height: 1.75; padding-left: 28px; position: relative;">
-            <span style="position: absolute; left: 0; color: #16A34A;">✓</span>
-            Een team dat elke dag klaarstaat
-          </li>
-        </ul>
-      </div>
-    </div>
-    
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 900px; margin: 0 auto 64px;">
-      <div style="background: white; border: 1px solid #E8E4F4; border-radius: 20px; padding: 40px;" class="r d1">
-        <p style="font-size: 14px; font-weight: 700; color: #3D3856; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;">Per Kwartaal</p>
-        <p style="font-size: 56px; font-weight: 800; color: #0D0B14; margin-bottom: 8px;">39 euro</p>
-        <p style="font-size: 14px; color: #3D3856; margin-bottom: 8px;">Wordt binnenkort 45 euro</p>
-        <p style="font-size: 14px; color: #9490A8; margin-bottom: 28px;">Dat is nog geen 3 euro per week</p>
-        <button class="btn btn-white" style="width: 100%; margin-bottom: 16px;">Word lid</button>
+
+    <!-- Pricing cards -->
+    <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 28px; max-width: 940px; margin: 0 auto 48px; align-items: start;">
+
+      <!-- Kwartaal card -->
+      <div class="r d1" style="background: #FFFFFF; border: 2px solid #E8E4F4; border-radius: 24px; padding: 40px 36px; text-align: center;">
+        <p style="font-size: 13px; font-weight: 700; color: #9490A8; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;">Per Kwartaal</p>
+        <div style="margin-bottom: 20px;">
+          <span style="font-size: 16px; color: #9490A8; text-decoration: line-through; margin-right: 8px;">45 euro</span>
+          <p style="font-size: 52px; font-weight: 800; color: #0D0B14; line-height: 1;">39 euro</p>
+        </div>
+        <p style="font-size: 14px; color: #3D3856; margin-bottom: 32px;">Nog geen 3 euro per week</p>
+
+        <div style="text-align: left; margin-bottom: 32px; padding: 0 4px;">
+          <div style="font-size: 14px; color: #3D3856; line-height: 1.7; margin-bottom: 8px; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: #16A34A; font-size: 15px;">✓</span>Alle videolessen en cursussen</div>
+          <div style="font-size: 14px; color: #3D3856; line-height: 1.7; margin-bottom: 8px; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: #16A34A; font-size: 15px;">✓</span>Community met persoonlijke hulp</div>
+          <div style="font-size: 14px; color: #3D3856; line-height: 1.7; margin-bottom: 8px; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: #16A34A; font-size: 15px;">✓</span>Alle stappenplannen</div>
+          <div style="font-size: 14px; color: #3D3856; line-height: 1.7; margin-bottom: 8px; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: #16A34A; font-size: 15px;">✓</span>De nieuwe E-mailchecker</div>
+          <div style="font-size: 14px; color: #3D3856; line-height: 1.7; margin-bottom: 8px; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: #16A34A; font-size: 15px;">✓</span>Exclusieve e-mailupdates</div>
+          <div style="font-size: 14px; color: #3D3856; line-height: 1.7; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: #16A34A; font-size: 15px;">✓</span>Een team dat elke dag klaarstaat</div>
+        </div>
+
+        <button class="btn btn-white" style="width: 100%; margin-bottom: 14px; border: 2px solid #E8E4F4;">Word lid</button>
         <p style="font-size: 13px; color: #9490A8;">Ideaal om vrijblijvend te starten</p>
       </div>
-      
-      <div style="background: white; border: 3px solid #F0B429; border-radius: 20px; padding: 40px; position: relative;" class="r d2">
-        <div style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: #F0B429; color: #5C4200; padding: 6px 20px; border-radius: 20px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">Meest gekozen</div>
-        <p style="font-size: 14px; font-weight: 700; color: #3D3856; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px;">Per Jaar</p>
-        <p style="font-size: 56px; font-weight: 800; color: #0D0B14; margin-bottom: 8px;">139 euro</p>
-        <p style="font-size: 14px; color: #3D3856; margin-bottom: 8px;">Wordt binnenkort 169 euro</p>
-        <p style="font-size: 14px; color: #10B981; font-weight: 600; margin-bottom: 28px;">Bespaar 20 euro per jaar</p>
-        <button class="btn btn-gold" style="width: 100%; margin-bottom: 16px;">Word lid</button>
-        <p style="font-size: 13px; color: #9490A8;">2,67 euro per week. Minder dan een kop koffie.</p>
+
+      <!-- Jaar card (hero card) -->
+      <div class="r d2" style="background: linear-gradient(170deg, #FFFCF3 0%, #FFF8E1 50%, #FFFCF3 100%); border: 3px solid #F0B429; border-radius: 24px; padding: 40px 36px; text-align: center; position: relative; box-shadow: 0 8px 40px rgba(240,180,41,0.18), 0 2px 12px rgba(240,180,41,0.10);">
+        <div style="position: absolute; top: -16px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #F0B429, #E5A520); color: #5C4200; padding: 7px 24px; border-radius: 20px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; box-shadow: 0 3px 12px rgba(240,180,41,0.3);">Meest gekozen</div>
+        <p style="font-size: 13px; font-weight: 700; color: #8B7B4A; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;">Per Jaar</p>
+        <div style="margin-bottom: 8px;">
+          <span style="font-size: 16px; color: #B8A070; text-decoration: line-through; margin-right: 8px;">169 euro</span>
+          <p style="font-size: 58px; font-weight: 800; color: #0D0B14; line-height: 1;">139 euro</p>
+        </div>
+        <div style="display: inline-block; background: rgba(22,163,74,0.1); color: #16A34A; font-size: 14px; font-weight: 700; padding: 5px 16px; border-radius: 20px; margin-bottom: 20px;">Bespaar 17 euro per kwartaal</div>
+        <p style="font-size: 14px; color: #5C4200; margin-bottom: 32px;">2,67 euro per week. Minder dan een kop koffie.</p>
+
+        <div style="text-align: left; margin-bottom: 32px; padding: 0 4px;">
+          <div style="font-size: 14px; color: #3D3856; line-height: 1.7; margin-bottom: 8px; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: #16A34A; font-size: 15px;">✓</span>Alle videolessen en cursussen</div>
+          <div style="font-size: 14px; color: #3D3856; line-height: 1.7; margin-bottom: 8px; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: #16A34A; font-size: 15px;">✓</span>Community met persoonlijke hulp</div>
+          <div style="font-size: 14px; color: #3D3856; line-height: 1.7; margin-bottom: 8px; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: #16A34A; font-size: 15px;">✓</span>Alle stappenplannen</div>
+          <div style="font-size: 14px; color: #3D3856; line-height: 1.7; margin-bottom: 8px; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: #16A34A; font-size: 15px;">✓</span>De nieuwe E-mailchecker</div>
+          <div style="font-size: 14px; color: #3D3856; line-height: 1.7; margin-bottom: 8px; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: #16A34A; font-size: 15px;">✓</span>Exclusieve e-mailupdates</div>
+          <div style="font-size: 14px; color: #3D3856; line-height: 1.7; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: #16A34A; font-size: 15px;">✓</span>Een team dat elke dag klaarstaat</div>
+        </div>
+
+        <button class="btn btn-gold" style="width: 100%; margin-bottom: 14px; font-size: 17px; padding: 18px 32px; box-shadow: 0 4px 16px rgba(240,180,41,0.35);">Word lid van DigitaalSlim Plus+</button>
+        <p style="font-size: 13px; color: #8B7B4A;">30 dagen niet-goed-geld-terug garantie</p>
       </div>
     </div>
-    
-    <div style="text-align: center;">
-      <div class="r d3" style="background: linear-gradient(135deg, rgba(22,163,74,0.06) 0%, rgba(16,185,129,0.04) 100%); border: 1px solid rgba(22,163,74,0.15); border-radius: 16px; padding: 28px; margin-bottom: 24px;">
-        <p style="font-size: 16px; color: #3D3856; margin-bottom: 8px;"><strong style="color: #0D0B14;">Garantie:</strong> 30 dagen niet-goed-geld-terug.</p>
-        <p style="font-size: 14px; color: #9490A8;">Niet tevreden? Stuur ons een mailtje en je krijgt je volledige bedrag terug. Zonder vragen.</p>
+
+    <!-- Bevriezing + opzegbaar strip -->
+    <div style="max-width: 940px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div class="r d3" style="background: white; border: 1px solid #E8E4F4; border-radius: 16px; padding: 22px 28px; display: flex; align-items: center; gap: 14px;">
+        <span style="font-size: 28px; flex-shrink: 0;">🔒</span>
+        <div>
+          <p style="font-size: 15px; font-weight: 700; color: #0D0B14; margin-bottom: 2px;">Prijsbevriezing</p>
+          <p style="font-size: 14px; color: #3D3856; line-height: 1.5;">Zolang je lid bent, gaat jouw prijs niet omhoog.</p>
+        </div>
       </div>
-      
-      <p style="font-size: 14px; color: #3D3856;" class="r">Op elk moment opzegbaar. Geen kleine lettertjes, geen verplichtingen.</p>
+      <div class="r d4" style="background: white; border: 1px solid #E8E4F4; border-radius: 16px; padding: 22px 28px; display: flex; align-items: center; gap: 14px;">
+        <span style="font-size: 28px; flex-shrink: 0;">✅</span>
+        <div>
+          <p style="font-size: 15px; font-weight: 700; color: #0D0B14; margin-bottom: 2px;">Op elk moment opzegbaar</p>
+          <p style="font-size: 14px; color: #3D3856; line-height: 1.5;">Geen kleine lettertjes, geen verplichtingen.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
