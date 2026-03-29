@@ -479,8 +479,7 @@ a { text-decoration: none; }
 .hero-trust {
   position: relative;
   z-index: 2;
-  border-top: 1px solid var(--border);
-  padding: 14px 40px;
+  padding: 20px 40px;
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -494,28 +493,24 @@ a { text-decoration: none; }
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--muted);
-  padding: 0 32px 0 0;
-  margin-right: 32px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  background: rgba(74, 44, 245, 0.06);
+  border: 1px solid rgba(74, 44, 245, 0.12);
+  padding: 10px 20px;
+  margin: 0 8px;
+  border-radius: var(--rpill);
   position: relative;
 }
 
 .hero-trust-item + .hero-trust-item::before {
-  content: '';
-  position: absolute;
-  left: -32px;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 16px;
-  width: 1px;
-  background: var(--border-2);
+  display: none;
 }
 
 .hero-trust-item svg {
-  width: 16px; height: 16px;
-  stroke: var(--violet-3); stroke-width: 2;
+  width: 18px; height: 18px;
+  stroke: var(--violet); stroke-width: 2;
   fill: none; stroke-linecap: round; stroke-linejoin: round;
   flex-shrink: 0;
 }
@@ -2085,9 +2080,8 @@ a { text-decoration: none; }
   .hero-cta-row { flex-direction: column; align-items: center; }
   .hero-visual { order: -1; padding: 0 20px; }
   .hero-mockup { max-width: 280px; margin: 0 auto; }
-  .hero-trust { flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px 20px; }
-  .hero-trust-item + .hero-trust-item::before { display: none; }
-  .hero-trust-item { padding: 0; margin: 0; }
+  .hero-trust { flex-direction: column; align-items: center; gap: 8px; padding: 16px 20px; }
+  .hero-trust-item { margin: 0; font-size: 13px; padding: 8px 16px; }
 
   .herkenning, .matthias, .scenario, .kanalen, .wall-of-love, .vergelijking, .faq, .prijzen, .final-cta, .dag1 { padding: 72px 20px; }
   .pijlers { padding: 72px 20px; }
