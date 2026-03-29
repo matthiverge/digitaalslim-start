@@ -3646,8 +3646,6 @@ var wallPage = 0;
 var wallPages = document.querySelectorAll('.wall-page');
 function loadMoreWall() {
   var btn = document.getElementById('wall-load-more');
-  var btnRect = btn.getBoundingClientRect();
-  var btnOffset = btnRect.top + window.scrollY;
   wallPage++;
   if (wallPage < wallPages.length) {
     wallPages[wallPage].style.display = 'grid';
@@ -3661,9 +3659,6 @@ function loadMoreWall() {
         c.style.transform = 'translateY(0)';
       }, i * 80);
     });
-    setTimeout(function() {
-      wallPages[wallPage].scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
   }
   if (wallPage >= wallPages.length - 1) {
     btn.style.display = 'none';
