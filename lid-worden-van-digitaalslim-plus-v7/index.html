@@ -2091,6 +2091,23 @@ a { text-decoration: none; }
   .hero-trust-item { margin: 0; font-size: 13px; padding: 8px 16px; }
 
   .herkenning, .matthias, .scenario, .kanalen, .wall-of-love, .vergelijking, .faq, .prijzen, .final-cta, .dag1 { padding: 72px 20px; }
+
+  /* Consistent h2 sizing on mobile */
+  .matthias h2, .herkenning-top h2, .scenario h2, .scenario-header h2,
+  .schamen-sectie h2, .pijlers-header h2, .pijlers h2,
+  .kanalen-header h2, .kanalen h2,
+  .vergelijking-inner h2, .vergelijking h2,
+  .prijzen-header h2, .prijzen h2,
+  .dag1-header h2, .dag1 h2,
+  .faq-header h2, .faq h2,
+  .wall-header h2, .wall-of-love h2,
+  .final-cta h2,
+  .contrast-sectie h2,
+  .compact-pricing-wrap h2 {
+    font-size: 26px !important;
+    letter-spacing: -1px !important;
+    line-height: 1.2 !important;
+  }
   .pijlers { padding: 72px 20px; }
   .veilige-haven { padding: 56px 20px; }
   .testimonials-section { padding: 32px 20px 56px; }
@@ -2161,15 +2178,10 @@ a { text-decoration: none; }
   .contrast-grid > div { padding: 32px 24px !important; }
   .contrast-sectie { padding: 72px 20px !important; }
 
-  .final-cta h2 { font-size: 26px; letter-spacing: -0.8px; }
   .pijlers-grid { grid-template-columns: 1fr !important; max-width: 480px !important; margin-left: auto !important; margin-right: auto !important; }
 }
 
 @media (max-width: 480px) {
-  .herkenning-top h2, .matthias-label h2, .scenario-header h2,
-  .kanalen-header h2, .wall-header h2,
-  .vergelijking-inner h2, .faq-header h2, .prijzen-header h2,
-  .dag1-header h2, .pijlers-header h2 { font-size: 22px; }
   .veilig-row { grid-template-columns: 1fr 1fr; }
 }
 
