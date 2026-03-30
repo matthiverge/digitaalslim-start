@@ -2705,11 +2705,22 @@ a { text-decoration: none; }
   </div>
 
   <!-- Popup -->
-  <div id="wave-popup" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 8, 20, 0.95); z-index: 10000; overflow-y: auto; cursor: pointer;">
-    <div style="max-width: 900px; width: 90vw; margin: 5vh auto; position: relative; cursor: default;" onclick="event.stopPropagation()">
-      <button id="wave-popup-close" onclick="closeWavePopup()" style="position: absolute; top: -48px; right: 0; background: rgba(255,255,255,0.15); border: none; color: white; font-size: 20px; cursor: pointer; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; backdrop-filter: blur(8px);">&#x2715;</button>
-      <img id="wave-popup-image" src="" alt="Testimonial" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
-      <div id="wave-popup-content" style="color: rgba(255, 255, 255, 0.6); text-align: center; margin-top: 16px; font-size: 14px;"></div>
+  <div id="wave-popup" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 8, 20, 0.95); z-index: 10000; cursor: pointer;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; padding: 20px;">
+
+      <!-- Vorige knop -->
+      <button id="wave-popup-prev" onclick="event.stopPropagation(); navigateWavePopup(-1)" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.15); border: none; color: white; font-size: 28px; cursor: pointer; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 50%; backdrop-filter: blur(8px); z-index: 2;">&#8249;</button>
+
+      <!-- Centrale content -->
+      <div style="max-width: 900px; width: 90vw; position: relative; cursor: default;" onclick="event.stopPropagation()">
+        <button id="wave-popup-close" onclick="closeWavePopup()" style="position: absolute; top: -48px; right: 0; background: rgba(255,255,255,0.15); border: none; color: white; font-size: 20px; cursor: pointer; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; backdrop-filter: blur(8px);">&#x2715;</button>
+        <img id="wave-popup-image" src="" alt="Ervaring van een DigitaalSlim lid" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+        <p style="color: rgba(255,255,255,0.45); text-align: center; margin-top: 20px; font-size: 14px; line-height: 1.6;">Gebruik de pijltjes om meer ervaringen te bekijken, of tik ernaast om te sluiten.</p>
+      </div>
+
+      <!-- Volgende knop -->
+      <button id="wave-popup-next" onclick="event.stopPropagation(); navigateWavePopup(1)" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.15); border: none; color: white; font-size: 28px; cursor: pointer; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 50%; backdrop-filter: blur(8px); z-index: 2;">&#8250;</button>
+
     </div>
   </div>
 
@@ -3024,24 +3035,38 @@ a { text-decoration: none; }
       }
     }
 
+    var currentPopupIndex = -1;
+    var activeTestimonialFiles = [];
+
     function openWavePopup(filename, imageSrc) {
-      const popup = document.getElementById('wave-popup');
-      const popupImage = document.getElementById('wave-popup-image');
-      const popupContent = document.getElementById('wave-popup-content');
+      var isMobile = window.innerWidth <= 767;
+      activeTestimonialFiles = isMobile ? allTestimonialFiles.slice(0, 45) : allTestimonialFiles;
+      currentPopupIndex = activeTestimonialFiles.indexOf(filename);
+
+      var popup = document.getElementById('wave-popup');
+      var popupImage = document.getElementById('wave-popup-image');
 
       popupImage.src = imageSrc;
-      popupContent.innerHTML = '<p>Testimonial van ' + filename.replace('.png', '').replace('Ervaring Community - ', '') + '</p>';
-
-      popup.style.display = 'flex';
-      popup.style.flexDirection = 'column';
-      popup.style.justifyContent = 'center';
+      popup.style.display = 'block';
       document.body.style.overflow = 'hidden';
     }
 
+    function navigateWavePopup(direction) {
+      if (activeTestimonialFiles.length === 0) return;
+      currentPopupIndex = currentPopupIndex + direction;
+      if (currentPopupIndex < 0) currentPopupIndex = activeTestimonialFiles.length - 1;
+      if (currentPopupIndex >= activeTestimonialFiles.length) currentPopupIndex = 0;
+
+      var file = activeTestimonialFiles[currentPopupIndex];
+      var popupImage = document.getElementById('wave-popup-image');
+      popupImage.src = 'afbeeldingen/Testimonials/' + encodeURIComponent(file);
+    }
+
     function closeWavePopup() {
-      const popup = document.getElementById('wave-popup');
+      var popup = document.getElementById('wave-popup');
       popup.style.display = 'none';
       document.body.style.overflow = 'auto';
+      currentPopupIndex = -1;
     }
 
     // Initialize on page load
@@ -3062,17 +3087,26 @@ a { text-decoration: none; }
       }, 200);
     });
 
-    // Close popup when clicking outside
-    document.getElementById('wave-popup')?.addEventListener('click', (e) => {
-      if (e.target === document.getElementById('wave-popup')) {
+    // Close popup when clicking background
+    document.getElementById('wave-popup')?.addEventListener('click', function(e) {
+      if (e.target === this || e.target === this.firstElementChild) {
         closeWavePopup();
       }
     });
 
-    // Close popup on Escape key
-    document.addEventListener('keydown', (e) => {
+    // Keyboard navigation: arrows + escape
+    document.addEventListener('keydown', function(e) {
+      var popup = document.getElementById('wave-popup');
+      if (!popup || popup.style.display === 'none') return;
+
       if (e.key === 'Escape') {
         closeWavePopup();
+      } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        navigateWavePopup(1);
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        navigateWavePopup(-1);
       }
     });
   </script>
