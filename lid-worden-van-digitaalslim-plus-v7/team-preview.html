@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Sectie - Preview</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; }
+
+/* Switcher */
+.switcher {
+  position: sticky; top: 0; z-index: 100;
+  background: #0D0B14; padding: 16px 20px;
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+}
+.switcher button {
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+  color: white; padding: 10px 24px; border-radius: 999px; font-size: 15px;
+  font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.switcher button.active {
+  background: #F0B429; color: #0D0B14; border-color: #F0B429;
+}
+
+.variant { display: none; }
+.variant.active { display: block; }
+
+/* Shared team styles */
+.team-section { padding: 80px 40px; }
+.team-header { text-align: center; max-width: 600px; margin: 0 auto 48px; }
+.team-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(74,44,245,0.06); border: 1px solid rgba(74,44,245,0.15);
+  border-radius: 999px; padding: 7px 18px;
+  font-size: 11px; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: #4A2CF5; margin-bottom: 20px;
+}
+.team-title {
+  font-size: 36px; font-weight: 800; letter-spacing: -1.5px;
+  line-height: 1.15; margin-bottom: 14px;
+}
+.team-sub { font-size: 17px; line-height: 1.75; }
+
+/* ========== VERSIE 1: Ronde portretjes op een rij ========== */
+.v1 { background: #FFFFFF; }
+.v1 .team-title { color: #0D0B14; }
+.v1 .team-sub { color: #3D3856; }
+.v1-grid {
+  display: flex; gap: 48px; justify-content: center; flex-wrap: wrap;
+  max-width: 700px; margin: 0 auto;
+}
+.v1-member { text-align: center; width: 130px; }
+.v1-member img {
+  width: 110px; height: 110px; border-radius: 50%; object-fit: cover;
+  object-position: center 15%; border: 3px solid #F0B429;
+  box-shadow: 0 4px 16px rgba(74,44,245,0.10);
+  margin-bottom: 14px;
+}
+.v1-name { font-size: 17px; font-weight: 700; color: #0D0B14; margin-bottom: 4px; }
+.v1-role { font-size: 13px; color: #3D3856; line-height: 1.4; }
+
+/* ========== VERSIE 2: Kaartjes met foto + tekst ========== */
+.v2 { background: linear-gradient(135deg, #F8F7FF 0%, #F0EEFF 100%); }
+.v2 .team-title { color: #0D0B14; }
+.v2 .team-sub { color: #3D3856; }
+.v2-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  max-width: 900px; margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .v2-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.v2-card {
+  background: white; border-radius: 20px; padding: 32px 20px;
+  text-align: center; border: 1px solid rgba(74,44,245,0.08);
+  box-shadow: 0 2px 12px rgba(13,11,20,0.04);
+}
+.v2-card img {
+  width: 90px; height: 90px; border-radius: 50%; object-fit: cover;
+  object-position: center 15%; border: 3px solid #F0B429;
+  margin-bottom: 16px;
+}
+.v2-name { font-size: 18px; font-weight: 700; color: #0D0B14; margin-bottom: 6px; }
+.v2-role { font-size: 14px; color: #4A2CF5; font-weight: 600; margin-bottom: 10px; }
+.v2-desc { font-size: 13px; color: #3D3856; line-height: 1.5; }
+
+/* ========== VERSIE 3: Donker + overlap avatars + hover/tik ========== */
+.v3 { background: #0D0B14; }
+.v3 .team-title { color: white; }
+.v3 .team-sub { color: rgba(255,255,255,0.6); }
+.v3 .team-eyebrow {
+  background: rgba(240,180,41,0.10); border-color: rgba(240,180,41,0.25);
+  color: #F0B429;
+}
+.v3-row {
+  display: flex; justify-content: center; align-items: center;
+  margin: 0 auto 40px; position: relative;
+}
+.v3-avatar {
+  width: 100px; height: 100px; border-radius: 50%; overflow: hidden;
+  border: 3px solid #1A1627; margin-left: -20px; position: relative;
+  cursor: pointer; transition: transform 0.3s ease, z-index 0s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.v3-avatar:first-child { margin-left: 0; }
+.v3-avatar:hover, .v3-avatar.active {
+  transform: scale(1.25); z-index: 10;
+  border-color: #F0B429;
+}
+.v3-avatar img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 15%;
+}
+.v3-info {
+  text-align: center; min-height: 80px;
+  transition: opacity 0.3s ease;
+}
+.v3-info-name {
+  font-size: 22px; font-weight: 700; color: white; margin-bottom: 4px;
+}
+.v3-info-role {
+  font-size: 15px; color: #F0B429; font-weight: 600; margin-bottom: 8px;
+}
+.v3-info-desc {
+  font-size: 14px; color: rgba(255,255,255,0.5); max-width: 400px; margin: 0 auto;
+}
+.v3-hint {
+  text-align: center; margin-top: 12px;
+  font-size: 13px; color: rgba(255,255,255,0.3);
+}
+
+@media (max-width: 767px) {
+  .v1-grid { gap: 32px; }
+  .v1-member { width: 110px; }
+  .v1-member img { width: 90px; height: 90px; }
+  .team-title { font-size: 28px; }
+  .team-section { padding: 60px 20px; }
+  .v3-avatar { width: 80px; height: 80px; margin-left: -16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="switcher">
+  <button class="active" onclick="showVariant('v1')">Versie 1: Ronde portretjes</button>
+  <button onclick="showVariant('v2')">Versie 2: Kaartjes</button>
+  <button onclick="showVariant('v3')">Versie 3: Donker + overlap</button>
+</div>
+
+<!-- VERSIE 1: Ronde portretjes op een rij -->
+<div class="variant active" id="v1">
+  <section class="team-section v1">
+    <div class="team-header">
+      <div class="team-eyebrow">Ons team</div>
+      <h2 class="team-title">De mensen achter DigitaalSlim.</h2>
+      <p class="team-sub">Elke dag staan wij klaar om je te helpen. Persoonlijk, geduldig en met een glimlach.</p>
+    </div>
+    <div class="v1-grid">
+      <div class="v1-member">
+        <img src="afbeeldingen/team/matthias.png" alt="Matthias">
+        <div class="v1-name">Matthias</div>
+        <div class="v1-role">Oprichter DigitaalSlim</div>
+      </div>
+      <div class="v1-member">
+        <img src="afbeeldingen/team/rutger.png" alt="Rutger">
+        <div class="v1-name">Rutger</div>
+        <div class="v1-role">Community en ondersteuning</div>
+      </div>
+      <div class="v1-member">
+        <img src="afbeeldingen/team/jim.png" alt="Jim">
+        <div class="v1-name">Jim</div>
+        <div class="v1-role">Hulp via e-mail</div>
+      </div>
+      <div class="v1-member">
+        <img src="afbeeldingen/team/max.png" alt="Max">
+        <div class="v1-name">Max</div>
+        <div class="v1-role">Videocursussen</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- VERSIE 2: Kaartjes met foto + tekst -->
+<div class="variant" id="v2">
+  <section class="team-section v2">
+    <div class="team-header">
+      <div class="team-eyebrow">Ons team</div>
+      <h2 class="team-title">De mensen achter DigitaalSlim.</h2>
+      <p class="team-sub">Elke dag staan wij klaar om je te helpen. Persoonlijk, geduldig en met een glimlach.</p>
+    </div>
+    <div class="v2-grid">
+      <div class="v2-card">
+        <img src="afbeeldingen/team/matthias.png" alt="Matthias">
+        <div class="v2-name">Matthias</div>
+        <div class="v2-role">Oprichter</div>
+        <div class="v2-desc">Startte DigitaalSlim om zijn vader te helpen met zijn iPad. Nu helpt hij duizenden mensen.</div>
+      </div>
+      <div class="v2-card">
+        <img src="afbeeldingen/team/rutger.png" alt="Rutger">
+        <div class="v2-name">Rutger</div>
+        <div class="v2-role">Community</div>
+        <div class="v2-desc">Beheert de community en beantwoordt dagelijks jullie vragen met geduld en een glimlach.</div>
+      </div>
+      <div class="v2-card">
+        <img src="afbeeldingen/team/jim.png" alt="Jim">
+        <div class="v2-name">Jim</div>
+        <div class="v2-role">Hulp via e-mail</div>
+        <div class="v2-desc">Beantwoordt elke e-mail persoonlijk. Geen standaardantwoorden, altijd op maat.</div>
+      </div>
+      <div class="v2-card">
+        <img src="afbeeldingen/team/max.png" alt="Max">
+        <div class="v2-name">Max</div>
+        <div class="v2-role">Videocursussen</div>
+        <div class="v2-desc">Maakt de stap-voor-stap video's waarmee je alles op je eigen tempo leert.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- VERSIE 3: Donker + overlapping avatars -->
+<div class="variant" id="v3">
+  <section class="team-section v3">
+    <div class="team-header">
+      <div class="team-eyebrow">Ons team</div>
+      <h2 class="team-title">De mensen achter DigitaalSlim.</h2>
+      <p class="team-sub">Elke dag staan wij klaar om je te helpen. Persoonlijk, geduldig en met een glimlach.</p>
+    </div>
+    <div class="v3-row">
+      <div class="v3-avatar active" data-name="Matthias" data-role="Oprichter DigitaalSlim" data-desc="Startte DigitaalSlim om zijn vader te helpen met zijn iPad. Nu helpt hij duizenden mensen.">
+        <img src="afbeeldingen/team/matthias.png" alt="Matthias">
+      </div>
+      <div class="v3-avatar" data-name="Rutger" data-role="Community en ondersteuning" data-desc="Beheert de community en beantwoordt dagelijks jullie vragen met geduld en een glimlach.">
+        <img src="afbeeldingen/team/rutger.png" alt="Rutger">
+      </div>
+      <div class="v3-avatar" data-name="Jim" data-role="Hulp via e-mail" data-desc="Beantwoordt elke e-mail persoonlijk. Geen standaardantwoorden, altijd op maat.">
+        <img src="afbeeldingen/team/jim.png" alt="Jim">
+      </div>
+      <div class="v3-avatar" data-name="Max" data-role="Videocursussen" data-desc="Maakt de stap-voor-stap video's waarmee je alles op je eigen tempo leert.">
+        <img src="afbeeldingen/team/max.png" alt="Max">
+      </div>
+    </div>
+    <div class="v3-info">
+      <div class="v3-info-name">Matthias</div>
+      <div class="v3-info-role">Oprichter DigitaalSlim</div>
+      <div class="v3-info-desc">Startte DigitaalSlim om zijn vader te helpen met zijn iPad. Nu helpt hij duizenden mensen.</div>
+    </div>
+    <div class="v3-hint">Tik op een foto om meer te weten</div>
+  </section>
+</div>
+
+<script>
+function showVariant(id) {
+  document.querySelectorAll('.variant').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.switcher button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// Versie 3: avatar click/hover
+document.querySelectorAll('.v3-avatar').forEach(avatar => {
+  avatar.addEventListener('click', function() {
+    document.querySelectorAll('.v3-avatar').forEach(a => a.classList.remove('active'));
+    this.classList.add('active');
+    document.querySelector('.v3-info-name').textContent = this.dataset.name;
+    document.querySelector('.v3-info-role').textContent = this.dataset.role;
+    document.querySelector('.v3-info-desc').textContent = this.dataset.desc;
+  });
+});
+</script>
+
+</body>
+</html>
