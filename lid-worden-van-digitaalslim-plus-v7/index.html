@@ -2760,7 +2760,7 @@ a { text-decoration: none; }
           <p style="font-size: 44px; font-weight: 800; color: #0D0B14; line-height: 1; margin-bottom: 6px;">42 <span style="font-size: 20px; font-weight: 600; color: #3D3856;">euro</span></p>
           <p style="font-size: 14px; color: #9490A8; margin-bottom: 4px;">3,50 euro per week</p>
           <p style="font-size: 13px; color: #9490A8; margin-bottom: 28px;">Minder dan een belegd broodje bij de bakker. 🥖</p>
-          <button class="btn btn-white" style="width: 100%; border: 1.5px solid #E8E4F4; font-size: 15px; padding: 14px 24px;">Word lid</button>
+          <button class="btn btn-white" data-plan="quarterly" style="width: 100%; border: 1.5px solid #E8E4F4; font-size: 15px; padding: 14px 24px;">Word lid</button>
         </div>
         <!-- Jaar -->
         <div style="background: #FFFFFF; border: 2px solid #F0B429; border-radius: 20px; padding: 36px 32px; text-align: center; position: relative;">
@@ -2769,7 +2769,7 @@ a { text-decoration: none; }
           <p style="font-size: 44px; font-weight: 800; color: #0D0B14; line-height: 1; margin-bottom: 6px;">139 <span style="font-size: 20px; font-weight: 600; color: #3D3856;">euro</span></p>
           <p style="font-size: 14px; color: #16A34A; font-weight: 600; margin-bottom: 4px;">2,67 euro per week - bespaar 29 euro</p>
           <p style="font-size: 13px; color: #9490A8; margin-bottom: 28px;">Minder dan een kop koffie. ☕</p>
-          <button class="btn btn-gold" style="width: 100%; font-size: 15px; padding: 14px 24px;">Word lid van DigitaalSlim Plus+</button>
+          <button class="btn btn-gold" data-plan="yearly" style="width: 100%; font-size: 15px; padding: 14px 24px;">Word lid van DigitaalSlim Plus+</button>
         </div>
       </div>
 
@@ -2971,7 +2971,7 @@ a { text-decoration: none; }
           <p style="font-size: 14px; color: #3D3856; line-height: 2; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: #16A34A;">&#10003;</span>Een team dat elke dag klaarstaat</p>
           <p style="font-size: 14px; color: #3D3856; line-height: 2; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: #16A34A;">&#10003;</span>30 dagen niet-goed-geld-terug</p>
         </div>
-        <button class="btn btn-white" style="width: 100%; border: 1.5px solid #E8E4F4; font-size: 15px; padding: 14px 24px;">Word lid</button>
+        <button class="btn btn-white" data-plan="quarterly" style="width: 100%; border: 1.5px solid #E8E4F4; font-size: 15px; padding: 14px 24px;">Word lid</button>
       </div>
 
       <!-- Jaar -->
@@ -2989,7 +2989,7 @@ a { text-decoration: none; }
           <p style="font-size: 14px; color: #3D3856; line-height: 2; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: #16A34A;">&#10003;</span>Een team dat elke dag klaarstaat</p>
           <p style="font-size: 14px; color: #3D3856; line-height: 2; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: #16A34A;">&#10003;</span>30 dagen niet-goed-geld-terug</p>
         </div>
-        <button class="btn btn-gold" style="width: 100%; font-size: 15px; padding: 14px 24px;">Word lid van DigitaalSlim Plus+</button>
+        <button class="btn btn-gold" data-plan="yearly" style="width: 100%; font-size: 15px; padding: 14px 24px;">Word lid van DigitaalSlim Plus+</button>
       </div>
     </div>
 
@@ -3556,11 +3556,13 @@ var checkoutBase = 'https://ontdek.nu.digitaalslim.be/checkout/digitaalslim-plus
 document.querySelectorAll('.btn').forEach(btn => {
   if (btn.id === 'wall-load-more') return;
   btn.addEventListener('click', function() {
-    var text = this.textContent.trim();
-    if (text === 'Word lid') {
-      window.location.href = checkoutBase + '?plan=quarterly';
-    } else if (text === 'Word lid van DigitaalSlim Plus+') {
-      window.location.href = checkoutBase + '?plan=yearly';
+    var plan = this.getAttribute('data-plan');
+    if (plan) {
+      // Pricing knoppen: specifiek plan meegeven
+      window.location.href = checkoutBase + '?plan=' + plan;
+    } else {
+      // Algemene CTA knoppen: gewone URL, bezoeker kiest zelf
+      window.location.href = checkoutBase;
     }
   });
 });
