@@ -3221,7 +3221,7 @@ a { text-decoration: none; }
     </div>
 
     <div style="text-align: center; margin: 48px 0;">
-      <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 999px; padding: 8px 20px; font-size: 13px; color: rgba(255, 255, 255, 0.6);">Tik op een ervaring om deze te lezen</div>
+      <div id="wave-hint" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 999px; padding: 8px 20px; font-size: 13px; color: rgba(255, 255, 255, 0.6); transition: opacity 0.5s ease;">Scroll verder om ze te ontdekken...</div>
     </div>
 
     <div style="text-align: center; max-width: 500px; margin: 64px auto; padding: 40px; background: rgba(255, 255, 255, 0.05); border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.10);">
@@ -3254,7 +3254,21 @@ a { text-decoration: none; }
     .wave-card {
       position: absolute;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      transition: left 1.2s cubic-bezier(0.23, 1, 0.32, 1),
+                  top 1.2s cubic-bezier(0.23, 1, 0.32, 1),
+                  width 1.2s cubic-bezier(0.23, 1, 0.32, 1),
+                  height 1.2s cubic-bezier(0.23, 1, 0.32, 1),
+                  transform 1.2s cubic-bezier(0.23, 1, 0.32, 1),
+                  opacity 0.8s ease;
+      opacity: 0;
+    }
+
+    .wave-card.stacked {
+      opacity: 1;
+    }
+
+    .wave-card.exploded {
+      opacity: 1;
     }
 
     .wave-card img {
@@ -3267,9 +3281,10 @@ a { text-decoration: none; }
     }
 
     @media (hover: hover) and (pointer: fine) {
-      .wave-card:hover {
+      .wave-card.exploded:hover {
         transform: rotate(0deg) scale(2.2) !important;
         z-index: 100;
+        transition: transform 0.3s ease;
       }
     }
   </style>
@@ -3420,6 +3435,9 @@ a { text-decoration: none; }
     function s1(i){var x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x);}
     function s2(i){var x=Math.sin(i*269.5+183.3)*23421.6312;return x-Math.floor(x);}
 
+    var waveCards = [];
+    var waveExploded = false;
+
     function initWaveScene() {
       const container = document.getElementById('wave-scene');
       if (!container) return;
@@ -3427,12 +3445,15 @@ a { text-decoration: none; }
       const vw = container.offsetWidth;
       const vh = container.offsetHeight;
       const total = testimonialFiles.length;
+      const centerX = vw / 2;
+      const centerY = vh / 2;
 
-      // Grid-based wave layout (matching waaier golf)
+      // Pre-calculate wave positions
       const cols = Math.round(Math.sqrt(total * (vw / vh)) * 1.1);
       const totalRows = Math.ceil(total / cols);
 
       testimonialFiles.forEach((file, i) => {
+        // Wave target position
         const col = i % cols;
         const row = Math.floor(i / cols);
         const cW = (vw + 80) / cols;
@@ -3441,17 +3462,25 @@ a { text-decoration: none; }
         const h = cH * 1.02;
         const waveY = Math.sin((col / cols) * Math.PI * 3 + row * 1.2) * 18;
         const stagger = (row % 2) * (cW * 0.45);
-        const xPos = col * cW + stagger - 40 + (s1(i) - 0.5) * 6;
-        const yPos = row * cH + waveY + 25 + (s2(i) - 0.5) * 6;
-        const rot = Math.sin(col * 0.6 + row * 0.4) * 3.5;
+        const targetX = col * cW + stagger - 40 + (s1(i) - 0.5) * 6;
+        const targetY = row * cH + waveY + 25 + (s2(i) - 0.5) * 6;
+        const targetRot = Math.sin(col * 0.6 + row * 0.4) * 3.5;
+
+        // Stack position: all cards piled in center with slight random offsets
+        const stackW = 80;
+        const stackH = 80;
+        const stackX = centerX - stackW / 2 + (s1(i) - 0.5) * 30;
+        const stackY = centerY - stackH / 2 + (s2(i) - 0.5) * 30;
+        const stackRot = (s1(i + 10) - 0.5) * 40;
 
         const card = document.createElement('div');
-        card.className = 'wave-card';
-        card.style.left = xPos + 'px';
-        card.style.top = yPos + 'px';
-        card.style.width = w + 'px';
-        card.style.height = h + 'px';
-        card.style.transform = 'rotate(' + rot + 'deg)';
+        card.className = 'wave-card stacked';
+        card.style.left = stackX + 'px';
+        card.style.top = stackY + 'px';
+        card.style.width = stackW + 'px';
+        card.style.height = stackH + 'px';
+        card.style.transform = 'rotate(' + stackRot + 'deg)';
+        card.style.zIndex = total - i;
 
         const img = document.createElement('img');
         img.src = 'afbeeldingen/Testimonials/' + encodeURIComponent(file);
@@ -3459,10 +3488,61 @@ a { text-decoration: none; }
         img.loading = i < 20 ? 'eager' : 'lazy';
 
         card.appendChild(img);
-        card.addEventListener('click', () => openWavePopup(file, img.src));
+        card.addEventListener('click', function() {
+          if (waveExploded) {
+            openWavePopup(file, img.src);
+          }
+        });
 
         container.appendChild(card);
+
+        waveCards.push({
+          el: card,
+          targetX: targetX,
+          targetY: targetY,
+          targetW: w,
+          targetH: h,
+          targetRot: targetRot,
+          index: i
+        });
       });
+
+      // Intersection Observer: trigger wave when section scrolls into view
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !waveExploded) {
+            waveExploded = true;
+            explodeToWave();
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(container);
+    }
+
+    function explodeToWave() {
+      waveCards.forEach(function(cardData, i) {
+        var card = cardData.el;
+        // Stagger the animation for a cascading effect
+        card.style.transitionDelay = (i * 5) + 'ms';
+        card.style.left = cardData.targetX + 'px';
+        card.style.top = cardData.targetY + 'px';
+        card.style.width = cardData.targetW + 'px';
+        card.style.height = cardData.targetH + 'px';
+        card.style.transform = 'rotate(' + cardData.targetRot + 'deg)';
+        card.style.zIndex = '';
+        card.classList.remove('stacked');
+        card.classList.add('exploded');
+      });
+
+      // Update hint text after animation
+      var hint = document.getElementById('wave-hint');
+      if (hint) {
+        setTimeout(function() {
+          hint.textContent = 'Tik of klik op een ervaring om deze te lezen';
+        }, 1500);
+      }
     }
 
     function openWavePopup(filename, imageSrc) {
