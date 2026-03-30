@@ -2793,6 +2793,10 @@ a { text-decoration: none; }
       const cols = Math.round(Math.sqrt(total * (vw / vh)) * 1.1);
       const totalRows = Math.ceil(total / cols);
 
+      // Calculate how many cards are on the last row for centering
+      const lastRowCount = total % cols || cols;
+      const cW_base = (vw + 80) / cols;
+
       testimonialFiles.forEach((file, i) => {
         // Wave target position
         const col = i % cols;
@@ -2803,7 +2807,10 @@ a { text-decoration: none; }
         const h = cH * 1.02;
         const waveY = Math.sin((col / cols) * Math.PI * 3 + row * 1.2) * 18;
         const stagger = (row % 2) * (cW * 0.45);
-        const targetX = col * cW + stagger - 40 + (s1(i) - 0.5) * 6;
+        // Center the last row if it has fewer cards
+        const isLastRow = row === totalRows - 1;
+        const lastRowOffset = (isLastRow && lastRowCount < cols) ? ((cols - lastRowCount) * cW) / 2 : 0;
+        const targetX = col * cW + stagger - 40 + (s1(i) - 0.5) * 6 + lastRowOffset;
         const targetY = row * cH + waveY + 25 + (s2(i) - 0.5) * 6;
         const targetRot = Math.sin(col * 0.6 + row * 0.4) * 3.5;
 
