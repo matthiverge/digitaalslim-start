@@ -3603,8 +3603,9 @@ const observer = new IntersectionObserver(function(entries) {
 document.querySelectorAll('.r').forEach(el => observer.observe(el));
 
 
-// Smooth button clicks
+// Smooth button clicks (skip wall-load-more and other non-CTA buttons)
 document.querySelectorAll('.btn').forEach(btn => {
+  if (btn.id === 'wall-load-more') return;
   btn.addEventListener('click', function() {
     const target = document.getElementById('prijzen');
     if (target) target.scrollIntoView({ behavior: 'smooth' });
