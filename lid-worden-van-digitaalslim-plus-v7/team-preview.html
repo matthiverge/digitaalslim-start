@@ -129,6 +129,41 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   font-size: 13px; color: rgba(255,255,255,0.3);
 }
 
+/* ========== VERSIE 4: Donker + gelijkwaardig grid ========== */
+.v4 { background: #0D0B14; }
+.v4 .team-title { color: white; }
+.v4 .team-sub { color: rgba(255,255,255,0.6); }
+.v4 .team-eyebrow {
+  background: rgba(240,180,41,0.10); border-color: rgba(240,180,41,0.25);
+  color: #F0B429;
+}
+.v4-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+  max-width: 900px; margin: 0 auto;
+}
+.v4-member {
+  text-align: center;
+}
+.v4-member img {
+  width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+  object-position: center 15%; border: 3px solid rgba(240,180,41,0.4);
+  margin-bottom: 16px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.v4-member:hover img {
+  border-color: #F0B429;
+  transform: scale(1.05);
+}
+.v4-name {
+  font-size: 18px; font-weight: 700; color: white; margin-bottom: 4px;
+}
+.v4-role {
+  font-size: 14px; color: #F0B429; font-weight: 600; margin-bottom: 10px;
+}
+.v4-desc {
+  font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.5;
+}
+
 @media (max-width: 767px) {
   .v1-grid { gap: 32px; }
   .v1-member { width: 110px; }
@@ -136,6 +171,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   .team-title { font-size: 28px; }
   .team-section { padding: 60px 20px; }
   .v3-avatar { width: 80px; height: 80px; margin-left: -16px; }
+  .v4-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .v4-member img { width: 100px; height: 100px; }
 }
 </style>
 </head>
@@ -145,6 +182,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <button class="active" onclick="showVariant('v1')">Versie 1: Ronde portretjes</button>
   <button onclick="showVariant('v2')">Versie 2: Kaartjes</button>
   <button onclick="showVariant('v3')">Versie 3: Donker + overlap</button>
+  <button onclick="showVariant('v4')">Versie 4: Donker + gelijkwaardig</button>
 </div>
 
 <!-- VERSIE 1: Ronde portretjes op een rij -->
@@ -245,6 +283,43 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
       <div class="v3-info-desc">Startte DigitaalSlim om zijn vader te helpen met zijn iPad. Nu helpt hij duizenden mensen.</div>
     </div>
     <div class="v3-hint">Tik op een foto om meer te weten</div>
+  </section>
+</div>
+
+<!-- VERSIE 4: Donker + gelijkwaardig grid -->
+<div class="variant" id="v4">
+  <section class="team-section v4">
+    <div class="team-header">
+      <div class="team-eyebrow">Ons team</div>
+      <h2 class="team-title">De mensen achter DigitaalSlim.</h2>
+      <p class="team-sub">Elke dag staan wij klaar om je te helpen. Persoonlijk, geduldig en met een glimlach.</p>
+    </div>
+    <div class="v4-grid">
+      <div class="v4-member">
+        <img src="afbeeldingen/team/matthias.png" alt="Matthias">
+        <div class="v4-name">Matthias</div>
+        <div class="v4-role">Oprichter</div>
+        <div class="v4-desc">Startte DigitaalSlim om zijn vader te helpen met zijn iPad. Nu helpt hij duizenden mensen.</div>
+      </div>
+      <div class="v4-member">
+        <img src="afbeeldingen/team/rutger.png" alt="Rutger">
+        <div class="v4-name">Rutger</div>
+        <div class="v4-role">Community</div>
+        <div class="v4-desc">Beheert de community en beantwoordt dagelijks jullie vragen met geduld en een glimlach.</div>
+      </div>
+      <div class="v4-member">
+        <img src="afbeeldingen/team/jim.png" alt="Jim">
+        <div class="v4-name">Jim</div>
+        <div class="v4-role">Hulp via e-mail</div>
+        <div class="v4-desc">Beantwoordt elke e-mail persoonlijk. Geen standaardantwoorden, altijd op maat.</div>
+      </div>
+      <div class="v4-member">
+        <img src="afbeeldingen/team/max.png" alt="Max">
+        <div class="v4-name">Max</div>
+        <div class="v4-role">Videocursussen</div>
+        <div class="v4-desc">Maakt de stap-voor-stap video's waarmee je alles op je eigen tempo leert.</div>
+      </div>
+    </div>
   </section>
 </div>
 
