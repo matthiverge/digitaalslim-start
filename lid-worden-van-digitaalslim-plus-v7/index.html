@@ -2925,15 +2925,63 @@ a { text-decoration: none; }
     }
 
     // Handle window resize with debounce
+    // If already exploded, just reposition cards (no re-stack animation)
     window.addEventListener('resize', function() {
       if (resizeDebounceTimer) {
         clearTimeout(resizeDebounceTimer);
       }
       resizeDebounceTimer = setTimeout(function() {
-        waveExploded = false;
-        initWaveScene();
+        if (waveExploded) {
+          // Already exploded: recalculate positions without animation
+          repositionWaveCards();
+        } else {
+          // Not yet exploded: rebuild from scratch
+          initWaveScene();
+        }
       }, 200);
     });
+
+    function repositionWaveCards() {
+      var container = document.getElementById('wave-scene');
+      if (!container || waveCards.length === 0) return;
+
+      var vw = container.offsetWidth;
+      var vh = container.offsetHeight;
+      var isMobile = window.innerWidth <= 767;
+      var total = waveCards.length;
+
+      var cols = Math.round(Math.sqrt(total * (vw / vh)) * 1.1);
+      var totalRows = Math.ceil(total / cols);
+      var lastRowCount = total % cols || cols;
+
+      waveCards.forEach(function(cardData, i) {
+        var col = i % cols;
+        var row = Math.floor(i / cols);
+        var cW = (vw + 80) / cols;
+        var cH = (vh - 50) / totalRows;
+        var w = cW * 1.15;
+        var h = cH * 1.02;
+        var waveY = Math.sin((col / cols) * Math.PI * 3 + row * 1.2) * 18;
+        var stagger = (row % 2) * (cW * 0.45);
+        var isLastRow = row === totalRows - 1;
+        var lastRowOffset = (isLastRow && lastRowCount < cols) ? ((cols - lastRowCount) * cW) / 2 : 0;
+
+        var card = cardData.el;
+        // Disable transition for instant repositioning
+        card.style.transition = 'none';
+        card.style.left = (col * cW + stagger - 40 + (s1(i) - 0.5) * 6 + lastRowOffset) + 'px';
+        card.style.top = (row * cH + waveY + 25 + (s2(i) - 0.5) * 6) + 'px';
+        card.style.width = w + 'px';
+        card.style.height = h + 'px';
+        card.style.transform = 'rotate(' + (Math.sin(col * 0.6 + row * 0.4) * 3.5) + 'deg)';
+        // Re-enable transition after reposition
+        requestAnimationFrame(function() {
+          requestAnimationFrame(function() {
+            card.style.transition = '';
+          });
+        });
+      });
+    }
 
     // Close popup when clicking background
     document.getElementById('wave-popup')?.addEventListener('click', function(e) {
