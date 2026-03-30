@@ -2705,21 +2705,25 @@ a { text-decoration: none; }
   </div>
 
   <!-- Popup -->
-  <div id="wave-popup" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 8, 20, 0.95); z-index: 10000; cursor: pointer;">
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; padding: 20px;">
+  <div id="wave-popup" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10, 8, 20, 0.95); z-index: 10000; overflow-y: auto; cursor: pointer;">
+    <div style="max-width: 1200px; width: 95vw; margin: 24px auto; padding: 0 0 40px; cursor: default;" onclick="event.stopPropagation()">
 
-      <!-- Vorige knop -->
-      <button id="wave-popup-prev" onclick="event.stopPropagation(); navigateWavePopup(-1)" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.15); border: none; color: white; font-size: 28px; cursor: pointer; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 50%; backdrop-filter: blur(8px); z-index: 2;">&#8249;</button>
-
-      <!-- Centrale content -->
-      <div style="max-width: 900px; width: 90vw; position: relative; cursor: default;" onclick="event.stopPropagation()">
-        <button id="wave-popup-close" onclick="closeWavePopup()" style="position: absolute; top: -48px; right: 0; background: rgba(255,255,255,0.15); border: none; color: white; font-size: 20px; cursor: pointer; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; backdrop-filter: blur(8px);">&#x2715;</button>
-        <img id="wave-popup-image" src="" alt="Ervaring van een DigitaalSlim lid" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
-        <p style="color: rgba(255,255,255,0.45); text-align: center; margin-top: 20px; font-size: 14px; line-height: 1.6;">Gebruik de pijltjes om meer ervaringen te bekijken, of tik ernaast om te sluiten.</p>
+      <!-- Sluit knop -->
+      <div style="text-align: right; margin-bottom: 12px;">
+        <button onclick="closeWavePopup()" style="background: rgba(255,255,255,0.12); border: none; color: white; font-size: 18px; cursor: pointer; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50;">&#x2715;</button>
       </div>
 
-      <!-- Volgende knop -->
-      <button id="wave-popup-next" onclick="event.stopPropagation(); navigateWavePopup(1)" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.15); border: none; color: white; font-size: 28px; cursor: pointer; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; border-radius: 50%; backdrop-filter: blur(8px); z-index: 2;">&#8250;</button>
+      <!-- Afbeelding -->
+      <img id="wave-popup-image" src="" alt="Ervaring van een DigitaalSlim lid" style="width: 100%; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+
+      <!-- Hint tekst -->
+      <p style="color: rgba(255,255,255,0.6); text-align: center; margin-top: 28px; font-size: 17px; line-height: 1.6;">Gebruik de knoppen hieronder om meer ervaringen te bekijken, of tik ernaast om te sluiten.</p>
+
+      <!-- Navigatie knoppen -->
+      <div style="display: flex; gap: 16px; justify-content: center; margin-top: 24px; flex-wrap: wrap; padding: 0 16px;">
+        <button onclick="event.stopPropagation(); navigateWavePopup(-1)" style="display: flex; align-items: center; gap: 10px; background: #F0B429; color: #0D0B14; border: none; border-radius: 14px; padding: 16px 32px; font-size: 17px; font-weight: 700; cursor: pointer; min-width: 200px; justify-content: center;">&#8592; Vorige ervaring</button>
+        <button onclick="event.stopPropagation(); navigateWavePopup(1)" style="display: flex; align-items: center; gap: 10px; background: #F0B429; color: #0D0B14; border: none; border-radius: 14px; padding: 16px 32px; font-size: 17px; font-weight: 700; cursor: pointer; min-width: 200px; justify-content: center;">Volgende ervaring &#8594;</button>
+      </div>
 
     </div>
   </div>
