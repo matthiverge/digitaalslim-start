@@ -30,9 +30,10 @@ body {
   border-radius: 10px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.2);
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1.5px solid rgba(255,255,255,0.05);
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+  cursor: pointer;
 }
 
 .card.go {
@@ -52,7 +53,17 @@ body {
   pointer-events: none;
 }
 
-/* Tap prompt */
+/* Desktop hover - only for pointer devices */
+@media (hover: hover) and (pointer: fine) {
+  .card.exploded:hover {
+    z-index: 9999 !important;
+    transform: scale(2.2) !important;
+    box-shadow: 0 20px 60px rgba(74,44,245,0.3), 0 8px 24px rgba(0,0,0,0.5);
+    border-color: rgba(240,180,41,0.35);
+    transition: transform 0.3s cubic-bezier(0.34, 1.4, 0.64, 1), box-shadow 0.3s ease !important;
+  }
+}
+
 .tap-prompt {
   position: fixed;
   bottom: 120px;
@@ -63,22 +74,19 @@ body {
   pointer-events: none;
   transition: opacity 0.5s ease;
 }
-
-.tap-prompt.hidden { opacity: 0; }
-
+.tap-prompt.hidden { opacity: 0; pointer-events: none; }
 .tap-prompt-text {
   font-size: 18px;
   font-weight: 600;
   color: rgba(255,255,255,0.7);
   animation: pulse 2s ease-in-out infinite;
 }
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.7; }
-  50% { opacity: 1; }
+@media (hover: hover) and (pointer: fine) {
+  .tap-prompt-text::after { content: " of klik"; }
 }
+@keyframes pulse { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
 
-/* Popup overlay */
+/* Popup */
 .popup-overlay {
   display: none;
   position: fixed;
@@ -91,9 +99,7 @@ body {
   justify-content: center;
   padding: 20px;
 }
-
 .popup-overlay.show { display: flex; }
-
 .popup-overlay img {
   max-width: 90vw;
   max-height: 80vh;
@@ -101,18 +107,17 @@ body {
   box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 0 0 2px rgba(240,180,41,0.3);
   object-fit: contain;
 }
-
 .popup-close {
   position: absolute;
   top: 20px;
   right: 24px;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.2);
   color: white;
-  font-size: 22px;
+  font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,7 +133,6 @@ body {
   text-align: center;
   pointer-events: none;
 }
-
 .counter-number {
   font-size: 72px;
   font-weight: 900;
@@ -140,7 +144,6 @@ body {
   background-clip: text;
   filter: drop-shadow(0 4px 12px rgba(240,180,41,0.3));
 }
-
 .counter-label {
   font-size: 14px;
   font-weight: 600;
@@ -150,7 +153,7 @@ body {
   text-transform: uppercase;
 }
 
-/* Switcher - bottom */
+/* Switcher */
 .switcher {
   position: fixed;
   top: 16px;
@@ -164,9 +167,7 @@ body {
   border-radius: 999px;
   padding: 4px;
 }
-
 .switcher.show { display: flex; }
-
 .switcher button {
   background: transparent;
   border: none;
@@ -180,9 +181,6 @@ body {
   transition: all 0.25s ease;
   white-space: nowrap;
 }
-
-.switcher button:hover { color: rgba(255,255,255,0.7); }
-
 .switcher button.active {
   background: rgba(240,180,41,0.18);
   color: #F0B429;
@@ -215,12 +213,11 @@ body {
 </div>
 
 <script>
-var files = ["1. Ervaring Community - Rina.png","2. Ervaring Community - Elise.png","3. Ervaring Community - Mady.png","4. Ervaring Community - Eddie.png","5. Ervaring Community - Jenny A.png","6. Ervaring Community - Nicole D.png","7. Ervaring Community - Cecile.png","8. Ervaring Community - Armand.png","9. Ervaring Community - Herman.png","10. Ervaring Community - Jenny DP.png","11. Ervaring Community - Ellen.png","12. Ervaring Community - Helene.png","13. Ervaring Community - Raoul.png","14. Ervaring Community - Jakelien.png","15. Ervaring Community - Linda.png","16. Ervaring Community - Dominique.png","17. Ervaring Community - Jos.png","18. Ervaring Community - Patricia.png","19. Ervaring Community - Rianne.png","20. Ervaring Community - Nicole S.png","21. Ervaring Community - Gerda.png","22. Ervaring Community - Viviane.png","23. Ervaring Community - Myri.png","24. Ervaring Community - Christine.png","25. Ervaring Community - Luud.png","26. Ervaring Community - Elizabeth.png","27. Ervaring Community - Leny.png","28. Ervaring Community - Jacqueline.png","29. Ervaring Community - Rachel.png","30. Ervaring Community - Aukje.png","31. Ervaring Community - Myriam.png","32. Ervaring Community - Veerle.png","33. Ervaring Community - Luc.png","34. Ervaring Community - Joseph.png","35. Ervaring Community - Carla.png","36. Ervaring Community - Henk.png","37. Ervaring Community - Eric.png","38. Ervaring Community - Bea.png","39. Ervaring Community - Gommara.png","40. Ervaring Community - Guy.png","41. Ervaring Community - Patricia DB.png","42. Ervaring Community - Paula.png","43. Ervaring Community - Rudy.png","44. Ervaring Community - Hilda.png","45. Ervaring Community - Marleen.png","46. Ervaring Community - Heike.png","47. Ervaring Community - Martine J.png","48. Ervaring Community - Miranda.png","49. Ervaring Community - Dianne.png","50. Ervaring Community - Leen.png","51. Ervaring Community - Eddy.png","52. Ervaring Community - Arina.png","53. Ervaring Community - Marieke.png","54. Ervaring Community - Lucienne.png","55. Ervaring Community - Elisabeth.png","56. Ervaring Community - Denise.png","57. Ervaring Community - Rob.png","58. Ervaring Community - Maria.png","59. Ervaring Community - Tiny.png","60. Ervaring Community - Christine A.png","61. Ervaring Community - Marie Louise.png","62. Ervaring Community - Guido.png","63. Ervaring Community - Jef.png","64. Ervaring Community - Frieda.png","65. Ervaring Community - Marleen M.png","66. Ervaring Community - Annelies.png","67. Ervaring Community - Udo.png","68. Ervaring Community - Annemie.png","69. Ervaring Community - Joke M.png","70. Ervaring Community - Annie.png","71. Ervaring Community - Anita.png","72. Ervaring Community - Kit.png","73. Ervaring Community - Nicole Sm.png","74. Ervaring Community - Kristien.png","75. Ervaring Community - Chris.png","76. Ervaring Community - Magda.png","77. Ervaring Community - Pieter.png","78. Ervaring Community - Hilde V.png","79. Ervaring Community - Lutgart.png","80. Ervaring Community - Pierre.png","81. Ervaring Community - Martine D.png","82. Ervaring Community - Hilaire.png","83. Ervaring Community - Patrick.png","84. Ervaring Community - Jos S.png","85. Ervaring Community - Elly.png","86. Ervaring Community - Ellie.png","87. Ervaring Community - Jaap en Renee.png","88. Ervaring Community - Jacqueline C.png","89. Ervaring Community - Tuur.png","90. Ervaring Community - Jacqueline D.png","91. Ervaring Community - Diane VB.png","92. Ervaring Community - Harry.png","93. Ervaring Community - Rooske.png","94. Ervaring Community - Myra.png","95. Ervaring Community - Martine DV.png","96. Ervaring Community - Mies.png","97. Ervaring Community - Carline.png","98. Ervaring Community - Diane D.png","99. Ervaring Community - Gerda G.png","100. Ervaring Community - Trees.png","101. Ervaring Community - Nadine.png","102. Ervaring Community - Lou.png","103. Ervaring Community - Lucien.png","104. Ervaring Community - Joke P.png","105. Ervaring Community - Gina.png","106. Ervaring Community - Carine.png","107. Ervaring Community - Laura.png","108. Ervaring Community - Rudi.png","109. Ervaring Community - Diana.png","110. Ervaring Community - Rosette.png","111. Ervaring Community - Hilde N.png","112. Ervaring Community - Nele.png","113. Ervaring Community - Nicole Sm2.png","114. Ervaring Community - Henry.png","115. Ervaring Community - Leonie.png","116. Ervaring Community - Lut.png","117. Ervaring Community - Rita.png","118. Ervaring Community - Valerie.png","119. Ervaring Community - Marc.png","120. Ervaring Community - Rudi T.png","121. Ervaring Community - Ingrid.png","122. Ervaring Community - Patricia B.png","123. Ervaring Community - Anne-Mieke.png","124. Ervaring Community - Chris GB.png","125. Ervaring Community - Luc H.png","126. Ervaring Community - Nadine L.png","127. Ervaring Community - Linda V.png","128. Ervaring Community - Therese.png","129. Ervaring Community - Tiny S.png","130. Ervaring Community - Linda VH.png","131. Ervaring Community - Myriam B.png","132. Ervaring Community - Aurel.png","133. Ervaring Community - Etty.png","134. Ervaring Community - Christiane.png","135. Ervaring Community - Mieke N.png","136. Ervaring Community - Francine D.png","137. Ervaring Community - Sabine C.png","138. Ervaring Community - Anita VG.png","139. Ervaring Community - Bernard C.png"];
+var files=["1. Ervaring Community - Rina.png","2. Ervaring Community - Elise.png","3. Ervaring Community - Mady.png","4. Ervaring Community - Eddie.png","5. Ervaring Community - Jenny A.png","6. Ervaring Community - Nicole D.png","7. Ervaring Community - Cecile.png","8. Ervaring Community - Armand.png","9. Ervaring Community - Herman.png","10. Ervaring Community - Jenny DP.png","11. Ervaring Community - Ellen.png","12. Ervaring Community - Helene.png","13. Ervaring Community - Raoul.png","14. Ervaring Community - Jakelien.png","15. Ervaring Community - Linda.png","16. Ervaring Community - Dominique.png","17. Ervaring Community - Jos.png","18. Ervaring Community - Patricia.png","19. Ervaring Community - Rianne.png","20. Ervaring Community - Nicole S.png","21. Ervaring Community - Gerda.png","22. Ervaring Community - Viviane.png","23. Ervaring Community - Myri.png","24. Ervaring Community - Christine.png","25. Ervaring Community - Luud.png","26. Ervaring Community - Elizabeth.png","27. Ervaring Community - Leny.png","28. Ervaring Community - Jacqueline.png","29. Ervaring Community - Rachel.png","30. Ervaring Community - Aukje.png","31. Ervaring Community - Myriam.png","32. Ervaring Community - Veerle.png","33. Ervaring Community - Luc.png","34. Ervaring Community - Joseph.png","35. Ervaring Community - Carla.png","36. Ervaring Community - Henk.png","37. Ervaring Community - Eric.png","38. Ervaring Community - Bea.png","39. Ervaring Community - Gommara.png","40. Ervaring Community - Guy.png","41. Ervaring Community - Patricia DB.png","42. Ervaring Community - Paula.png","43. Ervaring Community - Rudy.png","44. Ervaring Community - Hilda.png","45. Ervaring Community - Marleen.png","46. Ervaring Community - Heike.png","47. Ervaring Community - Martine J.png","48. Ervaring Community - Miranda.png","49. Ervaring Community - Dianne.png","50. Ervaring Community - Leen.png","51. Ervaring Community - Eddy.png","52. Ervaring Community - Arina.png","53. Ervaring Community - Marieke.png","54. Ervaring Community - Lucienne.png","55. Ervaring Community - Elisabeth.png","56. Ervaring Community - Denise.png","57. Ervaring Community - Rob.png","58. Ervaring Community - Maria.png","59. Ervaring Community - Tiny.png","60. Ervaring Community - Christine A.png","61. Ervaring Community - Marie Louise.png","62. Ervaring Community - Guido.png","63. Ervaring Community - Jef.png","64. Ervaring Community - Frieda.png","65. Ervaring Community - Marleen M.png","66. Ervaring Community - Annelies.png","67. Ervaring Community - Udo.png","68. Ervaring Community - Annemie.png","69. Ervaring Community - Joke M.png","70. Ervaring Community - Annie.png","71. Ervaring Community - Anita.png","72. Ervaring Community - Kit.png","73. Ervaring Community - Nicole Sm.png","74. Ervaring Community - Kristien.png","75. Ervaring Community - Chris.png","76. Ervaring Community - Magda.png","77. Ervaring Community - Pieter.png","78. Ervaring Community - Hilde V.png","79. Ervaring Community - Lutgart.png","80. Ervaring Community - Pierre.png","81. Ervaring Community - Martine D.png","82. Ervaring Community - Hilaire.png","83. Ervaring Community - Patrick.png","84. Ervaring Community - Jos S.png","85. Ervaring Community - Elly.png","86. Ervaring Community - Ellie.png","87. Ervaring Community - Jaap en Renee.png","88. Ervaring Community - Jacqueline C.png","89. Ervaring Community - Tuur.png","90. Ervaring Community - Jacqueline D.png","91. Ervaring Community - Diane VB.png","92. Ervaring Community - Harry.png","93. Ervaring Community - Rooske.png","94. Ervaring Community - Myra.png","95. Ervaring Community - Martine DV.png","96. Ervaring Community - Mies.png","97. Ervaring Community - Carline.png","98. Ervaring Community - Diane D.png","99. Ervaring Community - Gerda G.png","100. Ervaring Community - Trees.png","101. Ervaring Community - Nadine.png","102. Ervaring Community - Lou.png","103. Ervaring Community - Lucien.png","104. Ervaring Community - Joke P.png","105. Ervaring Community - Gina.png","106. Ervaring Community - Carine.png","107. Ervaring Community - Laura.png","108. Ervaring Community - Rudi.png","109. Ervaring Community - Diana.png","110. Ervaring Community - Rosette.png","111. Ervaring Community - Hilde N.png","112. Ervaring Community - Nele.png","113. Ervaring Community - Nicole Sm2.png","114. Ervaring Community - Henry.png","115. Ervaring Community - Leonie.png","116. Ervaring Community - Lut.png","117. Ervaring Community - Rita.png","118. Ervaring Community - Valerie.png","119. Ervaring Community - Marc.png","120. Ervaring Community - Rudi T.png","121. Ervaring Community - Ingrid.png","122. Ervaring Community - Patricia B.png","123. Ervaring Community - Anne-Mieke.png","124. Ervaring Community - Chris GB.png","125. Ervaring Community - Luc H.png","126. Ervaring Community - Nadine L.png","127. Ervaring Community - Linda V.png","128. Ervaring Community - Therese.png","129. Ervaring Community - Tiny S.png","130. Ervaring Community - Linda VH.png","131. Ervaring Community - Myriam B.png","132. Ervaring Community - Aurel.png","133. Ervaring Community - Etty.png","134. Ervaring Community - Christiane.png","135. Ervaring Community - Mieke N.png","136. Ervaring Community - Francine D.png","137. Ervaring Community - Sabine C.png","138. Ervaring Community - Anita VG.png","139. Ervaring Community - Bernard C.png"];
 
 var scene = document.getElementById('scene');
 var popup = document.getElementById('popup');
 var popupImg = document.getElementById('popup-img');
-var popupClose = document.getElementById('popupClose');
 var tapPrompt = document.getElementById('tapPrompt');
 var switcherEl = document.getElementById('switcher');
 var total = files.length;
@@ -231,146 +228,112 @@ var cy = vh / 2;
 var exploded = false;
 var currentLayout = 'explosion';
 
-function s1(i) { var x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
-function s2(i) { var x = Math.sin(i * 269.5 + 183.3) * 23421.6312; return x - Math.floor(x); }
+function s1(i){var x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x);}
+function s2(i){var x=Math.sin(i*269.5+183.3)*23421.6312;return x-Math.floor(x);}
 
-// Close popup
-popupClose.addEventListener('click', function(e) { e.stopPropagation(); popup.classList.remove('show'); });
-popup.addEventListener('click', function() { popup.classList.remove('show'); });
+// Popup
+document.getElementById('popupClose').addEventListener('click',function(e){e.stopPropagation();popup.classList.remove('show');});
+popup.addEventListener('click',function(){popup.classList.remove('show');});
 
-// Create cards - start stacked in center
-var cards = [];
-var cardSrcs = [];
-files.forEach(function(file, i) {
-  var div = document.createElement('div');
-  div.className = 'card';
-  var img = document.createElement('img');
-  var src = 'afbeeldingen/Testimonials/' + encodeURIComponent(file);
-  img.src = src;
-  img.loading = (i < 30) ? 'eager' : 'lazy';
+// Create cards stacked
+var cards=[];
+files.forEach(function(file,i){
+  var div=document.createElement('div');
+  div.className='card';
+  var img=document.createElement('img');
+  var src='afbeeldingen/Testimonials/'+encodeURIComponent(file);
+  img.src=src;
+  img.loading=(i<30)?'eager':'lazy';
   div.appendChild(img);
-
-  // Start stacked in center with slight random offset
-  var stackW = 200;
-  var stackH = 70;
-  div.style.width = stackW + 'px';
-  div.style.height = stackH + 'px';
-  div.style.left = (cx - stackW/2 + (s1(i) - 0.5) * 40) + 'px';
-  div.style.top = (cy - stackH/2 + (s2(i) - 0.5) * 40) + 'px';
-  div.style.transform = 'rotate(' + ((s1(i+3) - 0.5) * 30) + 'deg)';
-  div.style.zIndex = i;
-  div.style.opacity = '0.85';
-
-  div.addEventListener('click', function(e) {
-    if (!exploded) return;
+  var stackW=200,stackH=70;
+  div.style.width=stackW+'px';
+  div.style.height=stackH+'px';
+  div.style.left=(cx-stackW/2+(s1(i)-0.5)*40)+'px';
+  div.style.top=(cy-stackH/2+(s2(i)-0.5)*40)+'px';
+  div.style.transform='rotate('+((s1(i+3)-0.5)*30)+'deg)';
+  div.style.zIndex=i;
+  div.style.opacity='0.85';
+  div.setAttribute('data-src',src);
+  div.addEventListener('click',function(e){
+    if(!exploded)return;
     e.stopPropagation();
-    popupImg.src = src;
+    popupImg.src=this.getAttribute('data-src');
     popup.classList.add('show');
   });
-
   scene.appendChild(div);
   cards.push(div);
-  cardSrcs.push(src);
 });
 
-// Layout functions
-var layouts = {
-  explosion: function(i) {
-    var angle = s1(i) * Math.PI * 2;
-    var dist = 30 + Math.pow(s2(i), 0.65) * (Math.min(vw, vh) * 0.48);
-    var w = 140 + s1(i+10) * 120;
-    var h = 52 + s1(i+10) * 42;
-    return {
-      x: cx + Math.cos(angle) * dist - w/2 + (s1(i+30)-0.5) * 50,
-      y: cy + Math.sin(angle) * dist - h/2 + (s1(i+40)-0.5) * 50,
-      w: w, h: h,
-      rot: (s1(i+20) - 0.5) * 55
-    };
+// Layouts
+var layouts={
+  explosion:function(i){
+    var angle=s1(i)*Math.PI*2;
+    var dist=30+Math.pow(s2(i),0.65)*(Math.min(vw,vh)*0.48);
+    var w=140+s1(i+10)*120;
+    var h=52+s1(i+10)*42;
+    return{x:cx+Math.cos(angle)*dist-w/2+(s1(i+30)-0.5)*50,y:cy+Math.sin(angle)*dist-h/2+(s1(i+40)-0.5)*50,w:w,h:h,rot:(s1(i+20)-0.5)*55};
   },
-  spiral: function(i) {
-    var angle = (i / total) * Math.PI * 7 + s1(i) * 0.3;
-    var radius = 20 + (i / total) * (Math.min(vw, vh) * 0.47);
-    var w = 185 + s1(i) * 65;
-    var h = 62 + s1(i) * 28;
-    return {
-      x: cx + Math.cos(angle) * radius - w/2,
-      y: cy + Math.sin(angle) * radius - h/2,
-      w: w, h: h,
-      rot: (angle * 180 / Math.PI) * 0.6 + (s1(i+50) - 0.5) * 25
-    };
+  spiral:function(i){
+    var angle=(i/total)*Math.PI*7+s1(i)*0.3;
+    var radius=20+(i/total)*(Math.min(vw,vh)*0.47);
+    var w=185+s1(i)*65;
+    var h=62+s1(i)*28;
+    return{x:cx+Math.cos(angle)*radius-w/2,y:cy+Math.sin(angle)*radius-h/2,w:w,h:h,rot:(angle*180/Math.PI)*0.6+(s1(i+50)-0.5)*25};
   },
-  mosaic: function(i) {
-    var cols = Math.ceil(Math.sqrt(total * (vw/vh)));
-    var rows = Math.ceil(total / cols);
-    var col = i % cols;
-    var row = Math.floor(i / cols);
-    var cW = vw / cols;
-    var cH = (vh - 50) / rows;
-    var w = cW * 0.96;
-    var h = cH * 0.93;
-    return {
-      x: col * cW + (cW - w)/2 + (s1(i) - 0.5) * cW * 0.08,
-      y: row * cH + (cH - h)/2 + (s2(i) - 0.5) * cH * 0.08 + 25,
-      w: w, h: h,
-      rot: (s1(i+5) - 0.5) * 5
-    };
+  mosaic:function(i){
+    var cols=Math.ceil(Math.sqrt(total*(vw/vh)));
+    var rows=Math.ceil(total/cols);
+    var col=i%cols,row=Math.floor(i/cols);
+    var cW=vw/cols,cH=(vh-50)/rows;
+    var w=cW*0.96,h=cH*0.93;
+    return{x:col*cW+(cW-w)/2+(s1(i)-0.5)*cW*0.08,y:row*cH+(cH-h)/2+(s2(i)-0.5)*cH*0.08+25,w:w,h:h,rot:(s1(i+5)-0.5)*5};
   },
-  wave: function(i) {
-    var cols = Math.round(Math.sqrt(total * (vw/vh)) * 1.1);
-    var col = i % cols;
-    var row = Math.floor(i / cols);
-    var totalRows = Math.ceil(total / cols);
-    var cW = (vw + 80) / cols;
-    var cH = (vh - 50) / totalRows;
-    var w = cW * 1.15;
-    var h = cH * 1.02;
-    var waveY = Math.sin((col / cols) * Math.PI * 3 + row * 1.2) * 18;
-    var stagger = (row % 2) * (cW * 0.45);
-    return {
-      x: col * cW + stagger - 40 + (s1(i)-0.5) * 6,
-      y: row * cH + waveY + 25 + (s2(i)-0.5) * 6,
-      w: w, h: h,
-      rot: Math.sin(col * 0.6 + row * 0.4) * 3.5
-    };
+  wave:function(i){
+    var cols=Math.round(Math.sqrt(total*(vw/vh))*1.1);
+    var col=i%cols,row=Math.floor(i/cols);
+    var totalRows=Math.ceil(total/cols);
+    var cW=(vw+80)/cols,cH=(vh-50)/totalRows;
+    var w=cW*1.15,h=cH*1.02;
+    var waveY=Math.sin((col/cols)*Math.PI*3+row*1.2)*18;
+    var stagger=(row%2)*(cW*0.45);
+    return{x:col*cW+stagger-40+(s1(i)-0.5)*6,y:row*cH+waveY+25+(s2(i)-0.5)*6,w:w,h:h,rot:Math.sin(col*0.6+row*0.4)*3.5};
   }
 };
 
-function applyLayout(name) {
-  currentLayout = name;
-  var fn = layouts[name];
-  // Stagger the animation start per card for a nicer effect
-  cards.forEach(function(div, i) {
+function applyLayout(name,stagger){
+  currentLayout=name;
+  var fn=layouts[name];
+  cards.forEach(function(div,i){
     div.classList.add('go');
-    div.style.transitionDelay = (i * 4) + 'ms';
-    var p = fn(i);
-    div.style.width = p.w + 'px';
-    div.style.height = p.h + 'px';
-    div.style.left = p.x + 'px';
-    div.style.top = p.y + 'px';
-    div.style.transform = 'rotate(' + p.rot + 'deg)';
-    div.style.opacity = '1';
+    div.classList.add('exploded');
+    div.style.transitionDelay=stagger?(i*4)+'ms':'0ms';
+    var p=fn(i);
+    div.style.width=p.w+'px';
+    div.style.height=p.h+'px';
+    div.style.left=p.x+'px';
+    div.style.top=p.y+'px';
+    div.style.transform='rotate('+p.rot+'deg)';
+    div.style.opacity='1';
   });
 }
 
-// First tap = explode
-scene.addEventListener('click', function() {
-  if (exploded) return;
-  exploded = true;
+// First click/tap = explode
+scene.addEventListener('click',function(){
+  if(exploded)return;
+  exploded=true;
   tapPrompt.classList.add('hidden');
   switcherEl.classList.add('show');
-  applyLayout(currentLayout);
+  applyLayout(currentLayout,true);
 });
 
-// Switcher buttons
-document.querySelectorAll('.switcher button').forEach(function(btn) {
-  btn.addEventListener('click', function(e) {
+// Switcher
+document.querySelectorAll('.switcher button').forEach(function(btn){
+  btn.addEventListener('click',function(e){
     e.preventDefault();
     e.stopPropagation();
-    document.querySelectorAll('.switcher button').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.switcher button').forEach(function(b){b.classList.remove('active');});
     this.classList.add('active');
-    // Remove transition delays for instant switch
-    cards.forEach(function(div) { div.style.transitionDelay = '0ms'; });
-    applyLayout(this.getAttribute('data-layout'));
+    applyLayout(this.getAttribute('data-layout'),false);
   });
 });
 </script>
