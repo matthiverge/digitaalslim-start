@@ -2076,15 +2076,16 @@ a { text-decoration: none; }
   .urgency-bar-btn { font-size: 11px; padding: 6px 12px; }
 
   .hero { overflow: hidden; }
-  .hero-inner { grid-template-columns: 1fr; gap: 0; padding: 48px 20px 0; text-align: center; }
-  .hero-content { padding-bottom: 40px; display: flex; flex-direction: column; align-items: center; }
-  .hero-logo { height: 90px; margin-bottom: 20px; }
-  .hero h1 { font-size: 26px; letter-spacing: -1px; }
-  .hero-sub { font-size: 16px; text-align: center; }
-  .hero-chips { align-items: center; }
+  .hero-inner { display: flex !important; flex-direction: column; align-items: center; gap: 0; padding: 48px 20px 0; text-align: center; }
+  .hero-content { display: contents; }
+  .hero-logo { height: 90px; margin-bottom: 20px; order: 1; }
+  .hero .hero-pill { order: 2; }
+  .hero h1 { font-size: 26px; letter-spacing: -1px; order: 3; }
+  .hero-sub { font-size: 16px; text-align: center; order: 4; margin-bottom: 32px; }
+  .hero-chips { align-items: center; order: 5; }
   .hero-chip { font-size: 14px; }
-  .hero-cta-row { flex-direction: column; align-items: center; }
-  .hero-visual { order: -1; padding: 0 20px; }
+  .hero-visual { order: 6; padding: 0 20px; margin-bottom: 32px; }
+  .hero-cta-row { flex-direction: column; align-items: center; order: 7; padding-bottom: 40px; }
   .hero-mockup { max-width: 280px; margin: 0 auto; }
   .hero-trust { flex-direction: column; align-items: center; gap: 8px; padding: 16px 20px; }
   .hero-trust-item { margin: 0; font-size: 13px; padding: 8px 16px; }
