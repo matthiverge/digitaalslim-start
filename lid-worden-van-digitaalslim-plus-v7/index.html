@@ -2110,10 +2110,12 @@ a { text-decoration: none; }
   .matthias-item-header { flex-direction: column; text-align: center; width: 100%; }
   .matthias-visual-img { max-width: 480px; margin: 0 auto; display: block; }
 
-  .scenario-step { grid-template-columns: 48px 1fr; gap: 16px; }
-  .scenario-num { width: 48px; height: 48px; font-size: 18px; }
-  .scenario-timeline::before { left: 23px; }
+  .scenario-step { grid-template-columns: 1fr; gap: 12px; justify-items: start; }
+  .scenario-num { width: 44px; height: 44px; font-size: 17px; }
+  .scenario-timeline::before { display: none; }
+  .scenario-line { display: none !important; }
   .scenario-card-body { padding: 22px 22px; }
+  .scenario-card { width: 100%; }
   .scenario-card h3 { font-size: 18px; }
   .scenario-card p { font-size: 15px; }
 
@@ -2470,7 +2472,7 @@ a { text-decoration: none; }
 </section>
 
 <!-- SECTIE 5: SCENARIO (PHISHING) -->
-<section style="background: #FFFFFF; padding: 112px 40px;">
+<section class="scenario" style="background: #FFFFFF;">
   <div class="container">
     <div style="text-align: center; max-width: 640px; margin: 0 auto 80px;">
       <div class="eyebrow">Zo werkt het in de praktijk</div>
@@ -2480,7 +2482,7 @@ a { text-decoration: none; }
     
     <div style="max-width: 840px; margin: 0 auto 64px; position: relative;">
       <!-- Verticale lijn -->
-      <div style="position: absolute; left: 29px; top: 58px; bottom: 58px; width: 2px; background: linear-gradient(to bottom, var(--gold), var(--violet), #22c55e); opacity: 0.3;"></div>
+      <div class="scenario-line" style="position: absolute; left: 29px; top: 58px; bottom: 58px; width: 2px; background: linear-gradient(to bottom, var(--gold), var(--violet), #22c55e); opacity: 0.3;"></div>
 
       <div class="scenario-step r">
         <div class="scenario-num scenario-num-1">1</div>
@@ -2545,7 +2547,7 @@ a { text-decoration: none; }
     
     <div style="max-width: 840px; margin: 0 auto 24px; position: relative;">
       <!-- Verticale lijn -->
-      <div style="position: absolute; left: 29px; top: 58px; bottom: 58px; width: 2px; background: linear-gradient(to bottom, var(--gold), var(--violet), #22c55e); opacity: 0.3;"></div>
+      <div class="scenario-line" style="position: absolute; left: 29px; top: 58px; bottom: 58px; width: 2px; background: linear-gradient(to bottom, var(--gold), var(--violet), #22c55e); opacity: 0.3;"></div>
 
       <div class="scenario-step r">
         <div class="scenario-num scenario-num-1">1</div>
