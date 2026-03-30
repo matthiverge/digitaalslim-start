@@ -2130,6 +2130,11 @@ a { text-decoration: none; }
   .foto-grid img { height: auto !important; }
 
   .testimonials-grid { grid-template-columns: 1fr; max-width: 100%; }
+  .testimonials-b-grid { grid-template-columns: 1fr !important; max-width: 100% !important; }
+  .testimonials-b { padding: 56px 20px !important; }
+
+  .schamen-sectie { padding: 56px 20px !important; }
+  .schamen-sectie p { text-align: left !important; }
 
   .pijlers-grid { grid-template-columns: 1fr; }
 
@@ -2605,7 +2610,7 @@ a { text-decoration: none; }
 
 
 <!-- SECTIE 6: VEILIGE HAVEN -->
-<section style="background: linear-gradient(135deg, rgba(22,163,74,0.03) 0%, rgba(16,185,129,0.02) 100%); padding: 112px 40px;">
+<section class="schamen-sectie" style="background: linear-gradient(135deg, rgba(22,163,74,0.03) 0%, rgba(16,185,129,0.02) 100%); padding: 112px 40px;">
   <div class="container-sm" style="text-align: center;">
     <div style="font-size: 40px; margin-bottom: 28px; color: #10B981;" >♥</div>
     <h2 style="font-size: 40px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.15; color: #0D0B14; margin-bottom: 28px;" >Hier hoef je je nooit te schamen.</h2>
@@ -2632,13 +2637,13 @@ a { text-decoration: none; }
 </section>
 
 <!-- TESTIMONIALS B -->
-<section style="background: white; padding: 80px 40px;">
+<section class="testimonials-b" style="background: white; padding: 80px 40px;">
   <div class="container">
     <div style="text-align: center; margin-bottom: 64px;">
       <div class="eyebrow">Zo ervaren leden het zelf</div>
     </div>
     
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1040px; margin: 0 auto; margin-bottom: 64px;">
+    <div class="testimonials-b-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 1040px; margin: 0 auto; margin-bottom: 64px;">
       <div class="d1" style="background: white; border: 1px solid #E8E4F4; border-radius: 16px; box-shadow: 0 2px 8px rgba(13,11,20,0.04);">
         <img src="afbeeldingen/Testimonials/17. Ervaring Community - Jos.png" alt="Ervaring van Jos" style="width: 100%; display: block; border-radius: 14px;" loading="lazy">
       </div>
