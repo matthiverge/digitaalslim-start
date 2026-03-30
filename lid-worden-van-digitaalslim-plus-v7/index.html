@@ -626,10 +626,25 @@ a { text-decoration: none; }
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 494px;
-  gap: 72px;
+  grid-template-areas:
+    "header photo1"
+    "text1  photo1"
+    "text2  photo2";
+  gap: 28px 72px;
   align-items: start;
   position: relative;
   z-index: 1;
+}
+.matthias-item-header { grid-area: header; }
+.matthias-item-text1  { grid-area: text1; }
+.matthias-item-text2  { grid-area: text2; }
+.matthias-item-photo1 { grid-area: photo1; }
+.matthias-item-photo2 { grid-area: photo2; }
+
+.matthias-visual-img {
+  width: 100%;
+  border-radius: var(--r3);
+  box-shadow: var(--s3);
 }
 
 .matthias-header {
@@ -682,15 +697,11 @@ a { text-decoration: none; }
   border-left: 3px solid var(--gold);
 }
 
-.matthias-visual {
+.matthias-item-photo1,
+.matthias-item-photo2 {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-}
-
-.matthias-visual img {
-  border-radius: var(--r3);
-  box-shadow: var(--s3);
+  gap: 12px;
 }
 
 .matthias-caption {
@@ -2024,30 +2035,6 @@ a { text-decoration: none; }
 
 .footer p { font-size: 14px; color: var(--muted); }
 
-.mobile-bar {
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 200;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(74,44,245,0.12);
-  padding: 14px 20px;
-  text-align: center;
-  transform: translateY(100%);
-  transition: transform 0.4s var(--ease);
-  box-shadow: 0 -4px 24px rgba(13,11,20,0.08);
-}
-
-.mobile-bar.visible { transform: translateY(0); }
-
-.mobile-bar .btn-gold {
-  width: 100%;
-  max-width: 420px;
-  font-size: 16px;
-  padding: 15px 28px;
-}
 
 /* ═══════════════════════════════════════════════════════════
    RESPONSIVE
@@ -2072,7 +2059,7 @@ a { text-decoration: none; }
   .hero h1 { font-size: clamp(22px, 3vw, 30px); }
   .hero-chips { display: none; }
   .hero-mockup { max-width: 320px; }
-  .matthias-inner { grid-template-columns: 1fr 390px; gap: 48px; }
+  .matthias-inner { grid-template-columns: 1fr 390px; gap: 28px 48px; }
   .kanalen-layout { grid-template-columns: 340px 1fr; gap: 40px; }
   .veilig-row { grid-template-columns: repeat(2, 1fr); }
 }
@@ -2109,9 +2096,18 @@ a { text-decoration: none; }
   .herkenning-grid { grid-template-columns: 1fr; }
   .herkenning-bridge { padding: 24px 24px; font-size: 16px; }
 
-  .matthias-inner { grid-template-columns: 1fr; gap: 40px; }
-  .matthias-visual { order: -1; }
-  .matthias-header { flex-direction: column; text-align: center; width: 100%; }
+  .matthias-inner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "text1"
+      "photo1"
+      "text2"
+      "photo2";
+    gap: 24px;
+  }
+  .matthias-item-header { flex-direction: column; text-align: center; width: 100%; }
+  .matthias-visual-img { max-width: 480px; margin: 0 auto; display: block; }
 
   .scenario-step { grid-template-columns: 48px 1fr; gap: 16px; }
   .scenario-num { width: 48px; height: 48px; font-size: 18px; }
@@ -2122,7 +2118,7 @@ a { text-decoration: none; }
 
   .veilige-haven-inner { flex-direction: column; gap: 20px; }
 
-  .testimonials-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+  .testimonials-grid { grid-template-columns: 1fr; max-width: 100%; }
 
   .pijlers-grid { grid-template-columns: 1fr; }
 
@@ -2140,8 +2136,6 @@ a { text-decoration: none; }
   .wall-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
 
   .final-cta h2 { font-size: 26px; letter-spacing: -0.8px; }
-
-  .mobile-bar { display: block; }
 }
 
 @media (max-width: 480px) {
@@ -2211,7 +2205,7 @@ a { text-decoration: none; }
 <div class="urgency-bar">
   <div class="urgency-bar-badge">PRIJSVERHOGING</div>
   <div class="urgency-bar-sep"></div>
-  <div class="urgency-bar-text">De prijs stijgt binnenkort van <strong>139 euro</strong> naar <strong>169 euro</strong>. Schrijf je nu in, dan stijgt jouw prijs niet mee.</div>
+  <div class="urgency-bar-text">De prijs stijgt binnenkort. Schrijf je nu in, dan stijgt jouw prijs niet mee.</div>
 </div>
 
 <!-- HERO SECTION -->
@@ -2444,28 +2438,31 @@ a { text-decoration: none; }
 <!-- SECTIE 4: MATTHIAS' VERHAAL -->
 <section class="matthias">
   <div class="matthias-inner">
-    <div>
-      <div class="matthias-header">
-        <img src="afbeeldingen/matthias.png" alt="Matthias Moens" class="matthias-avatar">
-        <div class="matthias-label">
-          <h2>"Ik begrijp het. Want zo is het allemaal begonnen."</h2>
-          <p>Matthias Moens, oprichter DigitaalSlim</p>
-        </div>
-      </div>
-      
-      <div class="matthias-text">
-        <p>Tien jaar geleden kocht mijn vader zijn eerste iPad. Ik woonde in Barcelona, kon niet langskomen om het voor te doen. Dus begon ik video's te maken. Simpel, stap voor stap. Dat werkte zo goed, dat andere mensen erom vroegen. En toen nog meer. En nog meer.</p>
-        
-        <p>Zo ontstond DigitaalSlim. We hebben sindsdien aan tienduizenden mensen cursussen verkocht. Maar gaandeweg begreep ik dat een cursus niet genoeg is. Wat mensen nodig hebben is niet een map met video's. <strong>Wat mensen nodig hebben is een plek waar altijd iemand klaarstaat.</strong></p>
-        
-        <p>Dat is wat DigitaalSlim Plus+ is geworden. Alles wat we in tien jaar hebben geleerd, alle cursussen, alle kennis, alle ervaring, samengebracht op een plek. Met een community waar je elke vraag kunt stellen. En een team dat er elke dag is. Geen chatbot. Geen wachtrij. Echte mensen met eindeloos geduld.</p>
+    <div class="matthias-header matthias-item-header">
+      <img src="afbeeldingen/matthias.png" alt="Matthias Moens" class="matthias-avatar">
+      <div class="matthias-label">
+        <h2>"Ik begrijp het. Want zo is het allemaal begonnen."</h2>
+        <p>Matthias Moens, oprichter DigitaalSlim</p>
       </div>
     </div>
-    
-    <div class="matthias-visual">
-      <img src="afbeeldingen/papa-en-gezin.jpg" alt="Matthias met zijn gezin" style="border-radius: 16px;">
+
+    <div class="matthias-text matthias-item-text1">
+      <p>Tien jaar geleden kocht mijn vader zijn eerste iPad. Ik woonde in Barcelona, kon niet langskomen om het voor te doen. Dus begon ik video's te maken. Simpel, stap voor stap. Dat werkte zo goed, dat andere mensen erom vroegen. En toen nog meer. En nog meer.</p>
+    </div>
+
+    <div class="matthias-item-photo1">
+      <img src="afbeeldingen/papa-en-gezin.jpg" alt="Matthias met zijn gezin" class="matthias-visual-img" style="border-radius: 16px;">
       <p class="matthias-caption">Familie Moens, en de reden dat DigitaalSlim bestaat.</p>
-      <img src="afbeeldingen/Matthias%20met%20toestellen/Matthias%20met%20iPad.jpg" alt="Matthias met iPad en de DigitaalSlim Community" style="border-radius: 16px; margin-top: 24px;">
+    </div>
+
+    <div class="matthias-text matthias-item-text2">
+      <p>Zo ontstond DigitaalSlim. We hebben sindsdien aan tienduizenden mensen cursussen verkocht. Maar gaandeweg begreep ik dat een cursus niet genoeg is. Wat mensen nodig hebben is niet een map met video's. <strong>Wat mensen nodig hebben is een plek waar altijd iemand klaarstaat.</strong></p>
+
+      <p>Dat is wat DigitaalSlim Plus+ is geworden. Alles wat we in tien jaar hebben geleerd, alle cursussen, alle kennis, alle ervaring, samengebracht op een plek. Met een community waar je elke vraag kunt stellen. En een team dat er elke dag is. Geen chatbot. Geen wachtrij. Echte mensen met eindeloos geduld.</p>
+    </div>
+
+    <div class="matthias-item-photo2">
+      <img src="afbeeldingen/Matthias%20met%20toestellen/Matthias%20met%20iPad.jpg" alt="Matthias met iPad en de DigitaalSlim Community" class="matthias-visual-img" style="border-radius: 16px;">
       <p class="matthias-caption">De DigitaalSlim Plus+ Community, altijd bij de hand.</p>
     </div>
   </div>
@@ -3600,10 +3597,6 @@ a { text-decoration: none; }
   </p>
 </footer>
 
-<!-- STICKY MOBILE BAR -->
-<div style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(135deg, #1D1833 0%, #130F22 100%); border-top: 1px solid rgba(74,44,245,0.20); padding: 12px 20px; z-index: 250; text-align: center;" id="mobile-bar">
-  <button class="btn btn-gold" style="width: 100%; font-size: 16px;">Word lid | Vanaf 42 euro</button>
-</div>
 
 <script>
 // Scroll reveal animation
@@ -3619,17 +3612,6 @@ const observer = new IntersectionObserver(function(entries) {
 
 document.querySelectorAll('.r').forEach(el => observer.observe(el));
 
-// Mobile bar toggle
-function updateMobileBar() {
-  const bar = document.getElementById('mobile-bar');
-  if (window.innerWidth < 768) {
-    bar.style.display = 'block';
-  } else {
-    bar.style.display = 'none';
-  }
-}
-updateMobileBar();
-window.addEventListener('resize', updateMobileBar);
 
 // Smooth button clicks
 document.querySelectorAll('.btn').forEach(btn => {
