@@ -72,19 +72,41 @@ body {
   z-index: 10001;
   text-align: center;
   pointer-events: none;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.6s ease, bottom 0.6s ease;
 }
 .tap-prompt.hidden { opacity: 0; pointer-events: none; }
 .tap-prompt-text {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.8);
   animation: pulse 2s ease-in-out infinite;
 }
-@media (hover: hover) and (pointer: fine) {
-  .tap-prompt-text::after { content: " of klik"; }
-}
 @keyframes pulse { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; } }
+
+/* Hint after explosion */
+.read-hint {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10001;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease 1.5s;
+}
+.read-hint.show { opacity: 1; }
+.read-hint-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+  background: rgba(10,8,20,0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
 
 /* Popup */
 .popup-overlay {
@@ -199,7 +221,11 @@ body {
 <div class="scene" id="scene"></div>
 
 <div class="tap-prompt" id="tapPrompt">
-  <div class="tap-prompt-text">Tik om te ontdekken</div>
+  <div class="tap-prompt-text">Tik op de stapel om ze te ontdekken</div>
+</div>
+
+<div class="read-hint" id="readHint">
+  <div class="read-hint-text">Tik op een ervaring om deze te lezen</div>
 </div>
 
 <div class="popup-overlay" id="popup">
@@ -219,6 +245,7 @@ var scene = document.getElementById('scene');
 var popup = document.getElementById('popup');
 var popupImg = document.getElementById('popup-img');
 var tapPrompt = document.getElementById('tapPrompt');
+var readHint = document.getElementById('readHint');
 var switcherEl = document.getElementById('switcher');
 var total = files.length;
 var vw = window.innerWidth;
@@ -259,6 +286,7 @@ files.forEach(function(file,i){
     e.stopPropagation();
     popupImg.src=this.getAttribute('data-src');
     popup.classList.add('show');
+    readHint.classList.remove('show');
   });
   scene.appendChild(div);
   cards.push(div);
@@ -323,6 +351,7 @@ scene.addEventListener('click',function(){
   exploded=true;
   tapPrompt.classList.add('hidden');
   switcherEl.classList.add('show');
+  readHint.classList.add('show');
   applyLayout(currentLayout,true);
 });
 
