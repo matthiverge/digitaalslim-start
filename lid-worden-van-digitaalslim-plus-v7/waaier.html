@@ -19,13 +19,13 @@ body {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10001;
+  z-index: 99999;
   display: flex;
   gap: 6px;
-  background: rgba(255,255,255,0.08);
+  background: rgba(10,8,20,0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 2px solid rgba(240,180,41,0.3);
   border-radius: 999px;
   padding: 5px;
 }
@@ -35,20 +35,23 @@ body {
   border: none;
   color: rgba(255,255,255,0.5);
   font-family: inherit;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
-  padding: 8px 20px;
+  padding: 10px 24px;
   border-radius: 999px;
   cursor: pointer;
   transition: all 0.3s ease;
   white-space: nowrap;
+  position: relative;
+  z-index: 99999;
 }
 
-.switcher button:hover { color: rgba(255,255,255,0.8); }
+.switcher button:hover { color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.06); }
 
 .switcher button.active {
-  background: rgba(255,255,255,0.15);
-  color: white;
+  background: rgba(240,180,41,0.2);
+  color: #F0B429;
+  border: 1px solid rgba(240,180,41,0.3);
 }
 
 .scene {
@@ -60,15 +63,19 @@ body {
 .card {
   position: absolute;
   border-radius: 10px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 16px rgba(0,0,0,0.25);
   overflow: hidden;
+  cursor: pointer;
+  border: 1.5px solid rgba(255,255,255,0.06);
+  will-change: transform;
+}
+
+.card.animated {
   transition: left 0.9s cubic-bezier(0.34, 1.2, 0.64, 1),
               top 0.9s cubic-bezier(0.34, 1.2, 0.64, 1),
               width 0.9s cubic-bezier(0.34, 1.2, 0.64, 1),
               height 0.9s cubic-bezier(0.34, 1.2, 0.64, 1),
               transform 0.9s cubic-bezier(0.34, 1.2, 0.64, 1);
-  cursor: pointer;
-  border: 1.5px solid rgba(255,255,255,0.06);
 }
 
 .card img {
@@ -76,14 +83,31 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
 
-.card:hover {
-  z-index: 9999 !important;
-  transform: scale(2.5) !important;
-  box-shadow: 0 20px 60px rgba(74,44,245,0.35), 0 8px 24px rgba(0,0,0,0.5);
-  border-color: rgba(240,180,41,0.4);
-  transition: transform 0.3s cubic-bezier(0.34, 1.4, 0.64, 1), box-shadow 0.3s ease;
+/* Hover popup */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 90000;
+  background: rgba(10,8,20,0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.popup-overlay.show { display: flex; }
+
+.popup-overlay img {
+  max-width: 85vw;
+  max-height: 80vh;
+  border-radius: 16px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 0 2px rgba(240,180,41,0.3);
+  object-fit: contain;
 }
 
 .counter {
@@ -120,7 +144,7 @@ body {
 </head>
 <body>
 
-<div class="switcher">
+<div class="switcher" id="switcher">
   <button class="active" data-layout="spiral">Spiraal</button>
   <button data-layout="explosion">Explosie</button>
   <button data-layout="mosaic">Mozaiek</button>
@@ -128,6 +152,10 @@ body {
 </div>
 
 <div class="scene" id="scene"></div>
+
+<div class="popup-overlay" id="popup">
+  <img id="popup-img" src="" alt="">
+</div>
 
 <div class="counter">
   <div class="counter-number">139</div>
@@ -138,6 +166,8 @@ body {
 var files = ["1. Ervaring Community - Rina.png","2. Ervaring Community - Elise.png","3. Ervaring Community - Mady.png","4. Ervaring Community - Eddie.png","5. Ervaring Community - Jenny A.png","6. Ervaring Community - Nicole D.png","7. Ervaring Community - Cecile.png","8. Ervaring Community - Armand.png","9. Ervaring Community - Herman.png","10. Ervaring Community - Jenny DP.png","11. Ervaring Community - Ellen.png","12. Ervaring Community - Helene.png","13. Ervaring Community - Raoul.png","14. Ervaring Community - Jakelien.png","15. Ervaring Community - Linda.png","16. Ervaring Community - Dominique.png","17. Ervaring Community - Jos.png","18. Ervaring Community - Patricia.png","19. Ervaring Community - Rianne.png","20. Ervaring Community - Nicole S.png","21. Ervaring Community - Gerda.png","22. Ervaring Community - Viviane.png","23. Ervaring Community - Myri.png","24. Ervaring Community - Christine.png","25. Ervaring Community - Luud.png","26. Ervaring Community - Elizabeth.png","27. Ervaring Community - Leny.png","28. Ervaring Community - Jacqueline.png","29. Ervaring Community - Rachel.png","30. Ervaring Community - Aukje.png","31. Ervaring Community - Myriam.png","32. Ervaring Community - Veerle.png","33. Ervaring Community - Luc.png","34. Ervaring Community - Joseph.png","35. Ervaring Community - Carla.png","36. Ervaring Community - Henk.png","37. Ervaring Community - Eric.png","38. Ervaring Community - Bea.png","39. Ervaring Community - Gommara.png","40. Ervaring Community - Guy.png","41. Ervaring Community - Patricia DB.png","42. Ervaring Community - Paula.png","43. Ervaring Community - Rudy.png","44. Ervaring Community - Hilda.png","45. Ervaring Community - Marleen.png","46. Ervaring Community - Heike.png","47. Ervaring Community - Martine J.png","48. Ervaring Community - Miranda.png","49. Ervaring Community - Dianne.png","50. Ervaring Community - Leen.png","51. Ervaring Community - Eddy.png","52. Ervaring Community - Arina.png","53. Ervaring Community - Marieke.png","54. Ervaring Community - Lucienne.png","55. Ervaring Community - Elisabeth.png","56. Ervaring Community - Denise.png","57. Ervaring Community - Rob.png","58. Ervaring Community - Maria.png","59. Ervaring Community - Tiny.png","60. Ervaring Community - Christine A.png","61. Ervaring Community - Marie Louise.png","62. Ervaring Community - Guido.png","63. Ervaring Community - Jef.png","64. Ervaring Community - Frieda.png","65. Ervaring Community - Marleen M.png","66. Ervaring Community - Annelies.png","67. Ervaring Community - Udo.png","68. Ervaring Community - Annemie.png","69. Ervaring Community - Joke M.png","70. Ervaring Community - Annie.png","71. Ervaring Community - Anita.png","72. Ervaring Community - Kit.png","73. Ervaring Community - Nicole Sm.png","74. Ervaring Community - Kristien.png","75. Ervaring Community - Chris.png","76. Ervaring Community - Magda.png","77. Ervaring Community - Pieter.png","78. Ervaring Community - Hilde V.png","79. Ervaring Community - Lutgart.png","80. Ervaring Community - Pierre.png","81. Ervaring Community - Martine D.png","82. Ervaring Community - Hilaire.png","83. Ervaring Community - Patrick.png","84. Ervaring Community - Jos S.png","85. Ervaring Community - Elly.png","86. Ervaring Community - Ellie.png","87. Ervaring Community - Jaap en Renee.png","88. Ervaring Community - Jacqueline C.png","89. Ervaring Community - Tuur.png","90. Ervaring Community - Jacqueline D.png","91. Ervaring Community - Diane VB.png","92. Ervaring Community - Harry.png","93. Ervaring Community - Rooske.png","94. Ervaring Community - Myra.png","95. Ervaring Community - Martine DV.png","96. Ervaring Community - Mies.png","97. Ervaring Community - Carline.png","98. Ervaring Community - Diane D.png","99. Ervaring Community - Gerda G.png","100. Ervaring Community - Trees.png","101. Ervaring Community - Nadine.png","102. Ervaring Community - Lou.png","103. Ervaring Community - Lucien.png","104. Ervaring Community - Joke P.png","105. Ervaring Community - Gina.png","106. Ervaring Community - Carine.png","107. Ervaring Community - Laura.png","108. Ervaring Community - Rudi.png","109. Ervaring Community - Diana.png","110. Ervaring Community - Rosette.png","111. Ervaring Community - Hilde N.png","112. Ervaring Community - Nele.png","113. Ervaring Community - Nicole Sm2.png","114. Ervaring Community - Henry.png","115. Ervaring Community - Leonie.png","116. Ervaring Community - Lut.png","117. Ervaring Community - Rita.png","118. Ervaring Community - Valerie.png","119. Ervaring Community - Marc.png","120. Ervaring Community - Rudi T.png","121. Ervaring Community - Ingrid.png","122. Ervaring Community - Patricia B.png","123. Ervaring Community - Anne-Mieke.png","124. Ervaring Community - Chris GB.png","125. Ervaring Community - Luc H.png","126. Ervaring Community - Nadine L.png","127. Ervaring Community - Linda V.png","128. Ervaring Community - Therese.png","129. Ervaring Community - Tiny S.png","130. Ervaring Community - Linda VH.png","131. Ervaring Community - Myriam B.png","132. Ervaring Community - Aurel.png","133. Ervaring Community - Etty.png","134. Ervaring Community - Christiane.png","135. Ervaring Community - Mieke N.png","136. Ervaring Community - Francine D.png","137. Ervaring Community - Sabine C.png","138. Ervaring Community - Anita VG.png","139. Ervaring Community - Bernard C.png"];
 
 var scene = document.getElementById('scene');
+var popup = document.getElementById('popup');
+var popupImg = document.getElementById('popup-img');
 var total = files.length;
 var vw = window.innerWidth;
 var vh = window.innerHeight;
@@ -147,15 +177,24 @@ var cy = vh / 2;
 function s1(i) { var x = Math.sin(i * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
 function s2(i) { var x = Math.sin(i * 269.5 + 183.3) * 23421.6312; return x - Math.floor(x); }
 
+// Click on card = popup full size
+popup.addEventListener('click', function() { popup.classList.remove('show'); });
+
 var cards = [];
 files.forEach(function(file, i) {
   var div = document.createElement('div');
   div.className = 'card';
   var img = document.createElement('img');
-  img.src = 'afbeeldingen/Testimonials/' + encodeURIComponent(file);
+  var src = 'afbeeldingen/Testimonials/' + encodeURIComponent(file);
+  img.src = src;
   img.loading = 'lazy';
   div.appendChild(img);
   div.style.zIndex = i;
+  div.addEventListener('click', function(e) {
+    e.stopPropagation();
+    popupImg.src = src;
+    popup.classList.add('show');
+  });
   scene.appendChild(div);
   cards.push(div);
 });
@@ -238,10 +277,18 @@ function setLayout(name) {
     div.style.top = p.y + 'px';
     div.style.transform = 'rotate(' + p.rot + 'deg)';
   });
+  // Enable transition animations after initial render
+  setTimeout(function() {
+    cards.forEach(function(div) { div.classList.add('animated'); });
+  }, 50);
 }
 
 document.querySelectorAll('.switcher button').forEach(function(btn) {
-  btn.addEventListener('click', function() { setLayout(this.getAttribute('data-layout')); });
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    setLayout(this.getAttribute('data-layout'));
+  });
 });
 
 setLayout('spiral');
