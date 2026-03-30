@@ -3547,12 +3547,17 @@ const observer = new IntersectionObserver(function(entries) {
 document.querySelectorAll('.r').forEach(el => observer.observe(el));
 
 
-// Smooth button clicks (skip wall-load-more and other non-CTA buttons)
+// CTA button clicks: redirect to checkout
+var checkoutBase = 'https://ontdek.nu.digitaalslim.be/checkout/digitaalslim-plus-2026';
 document.querySelectorAll('.btn').forEach(btn => {
   if (btn.id === 'wall-load-more') return;
   btn.addEventListener('click', function() {
-    const target = document.getElementById('prijzen');
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    var text = this.textContent.trim();
+    if (text === 'Word lid') {
+      window.location.href = checkoutBase + '?plan=quarterly';
+    } else if (text === 'Word lid van DigitaalSlim Plus+') {
+      window.location.href = checkoutBase + '?plan=yearly';
+    }
   });
 });
 
