@@ -2777,62 +2777,38 @@ a { text-decoration: none; }
 </section>
 
 
-<!-- SECTIE 8: COMMUNITY VISUEEL -->
-<section style="background: white; padding: 112px 40px;">
-  <div class="container">
-    <div style="text-align: center; max-width: 680px; margin: 0 auto 64px;">
-      <div class="eyebrow">De community</div>
-      <h2 style="font-size: 40px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.15; color: #0D0B14; margin: 16px 0 18px;" >Een plek voor elke vraag.</h2>
-      <p style="font-size: 17px; color: #3D3856; line-height: 1.75;" >
-        De community is ingedeeld in duidelijke kanalen. Je hoeft niet te zoeken, je gaat naar het kanaal dat bij je vraag past.
-      </p>
+<!-- SECTIE 8: COMMUNITY KANALEN (overgenomen van V3) -->
+<section class="kanalen">
+  <div class="kanalen-header r">
+    <div class="eyebrow" style="color:rgba(139,111,250,0.90);background:rgba(74,44,245,0.10);border-color:rgba(74,44,245,0.22);">Je eigen veilige plek</div>
+    <h2>Geen Facebook. Geen algoritmes. Alleen jij en echte hulp.</h2>
+    <p>De community draait op een eigen platform met een eigen app. Alles is ingedeeld in duidelijke kanalen, zodat je snel vindt wat je zoekt. En het mooiste: jouw vragen sturen wat wij maken. Stel je een vraag die meer leden hebben? Dan wordt het een nieuw Stappenplan of een korte video.</p>
+  </div>
+
+  <div class="kanalen-layout">
+    <div>
+      <figure class="kanalen-screenshot r">
+        <img src="afbeeldingen/Huddle-Kanalen.png" alt="Alle kanalen in de community" loading="lazy">
+      </figure>
     </div>
-    
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; max-width: 1040px; margin: 0 auto 64px;">
-      <div >
-        <div style="padding: 32px; background: white; border: 1px dashed #E8E4F4; border-radius: 16px; text-align: center; color: #9490A8; margin-bottom: 24px; min-height: 300px;">
-          [screenshot placeholder: Huddle kanalenstructuur]
-        </div>
-        <div style="padding: 32px; background: white; border: 1px dashed #E8E4F4; border-radius: 16px; text-align: center; color: #9490A8; min-height: 300px;">
-          [screenshot placeholder: echte community gesprekken]
-        </div>
-      </div>
-      
-      <div >
-        <div style="background: white; border: 1px solid #E8E4F4; border-radius: 16px; padding: 36px;">
-          <h3 style="font-size: 18px; font-weight: 800; color: #0D0B14; margin-bottom: 24px;">De kanalen:</h3>
-          
-          <div style="margin-bottom: 24px;">
-            <p style="font-size: 14px; font-weight: 700; color: #3D3856; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Algemeen</p>
-            <p style="font-size: 16px; color: #0D0B14;">Stel je voor, Koffiehoekje</p>
-          </div>
-          
-          <div style="margin-bottom: 24px;">
-            <p style="font-size: 14px; font-weight: 700; color: #3D3856; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Apparaten</p>
-            <p style="font-size: 16px; color: #0D0B14;">iPad & iPhone, Mac</p>
-          </div>
-          
-          <div style="margin-bottom: 36px;">
-            <p style="font-size: 14px; font-weight: 700; color: #3D3856; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">Onderwerpen</p>
-            <p style="font-size: 16px; color: #0D0B14;">Privacy & Veiligheid, AI & Slim Werken</p>
-          </div>
-          
-          <hr style="border: none; border-top: 1px solid #E8E4F4; margin-bottom: 24px;">
-          
-          <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-            <span style="background: #F3F1FB; border: 1px solid rgba(74,44,245,0.20); color: #4A2CF5; padding: 8px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;">Alleen voor leden</span>
-            <span style="background: #F3F1FB; border: 1px solid rgba(74,44,245,0.20); color: #4A2CF5; padding: 8px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;">Geen reclame</span>
-            <span style="background: #F3F1FB; border: 1px solid rgba(74,44,245,0.20); color: #4A2CF5; padding: 8px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;">Eigen app</span>
-            <span style="background: #F3F1FB; border: 1px solid rgba(74,44,245,0.20); color: #4A2CF5; padding: 8px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;">Elke vraag is welkom</span>
-          </div>
-        </div>
-      </div>
+    <div class="kanalen-list">
+      <div class="kanaal r"><div class="kanaal-emoji">📱</div><div><h4>iPad &amp; iPhone</h4><p>Instellingen, tips en alles wat je dagelijks gebruikt</p></div></div>
+      <div class="kanaal r d1"><div class="kanaal-emoji">🖥️</div><div><h4>Mac</h4><p>Van sneltoetsen tot veelgestelde problemen</p></div></div>
+      <div class="kanaal r d2"><div class="kanaal-emoji">🔍</div><div><h4>Echt of Nep?</h4><p>Phishing herkennen, verdachte mails checken</p></div></div>
+      <div class="kanaal r"><div class="kanaal-emoji">🚨</div><div><h4>Actuele Waarschuwingen</h4><p>Oplichting en gevaren die nu de ronde doen</p></div></div>
+      <div class="kanaal r d1"><div class="kanaal-emoji">🤖</div><div><h4>AI &amp; Slim Werken</h4><p>Leer wat je kunt met tools als ChatGPT, fotobewerking en meer</p></div></div>
+      <div class="kanaal r d2"><div class="kanaal-emoji">☁️</div><div><h4>iCloud &amp; Accounts</h4><p>Foto's, back-ups en opslag beheren</p></div></div>
+      <div class="kanaal r"><div class="kanaal-emoji">☕</div><div><h4>Koffiehoekje</h4><p>Gezellig bijpraten met andere leden</p></div></div>
+      <div class="kanaal r d1"><div class="kanaal-emoji">❓</div><div><h4>Overige vragen</h4><p>Staat je vraag er niet bij? Stel hem hier!</p></div></div>
+      <div class="kanalen-meer">+ 12 andere kanalen wachten op je &rarr;</div>
     </div>
-    
-    <div style="text-align: center;">
-      <button class="btn btn-gold">Word lid van DigitaalSlim Plus+</button>
-      <p style="font-size: 14px; color: #3D3856; margin-top: 12px;">Op elk moment opzegbaar.</p>
-    </div>
+  </div>
+
+  <div class="veilig-row">
+    <div class="veilig-item r"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><p>Alleen voor leden</p></div>
+    <div class="veilig-item r d1"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg><p>Geen reclame</p></div>
+    <div class="veilig-item r d2"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg><p>Eigen app</p></div>
+    <div class="veilig-item r d3"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><p>Elke vraag is welkom</p></div>
   </div>
 </section>
 
