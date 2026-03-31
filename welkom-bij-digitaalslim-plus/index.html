@@ -115,7 +115,7 @@ img { max-width: 100%; height: auto; display: block; }
 .hero {
   background: linear-gradient(170deg, #0A0814 0%, #130F22 45%, #1D1833 100%);
   text-align: center;
-  padding: 80px 40px 72px;
+  padding: 56px 40px 72px;
   position: relative;
   overflow: hidden;
 }
@@ -132,11 +132,17 @@ img { max-width: 100%; height: auto; display: block; }
   pointer-events: none;
 }
 
-.hero-logo {
+/* ─── LOGO BAR ─── */
+.logo-bar {
+  background: var(--surface-2);
+  text-align: center;
+  padding: 32px 40px 24px;
+}
+
+.logo-bar img {
+  height: 52px;
   width: auto;
-  height: 48px;
-  margin: 0 auto 32px;
-  animation: scaleIn 0.6s ease-out 0.2s both;
+  margin: 0 auto;
 }
 
 .hero-check {
@@ -402,7 +408,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ─── MOBILE ─── */
 @media (max-width: 640px) {
   .hero {
-    padding: 56px 24px 56px;
+    padding: 40px 24px 48px;
   }
 
   .hero h1 {
@@ -453,10 +459,13 @@ img { max-width: 100%; height: auto; display: block; }
 </head>
 <body>
 
+<!-- ═══════ LOGO BAR ═══════ -->
+<div class="logo-bar">
+  <img src="DigitaalSlim-Plus-Logo.png" alt="DigitaalSlim Plus+">
+</div>
+
 <!-- ═══════ HERO ═══════ -->
 <section class="hero">
-  <img src="logo-plus-wit.png" alt="DigitaalSlim Plus+" class="hero-logo">
-
   <div class="hero-check">
     <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
   </div>
