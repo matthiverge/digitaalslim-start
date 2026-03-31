@@ -2237,7 +2237,8 @@ a { text-decoration: none; }
   .contrast-sectie { padding: 72px 20px !important; }
 
   .pijlers-grid { grid-template-columns: 1fr !important; max-width: 480px !important; margin-left: auto !important; margin-right: auto !important; }
-  .cursussen-grid { grid-template-columns: 1fr !important; max-width: 500px !important; margin-left: auto !important; margin-right: auto !important; }
+  .cursussen-fan { display: none !important; }
+  .cursussen-mobile-stack { display: grid !important; grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
 }
 
 @media (max-width: 480px) {
@@ -2472,19 +2473,39 @@ a { text-decoration: none; }
       <p style="font-size: 17px; color: #3D3856; line-height: 1.75; max-width: 640px; margin: 0 auto;">Als Plus+ lid krijg je onbeperkte toegang tot ons volledige cursusaanbod. iPad, iPhone, Mac, fotografie, iMovie, WhatsApp, AI en nog veel meer. En elke nieuwe cursus die we uitbrengen? Die krijg je er automatisch bij. Zonder extra kosten.</p>
     </div>
 
-    <!-- Course screenshots 2x2 grid -->
-    <div class="cursussen-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px;">
-      <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #E8E4F4;">
-        <img src="afbeeldingen/Toegang%20tot%20al%20onze%20cursussen/1-cursussen-overzicht.jpg" alt="Cursusoverzicht pagina 1: Wegwijs in DigitaalSlim, Canva, Apple Intelligence, ChatGPT en meer" style="width: 100%; display: block;" loading="lazy">
+    <!-- Course screenshots - Fan/Waaier layout (desktop) -->
+    <div class="cursussen-fan" style="position: relative; width: 100%; height: 520px; margin: 0 auto 48px; display: flex; justify-content: center; align-items: flex-end;">
+      <div class="cursussen-fan-card" style="position: absolute; width: 240px; transform: rotate(-7deg) translateX(-180px); transform-origin: bottom center; z-index: 1;">
+        <img src="afbeeldingen/Toegang%20tot%20al%20onze%20cursussen/1-cursussen-overzicht.jpg" alt="Cursusoverzicht pagina 1" style="width: 100%; display: block; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.08); border: 1px solid #E0DCF0;" loading="lazy">
+        <div style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); background: rgba(74,44,245,0.9); color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 999px; white-space: nowrap;">Pagina 1 van 4</div>
       </div>
-      <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #E8E4F4;">
-        <img src="afbeeldingen/Toegang%20tot%20al%20onze%20cursussen/2-cursussen-overzicht.jpg" alt="Cursusoverzicht pagina 2: iPadOS 26, iOS 26, macOS Sequoia, iPhone Fotografie en meer" style="width: 100%; display: block;" loading="lazy">
+      <div class="cursussen-fan-card" style="position: absolute; width: 240px; transform: rotate(-2.5deg) translateX(-64px); transform-origin: bottom center; z-index: 2;">
+        <img src="afbeeldingen/Toegang%20tot%20al%20onze%20cursussen/2-cursussen-overzicht.jpg" alt="Cursusoverzicht pagina 2" style="width: 100%; display: block; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.08); border: 1px solid #E0DCF0;" loading="lazy">
+        <div style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); background: rgba(74,44,245,0.9); color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 999px; white-space: nowrap;">Pagina 2 van 4</div>
       </div>
-      <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #E8E4F4;">
-        <img src="afbeeldingen/Toegang%20tot%20al%20onze%20cursussen/3-cursussen-overzicht.jpg" alt="Cursusoverzicht pagina 3: iPad & iPhone 15-17, Online Beveiliging, Mijn Tweede Brein en meer" style="width: 100%; display: block;" loading="lazy">
+      <div class="cursussen-fan-card" style="position: absolute; width: 240px; transform: rotate(2.5deg) translateX(64px); transform-origin: bottom center; z-index: 3;">
+        <img src="afbeeldingen/Toegang%20tot%20al%20onze%20cursussen/3-cursussen-overzicht.jpg" alt="Cursusoverzicht pagina 3" style="width: 100%; display: block; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.08); border: 1px solid #E0DCF0;" loading="lazy">
+        <div style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); background: rgba(74,44,245,0.9); color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 999px; white-space: nowrap;">Pagina 3 van 4</div>
       </div>
-      <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #E8E4F4;">
-        <img src="afbeeldingen/Toegang%20tot%20al%20onze%20cursussen/4-cursussen-overzicht.jpg" alt="Cursusoverzicht pagina 4: Apple Watch, WhatsApp, iMovie, macOS Big Sur tot Sonoma" style="width: 100%; display: block;" loading="lazy">
+      <div class="cursussen-fan-card" style="position: absolute; width: 240px; transform: rotate(7deg) translateX(180px); transform-origin: bottom center; z-index: 4;">
+        <img src="afbeeldingen/Toegang%20tot%20al%20onze%20cursussen/4-cursussen-overzicht.jpg" alt="Cursusoverzicht pagina 4" style="width: 100%; display: block; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.15), 0 2px 8px rgba(0,0,0,0.08); border: 1px solid #E0DCF0;" loading="lazy">
+        <div style="position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); background: rgba(74,44,245,0.9); color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 999px; white-space: nowrap;">Pagina 4 van 4</div>
+      </div>
+    </div>
+
+    <!-- Mobile fallback: vertical stack (hidden on desktop, shown on mobile) -->
+    <div class="cursussen-mobile-stack" style="display: none; gap: 16px; margin-bottom: 40px;">
+      <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #E8E4F4;">
+        <img src="afbeeldingen/Toegang%20tot%20al%20onze%20cursussen/1-cursussen-overzicht.jpg" alt="Cursusoverzicht pagina 1" style="width: 100%; display: block;" loading="lazy">
+      </div>
+      <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #E8E4F4;">
+        <img src="afbeeldingen/Toegang%20tot%20al%20onze%20cursussen/2-cursussen-overzicht.jpg" alt="Cursusoverzicht pagina 2" style="width: 100%; display: block;" loading="lazy">
+      </div>
+      <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #E8E4F4;">
+        <img src="afbeeldingen/Toegang%20tot%20al%20onze%20cursussen/3-cursussen-overzicht.jpg" alt="Cursusoverzicht pagina 3" style="width: 100%; display: block;" loading="lazy">
+      </div>
+      <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #E8E4F4;">
+        <img src="afbeeldingen/Toegang%20tot%20al%20onze%20cursussen/4-cursussen-overzicht.jpg" alt="Cursusoverzicht pagina 4" style="width: 100%; display: block;" loading="lazy">
       </div>
     </div>
 
