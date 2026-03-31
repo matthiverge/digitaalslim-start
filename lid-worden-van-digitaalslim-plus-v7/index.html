@@ -2090,7 +2090,7 @@ a { text-decoration: none; }
   .urgency-bar-text { font-size: 12px; }
   .urgency-bar-btn { font-size: 11px; padding: 6px 12px; }
 
-  .hero { overflow: hidden; }
+  .hero { overflow: visible; }
   .hero-inner { display: flex !important; flex-direction: column; align-items: center; gap: 0; padding: 48px 20px 0; text-align: center; }
   .hero-content { display: contents; }
   .hero-logo { height: 90px; margin-bottom: 20px; order: 1; }
@@ -2099,7 +2099,8 @@ a { text-decoration: none; }
   .hero-sub { font-size: 16px; text-align: center; order: 4; margin-bottom: 32px; }
   .hero-chips { align-items: center; order: 5; }
   .hero-chip { font-size: 14px; }
-  .hero-visual { order: 6; padding: 0 20px; margin-bottom: 32px; }
+  .hero-visual { order: 6; padding: 0 20px; margin-bottom: 32px; overflow: visible; }
+  .hero-mockup-wrap::before { top: -20%; left: -30%; right: -30%; bottom: -20%; background: radial-gradient(ellipse 70% 60% at 50% 55%, rgba(74,44,245,0.12) 0%, rgba(74,44,245,0.05) 35%, transparent 65%); }
   .hero-cta-row { flex-direction: column; align-items: center; order: 7; padding-bottom: 40px; }
   .hero-mockup { max-width: 280px; margin: 0 auto; }
   .hero-trust { flex-direction: column; align-items: center; gap: 8px; padding: 16px 20px; }
