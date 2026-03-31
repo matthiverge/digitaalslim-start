@@ -2106,6 +2106,11 @@ a { text-decoration: none; }
   .hero-trust { flex-direction: column; align-items: center; gap: 8px; padding: 16px 20px; }
   .hero-trust-item { margin: 0; font-size: 13px; padding: 8px 16px; }
 
+  .community-photos { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+  .community-photo-logo { order: -1; grid-column: 1 / -1; max-width: 70%; margin: 0 auto; }
+  .community-photo-matthias { order: 1; }
+  .community-photo-lid { order: 2; }
+
   .herkenning, .matthias, .scenario, .kanalen, .wall-of-love, .vergelijking, .faq, .prijzen, .final-cta, .dag1 { padding: 72px 20px; }
 
   /* Consistent h2 sizing on mobile */
@@ -2348,10 +2353,10 @@ a { text-decoration: none; }
       <h2  style="font-size: 40px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.15; color: #0D0B14; margin: 0;">Maak kennis met de DigitaalSlim Plus+ Community.</h2>
     </div>
 
-    <div style="max-width: 960px; margin: 0 auto 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: stretch;" >
-      <img src="afbeeldingen/Matthias%20met%20toestellen/Matthias%20met%20iPad%20en%20Mac%202.jpg" alt="Matthias van DigitaalSlim" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 36px rgba(74,44,245,0.10), 0 2px 8px rgba(13,11,20,0.05); object-fit: cover; height: 100%;">
-      <img src="afbeeldingen/DS-PLUS-COMMUNITY-THUMB.jpg" alt="DigitaalSlim Plus+ Community" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 36px rgba(74,44,245,0.10), 0 2px 8px rgba(13,11,20,0.05); object-fit: cover; height: 100%;">
-      <img src="afbeeldingen/DS-community-lid-op-ipad.jpg" alt="Lid met iPad in de community" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 36px rgba(74,44,245,0.10), 0 2px 8px rgba(13,11,20,0.05); object-fit: cover; height: 100%;">
+    <div class="community-photos" style="max-width: 960px; margin: 0 auto 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: stretch;" >
+      <img src="afbeeldingen/Matthias%20met%20toestellen/Matthias%20met%20iPad%20en%20Mac%202.jpg" alt="Matthias van DigitaalSlim" class="community-photo-matthias" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 36px rgba(74,44,245,0.10), 0 2px 8px rgba(13,11,20,0.05); object-fit: cover; height: 100%;">
+      <img src="afbeeldingen/DS-PLUS-COMMUNITY-THUMB.jpg" alt="DigitaalSlim Plus+ Community" class="community-photo-logo" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 36px rgba(74,44,245,0.10), 0 2px 8px rgba(13,11,20,0.05); object-fit: cover; height: 100%;">
+      <img src="afbeeldingen/DS-community-lid-op-ipad.jpg" alt="Lid met iPad in de community" class="community-photo-lid" style="width: 100%; border-radius: 20px; box-shadow: 0 8px 36px rgba(74,44,245,0.10), 0 2px 8px rgba(13,11,20,0.05); object-fit: cover; height: 100%;">
     </div>
 
     <div style="max-width: 800px; margin: 0 auto;">
