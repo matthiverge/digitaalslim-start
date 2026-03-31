@@ -3931,18 +3931,11 @@ document.querySelectorAll('.r').forEach(el => observer.observe(el));
 
 
 // CTA button clicks: redirect to checkout
-var checkoutBase = 'https://ontdek.nu.digitaalslim.be/checkout/digitaalslim-plus-met-community';
+var checkoutURL = 'https://ontdek.nu.digitaalslim.be/checkout/digitaalslim-plus-met-community';
 document.querySelectorAll('.btn').forEach(btn => {
   if (btn.id === 'wall-load-more') return;
   btn.addEventListener('click', function() {
-    var plan = this.getAttribute('data-plan');
-    if (plan) {
-      // Pricing knoppen: specifiek plan meegeven
-      window.location.href = checkoutBase + '?plan=' + plan;
-    } else {
-      // Algemene CTA knoppen: gewone URL, bezoeker kiest zelf
-      window.location.href = checkoutBase;
-    }
+    window.location.href = checkoutURL;
   });
 });
 
